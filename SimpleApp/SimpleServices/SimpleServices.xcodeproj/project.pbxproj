@@ -1,0 +1,332 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7373D2EB1CD0C1A100332D91 /* libSimpleModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7373D2EA1CD0C1A100332D91 /* libSimpleModel.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7373D2C61CD0B7DE00332D91 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7373D2C81CD0B7DE00332D91 /* libSimpleServices.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSimpleServices.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7373D2EA1CD0C1A100332D91 /* libSimpleModel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSimpleModel.a; path = "../Debug-iphonesimulator/libSimpleModel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7373D2C51CD0B7DE00332D91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7373D2EB1CD0C1A100332D91 /* libSimpleModel.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7373D2BF1CD0B7DE00332D91 = {
+			isa = PBXGroup;
+			children = (
+				7373D2CA1CD0B7DE00332D91 /* SimpleServices */,
+				7373D2E91CD0C03C00332D91 /* Frameworks */,
+				7373D2C91CD0B7DE00332D91 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7373D2C91CD0B7DE00332D91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7373D2C81CD0B7DE00332D91 /* libSimpleServices.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7373D2CA1CD0B7DE00332D91 /* SimpleServices */ = {
+			isa = PBXGroup;
+			children = (
+				737DED981CD1DD0500D97A9F /* Tools */,
+				7373D2F51CD0C2AF00332D91 /* ServicesFactory */,
+				7373D2F41CD0C2A400332D91 /* GoodsServices */,
+			);
+			path = SimpleServices;
+			sourceTree = "<group>";
+		};
+		7373D2E91CD0C03C00332D91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7373D2EA1CD0C1A100332D91 /* libSimpleModel.a */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		7373D2F41CD0C2A400332D91 /* GoodsServices */ = {
+			isa = PBXGroup;
+			children = (
+				7373D2FB1CD0C2C500332D91 /* Network */,
+				7373D2F61CD0C2C500332D91 /* FeatureSet */,
+			);
+			path = GoodsServices;
+			sourceTree = "<group>";
+		};
+		7373D2F51CD0C2AF00332D91 /* ServicesFactory */ = {
+			isa = PBXGroup;
+			children = (
+				7373D30C1CD0C3A300332D91 /* Network */,
+				7373D3011CD0C32B00332D91 /* FeatureSet */,
+				7373D3021CD0C32B00332D91 /* Service */,
+			);
+			path = ServicesFactory;
+			sourceTree = "<group>";
+		};
+		7373D2F61CD0C2C500332D91 /* FeatureSet */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FeatureSet;
+			sourceTree = "<group>";
+		};
+		7373D2FB1CD0C2C500332D91 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7373D3011CD0C32B00332D91 /* FeatureSet */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FeatureSet;
+			sourceTree = "<group>";
+		};
+		7373D3021CD0C32B00332D91 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7373D30C1CD0C3A300332D91 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		737DED981CD1DD0500D97A9F /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7373D2C71CD0B7DE00332D91 /* SimpleServices */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7373D2D11CD0B7DF00332D91 /* Build configuration list for PBXNativeTarget "SimpleServices" */;
+			buildPhases = (
+				7373D2C41CD0B7DE00332D91 /* Sources */,
+				7373D2C51CD0B7DE00332D91 /* Frameworks */,
+				7373D2C61CD0B7DE00332D91 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleServices;
+			productName = SimpleServices;
+			productReference = 7373D2C81CD0B7DE00332D91 /* libSimpleServices.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7373D2C01CD0B7DE00332D91 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = wuyp;
+				TargetAttributes = {
+					7373D2C71CD0B7DE00332D91 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 7373D2C31CD0B7DE00332D91 /* Build configuration list for PBXProject "SimpleServices" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7373D2BF1CD0B7DE00332D91;
+			productRefGroup = 7373D2C91CD0B7DE00332D91 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7373D2C71CD0B7DE00332D91 /* SimpleServices */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7373D2C41CD0B7DE00332D91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7373D2CF1CD0B7DF00332D91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7373D2D01CD0B7DF00332D91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7373D2D21CD0B7DF00332D91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../SimpleModel/SimpleModel\"/**",
+					"../Pods/Headers/Public/**",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7373D2D31CD0B7DF00332D91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../SimpleModel/SimpleModel\"/**",
+					"../Pods/Headers/Public/**",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7373D2C31CD0B7DE00332D91 /* Build configuration list for PBXProject "SimpleServices" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7373D2CF1CD0B7DF00332D91 /* Debug */,
+				7373D2D01CD0B7DF00332D91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7373D2D11CD0B7DF00332D91 /* Build configuration list for PBXNativeTarget "SimpleServices" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7373D2D21CD0B7DF00332D91 /* Debug */,
+				7373D2D31CD0B7DF00332D91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7373D2C01CD0B7DE00332D91 /* Project object */;
+}

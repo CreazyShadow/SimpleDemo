@@ -1,0 +1,21 @@
+workspace 'SimpleApp.xcworkspace'
+
+platform :ios, '8.0'
+
+def share_pods
+	pod 'OpenShare'
+	pod 'FMDB'
+	pod 'YYModel'
+	pod 'EGOCache'
+	pod 'Masonry'
+	pod 'WSProgressHUD'
+	pod 'YTKNetwork'
+	pod 'AFNetworking'
+   	pod 'MJRefresh'
+    pod 'JSONModel'
+end
+
+target 'SimpleApp' do
+	xcodeproj 'SimpleApp.xcodeproj'
+	share_pods
+end

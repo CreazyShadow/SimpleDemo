@@ -25,6 +25,8 @@
 		735432F21CF4653300FA966A /* libSimpleCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 735432F11CF4653300FA966A /* libSimpleCommon.a */; };
 		7366D0A01D70190000C536CF /* EventButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7366D09F1D70190000C536CF /* EventButton.m */; };
 		7366D0A31D70191200C536CF /* EventTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7366D0A21D70191200C536CF /* EventTextField.m */; };
+		736EA93F1D8E63A400F97E4F /* AutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 736EA93D1D8E63A400F97E4F /* AutoLayoutViewController.m */; };
+		736EA9401D8E63A400F97E4F /* AutoLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736EA93E1D8E63A400F97E4F /* AutoLayoutViewController.xib */; };
 		7373D2491CD0AA2600332D91 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7373D2481CD0AA2600332D91 /* main.m */; };
 		7373D24C1CD0AA2600332D91 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7373D24B1CD0AA2600332D91 /* AppDelegate.m */; };
 		7373D24F1CD0AA2600332D91 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7373D24E1CD0AA2600332D91 /* ViewController.m */; };
@@ -102,6 +104,9 @@
 		7366D09F1D70190000C536CF /* EventButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventButton.m; sourceTree = "<group>"; };
 		7366D0A11D70191200C536CF /* EventTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTextField.h; sourceTree = "<group>"; };
 		7366D0A21D70191200C536CF /* EventTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTextField.m; sourceTree = "<group>"; };
+		736EA93C1D8E63A400F97E4F /* AutoLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutViewController.h; sourceTree = "<group>"; };
+		736EA93D1D8E63A400F97E4F /* AutoLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutViewController.m; sourceTree = "<group>"; };
+		736EA93E1D8E63A400F97E4F /* AutoLayoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutoLayoutViewController.xib; sourceTree = "<group>"; };
 		7373D2441CD0AA2600332D91 /* SimpleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7373D2481CD0AA2600332D91 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7373D24A1CD0AA2600332D91 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -251,6 +256,16 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		736EA93B1D8E639200F97E4F /* AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				736EA93C1D8E63A400F97E4F /* AutoLayoutViewController.h */,
+				736EA93D1D8E63A400F97E4F /* AutoLayoutViewController.m */,
+				736EA93E1D8E63A400F97E4F /* AutoLayoutViewController.xib */,
+			);
+			path = AutoLayout;
+			sourceTree = "<group>";
+		};
 		7373D23B1CD0AA2600332D91 = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +291,7 @@
 		7373D2461CD0AA2600332D91 /* SimpleApp */ = {
 			isa = PBXGroup;
 			children = (
+				736EA93B1D8E639200F97E4F /* AutoLayout */,
 				7307912E1D8254970034EBFF /* masonry */,
 				730791271D815F300034EBFF /* JavaScriptCore */,
 				7334FC2F1D6B26A60046DD4F /* Image */,
@@ -511,6 +527,7 @@
 				7373D2571CD0AA2600332D91 /* LaunchScreen.storyboard in Resources */,
 				7373D2541CD0AA2600332D91 /* Assets.xcassets in Resources */,
 				7373D2521CD0AA2600332D91 /* Main.storyboard in Resources */,
+				736EA9401D8E63A400F97E4F /* AutoLayoutViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +629,7 @@
 				73A120871D62F93400C56C92 /* TestWebviewViewController.m in Sources */,
 				7307912D1D8160580034EBFF /* JSValueViewController.m in Sources */,
 				739F10F21D06A00C005DA096 /* FirstViewController.m in Sources */,
+				736EA93F1D8E63A400F97E4F /* AutoLayoutViewController.m in Sources */,
 				73A1208A1D6302F100C56C92 /* UIWebView+Clean.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

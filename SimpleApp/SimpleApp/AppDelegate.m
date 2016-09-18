@@ -17,6 +17,8 @@
 
 #import "SimpleApp-Swift.h"
 
+#import "AutoLayoutViewController.h"
+
 @interface AppDelegate ()
 
 @property (nonatomic, strong, readwrite) id field;
@@ -27,8 +29,6 @@
 @implementation AppDelegate
 
 - (void)test {
-    
-    NSMutableArray *str = @"123456789a";
 //    [str addObject:@"123"];
 //    str = [NSString stringWithFormat:@"%.2lf", str.doubleValue];
 
@@ -65,14 +65,33 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    NSString *className = @"FirstViewController";
-    UIViewController *vc = [[NSClassFromString(className) alloc] init];
-//    UIViewController *vc = [self setupTabBarController];
-    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
-    self.window.rootViewController = nc;
+    [self setupStartType:1];
     
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)setupStartType:(NSInteger)type {
+    UIViewController *vc = nil;
+    NSString *className = @"AutoLayoutViewController";
+    switch (type) {
+        case 0:
+        {
+            vc = [[NSClassFromString(className) alloc] init];
+        }
+            break;
+        case 1:
+        {
+            vc = [[NSClassFromString(className) alloc] initWithNibName:className bundle:nil];
+        }
+            break;
+        case 2:
+            
+            break;
+    }
+    
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = nc;
 }
 
 - (UITabBarController *)setupTabBarController {

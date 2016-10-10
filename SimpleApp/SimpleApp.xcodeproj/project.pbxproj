@@ -35,6 +35,13 @@
 		7373D2571CD0AA2600332D91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7373D2551CD0AA2600332D91 /* LaunchScreen.storyboard */; };
 		7373D2621CD0AA2600332D91 /* SimpleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7373D2611CD0AA2600332D91 /* SimpleAppTests.m */; };
 		7373D26D1CD0AA2600332D91 /* SimpleAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7373D26C1CD0AA2600332D91 /* SimpleAppUITests.m */; };
+		737E49BB1D90C740000080F0 /* KJNCFxJibingCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 737E49B81D90C740000080F0 /* KJNCFxJibingCell1.m */; };
+		737E49BC1D90C740000080F0 /* KJNCFxJibingCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 737E49BA1D90C740000080F0 /* KJNCFxJibingCell2.m */; };
+		737E4A8A1D924133000080F0 /* ChildTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 737E4A831D924133000080F0 /* ChildTableViewCell.m */; };
+		737E4A8B1D924133000080F0 /* ChildTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 737E4A841D924133000080F0 /* ChildTableViewCell.xib */; };
+		737E4A8C1D924133000080F0 /* ProductCapticalSelectEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 737E4A861D924133000080F0 /* ProductCapticalSelectEventView.m */; };
+		737E4A8D1D924133000080F0 /* ProductSliderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 737E4A881D924133000080F0 /* ProductSliderTableViewCell.m */; };
+		737E4A8E1D924133000080F0 /* ProductSliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 737E4A891D924133000080F0 /* ProductSliderTableViewCell.xib */; };
 		739F10F21D06A00C005DA096 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739F10F11D06A00C005DA096 /* FirstViewController.m */; };
 		739F10F51D06A012005DA096 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739F10F41D06A012005DA096 /* SecondViewController.m */; };
 		73A120871D62F93400C56C92 /* TestWebviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A120861D62F93400C56C92 /* TestWebviewViewController.m */; };
@@ -46,6 +53,20 @@
 		73B6CCB51D2CAB6D00982753 /* TestCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B6CCB41D2CAB6D00982753 /* TestCommonViewController.m */; };
 		73C3F84A1D2B4568008BBD9F /* CustomerLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C3F8491D2B4568008BBD9F /* CustomerLayer.m */; };
 		73C3F84D1D2B46C7008BBD9F /* RenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C3F84C1D2B46C7008BBD9F /* RenderViewController.m */; };
+		73C7DAA61D8F8C95003F06F5 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C7DAA51D8F8C95003F06F5 /* NavigationViewController.m */; };
+		73C7DAA91D8F8CA7003F06F5 /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C7DAA81D8F8CA7003F06F5 /* CustomNavigationBar.m */; };
+		73D8FD941D991836009F1F6D /* SelectDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D8FD931D991836009F1F6D /* SelectDatePickerView.xib */; };
+		73D8FD971D99184B009F1F6D /* SelectDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D8FD961D99184B009F1F6D /* SelectDatePickerView.m */; };
+		73D8FDA01D9A2F04009F1F6D /* CollectionAutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D8FD9E1D9A2F04009F1F6D /* CollectionAutoLayoutViewController.m */; };
+		73D8FDA11D9A2F04009F1F6D /* CollectionAutoLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D8FD9F1D9A2F04009F1F6D /* CollectionAutoLayoutViewController.xib */; };
+		73D8FDA51D9A30DB009F1F6D /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D8FDA31D9A30DB009F1F6D /* CollectionViewCell.m */; };
+		73D8FDA61D9A30DB009F1F6D /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D8FDA41D9A30DB009F1F6D /* CollectionViewCell.xib */; };
+		73D8FDBC1D9A4A3D009F1F6D /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D8FDBB1D9A4A3D009F1F6D /* TestView.xib */; };
+		73D8FDBF1D9A4A9E009F1F6D /* TestXibViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D8FDBE1D9A4A9E009F1F6D /* TestXibViewVC.m */; };
+		73D8FDCB1D9A755A009F1F6D /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D8FDCA1D9A755A009F1F6D /* Company.m */; };
+		73D8FDCE1D9A7576009F1F6D /* Agreement.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D8FDCD1D9A7576009F1F6D /* Agreement.m */; };
+		73D8FDD31D9A75D8009F1F6D /* BaseKnowTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D8FDD11D9A75D8009F1F6D /* BaseKnowTestViewController.m */; };
+		73D8FDD41D9A75D8009F1F6D /* BaseKnowTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D8FDD21D9A75D8009F1F6D /* BaseKnowTestViewController.xib */; };
 		B980A19BF0CE00920C503208 /* libPods-SimpleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ADD0F38396CB07FF3AB19A5 /* libPods-SimpleApp.a */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +144,18 @@
 		7373D2681CD0AA2600332D91 /* SimpleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7373D26C1CD0AA2600332D91 /* SimpleAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleAppUITests.m; sourceTree = "<group>"; };
 		7373D26E1CD0AA2600332D91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		737E49B71D90C740000080F0 /* KJNCFxJibingCell1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJNCFxJibingCell1.h; sourceTree = "<group>"; };
+		737E49B81D90C740000080F0 /* KJNCFxJibingCell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJNCFxJibingCell1.m; sourceTree = "<group>"; };
+		737E49B91D90C740000080F0 /* KJNCFxJibingCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJNCFxJibingCell2.h; sourceTree = "<group>"; };
+		737E49BA1D90C740000080F0 /* KJNCFxJibingCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJNCFxJibingCell2.m; sourceTree = "<group>"; };
+		737E4A821D924133000080F0 /* ChildTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildTableViewCell.h; sourceTree = "<group>"; };
+		737E4A831D924133000080F0 /* ChildTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildTableViewCell.m; sourceTree = "<group>"; };
+		737E4A841D924133000080F0 /* ChildTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChildTableViewCell.xib; sourceTree = "<group>"; };
+		737E4A851D924133000080F0 /* ProductCapticalSelectEventView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCapticalSelectEventView.h; sourceTree = "<group>"; };
+		737E4A861D924133000080F0 /* ProductCapticalSelectEventView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCapticalSelectEventView.m; sourceTree = "<group>"; };
+		737E4A871D924133000080F0 /* ProductSliderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSliderTableViewCell.h; sourceTree = "<group>"; };
+		737E4A881D924133000080F0 /* ProductSliderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSliderTableViewCell.m; sourceTree = "<group>"; };
+		737E4A891D924133000080F0 /* ProductSliderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductSliderTableViewCell.xib; sourceTree = "<group>"; };
 		739F10F01D06A00C005DA096 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		739F10F11D06A00C005DA096 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		739F10F31D06A012005DA096 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
@@ -143,6 +176,30 @@
 		73C3F8491D2B4568008BBD9F /* CustomerLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerLayer.m; sourceTree = "<group>"; };
 		73C3F84B1D2B46C7008BBD9F /* RenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderViewController.h; sourceTree = "<group>"; };
 		73C3F84C1D2B46C7008BBD9F /* RenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderViewController.m; sourceTree = "<group>"; };
+		73C7DAA41D8F8C95003F06F5 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		73C7DAA51D8F8C95003F06F5 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		73C7DAA71D8F8CA7003F06F5 /* CustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationBar.h; sourceTree = "<group>"; };
+		73C7DAA81D8F8CA7003F06F5 /* CustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationBar.m; sourceTree = "<group>"; };
+		73D8FD931D991836009F1F6D /* SelectDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectDatePickerView.xib; sourceTree = "<group>"; };
+		73D8FD951D99184B009F1F6D /* SelectDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectDatePickerView.h; sourceTree = "<group>"; };
+		73D8FD961D99184B009F1F6D /* SelectDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectDatePickerView.m; sourceTree = "<group>"; };
+		73D8FD9D1D9A2F04009F1F6D /* CollectionAutoLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionAutoLayoutViewController.h; sourceTree = "<group>"; };
+		73D8FD9E1D9A2F04009F1F6D /* CollectionAutoLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionAutoLayoutViewController.m; sourceTree = "<group>"; };
+		73D8FD9F1D9A2F04009F1F6D /* CollectionAutoLayoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionAutoLayoutViewController.xib; sourceTree = "<group>"; };
+		73D8FDA21D9A30DB009F1F6D /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		73D8FDA31D9A30DB009F1F6D /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		73D8FDA41D9A30DB009F1F6D /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		73D8FDBB1D9A4A3D009F1F6D /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
+		73D8FDBD1D9A4A9E009F1F6D /* TestXibViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestXibViewVC.h; sourceTree = "<group>"; };
+		73D8FDBE1D9A4A9E009F1F6D /* TestXibViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestXibViewVC.m; sourceTree = "<group>"; };
+		73D8FDC91D9A755A009F1F6D /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
+		73D8FDCA1D9A755A009F1F6D /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
+		73D8FDCC1D9A7576009F1F6D /* Agreement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Agreement.h; sourceTree = "<group>"; };
+		73D8FDCD1D9A7576009F1F6D /* Agreement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Agreement.m; sourceTree = "<group>"; };
+		73D8FDCF1D9A7591009F1F6D /* CompanyProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyProtocol.h; sourceTree = "<group>"; };
+		73D8FDD01D9A75D8009F1F6D /* BaseKnowTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseKnowTestViewController.h; sourceTree = "<group>"; };
+		73D8FDD11D9A75D8009F1F6D /* BaseKnowTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseKnowTestViewController.m; sourceTree = "<group>"; };
+		73D8FDD21D9A75D8009F1F6D /* BaseKnowTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseKnowTestViewController.xib; sourceTree = "<group>"; };
 		AF1F2D7D0AFC0A3595B79DEB /* Pods-SimpleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -259,9 +316,33 @@
 		736EA93B1D8E639200F97E4F /* AutoLayout */ = {
 			isa = PBXGroup;
 			children = (
+				737E4A821D924133000080F0 /* ChildTableViewCell.h */,
+				737E4A831D924133000080F0 /* ChildTableViewCell.m */,
+				737E4A841D924133000080F0 /* ChildTableViewCell.xib */,
+				737E4A851D924133000080F0 /* ProductCapticalSelectEventView.h */,
+				737E4A861D924133000080F0 /* ProductCapticalSelectEventView.m */,
+				737E4A871D924133000080F0 /* ProductSliderTableViewCell.h */,
+				737E4A881D924133000080F0 /* ProductSliderTableViewCell.m */,
+				737E4A891D924133000080F0 /* ProductSliderTableViewCell.xib */,
+				737E49B71D90C740000080F0 /* KJNCFxJibingCell1.h */,
+				737E49B81D90C740000080F0 /* KJNCFxJibingCell1.m */,
+				737E49B91D90C740000080F0 /* KJNCFxJibingCell2.h */,
+				737E49BA1D90C740000080F0 /* KJNCFxJibingCell2.m */,
 				736EA93C1D8E63A400F97E4F /* AutoLayoutViewController.h */,
 				736EA93D1D8E63A400F97E4F /* AutoLayoutViewController.m */,
 				736EA93E1D8E63A400F97E4F /* AutoLayoutViewController.xib */,
+				73D8FD931D991836009F1F6D /* SelectDatePickerView.xib */,
+				73D8FD951D99184B009F1F6D /* SelectDatePickerView.h */,
+				73D8FD961D99184B009F1F6D /* SelectDatePickerView.m */,
+				73D8FD9D1D9A2F04009F1F6D /* CollectionAutoLayoutViewController.h */,
+				73D8FD9E1D9A2F04009F1F6D /* CollectionAutoLayoutViewController.m */,
+				73D8FD9F1D9A2F04009F1F6D /* CollectionAutoLayoutViewController.xib */,
+				73D8FDA21D9A30DB009F1F6D /* CollectionViewCell.h */,
+				73D8FDA31D9A30DB009F1F6D /* CollectionViewCell.m */,
+				73D8FDA41D9A30DB009F1F6D /* CollectionViewCell.xib */,
+				73D8FDBB1D9A4A3D009F1F6D /* TestView.xib */,
+				73D8FDBD1D9A4A9E009F1F6D /* TestXibViewVC.h */,
+				73D8FDBE1D9A4A9E009F1F6D /* TestXibViewVC.m */,
 			);
 			path = AutoLayout;
 			sourceTree = "<group>";
@@ -291,6 +372,8 @@
 		7373D2461CD0AA2600332D91 /* SimpleApp */ = {
 			isa = PBXGroup;
 			children = (
+				73D8FDC81D9A7530009F1F6D /* BaseKnow */,
+				73C7DAA31D8F8C7A003F06F5 /* Navigation */,
 				736EA93B1D8E639200F97E4F /* AutoLayout */,
 				7307912E1D8254970034EBFF /* masonry */,
 				730791271D815F300034EBFF /* JavaScriptCore */,
@@ -408,6 +491,32 @@
 			path = viewRender;
 			sourceTree = "<group>";
 		};
+		73C7DAA31D8F8C7A003F06F5 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				73C7DAA41D8F8C95003F06F5 /* NavigationViewController.h */,
+				73C7DAA51D8F8C95003F06F5 /* NavigationViewController.m */,
+				73C7DAA71D8F8CA7003F06F5 /* CustomNavigationBar.h */,
+				73C7DAA81D8F8CA7003F06F5 /* CustomNavigationBar.m */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		73D8FDC81D9A7530009F1F6D /* BaseKnow */ = {
+			isa = PBXGroup;
+			children = (
+				73D8FDC91D9A755A009F1F6D /* Company.h */,
+				73D8FDCA1D9A755A009F1F6D /* Company.m */,
+				73D8FDCC1D9A7576009F1F6D /* Agreement.h */,
+				73D8FDCD1D9A7576009F1F6D /* Agreement.m */,
+				73D8FDCF1D9A7591009F1F6D /* CompanyProtocol.h */,
+				73D8FDD01D9A75D8009F1F6D /* BaseKnowTestViewController.h */,
+				73D8FDD11D9A75D8009F1F6D /* BaseKnowTestViewController.m */,
+				73D8FDD21D9A75D8009F1F6D /* BaseKnowTestViewController.xib */,
+			);
+			path = BaseKnow;
+			sourceTree = "<group>";
+		};
 		73F2BFEE1CF7F915005C6203 /* gcd */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +597,7 @@
 					7373D2431CD0AA2600332D91 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = F74GWC55U7;
+						LastSwiftMigration = 0800;
 					};
 					7373D25C1CD0AA2600332D91 = {
 						CreatedOnToolsVersion = 7.3;
@@ -524,10 +634,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				737E4A8E1D924133000080F0 /* ProductSliderTableViewCell.xib in Resources */,
+				73D8FDA11D9A2F04009F1F6D /* CollectionAutoLayoutViewController.xib in Resources */,
 				7373D2571CD0AA2600332D91 /* LaunchScreen.storyboard in Resources */,
+				73D8FDD41D9A75D8009F1F6D /* BaseKnowTestViewController.xib in Resources */,
+				73D8FDBC1D9A4A3D009F1F6D /* TestView.xib in Resources */,
+				73D8FD941D991836009F1F6D /* SelectDatePickerView.xib in Resources */,
 				7373D2541CD0AA2600332D91 /* Assets.xcassets in Resources */,
 				7373D2521CD0AA2600332D91 /* Main.storyboard in Resources */,
 				736EA9401D8E63A400F97E4F /* AutoLayoutViewController.xib in Resources */,
+				737E4A8B1D924133000080F0 /* ChildTableViewCell.xib in Resources */,
+				73D8FDA61D9A30DB009F1F6D /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,36 +717,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				737E4A8D1D924133000080F0 /* ProductSliderTableViewCell.m in Sources */,
 				7366D0A01D70190000C536CF /* EventButton.m in Sources */,
 				730791891D89283B0034EBFF /* BaseViewController.m in Sources */,
 				73C3F84D1D2B46C7008BBD9F /* RenderViewController.m in Sources */,
 				73B6CCB51D2CAB6D00982753 /* TestCommonViewController.m in Sources */,
+				73D8FDA51D9A30DB009F1F6D /* CollectionViewCell.m in Sources */,
+				73C7DAA61D8F8C95003F06F5 /* NavigationViewController.m in Sources */,
 				7373D24F1CD0AA2600332D91 /* ViewController.m in Sources */,
 				730791341D86405D0034EBFF /* PickerViewController.m in Sources */,
+				73C7DAA91D8F8CA7003F06F5 /* CustomNavigationBar.m in Sources */,
 				7334FC271D6B01C10046DD4F /* MasonyTableViewController.m in Sources */,
 				732640191D1158E700AB2EA7 /* StructAndClass.m in Sources */,
 				73B5C0361D56F5B400F8CA7B /* TestTableViewViewController.swift in Sources */,
+				73D8FDD31D9A75D8009F1F6D /* BaseKnowTestViewController.m in Sources */,
 				732640151D10EC5400AB2EA7 /* GcdViewController.m in Sources */,
 				7326076C1D22397B00291A96 /* ScrapeView.m in Sources */,
+				737E49BC1D90C740000080F0 /* KJNCFxJibingCell2.m in Sources */,
 				7307912A1D815F9C0034EBFF /* JSContextDemo.m in Sources */,
 				739F10F51D06A012005DA096 /* SecondViewController.m in Sources */,
+				73D8FDA01D9A2F04009F1F6D /* CollectionAutoLayoutViewController.m in Sources */,
 				7366D0A31D70191200C536CF /* EventTextField.m in Sources */,
+				73D8FDCB1D9A755A009F1F6D /* Company.m in Sources */,
 				73B5C03A1D572BDB00F8CA7B /* CellModel.swift in Sources */,
+				737E4A8A1D924133000080F0 /* ChildTableViewCell.m in Sources */,
 				730791411D86A16A0034EBFF /* UIPageControllerViewControllerDemo.m in Sources */,
 				73A1208D1D63034500C56C92 /* UIWebView+TT.m in Sources */,
 				7304CE9D1CF541A800C5E349 /* TestRuntimeViewController.m in Sources */,
 				7334FC321D6B26B30046DD4F /* ImageViewController.m in Sources */,
 				730791311D8254A00034EBFF /* MasonryViewController.m in Sources */,
+				737E4A8C1D924133000080F0 /* ProductCapticalSelectEventView.m in Sources */,
 				7373D24C1CD0AA2600332D91 /* AppDelegate.m in Sources */,
 				730791441D86A9630034EBFF /* PageViewControllerChild.m in Sources */,
 				7334FC2A1D6B01F30046DD4F /* MasonryTableViewCell.m in Sources */,
 				73C3F84A1D2B4568008BBD9F /* CustomerLayer.m in Sources */,
 				73B5C0381D56F65900F8CA7B /* ExpandTableViewCell.swift in Sources */,
+				73D8FDBF1D9A4A9E009F1F6D /* TestXibViewVC.m in Sources */,
 				7373D2491CD0AA2600332D91 /* main.m in Sources */,
+				73D8FD971D99184B009F1F6D /* SelectDatePickerView.m in Sources */,
+				737E49BB1D90C740000080F0 /* KJNCFxJibingCell1.m in Sources */,
 				73A120871D62F93400C56C92 /* TestWebviewViewController.m in Sources */,
 				7307912D1D8160580034EBFF /* JSValueViewController.m in Sources */,
 				739F10F21D06A00C005DA096 /* FirstViewController.m in Sources */,
 				736EA93F1D8E63A400F97E4F /* AutoLayoutViewController.m in Sources */,
+				73D8FDCE1D9A7576009F1F6D /* Agreement.m in Sources */,
 				73A1208A1D6302F100C56C92 /* UIWebView+Clean.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -785,6 +916,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = F74GWC55U7;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -809,11 +941,12 @@
 					"$(SRCROOT)/Users/wuyp/Library/Developer/Xcode/DerivedData/SimpleApp-cswqutjhlfbmkqbsnbwnxbznehzs/Build/Products/Debug-iphonesimulator/libSimpleCommon.a",
 					"$(PROJECT_DIR)/SimpleCommon/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pingan.yztcreazysimple;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tigerEN.renshetong12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SimpleApp/ListView/SimpleApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s armv7";
 			};
@@ -827,6 +960,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = F74GWC55U7;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -851,10 +985,11 @@
 					"$(SRCROOT)/Users/wuyp/Library/Developer/Xcode/DerivedData/SimpleApp-cswqutjhlfbmkqbsnbwnxbznehzs/Build/Products/Debug-iphonesimulator/libSimpleCommon.a",
 					"$(PROJECT_DIR)/SimpleCommon/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pingan.yztcreazysimple;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tigerEN.renshetong12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SimpleApp/ListView/SimpleApp-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s armv7";
 			};

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="223" id="KGk-i7-Jjw" customClass="ChildTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="323" height="223"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="323" height="222.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ONR-ue-Yif">
+                        <rect key="frame" x="8" y="15" width="307" height="192.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tableView>
+                </subviews>
+                <color key="backgroundColor" red="0.18708844080000001" green="0.83491975760000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="ONR-ue-Yif" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="397-3p-2dm"/>
+                    <constraint firstAttribute="trailing" secondItem="ONR-ue-Yif" secondAttribute="trailing" constant="8" id="Llx-Yd-5ra"/>
+                    <constraint firstItem="ONR-ue-Yif" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="bqw-K2-wwE"/>
+                    <constraint firstAttribute="bottom" secondItem="ONR-ue-Yif" secondAttribute="bottom" constant="15" id="yZr-qh-iZe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="tableview" destination="ONR-ue-Yif" id="0DU-AM-NYY"/>
+            </connections>
+            <point key="canvasLocation" x="225.5" y="404.5"/>
+        </tableViewCell>
+    </objects>
+</document>

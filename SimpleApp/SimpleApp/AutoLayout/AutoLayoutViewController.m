@@ -2,15 +2,20 @@
 //  AutoLayoutViewController.m
 //  SimpleApp
 //
-//  Created by wuyp on 16/9/18.
+//  Created by wuyp on 16/9/15.
 //  Copyright © 2016年 wuyp. All rights reserved.
 //
 
 #import "AutoLayoutViewController.h"
 
-@interface AutoLayoutViewController ()<UITextFieldDelegate>
+#import "ChildTableViewCell.h"
 
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+#import "ProductSliderTableViewCell.h"
+#import "SelectDatePickerView.h"
+
+@interface AutoLayoutViewController ()
+
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 @end
 
@@ -18,20 +23,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.textField.delegate = self;
-}
+    
+    self.view.backgroundColor = [UIColor colorWithRed:23 green:24 blue:25 alpha:1];
+    self.datePicker.timeZone = [NSTimeZone systemTimeZone];
+    
+    [self.datePicker addTarget:self action:@selector(datePickerChanged:) forControlEvents:UIControlEventValueChanged];
+  }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+- (void)datePickerChanged:(UIDatePicker *)datePicker {
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *comp = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
-    [comp setMonth:comp.month + 10];
-    NSLog(@"%@ %@",[NSDate date] ,[calendar dateFromComponents:comp]);
-}
-
-#pragma mark - UITextFieldDelegate
-
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    return NO;
+    NSRange range = [calendar rangeOfUnit:NSDayCalendarUnit inUnit: NSMonthCalendarUnit forDate:datePicker.date];
+    
 }
 
 @end

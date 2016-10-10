@@ -14,9 +14,9 @@
 
 @interface Person : NSObject
 
-@property (nonatomic, copy) NSString<Optional> *name;
+@property (nonatomic, copy) NSString *name;
 
-@property (nonatomic, copy) NSString<Optional> *phoneNum;
+@property (nonatomic, copy) NSString *phoneNum;
 
 - (void)test;
 

@@ -1,5 +1,5 @@
 //
-//  AutoLayoutViewController.h
+//  ChildTableViewCell.h
 //  SimpleApp
 //
 //  Created by wuyp on 16/9/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AutoLayoutViewController : UIViewController
+@interface ChildTableViewCell : UITableViewCell
 
 @end

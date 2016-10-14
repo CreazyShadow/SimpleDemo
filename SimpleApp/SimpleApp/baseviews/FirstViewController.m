@@ -11,6 +11,8 @@
 #import "ScrapeView.h"
 #import "TestWebviewViewController.h"
 
+#import <Person.h>
+
 #import "MasonryViewController.h"
 
 @interface FirstViewController ()
@@ -36,7 +38,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [super touchesBegan:touches withEvent:event];
+
 }
 
 #pragma mark - override
@@ -64,7 +66,7 @@
     [_button2 addTarget:self action:@selector(clickButton2) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_button2];
     
-    [self testStackView];
+    
 }
 
 #pragma mark - Test

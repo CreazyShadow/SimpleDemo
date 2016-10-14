@@ -17,7 +17,7 @@
 
 #import "SimpleApp-Swift.h"
 
-#import "AutoLayoutViewController.h"
+#import "NavigationViewController.h"
 
 @interface AppDelegate ()
 
@@ -29,30 +29,7 @@
 @implementation AppDelegate
 
 - (void)test {
-//    [str addObject:@"123"];
-//    str = [NSString stringWithFormat:@"%.2lf", str.doubleValue];
-
     
-//    NSArray *moneyArr = [str componentsSeparatedByString:@"."];
-//    NSString *entirMoney = moneyArr[0];
-//    NSString *pointMoney = moneyArr[1];
-//    NSInteger index = 0;
-//    NSMutableArray *marr = [NSMutableArray array];
-//    
-//    for (NSInteger i = entirMoney.length - 1; i >= 0; i--) {
-//        index++;
-//        [marr insertObject:[NSString stringWithFormat:@"%c", [entirMoney characterAtIndex:i]] atIndex:0];
-//        if (index % 3 == 0) {
-//            [marr insertObject:@"," atIndex:0];
-//        }
-//    }
-//    
-//    if ([[marr firstObject] isEqualToString:@","]) {
-//        [marr removeObjectAtIndex:0];
-//    }
-//    
-//    str = [[marr componentsJoinedByString:@""] stringByAppendingFormat:@".%@", pointMoney];
-//    NSLog(@"%@", str);
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -63,7 +40,6 @@
     //    [[LogHelper shareInstance] redirectSTD:STDERR_FILENO];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
     
     [self setupStartType:1];
     
@@ -96,7 +72,7 @@
 
 - (UITabBarController *)setupTabBarController {
     UITabBarController *tbc = [[UITabBarController alloc] init];
-   
+    
     NSArray *vcs = @[@"FirstViewController", @"SecondViewController", @"ImageViewController"];
     for (NSString *vc in vcs) {
         UIViewController *temp = [[NSClassFromString(vc) alloc] init];
@@ -148,7 +124,7 @@ void uncaughtExceptionHandler(NSException *exception){
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-//    NSLog(@"%@ %@ %@", url, sourceApplication, annotation);
+    //    NSLog(@"%@ %@ %@", url, sourceApplication, annotation);
     return YES;
 }
 

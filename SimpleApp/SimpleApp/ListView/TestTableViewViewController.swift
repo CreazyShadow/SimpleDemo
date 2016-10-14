@@ -29,39 +29,39 @@ class TestTableViewViewController: UIViewController, UITableViewDelegate, UITabl
     
     //MARK: tableView delegate & datasource
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let model: CellModel = self.source[indexPath.row]
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let model: CellModel = self.source[(indexPath as NSIndexPath).row]
         return model.isSelected! ? 120 : 40
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("CELL")!
-        cell.textLabel?.text = self.source[indexPath.row].name
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "CELL")!
+        cell.textLabel?.text = self.source[(indexPath as NSIndexPath).row].name
         return cell
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return source.count
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let model: CellModel = self.source[indexPath.row]
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model: CellModel = self.source[(indexPath as NSIndexPath).row]
         model.isSelected = !model.isSelected
-        let indexs: [NSIndexPath] = [indexPath]
-        self.tableView .reloadRowsAtIndexPaths(indexs, withRowAnimation: .Bottom)
+        let indexs: [IndexPath] = [indexPath]
+        self.tableView .reloadRows(at: indexs, with: .bottom)
     }
     
     //MARK: lazy load
     
     lazy var tableView: UITableView = {
-        let temp: UITableView = UITableView(frame: self.view.bounds, style: .Grouped)
+        let temp: UITableView = UITableView(frame: self.view.bounds, style: .grouped)
         temp.delegate = self
         temp.dataSource = self
-        temp.registerClass(ExpandTableViewCell.self, forCellReuseIdentifier: "CELL")
+        temp.register(ExpandTableViewCell.self, forCellReuseIdentifier: "CELL")
         return temp
     }()
     

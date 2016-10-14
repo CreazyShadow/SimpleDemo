@@ -488,6 +488,7 @@
 					7373D2431CD0AA2600332D91 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = F74GWC55U7;
+						LastSwiftMigration = 0800;
 					};
 					7373D25C1CD0AA2600332D91 = {
 						CreatedOnToolsVersion = 7.3;
@@ -814,6 +815,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SimpleApp/ListView/SimpleApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s armv7";
 			};
@@ -855,6 +857,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SimpleApp/ListView/SimpleApp-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s armv7";
 			};

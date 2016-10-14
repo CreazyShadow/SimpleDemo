@@ -18,14 +18,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.textField.delegate = self;
+    
+    UIScrollView *scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
+    for (int i = 0; i < 10; i++) {
+        UIButton *temp = [[UIButton alloc] initWithFrame:CGRectMake(i * 100, 0, 100, 100)];
+        temp.backgroundColor = [UIColor blueColor];
+        temp.layer.borderColor = [UIColor redColor].CGColor;
+        temp.layer.borderWidth = 1;
+        [temp addTarget:self action:@selector(action) forControlEvents:UIControlEventTouchUpInside];
+        [scrollview addSubview:temp];
+    }
+    
+    scrollview.contentSize = CGSizeMake(1000, 0);
+    [self.view addSubview:scrollview];
+}
+
+- (void)action {
+    NSLog(@"-----action");
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *comp = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
-    [comp setMonth:comp.month + 10];
-    NSLog(@"%@ %@",[NSDate date] ,[calendar dateFromComponents:comp]);
 }
 
 #pragma mark - UITextFieldDelegate

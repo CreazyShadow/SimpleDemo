@@ -9,10 +9,11 @@
 #import "SecondViewController.h"
 #import <CoreFoundation/CoreFoundation.h>
 #import <CoreFoundation/CFRunLoop.h>
+#import "ProductSliderTableViewCell.h"
 
-@interface SecondViewController ()
+@interface SecondViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -22,37 +23,66 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"SecondViewController";
+    
+    [self.view addSubview:self.tableView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    if (_timer) {
-        [self stop];
-        [_timer invalidate];
-        _timer = nil;
-        return;
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        [_tableView registerNib:[UINib nibWithNibName:@"ProductSliderTableViewCell" bundle:nil] forCellReuseIdentifier:@"sliderCell"];
     }
     
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerRun) userInfo:nil repeats:YES];
+    return _tableView;
 }
 
-- (void)start {
-    [_timer setFireDate:[NSDate distantPast]];
+#pragma mark - tableivew delegate & datasource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 3;
 }
 
-- (void)stop {
-    [_timer setFireDate:[NSDate distantFuture]];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
 }
 
-- (void)timerRun {
-    NSLog(@"~~~~~~~111~~~~~~~~~~");
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        ProductSliderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"sliderCell" forIndexPath:indexPath];
+        NSMutableArray *source = [NSMutableArray array];
+        cell.backgroundColor = [UIColor orangeColor];
+        for (int i = 0; i < 6; i++) {
+            [source addObject:[NSString stringWithFormat:@"%d", i]];
+        }
+        cell.source = source;
+        
+        return cell;
+    }
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    
+    cell.textLabel.text = @"AAAFDFDAFDAFDFDFDA";
+    cell.backgroundColor = [UIColor blueColor];
+    cell.layer.cornerRadius = 10;
+    return cell;
 }
 
-- (void)dealloc {
-    NSLog(@"dealloc");
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.01;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 20;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return indexPath.section == 0 ? 80 : 40;
 }
 
 @end

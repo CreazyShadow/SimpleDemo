@@ -19,6 +19,10 @@
 
 #import "NavigationViewController.h"
 
+#import <Dog.h>
+
+#import <CommonCrypto/CommonCrypto.h>
+
 @interface AppDelegate ()
 
 @property (nonatomic, strong, readwrite) id field;
@@ -29,8 +33,15 @@
 @implementation AppDelegate
 
 - (void)test {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.timeZone = [NSTimeZone systemTimeZone];
+    dateFormatter.dateFormat = @"YYYY-MM-DD";
+    NSDate *date = [dateFormatter dateFromString:@"2016-12-11"];
+    NSString *d = [dateFormatter stringFromDate:[NSDate date]];
     
+    NSLog(@"%@ %@", date, d);
 }
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -40,8 +51,9 @@
     //    [[LogHelper shareInstance] redirectSTD:STDERR_FILENO];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
     
-    [self setupStartType:1];
+    [self setupStartType:0];
     
     [self.window makeKeyAndVisible];
     return YES;
@@ -49,7 +61,7 @@
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"AutoLayoutViewController";
+    NSString *className = @"FirstViewController";
     switch (type) {
         case 0:
         {

@@ -16,5 +16,8 @@
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
 #import <UIView+Extension.h>
+#import "UIView+XibMananger.h"
+
+#import <UIImageView+WebCache.h>
 
 #endif /* SimpleApp_pch */

@@ -12,7 +12,20 @@
 
 - (void)test {
     self.name = @"123";
-//    [self.name showLog];
+}
+
+#pragma mark - 消息
+
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+    return nil;
+}
+
+//- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+//    
+//}
+
+- (void)forwardInvocation:(NSInvocation *)anInvocation {
+    
 }
 
 @end

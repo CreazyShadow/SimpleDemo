@@ -22,9 +22,13 @@
     
     [self.view addSubview:self.webview];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:8080/js_ocdemo.html"]];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:8080/js_ocdemo.html"]];
     
-    [self.webview loadRequest:request];
+    NSString *url = @"<iframe name=\"weizhang\" src=\"http://m.cheshouye.com/api/weizhang/\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+    
+//    [self.webview loadRequest:request];
+    [self.webview sizeToFit];
+    [self.webview loadHTMLString:url baseURL:nil];
 }
 
 #pragma mark - UIWebViewDelegate

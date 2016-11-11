@@ -10,8 +10,11 @@
 #import "SecondViewController.h"
 #import "ScrapeView.h"
 #import "TestWebviewViewController.h"
+#import "DrawViewController.h"
 
 #import <Person.h>
+
+#import "SubView.h"
 
 #import "MasonryViewController.h"
 
@@ -38,7 +41,9 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-
+    SecondViewController *second = [[SecondViewController alloc] init];
+    [self.navigationController pushViewController:second animated:YES];
+    
 }
 
 #pragma mark - override
@@ -59,20 +64,7 @@
     _button1.backgroundColor = [UIColor greenColor];
     [_button1 addTarget:self action:@selector(clickButton1) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_button1];
-    
-    self.button2 = [[UIButton alloc] initWithFrame:CGRectMake(0, 115, 100, 30)];
-    [_button2 setTitle:@"Button2" forState:UIControlStateNormal];
-    _button2.backgroundColor = [UIColor greenColor];
-    [_button2 addTarget:self action:@selector(clickButton2) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_button2];
-    
-    
-}
 
-#pragma mark - Test
-
-- (void)testStackView {
-    
 }
 
 #pragma mark - event responder
@@ -81,8 +73,8 @@
     
 }
 
-- (void)clickButton2 {
-    
+- (void)textFieldDidChange:(UITextField *)textField {
+    NSLog(@"%@", textField.text);
 }
 
 #pragma mark - getter & setter 

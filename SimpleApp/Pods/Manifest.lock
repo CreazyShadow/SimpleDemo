@@ -22,6 +22,9 @@ PODS:
   - Masonry (1.0.1)
   - MJRefresh (3.1.12)
   - OpenShare (0.0.1)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - Shimmer (1.0.2)
   - WSProgressHUD (1.1.1):
     - Shimmer
@@ -37,6 +40,7 @@ DEPENDENCIES:
   - Masonry
   - MJRefresh
   - OpenShare
+  - SDWebImage
   - WSProgressHUD
   - YTKNetwork
   - YYModel
@@ -49,11 +53,12 @@ SPEC CHECKSUMS:
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   OpenShare: a560580dbb729d5c0c3cc1ee84cd6aa4a07e94c6
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   WSProgressHUD: 0ebb8dd846f7fb4715d42c87584456480cb7fbf0
   YTKNetwork: ee77c77f1abaa56c36ad1e463e6aa7f865229ce6
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: fc3cd508ae2033099e1502fe172b814010e9c814
+PODFILE CHECKSUM: e19c87bd36b6bab9ecf8915cc36025922d156bc2
 
 COCOAPODS: 1.0.1

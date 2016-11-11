@@ -10,6 +10,8 @@
 
 @interface Dog : NSObject
 
+@property (nonatomic, strong) NSString* test;
+
 - (void)eat;
 
 @end

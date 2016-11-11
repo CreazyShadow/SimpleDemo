@@ -56,4 +56,8 @@ void eat(id self, SEL cdm) {
     [anInvocation invokeWithTarget:nil];
 }
 
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key{
+
+}
+
 @end

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7304CE9F1CF542B300C5E349 /* libSimpleModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7304CE9E1CF542B300C5E349 /* libSimpleModel.a */; };
+		7323E98F1DBD99DD00F053F8 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7323E98E1DBD99DD00F053F8 /* DrawViewController.m */; };
+		7323E9921DBD99EF00F053F8 /* DelayDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7323E9911DBD99EF00F053F8 /* DelayDrawView.m */; };
+		7323E9E61DBF5B9800F053F8 /* NSObject+Exception.m in Sources */ = {isa = PBXBuildFile; fileRef = 7323E9E51DBF5B9800F053F8 /* NSObject+Exception.m */; };
+		7323E9EB1DC1CDF300F053F8 /* RefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7323E9EA1DC1CDF300F053F8 /* RefreshViewController.m */; };
+		733C26331DD42213005FF7AE /* ProductSliderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 733C26311DD42213005FF7AE /* ProductSliderTableViewCell.m */; };
+		733C26341DD42213005FF7AE /* ProductSliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 733C26321DD42213005FF7AE /* ProductSliderTableViewCell.xib */; };
 		735432F21CF4653300FA966A /* libSimpleCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 735432F11CF4653300FA966A /* libSimpleCommon.a */; };
 		7373D2491CD0AA2600332D91 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7373D2481CD0AA2600332D91 /* main.m */; };
 		7373D24C1CD0AA2600332D91 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7373D24B1CD0AA2600332D91 /* AppDelegate.m */; };
@@ -16,6 +22,14 @@
 		7373D2571CD0AA2600332D91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7373D2551CD0AA2600332D91 /* LaunchScreen.storyboard */; };
 		7373D2621CD0AA2600332D91 /* SimpleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7373D2611CD0AA2600332D91 /* SimpleAppTests.m */; };
 		7373D26D1CD0AA2600332D91 /* SimpleAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7373D26C1CD0AA2600332D91 /* SimpleAppUITests.m */; };
+		739A4AFB1DD1654500CA2533 /* SubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 739A4AFA1DD1654500CA2533 /* SubView.m */; };
+		73B5A05C1DC6F15200477323 /* SelectImageItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B5A0581DC6F15200477323 /* SelectImageItemView.m */; };
+		73B5A05D1DC6F15200477323 /* SelectImageItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73B5A0591DC6F15200477323 /* SelectImageItemView.xib */; };
+		73B5A05E1DC6F15200477323 /* SelectImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B5A05B1DC6F15200477323 /* SelectImageView.m */; };
+		73B5A0611DC7110200477323 /* TestCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B5A0601DC7110200477323 /* TestCustomViewController.m */; };
+		73B5A0641DC7171100477323 /* XibFileOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B5A0631DC7171100477323 /* XibFileOwner.m */; };
+		73B5A0671DC717ED00477323 /* UIView+XibMananger.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B5A0661DC717ED00477323 /* UIView+XibMananger.m */; };
+		73B5A06C1DC868B200477323 /* FitCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B5A06B1DC868B200477323 /* FitCommentViewController.m */; };
 		73BA34C61DB12E65007E9FC1 /* MasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BA34771DB12E65007E9FC1 /* MasonryViewController.m */; };
 		73BA34C71DB12E65007E9FC1 /* GcdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BA347C1DB12E65007E9FC1 /* GcdViewController.m */; };
 		73BA34C81DB12E65007E9FC1 /* StructAndClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BA347F1DB12E65007E9FC1 /* StructAndClass.m */; };
@@ -70,7 +84,18 @@
 		192D915ABA8975E1A187A054 /* Pods-SimpleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp.release.xcconfig"; sourceTree = "<group>"; };
 		1ADD0F38396CB07FF3AB19A5 /* libPods-SimpleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7304CE9E1CF542B300C5E349 /* libSimpleModel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSimpleModel.a; path = "../../../../Library/Developer/Xcode/DerivedData/SimpleApp-cswqutjhlfbmkqbsnbwnxbznehzs/Build/Products/Debug-iphonesimulator/libSimpleModel.a"; sourceTree = "<group>"; };
+		7323E98D1DBD99DD00F053F8 /* DrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawViewController.h; sourceTree = "<group>"; };
+		7323E98E1DBD99DD00F053F8 /* DrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
+		7323E9901DBD99EF00F053F8 /* DelayDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelayDrawView.h; sourceTree = "<group>"; };
+		7323E9911DBD99EF00F053F8 /* DelayDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DelayDrawView.m; sourceTree = "<group>"; };
+		7323E9E41DBF5B9800F053F8 /* NSObject+Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Exception.h"; sourceTree = "<group>"; };
+		7323E9E51DBF5B9800F053F8 /* NSObject+Exception.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Exception.m"; sourceTree = "<group>"; };
+		7323E9E91DC1CDF300F053F8 /* RefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshViewController.h; sourceTree = "<group>"; };
+		7323E9EA1DC1CDF300F053F8 /* RefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshViewController.m; sourceTree = "<group>"; };
 		7334FC331D6B271B0046DD4F /* SimpleApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleApp-Prefix.pch"; sourceTree = "<group>"; };
+		733C26301DD42213005FF7AE /* ProductSliderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSliderTableViewCell.h; sourceTree = "<group>"; };
+		733C26311DD42213005FF7AE /* ProductSliderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSliderTableViewCell.m; sourceTree = "<group>"; };
+		733C26321DD42213005FF7AE /* ProductSliderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductSliderTableViewCell.xib; sourceTree = "<group>"; };
 		735432F11CF4653300FA966A /* libSimpleCommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSimpleCommon.a; path = "../../../../Library/Developer/Xcode/DerivedData/SimpleApp-cswqutjhlfbmkqbsnbwnxbznehzs/Build/Products/Debug-iphonesimulator/libSimpleCommon.a"; sourceTree = "<group>"; };
 		7373D2441CD0AA2600332D91 /* SimpleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7373D2481CD0AA2600332D91 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -86,6 +111,21 @@
 		7373D2681CD0AA2600332D91 /* SimpleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7373D26C1CD0AA2600332D91 /* SimpleAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleAppUITests.m; sourceTree = "<group>"; };
 		7373D26E1CD0AA2600332D91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		739A4AF91DD1654500CA2533 /* SubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubView.h; sourceTree = "<group>"; };
+		739A4AFA1DD1654500CA2533 /* SubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubView.m; sourceTree = "<group>"; };
+		73B5A0571DC6F15200477323 /* SelectImageItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectImageItemView.h; sourceTree = "<group>"; };
+		73B5A0581DC6F15200477323 /* SelectImageItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectImageItemView.m; sourceTree = "<group>"; };
+		73B5A0591DC6F15200477323 /* SelectImageItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectImageItemView.xib; sourceTree = "<group>"; };
+		73B5A05A1DC6F15200477323 /* SelectImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectImageView.h; sourceTree = "<group>"; };
+		73B5A05B1DC6F15200477323 /* SelectImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectImageView.m; sourceTree = "<group>"; };
+		73B5A05F1DC7110200477323 /* TestCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCustomViewController.h; sourceTree = "<group>"; };
+		73B5A0601DC7110200477323 /* TestCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCustomViewController.m; sourceTree = "<group>"; };
+		73B5A0621DC7171100477323 /* XibFileOwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XibFileOwner.h; sourceTree = "<group>"; };
+		73B5A0631DC7171100477323 /* XibFileOwner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XibFileOwner.m; sourceTree = "<group>"; };
+		73B5A0651DC717ED00477323 /* UIView+XibMananger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XibMananger.h"; sourceTree = "<group>"; };
+		73B5A0661DC717ED00477323 /* UIView+XibMananger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XibMananger.m"; sourceTree = "<group>"; };
+		73B5A06A1DC868B200477323 /* FitCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FitCommentViewController.h; sourceTree = "<group>"; };
+		73B5A06B1DC868B200477323 /* FitCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FitCommentViewController.m; sourceTree = "<group>"; };
 		73BA34761DB12E65007E9FC1 /* MasonryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasonryViewController.h; sourceTree = "<group>"; };
 		73BA34771DB12E65007E9FC1 /* MasonryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasonryViewController.m; sourceTree = "<group>"; };
 		73BA347B1DB12E65007E9FC1 /* GcdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GcdViewController.h; sourceTree = "<group>"; };
@@ -194,6 +234,36 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7323E98B1DBD99C600F053F8 /* 特效 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "特效";
+			sourceTree = "<group>";
+		};
+		7323E98C1DBD99CE00F053F8 /* 画图 */ = {
+			isa = PBXGroup;
+			children = (
+				7323E98D1DBD99DD00F053F8 /* DrawViewController.h */,
+				7323E98E1DBD99DD00F053F8 /* DrawViewController.m */,
+				7323E9901DBD99EF00F053F8 /* DelayDrawView.h */,
+				7323E9911DBD99EF00F053F8 /* DelayDrawView.m */,
+				7323E9E41DBF5B9800F053F8 /* NSObject+Exception.h */,
+				7323E9E51DBF5B9800F053F8 /* NSObject+Exception.m */,
+			);
+			path = "画图";
+			sourceTree = "<group>";
+		};
+		733C262F1DD42213005FF7AE /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				733C26301DD42213005FF7AE /* ProductSliderTableViewCell.h */,
+				733C26311DD42213005FF7AE /* ProductSliderTableViewCell.m */,
+				733C26321DD42213005FF7AE /* ProductSliderTableViewCell.xib */,
+			);
+			path = Slider;
+			sourceTree = "<group>";
+		};
 		7373D23B1CD0AA2600332D91 = {
 			isa = PBXGroup;
 			children = (
@@ -219,15 +289,16 @@
 		7373D2461CD0AA2600332D91 /* SimpleApp */ = {
 			isa = PBXGroup;
 			children = (
+				73B5A0681DC8652400477323 /* 系统适配 */,
+				73B5A0551DC6F14500477323 /* 自定义视图 */,
+				7323E98C1DBD99CE00F053F8 /* 画图 */,
+				7323E98B1DBD99C600F053F8 /* 特效 */,
 				73BA34731DB12E65007E9FC1 /* 布局 */,
-				73BA34781DB12E65007E9FC1 /* 测试 */,
 				73BA34791DB12E65007E9FC1 /* 多线程 */,
 				73BA347D1DB12E65007E9FC1 /* 公共 */,
-				73BA34851DB12E65007E9FC1 /* 画图 */,
 				73BA34861DB12E65007E9FC1 /* 机制 */,
 				73BA348F1DB12E65007E9FC1 /* 基础 */,
 				73BA34A01DB12E65007E9FC1 /* 视图 */,
-				73BA34C41DB12E65007E9FC1 /* 特效 */,
 				7373D24A1CD0AA2600332D91 /* AppDelegate.h */,
 				7373D24B1CD0AA2600332D91 /* AppDelegate.m */,
 				7373D2501CD0AA2600332D91 /* Main.storyboard */,
@@ -266,20 +337,64 @@
 			path = SimpleAppUITests;
 			sourceTree = "<group>";
 		};
+		73B5A0461DC6E03800477323 /* AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				73B5A0621DC7171100477323 /* XibFileOwner.h */,
+				73B5A0631DC7171100477323 /* XibFileOwner.m */,
+				73B5A0651DC717ED00477323 /* UIView+XibMananger.h */,
+				73B5A0661DC717ED00477323 /* UIView+XibMananger.m */,
+			);
+			path = AutoLayout;
+			sourceTree = "<group>";
+		};
+		73B5A0551DC6F14500477323 /* 自定义视图 */ = {
+			isa = PBXGroup;
+			children = (
+				733C262F1DD42213005FF7AE /* Slider */,
+				73B5A0561DC6F15200477323 /* SelectImage */,
+				73B5A05F1DC7110200477323 /* TestCustomViewController.h */,
+				73B5A0601DC7110200477323 /* TestCustomViewController.m */,
+			);
+			path = "自定义视图";
+			sourceTree = "<group>";
+		};
+		73B5A0561DC6F15200477323 /* SelectImage */ = {
+			isa = PBXGroup;
+			children = (
+				73B5A0571DC6F15200477323 /* SelectImageItemView.h */,
+				73B5A0581DC6F15200477323 /* SelectImageItemView.m */,
+				73B5A0591DC6F15200477323 /* SelectImageItemView.xib */,
+				73B5A05A1DC6F15200477323 /* SelectImageView.h */,
+				73B5A05B1DC6F15200477323 /* SelectImageView.m */,
+			);
+			path = SelectImage;
+			sourceTree = "<group>";
+		};
+		73B5A0681DC8652400477323 /* 系统适配 */ = {
+			isa = PBXGroup;
+			children = (
+				73B5A0691DC8653600477323 /* IOS10 */,
+			);
+			path = "系统适配";
+			sourceTree = "<group>";
+		};
+		73B5A0691DC8653600477323 /* IOS10 */ = {
+			isa = PBXGroup;
+			children = (
+				73B5A06A1DC868B200477323 /* FitCommentViewController.h */,
+				73B5A06B1DC868B200477323 /* FitCommentViewController.m */,
+			);
+			path = IOS10;
+			sourceTree = "<group>";
+		};
 		73BA34731DB12E65007E9FC1 /* 布局 */ = {
 			isa = PBXGroup;
 			children = (
-				73BA34741DB12E65007E9FC1 /* AutoLayout */,
+				73B5A0461DC6E03800477323 /* AutoLayout */,
 				73BA34751DB12E65007E9FC1 /* masonry */,
 			);
 			path = "布局";
-			sourceTree = "<group>";
-		};
-		73BA34741DB12E65007E9FC1 /* AutoLayout */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AutoLayout;
 			sourceTree = "<group>";
 		};
 		73BA34751DB12E65007E9FC1 /* masonry */ = {
@@ -289,13 +404,6 @@
 				73BA34771DB12E65007E9FC1 /* MasonryViewController.m */,
 			);
 			path = masonry;
-			sourceTree = "<group>";
-		};
-		73BA34781DB12E65007E9FC1 /* 测试 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "测试";
 			sourceTree = "<group>";
 		};
 		73BA34791DB12E65007E9FC1 /* 多线程 */ = {
@@ -334,13 +442,6 @@
 				73BA34841DB12E65007E9FC1 /* ScrapeView.m */,
 			);
 			path = views;
-			sourceTree = "<group>";
-		};
-		73BA34851DB12E65007E9FC1 /* 画图 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "画图";
 			sourceTree = "<group>";
 		};
 		73BA34861DB12E65007E9FC1 /* 机制 */ = {
@@ -405,6 +506,8 @@
 				73BA349D1DB12E65007E9FC1 /* FirstViewController.m */,
 				73BA349E1DB12E65007E9FC1 /* SecondViewController.h */,
 				73BA349F1DB12E65007E9FC1 /* SecondViewController.m */,
+				739A4AF91DD1654500CA2533 /* SubView.h */,
+				739A4AFA1DD1654500CA2533 /* SubView.m */,
 			);
 			path = baseviews;
 			sourceTree = "<group>";
@@ -458,6 +561,8 @@
 				73BA34B11DB12E65007E9FC1 /* MasonyTableViewController.m */,
 				73BA34B21DB12E65007E9FC1 /* SimpleApp-Bridging-Header.h */,
 				73BA34B31DB12E65007E9FC1 /* TestTableViewViewController.swift */,
+				7323E9E91DC1CDF300F053F8 /* RefreshViewController.h */,
+				7323E9EA1DC1CDF300F053F8 /* RefreshViewController.m */,
 			);
 			path = ListView;
 			sourceTree = "<group>";
@@ -498,13 +603,6 @@
 				73BA34C31DB12E65007E9FC1 /* UIWebView+TT.m */,
 			);
 			path = webview;
-			sourceTree = "<group>";
-		};
-		73BA34C41DB12E65007E9FC1 /* 特效 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "特效";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -615,8 +713,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				733C26341DD42213005FF7AE /* ProductSliderTableViewCell.xib in Resources */,
 				73BA34D01DB12E65007E9FC1 /* BaseKnowTestViewController.xib in Resources */,
 				7373D2571CD0AA2600332D91 /* LaunchScreen.storyboard in Resources */,
+				73B5A05D1DC6F15200477323 /* SelectImageItemView.xib in Resources */,
 				7373D2541CD0AA2600332D91 /* Assets.xcassets in Resources */,
 				7373D2521CD0AA2600332D91 /* Main.storyboard in Resources */,
 			);
@@ -692,6 +792,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73BA34DD1DB12E65007E9FC1 /* TestTableViewViewController.swift in Sources */,
+				73B5A05E1DC6F15200477323 /* SelectImageView.m in Sources */,
 				7373D24C1CD0AA2600332D91 /* AppDelegate.m in Sources */,
 				73BA34CB1DB12E65007E9FC1 /* JSContextDemo.m in Sources */,
 				73BA34CA1DB12E65007E9FC1 /* ScrapeView.m in Sources */,
@@ -702,26 +803,37 @@
 				73BA34DF1DB12E65007E9FC1 /* NavigationViewController.m in Sources */,
 				73BA34D21DB12E65007E9FC1 /* BaseViewController.m in Sources */,
 				73BA34C91DB12E65007E9FC1 /* TestCommonViewController.m in Sources */,
+				7323E9EB1DC1CDF300F053F8 /* RefreshViewController.m in Sources */,
+				7323E9E61DBF5B9800F053F8 /* NSObject+Exception.m in Sources */,
 				73BA34D71DB12E65007E9FC1 /* ImageViewController.m in Sources */,
 				73BA34D31DB12E65007E9FC1 /* FirstViewController.m in Sources */,
+				73B5A0641DC7171100477323 /* XibFileOwner.m in Sources */,
 				7373D2491CD0AA2600332D91 /* main.m in Sources */,
 				73BA34E01DB12E65007E9FC1 /* ViewController.m in Sources */,
 				73BA34D91DB12E65007E9FC1 /* CellModel.swift in Sources */,
+				733C26331DD42213005FF7AE /* ProductSliderTableViewCell.m in Sources */,
+				7323E9921DBD99EF00F053F8 /* DelayDrawView.m in Sources */,
 				73BA34DC1DB12E65007E9FC1 /* MasonyTableViewController.m in Sources */,
 				73BA34E11DB12E65007E9FC1 /* TestWebviewViewController.m in Sources */,
+				73B5A0671DC717ED00477323 /* UIView+XibMananger.m in Sources */,
+				73B5A05C1DC6F15200477323 /* SelectImageItemView.m in Sources */,
 				73BA34C61DB12E65007E9FC1 /* MasonryViewController.m in Sources */,
 				73BA34C71DB12E65007E9FC1 /* GcdViewController.m in Sources */,
 				73BA34D61DB12E65007E9FC1 /* EventTextField.m in Sources */,
+				73B5A06C1DC868B200477323 /* FitCommentViewController.m in Sources */,
 				73BA34DA1DB12E65007E9FC1 /* ExpandTableViewCell.swift in Sources */,
 				73BA34C81DB12E65007E9FC1 /* StructAndClass.m in Sources */,
 				73BA34D41DB12E65007E9FC1 /* SecondViewController.m in Sources */,
+				73B5A0611DC7110200477323 /* TestCustomViewController.m in Sources */,
 				73BA34E31DB12E65007E9FC1 /* UIWebView+TT.m in Sources */,
 				73BA34D11DB12E65007E9FC1 /* Company.m in Sources */,
 				73BA34E21DB12E65007E9FC1 /* UIWebView+Clean.m in Sources */,
 				73BA34D81DB12E65007E9FC1 /* CustomerLayer.m in Sources */,
+				7323E98F1DBD99DD00F053F8 /* DrawViewController.m in Sources */,
 				73BA34DB1DB12E65007E9FC1 /* MasonryTableViewCell.m in Sources */,
 				73BA34CE1DB12E65007E9FC1 /* Agreement.m in Sources */,
 				73BA34CD1DB12E65007E9FC1 /* TestRuntimeViewController.m in Sources */,
+				739A4AFB1DD1654500CA2533 /* SubView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -904,7 +1016,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerEN.renshetong12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "SimpleApp/ListView/SimpleApp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -948,7 +1060,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerEN.renshetong12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "SimpleApp/ListView/SimpleApp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s armv7";

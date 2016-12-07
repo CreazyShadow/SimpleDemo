@@ -20,16 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self.view addSubview:self.tableView];
-//    self.tableView.tableFooterView = ({
-//        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 50)];
-//        view.backgroundColor = [UIColor blueColor];
-//        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 10, 375, 30)];
-//        [button setTitle:@"Button" forState:UIControlStateNormal];
-//        button.backgroundColor = [UIColor redColor];
-//        [view addSubview:button];
-//        view;
-//    });
 }
 
 - (void)didReceiveMemoryWarning {

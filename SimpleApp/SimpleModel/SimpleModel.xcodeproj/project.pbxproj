@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7301A1961DF53AD700274358 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 7301A1951DF53AD700274358 /* Book.m */; };
 		7304CE971CF53F9D00C5E349 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7304CE961CF53F9D00C5E349 /* Dog.m */; };
 		7326401D1D12462500AB2EA7 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = 7326401C1D12462500AB2EA7 /* People.m */; };
 		732640231D12466600AB2EA7 /* Man.m in Sources */ = {isa = PBXBuildFile; fileRef = 732640221D12466600AB2EA7 /* Man.m */; };
@@ -29,6 +30,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7301A1941DF53AD700274358 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		7301A1951DF53AD700274358 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		7304CE951CF53F9D00C5E349 /* Dog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
 		7304CE961CF53F9D00C5E349 /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
 		7326401B1D12462500AB2EA7 /* People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				7304CE941CF53F9700C5E349 /* runtime */,
 				7373D3191CD0C5E800332D91 /* Base */,
 				7373D31A1CD0C5E800332D91 /* Goods */,
+				7301A1941DF53AD700274358 /* Book.h */,
+				7301A1951DF53AD700274358 /* Book.m */,
 			);
 			path = SimpleModel;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				7304CE971CF53F9D00C5E349 /* Dog.m in Sources */,
 				73A827B81D66C43600248578 /* Person.m in Sources */,
 				73EDBEDE1D2A56BA00B72294 /* Dog+Fly.m in Sources */,
+				7301A1961DF53AD700274358 /* Book.m in Sources */,
 				732640231D12466600AB2EA7 /* Man.m in Sources */,
 				7373D3251CD0C65200332D91 /* GPModel.m in Sources */,
 				7373D3221CD0C62100332D91 /* BaseModel.m in Sources */,

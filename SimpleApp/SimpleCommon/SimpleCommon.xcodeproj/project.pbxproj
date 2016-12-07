@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7301A1991DF54D2700274358 /* NSObject+Single.m in Sources */ = {isa = PBXBuildFile; fileRef = 7301A1981DF54D2700274358 /* NSObject+Single.m */; };
 		730A34891CF46166001847E0 /* URLConfigurableInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 730A34881CF46166001847E0 /* URLConfigurableInterceptor.m */; };
 		730A348A1CF46497001847E0 /* URLResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 731A04A61CD3104300BFA726 /* URLResult.m */; };
 		731A048C1CD30FBA00BFA726 /* NSError+URLRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 731A048B1CD30FBA00BFA726 /* NSError+URLRouter.m */; };
@@ -42,6 +43,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7301A1971DF54D2700274358 /* NSObject+Single.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Single.h"; sourceTree = "<group>"; };
+		7301A1981DF54D2700274358 /* NSObject+Single.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Single.m"; sourceTree = "<group>"; };
 		730A34871CF46166001847E0 /* URLConfigurableInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLConfigurableInterceptor.h; sourceTree = "<group>"; };
 		730A34881CF46166001847E0 /* URLConfigurableInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLConfigurableInterceptor.m; sourceTree = "<group>"; };
 		731A048A1CD30FBA00BFA726 /* NSError+URLRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+URLRouter.h"; sourceTree = "<group>"; };
@@ -114,6 +117,8 @@
 				732B3B6A1DB9A427000A6A25 /* FileManager.m */,
 				732B3B7B1DB9A874000A6A25 /* MyProxy.h */,
 				732B3B7C1DB9A874000A6A25 /* MyProxy.m */,
+				7301A1971DF54D2700274358 /* NSObject+Single.h */,
+				7301A1981DF54D2700274358 /* NSObject+Single.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				732B3B771DB9A427000A6A25 /* UIView+Extension.m in Sources */,
+				7301A1991DF54D2700274358 /* NSObject+Single.m in Sources */,
 				730A348A1CF46497001847E0 /* URLResult.m in Sources */,
 				730A34891CF46166001847E0 /* URLConfigurableInterceptor.m in Sources */,
 				731A04981CD3100900BFA726 /* URLInput.m in Sources */,

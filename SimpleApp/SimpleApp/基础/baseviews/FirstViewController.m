@@ -22,7 +22,7 @@
 
 @property (nonatomic, strong) UIButton *button1;
 
-@property (nonatomic, strong) UIButton *button2;
+@property (nonatomic, strong) UILabel *label;
 
 @property (nonatomic, strong) ScrapeView *scrapeView;
 
@@ -38,12 +38,13 @@
     self.title = @"FirstViewController";
     
     [self setupSubViews];
+    
+    [self.view addSubview:self.button1];
+    [self.view addSubview:self.label];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    SecondViewController *second = [[SecondViewController alloc] init];
-    [self.navigationController pushViewController:second animated:YES];
-    
+    NSLog(@"1123");
 }
 
 #pragma mark - override
@@ -55,22 +56,19 @@
 #pragma mark - init
 
 - (void)setupSubViews {
-    self.button1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 80, 100, 30)];
-    _button1.layer.shadowColor = [UIColor redColor].CGColor;
-    _button1.layer.shadowOffset = CGSizeMake(0, 4);
-    _button1.layer.shadowRadius = 1;
-    _button1.layer.shadowOpacity = 0.6;
-    [_button1 setTitle:@"Button1" forState:UIControlStateNormal];
-    _button1.backgroundColor = [UIColor greenColor];
-    [_button1 addTarget:self action:@selector(clickButton1) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_button1];
-
+    UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 300, kScreenWidth, 160)];
+    [self.view addSubview:datePicker];
 }
 
 #pragma mark - event responder
 
 - (void)clickButton1 {
-    
+#ifdef __IPHONE_7_0
+    [self.label.text drawInRect:self.label.bounds withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]}];
+    _label.textAlignment = NSTextAlignmentCenter;
+#else
+    [self.label.text drawInRect:self.label.bounds withFont:_label.font lineBreakMode:NSLineBreakByTruncatingMiddle alignment:NSTextAlignmentCenter];
+#endif
 }
 
 - (void)textFieldDidChange:(UITextField *)textField {
@@ -90,13 +88,35 @@
 - (UIStackView *)stackView {
     if (!_stackView) {
         _stackView = [[UIStackView alloc] initWithFrame:CGRectMake(0, 180, 200, 40)];
-//        _stackView.alignment = UIStackViewAlignmentCenter;
         _stackView.axis = UILayoutConstraintAxisHorizontal;
         _stackView.distribution = UIStackViewDistributionFillEqually;
         _stackView.spacing = 1;
     }
     
     return _stackView;
+}
+
+- (UIButton *)button1 {
+    if (!_button1) {
+        _button1 = [[UIButton alloc] initWithFrame:CGRectMake(20, 80, 100, 30)];
+        _button1.backgroundColor = [UIColor purpleColor];
+        [_button1 setTitle:@"button1" forState:UIControlStateNormal];
+        [_button1 addTarget:self action:@selector(clickButton1) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    return _button1;
+}
+
+- (UILabel *)label {
+    if (!_label) {
+        _label = [[UILabel alloc] initWithFrame:CGRectMake(20, 130, 100, 30)];
+        _label.font = [UIFont systemFontOfSize:14];
+        _label.textColor = [UIColor orangeColor];
+        _label.backgroundColor = [UIColor purpleColor];
+        _label.text = @"ABCCC";
+    }
+    
+    return _label;
 }
 
 

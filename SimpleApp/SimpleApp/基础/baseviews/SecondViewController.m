@@ -15,18 +15,38 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 
+@property (nonatomic, copy) void(^cycleBlock)(void);
+
+@property (nonatomic, copy) NSString *cycleName;
+
 @end
 
 @implementation SecondViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"SecondViewController";
     
     [self.view addSubview:self.tableView];
+    
+    self.cycleBlock = ^ {
+        _cycleName = @"cycle";
+    };
 }
 
+- (void)dealloc {
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+}
 
 - (UITableView *)tableView {
     if (!_tableView) {
@@ -83,6 +103,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return indexPath.section == 0 ? 80 : 40;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

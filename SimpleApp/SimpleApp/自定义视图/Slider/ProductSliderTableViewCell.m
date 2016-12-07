@@ -172,43 +172,43 @@ static NSInteger const kLeftRightRange = 1; ///< 左右按钮最少间隔
     CGFloat textLabelWidth = _eventArr[0].width;
     NSInteger index = [self indexOfPoint:location.x];
     //判断是否能够拖动 两个按钮之间的距离最小为kLeftRightRange
-    if (btn.tag == 10) {
-        if (location.x + (textLabelWidth + kTextLabelMargin) * kLeftRightRange + 5 > self.rightBtn.centerX) {
-            [self completedPositionChange:index view:ges.view startFrontWidth:startFrontWidth startFrontX:startFrontX startMoveButtonX:startMoveButtonX];
-            return;
-        }
-    } else if (btn.tag == 11) {
-        if (location.x - (textLabelWidth + kTextLabelMargin) * kLeftRightRange - 5> self.rightBtn.centerX) {
-            [self completedPositionChange:index view:ges.view startFrontWidth:startFrontWidth startFrontX:startFrontX startMoveButtonX:startMoveButtonX];
-            return;
-        }
-    }
+//    if (btn.tag == 10) {
+//        if (location.x + (textLabelWidth + kTextLabelMargin) * kLeftRightRange + 5 > self.rightBtn.centerX) {
+//            [self completedPositionChange:index view:ges.view startFrontWidth:startFrontWidth startFrontX:startFrontX startMoveButtonX:startMoveButtonX];
+//            return;
+//        }
+//    } else if (btn.tag == 11) {
+//        if (location.x - (textLabelWidth + kTextLabelMargin) * kLeftRightRange - 5> self.rightBtn.centerX) {
+//            [self completedPositionChange:index view:ges.view startFrontWidth:startFrontWidth startFrontX:startFrontX startMoveButtonX:startMoveButtonX];
+//            return;
+//        }
+//    }
+//    
+//    NSLog(@"%ld left:%ld right:%ld stop:%d",index,self.leftSelectedIndex,self.rightSelectedIndex,isStop);
     
-    NSLog(@"%ld left:%ld right:%ld stop:%d",index,self.leftSelectedIndex,self.rightSelectedIndex,isStop);
     
-    
-    //开始滑动
-    if (ges.state == UIGestureRecognizerStateBegan) {
-        startMoveButtonX = ges.view.centerX;
-        startFrontWidth = self.frontImageView.width;
-        startFrontX = self.frontImageView.x;
-    }
-    
-    //停止滑动
-    if (ges.state == UIGestureRecognizerStateEnded) {
-        NSInteger index = [self indexOfPoint:location.x];
-        [self completedPositionChange:index view:ges.view startFrontWidth:startFrontWidth startFrontX:startFrontX startMoveButtonX:startMoveButtonX];
-        return;
-    }
-    
-    ges.view.centerX = location.x;
-    //设置frontImageView的宽度
-    if (ges.view.tag == 10) {
-        self.frontImageView.x = startFrontX + location.x - startMoveButtonX;
-        self.frontImageView.width = startFrontWidth- (location.x - startMoveButtonX);
-    } else {
-        self.frontImageView.width = startFrontWidth + (location.x - startMoveButtonX);
-    }
+//    //开始滑动
+//    if (ges.state == UIGestureRecognizerStateBegan) {
+//        startMoveButtonX = ges.view.centerX;
+//        startFrontWidth = self.frontImageView.width;
+//        startFrontX = self.frontImageView.x;
+//    }
+//    
+//    //停止滑动
+//    if (ges.state == UIGestureRecognizerStateEnded) {
+//        NSInteger index = [self indexOfPoint:location.x];
+//        [self completedPositionChange:index view:ges.view startFrontWidth:startFrontWidth startFrontX:startFrontX startMoveButtonX:startMoveButtonX];
+//        return;
+//    }
+//    
+//    ges.view.centerX = location.x;
+//    //设置frontImageView的宽度
+//    if (ges.view.tag == 10) {
+//        self.frontImageView.x = startFrontX + location.x - startMoveButtonX;
+//        self.frontImageView.width = startFrontWidth- (location.x - startMoveButtonX);
+//    } else {
+//        self.frontImageView.width = startFrontWidth + (location.x - startMoveButtonX);
+//    }
 }
 
 

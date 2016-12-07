@@ -12,8 +12,10 @@
 
 @property (nonatomic, strong) NSString *name;
 
-@property (nonatomic, assign) CGFloat *price;
+@property (nonatomic, assign) CGFloat   price;
 
 @property (nonatomic, strong) NSString *description;
+
+@property (nonatomic, assign) BOOL isValue;
 
 @end

@@ -37,7 +37,7 @@ void eat(id self, SEL cdm) {
 
 #pragma mark - say method is not declare
 
-//第二步：备选提供响应aSelector的对象，我们不备选，因此设置为nil，就会进入第三步
+//第二步：备选提供响应aSelector的对象，我们不备选，因此设置为ni`l，就会进入第三步
 - (id)forwardingTargetForSelector:(SEL)aSelector {
     return nil;
 }

@@ -675,8 +675,9 @@
 				TargetAttributes = {
 					7373D2431CD0AA2600332D91 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = F74GWC55U7;
+						DevelopmentTeam = K572TRU4M6;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 					};
 					7373D25C1CD0AA2600332D91 = {
 						CreatedOnToolsVersion = 7.3;
@@ -988,7 +989,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = F74GWC55U7;
+				DEVELOPMENT_TEAM = K572TRU4M6;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -1006,16 +1007,17 @@
 					"\"$(SRCROOT)/SimpleModel/SimpleModel\"/**",
 				);
 				INFOPLIST_FILE = SimpleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Users/wuyp/Library/Developer/Xcode/DerivedData/SimpleApp-cswqutjhlfbmkqbsnbwnxbznehzs/Build/Products/Debug-iphonesimulator/libSimpleCommon.a",
 					"$(PROJECT_DIR)/SimpleCommon/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tigerEN.renshetong12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingan.arplayerdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "cd5a41ab-430a-4381-b4e1-669f56925c20";
+				PROVISIONING_PROFILE_SPECIFIER = wangjianjune_pingan;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1032,7 +1034,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = F74GWC55U7;
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -1050,14 +1052,14 @@
 					"\"$(SRCROOT)/SimpleModel/SimpleModel\"/**",
 				);
 				INFOPLIST_FILE = SimpleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Users/wuyp/Library/Developer/Xcode/DerivedData/SimpleApp-cswqutjhlfbmkqbsnbwnxbznehzs/Build/Products/Debug-iphonesimulator/libSimpleCommon.a",
 					"$(PROJECT_DIR)/SimpleCommon/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tigerEN.renshetong12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingan.arplayerdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

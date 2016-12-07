@@ -22,6 +22,8 @@
 #import <Dog.h>
 
 #import <CommonCrypto/CommonCrypto.h>
+#import <objc/runtime.h>
+#import <objc/message.h>
 
 @interface AppDelegate ()
 
@@ -33,17 +35,53 @@
 @implementation AppDelegate
 
 - (void)test {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.timeZone = [NSTimeZone systemTimeZone];
-    dateFormatter.dateFormat = @"YYYY-MM-DD";
-    NSDate *date = [dateFormatter dateFromString:@"2016-12-11"];
-    NSString *d = [dateFormatter stringFromDate:[NSDate date]];
+
+    NSString *str = @"abcBBdef|";
+    NSRange rage = [str rangeOfString:@"|"];
+    NSLog(@"%ld %ld", rage.location, rage.length);
     
-    NSLog(@"%@ %@", date, d);
+}
+
+- (NSArray *)si_grouparray:(NSArray *)arr WithBlock:(NSString *(^)(id, NSInteger))block{
+    NSMutableSet *groupNames = [NSMutableSet set];
+    NSMutableArray *groups = [NSMutableArray array];
+    NSMutableDictionary *groupCache = [NSMutableDictionary dictionary];
+    NSMutableArray *undefinedItems = [NSMutableArray array];
+    [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString *key = block(obj, idx);
+        if (!key) {
+            [undefinedItems addObject:obj];
+            return;
+        }
+        
+        NSMutableArray *items = nil;
+        if ([groupNames containsObject:key]) {
+            items = groupCache[key];
+        } else {
+            items = [NSMutableArray array];
+            [groupNames addObject:key];
+            [groups addObject:items];
+            groupCache[key] = items;
+        }
+        
+        [items addObject:obj];
+    }];
+    
+    if (undefinedItems.count > 0) {
+        [groups addObject:undefinedItems];
+    }
+    return groups;
+}
+
++ (void)classM {
+    BOOL b = class_isMetaClass(object_getClass(self));
+    NSLog(@"%d", b);
 }
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [AppDelegate classM];
     
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     [self test];
@@ -51,7 +89,7 @@
     //    [[LogHelper shareInstance] redirectSTD:STDERR_FILENO];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
+//    self.window.backgroundColor = [UIColor whiteColor];
     
     [self setupStartType:0];
     

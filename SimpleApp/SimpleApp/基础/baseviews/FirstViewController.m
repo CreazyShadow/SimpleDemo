@@ -44,7 +44,15 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"1123");
+    NSMutableSet *set = [NSMutableSet set];
+    [set addObject:@1];
+    [set addObject:@12];
+    [set addObject:@11];
+    [set addObject:@3];
+    
+    for (NSNumber *item in set) {
+        NSLog(@"%d", item.intValue);
+    }
 }
 
 #pragma mark - override

@@ -28,6 +28,8 @@
 		734C429E1D375FB800B19D82 /* NSTimer+YZT.m in Sources */ = {isa = PBXBuildFile; fileRef = 734C429D1D375FB800B19D82 /* NSTimer+YZT.m */; };
 		739F10B11D055065005DA096 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739F10B01D055065005DA096 /* CoreFoundation.framework */; };
 		739F10B41D0550DC005DA096 /* RunLoopManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 739F10B31D0550DC005DA096 /* RunLoopManager.m */; };
+		73A041261DF7A7E100C44D22 /* RaySingleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A041251DF7A7E100C44D22 /* RaySingleCommand.m */; };
+		73A041291DF7AA3C00C44D22 /* UIButton+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A041281DF7AA3C00C44D22 /* UIButton+Signal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,6 +89,10 @@
 		739F10B01D055065005DA096 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		739F10B21D0550DC005DA096 /* RunLoopManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunLoopManager.h; sourceTree = "<group>"; };
 		739F10B31D0550DC005DA096 /* RunLoopManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunLoopManager.m; sourceTree = "<group>"; };
+		73A041241DF7A7E100C44D22 /* RaySingleCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaySingleCommand.h; sourceTree = "<group>"; };
+		73A041251DF7A7E100C44D22 /* RaySingleCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaySingleCommand.m; sourceTree = "<group>"; };
+		73A041271DF7AA3C00C44D22 /* UIButton+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Signal.h"; sourceTree = "<group>"; };
+		73A041281DF7AA3C00C44D22 /* UIButton+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Signal.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +189,7 @@
 		7373D2DF1CD0B7FB00332D91 /* SimpleCommon */ = {
 			isa = PBXGroup;
 			children = (
+				73A041231DF7A7C600C44D22 /* Signal */,
 				732B3B681DB9A427000A6A25 /* Utility */,
 				732B3B6B1DB9A427000A6A25 /* View */,
 				734C429B1D375F8B00B19D82 /* CommonCategory */,
@@ -237,6 +244,17 @@
 				739F10B31D0550DC005DA096 /* RunLoopManager.m */,
 			);
 			path = RunLoopExample;
+			sourceTree = "<group>";
+		};
+		73A041231DF7A7C600C44D22 /* Signal */ = {
+			isa = PBXGroup;
+			children = (
+				73A041241DF7A7E100C44D22 /* RaySingleCommand.h */,
+				73A041251DF7A7E100C44D22 /* RaySingleCommand.m */,
+				73A041271DF7AA3C00C44D22 /* UIButton+Signal.h */,
+				73A041281DF7AA3C00C44D22 /* UIButton+Signal.m */,
+			);
+			path = Signal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,11 +347,13 @@
 				730A34891CF46166001847E0 /* URLConfigurableInterceptor.m in Sources */,
 				731A04981CD3100900BFA726 /* URLInput.m in Sources */,
 				731A048F1CD30FE200BFA726 /* UIViewController+URLRouter.m in Sources */,
+				73A041261DF7A7E100C44D22 /* RaySingleCommand.m in Sources */,
 				731A048C1CD30FBA00BFA726 /* NSError+URLRouter.m in Sources */,
 				732B3B761DB9A427000A6A25 /* FileManager.m in Sources */,
 				732B3B781DB9A427000A6A25 /* CircleLayer.m in Sources */,
 				731A04A41CD3103A00BFA726 /* URLOpenOptions.m in Sources */,
 				739F10B41D0550DC005DA096 /* RunLoopManager.m in Sources */,
+				73A041291DF7AA3C00C44D22 /* UIButton+Signal.m in Sources */,
 				732B3B7A1DB9A427000A6A25 /* PageViewItem.m in Sources */,
 				732B3B7D1DB9A874000A6A25 /* MyProxy.m in Sources */,
 				731A04AA1CD3104A00BFA726 /* URLRouter.m in Sources */,

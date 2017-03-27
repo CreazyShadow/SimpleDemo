@@ -71,6 +71,25 @@
     return [dict copy];
 }
 
+#pragma mark - cookie
+
+- (void)setupCookie {
+    NSMutableDictionary *fromappDict = [NSMutableDictionary dictionary];
+    [fromappDict setObject:@"fromapp" forKey:NSHTTPCookieName];
+    [fromappDict setObject:@"ios" forKey:NSHTTPCookieValue];
+    // kDomain是公司app网址
+    [fromappDict setObject:@"" forKey:NSHTTPCookieDomain];
+    [fromappDict setObject:@"" forKey:NSHTTPCookieOriginURL];
+    [fromappDict setObject:@"/" forKey:NSHTTPCookiePath];
+    [fromappDict setObject:@"0" forKey:NSHTTPCookieVersion];
+    
+    NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:fromappDict];
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    [storage setCookie:cookie];
+    
+    [self.webview stringByEvaluatingJavaScriptFromString:@"document.cookit=''"];
+}
+
 #pragma mark - getter & setter 
 
 -(UIWebView *)webview {

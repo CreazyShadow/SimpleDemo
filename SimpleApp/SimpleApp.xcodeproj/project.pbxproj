@@ -40,6 +40,8 @@
 		733C26341DD42213005FF7AE /* ProductSliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 733C26321DD42213005FF7AE /* ProductSliderTableViewCell.xib */; };
 		7340660A1E6CF82800E4E98B /* PushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 734066091E6CF82800E4E98B /* PushManager.m */; };
 		73406E2A1E14F10100D5C58C /* GestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73406E291E14F10100D5C58C /* GestureViewController.m */; };
+		734DAE0B1E88FC8900D553CC /* AttributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 734DAE0A1E88FC8900D553CC /* AttributeViewController.m */; };
+		734DAE0E1E89098000D553CC /* TailorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 734DAE0D1E89098000D553CC /* TailorView.m */; };
 		735432F21CF4653300FA966A /* libSimpleCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 735432F11CF4653300FA966A /* libSimpleCommon.a */; };
 		735ADFC41E8363CB00F79620 /* InteractionModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735ADFC31E8363CB00F79620 /* InteractionModuleViewController.m */; };
 		735ADFDA1E836ABB00F79620 /* NavigationAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735ADFD91E836ABB00F79620 /* NavigationAnimationViewController.m */; };
@@ -196,6 +198,10 @@
 		734066091E6CF82800E4E98B /* PushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushManager.m; sourceTree = "<group>"; };
 		73406E281E14F10100D5C58C /* GestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureViewController.h; sourceTree = "<group>"; };
 		73406E291E14F10100D5C58C /* GestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureViewController.m; sourceTree = "<group>"; };
+		734DAE091E88FC8900D553CC /* AttributeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeViewController.h; sourceTree = "<group>"; };
+		734DAE0A1E88FC8900D553CC /* AttributeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributeViewController.m; sourceTree = "<group>"; };
+		734DAE0C1E89098000D553CC /* TailorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TailorView.h; sourceTree = "<group>"; };
+		734DAE0D1E89098000D553CC /* TailorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TailorView.m; sourceTree = "<group>"; };
 		735432F11CF4653300FA966A /* libSimpleCommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSimpleCommon.a; path = "../../../../Library/Developer/Xcode/DerivedData/SimpleApp-cswqutjhlfbmkqbsnbwnxbznehzs/Build/Products/Debug-iphonesimulator/libSimpleCommon.a"; sourceTree = "<group>"; };
 		735ADFC21E8363CB00F79620 /* InteractionModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionModuleViewController.h; sourceTree = "<group>"; };
 		735ADFC31E8363CB00F79620 /* InteractionModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionModuleViewController.m; sourceTree = "<group>"; };
@@ -469,6 +475,8 @@
 				7323E9911DBD99EF00F053F8 /* DelayDrawView.m */,
 				7323E9E41DBF5B9800F053F8 /* NSObject+Exception.h */,
 				7323E9E51DBF5B9800F053F8 /* NSObject+Exception.m */,
+				734DAE0C1E89098000D553CC /* TailorView.h */,
+				734DAE0D1E89098000D553CC /* TailorView.m */,
 			);
 			path = "画图";
 			sourceTree = "<group>";
@@ -509,6 +517,15 @@
 				733C26321DD42213005FF7AE /* ProductSliderTableViewCell.xib */,
 			);
 			path = Slider;
+			sourceTree = "<group>";
+		};
+		734DAE081E88FC7D00D553CC /* attributes */ = {
+			isa = PBXGroup;
+			children = (
+				734DAE091E88FC8900D553CC /* AttributeViewController.h */,
+				734DAE0A1E88FC8900D553CC /* AttributeViewController.m */,
+			);
+			path = attributes;
 			sourceTree = "<group>";
 		};
 		735ADF4C1E82829600F79620 /* 网络 */ = {
@@ -787,6 +804,7 @@
 		73BA34861DB12E65007E9FC1 /* 机制 */ = {
 			isa = PBXGroup;
 			children = (
+				734DAE081E88FC7D00D553CC /* attributes */,
 				735ADFC11E8363B000F79620 /* 模块交互 */,
 				73A346A91E67A9780030CE9D /* RunLoop */,
 				737B10781E63B4B1001FF92A /* 实用的类—处理机制 */,
@@ -1261,11 +1279,13 @@
 				73BA34D81DB12E65007E9FC1 /* CustomerLayer.m in Sources */,
 				7323E98F1DBD99DD00F053F8 /* DrawViewController.m in Sources */,
 				73BA34DB1DB12E65007E9FC1 /* MasonryTableViewCell.m in Sources */,
+				734DAE0E1E89098000D553CC /* TailorView.m in Sources */,
 				731C126D1E84F0620034F361 /* SessionCustomProtocolConfiguration.m in Sources */,
 				731DAD0D1E7B6EC4004E5F8D /* UIScreenViewController.m in Sources */,
 				735ADFDA1E836ABB00F79620 /* NavigationAnimationViewController.m in Sources */,
 				73BA34CE1DB12E65007E9FC1 /* Agreement.m in Sources */,
 				73ED0C241E514C0600E2A662 /* RayAnimation.m in Sources */,
+				734DAE0B1E88FC8900D553CC /* AttributeViewController.m in Sources */,
 				7393FBC41E48533B00EF7BDF /* Hit.m in Sources */,
 				735ADFE31E8377FA00F79620 /* RayNavigationTransition.m in Sources */,
 				73BA34CD1DB12E65007E9FC1 /* TestRuntimeViewController.m in Sources */,

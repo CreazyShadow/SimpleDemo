@@ -120,11 +120,40 @@
 
 #pragma mark - private
 
+#pragma mark - cookie
+
+- (WKWebViewConfiguration *)setupCookie {
+     WKWebViewConfiguration *webConfig = [[WKWebViewConfiguration alloc] init];
+    // 设置偏好设置
+    webConfig.preferences = [[WKPreferences alloc] init];
+    // 默认为0
+    webConfig.preferences.minimumFontSize = 10;
+    // 默认认为YES
+    webConfig.preferences.javaScriptEnabled = YES;
+    // 在iOS上默认为NO，表示不能自动通过窗口打开
+    webConfig.preferences.javaScriptCanOpenWindowsAutomatically = NO;
+    
+    // web内容处理池
+    webConfig.processPool = [[WKProcessPool alloc] init];
+    // 将所有cookie以document.cookie = 'key=value';形式进行拼接
+    NSString *cookieValue = @"document.cookie = 'fromapp=ios';document.cookie = 'channel=appstore';";
+    
+    // 加cookie给h5识别，表明在ios端打开该地址
+    WKUserContentController* userContentController = WKUserContentController.new;
+    WKUserScript * cookieScript = [[WKUserScript alloc]
+                                   initWithSource: cookieValue
+                                   injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
+    [userContentController addUserScript:cookieScript];
+    webConfig.userContentController = userContentController;
+    
+    return webConfig;
+}
+
 #pragma mark - getter & setter
 
 - (WKWebView *)webview {
     if (!_webview) {
-        _webview = [[WKWebView alloc] initWithFrame:self.view.bounds];
+        _webview = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:[self setupCookie]];
         _webview.UIDelegate = self;
         _webview.navigationDelegate = self;
     }

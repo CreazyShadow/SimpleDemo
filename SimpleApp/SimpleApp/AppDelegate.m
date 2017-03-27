@@ -85,7 +85,7 @@
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"TestArithmeticViewController";
+    NSString *className = @"DrawViewController";
     switch (type) {
         case 0:
         {

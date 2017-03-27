@@ -9,13 +9,15 @@
 #import "DrawViewController.h"
 #import "DelayDrawView.h"
 
+#import "tailorView.h"
+
 @interface DrawViewController () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
 @property (nonatomic, strong) DelayDrawView *delayView;
 
-@property (nonatomic, copy) void(^cycleRefrenceBlock)(NSString *str);
+@property (nonatomic, strong) TailorView *tailorView;
 
 @end
 
@@ -24,35 +26,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self setupScrollView];
-    
-    _cycleRefrenceBlock = ^(NSString *str){
-        [self delayDrawPath:[UIColor redColor]];
-    };
-}
-
-- (void)dealloc {
-    
+    TailorView *tailor = [[TailorView alloc] initWithFrame:CGRectMake(10, 100, kScreenWidth - 20, 200)];
+    tailor.backgroundColor = [UIColor purpleColor];
+    [self.view addSubview:tailor];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.cycleRefrenceBlock(@"test");
-}
-
-#pragma mark - ScrollView
-
-- (void)setupScrollView {
-    self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    _scrollView.backgroundColor = [UIColor orangeColor];
-    _scrollView.contentSize = CGSizeMake(kScreenWidth, 1000);
-    _scrollView.delegate = self;
-    [self.view addSubview:_scrollView];
-}
-
-#pragma mark - scrollview delegate
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    NSLog(@"-------------");
+    
 }
 
 #pragma mark - delay draw path

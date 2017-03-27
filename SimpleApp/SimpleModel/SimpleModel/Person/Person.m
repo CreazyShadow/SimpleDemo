@@ -20,12 +20,14 @@
     return nil;
 }
 
-//- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-//    
-//}
-
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
     
+}
+
+- (NSUInteger)hash {
+    NSUInteger temp = [super hash];
+    NSLog(@"-----hash:%ud", temp);
+    return temp;
 }
 
 @end

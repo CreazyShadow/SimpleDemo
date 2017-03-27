@@ -20,4 +20,8 @@
 
 #import <UIImageView+WebCache.h>
 
+#import <UIView+Shape.h>
+
+#import "GlobalInstance.h"
+
 #endif /* SimpleApp_pch */

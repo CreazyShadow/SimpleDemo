@@ -10,4 +10,6 @@
 
 @interface MyProxy : NSProxy
 
++ (id)proxyForObject:(id)obj;
+
 @end

@@ -13,19 +13,27 @@
 #import "ScrapeView.h"
 #import <math.h>
 
+#import "CustomURLProtocol.h"
+#import "SessionCustomProtocolConfiguration.h"
+
 #import <Person.h>
 
 #import "SimpleApp-Swift.h"
 
-#import "NavigationViewController.h"
-
 #import <Dog.h>
+#import <Person.h>
 
 #import <CommonCrypto/CommonCrypto.h>
 #import <objc/runtime.h>
 #import <objc/message.h>
 
-@interface AppDelegate ()
+#import <UserNotifications/UserNotifications.h>
+
+#import "CustomWindow.h"
+
+#import "CustomNavigationController.h"
+
+@interface AppDelegate () <UNUserNotificationCenterDelegate>
 
 @property (nonatomic, strong, readwrite) id field;
 
@@ -35,71 +43,49 @@
 @implementation AppDelegate
 
 - (void)test {
-
-    NSString *str = @"abcBBdef|";
-    NSRange rage = [str rangeOfString:@"|"];
-    NSLog(@"%ld %ld", rage.location, rage.length);
     
 }
 
-- (NSArray *)si_grouparray:(NSArray *)arr WithBlock:(NSString *(^)(id, NSInteger))block{
-    NSMutableSet *groupNames = [NSMutableSet set];
-    NSMutableArray *groups = [NSMutableArray array];
-    NSMutableDictionary *groupCache = [NSMutableDictionary dictionary];
-    NSMutableArray *undefinedItems = [NSMutableArray array];
-    [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSString *key = block(obj, idx);
-        if (!key) {
-            [undefinedItems addObject:obj];
-            return;
-        }
-        
-        NSMutableArray *items = nil;
-        if ([groupNames containsObject:key]) {
-            items = groupCache[key];
-        } else {
-            items = [NSMutableArray array];
-            [groupNames addObject:key];
-            [groups addObject:items];
-            groupCache[key] = items;
-        }
-        
-        [items addObject:obj];
-    }];
-    
-    if (undefinedItems.count > 0) {
-        [groups addObject:undefinedItems];
+- (void)printArray:(NSArray *)arr {
+    NSLog(@"\n");
+    for (id obj in arr) {
+        NSLog(@"%p", obj);
     }
-    return groups;
 }
-
-+ (void)classM {
-    BOOL b = class_isMetaClass(object_getClass(self));
-    NSLog(@"%d", b);
-}
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [AppDelegate classM];
+    //网络请求重定向
+//    [NSURLProtocol registerClass:[CustomURLProtocol class]];
+    [[SessionCustomProtocolConfiguration shareManager] openHttpProtocol];
     
+    //捕获crash
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    
+    //测试方法
     [self test];
+    
     //重定向NSLOG
-    //    [[LogHelper shareInstance] redirectSTD:STDERR_FILENO];
+    //[[LogHelper shareInstance] redirectSTD:STDERR_FILENO];
     
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    self.window.backgroundColor = [UIColor whiteColor];
+//    渲染window
+    self.window = [[CustomWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor]; 
     
+//    设置启动方式
     [self setupStartType:0];
     
     [self.window makeKeyAndVisible];
+    
+    //通知
+    [self setupNotification];
+    
     return YES;
 }
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"FirstViewController";
+    NSString *className = @"TestArithmeticViewController";
     switch (type) {
         case 0:
         {
@@ -116,7 +102,7 @@
             break;
     }
     
-    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
+    CustomNavigationController *nc = [[CustomNavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nc;
 }
 
@@ -168,7 +154,6 @@ void uncaughtExceptionHandler(NSException *exception){
 
 #pragma mark - Open URL
 
-
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
     return YES;
 }
@@ -197,6 +182,96 @@ void uncaughtExceptionHandler(NSException *exception){
 void handleExceptions(NSException *exception) {
     NSLog(@"exception = %@",exception);
     NSLog(@"callStackSymbols = %@",[exception callStackSymbols]);
+}
+
+#pragma mark - 通知ios10
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    //上传token
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    //获取token失败，开发调试的时候需要关注 必须的情况下将其上传到异常统计
+}
+
+#pragma mark - UNUserNotificationCenterDelegate
+
+//通知即将展示的时候
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    UNNotificationRequest *request = notification.request; //原始请求
+    NSDictionary *userInfo = notification.request.content.userInfo; //userInfo数据
+    UNNotificationContent *content = request.content;// 原始内容
+    NSString *title = content.title; //标题
+    NSString *subtitle = content.subtitle; // 副标题
+    NSNumber *badge = content.badge; //角标
+    NSString *body = content.body; //推送消息体
+    UNNotificationSound *sound = content.sound; //指定的声音
+    completionHandler(UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert); //回调此函数将设置导入
+}
+
+//用户与通知进行交互后的response，比如说用户直接点开通知打开APP、用户点击通知的按钮或者进行输入文本框的文本
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
+    //可判断response的种类和request的触发器是什么,可根据远程通知和本地通知分别处理，再根据action进行后续回调
+    
+//    //获取在Pending状态下待触发的通知
+//    - (void)getPendingNotificationRequestsWithCompletionHandler:(void(^)(NSArray *requests))completionHandler;
+//    //移除未触发的通知
+//    - (void)removePendingNotificationRequestsWithIdentifiers:(NSArray *)identifiers;
+//    - (void)removeAllPendingNotificationRequests;
+//    // 通知已经触发，但是还在操作系统的通知中心上，可以进行查询和删除
+//    - (void)getDeliveredNotificationsWithCompletionHandler:(void(^)(NSArray *notifications))completionHandler;
+//    - (void)removeDeliveredNotificationsWithIdentifiers:(NSArray *)identifiers;
+//    - (void)removeAllDeliveredNotifications;
+}
+
+#pragma mark - ios10本地通知
+- (void)localNotification {
+    UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+    content.title = @"\"Fly to the moon\"";
+    content.subtitle = @"by Neo";
+    content.body = @"the wonderful song with you~";
+    content.badge = @0;
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"image1" ofType:@"png"];
+    NSError *error = nil;
+    //将本地图片的路径形成一个图片附件，加入到content中
+    UNNotificationAttachment *img_attachment = [UNNotificationAttachment attachmentWithIdentifier:@"att1" URL:[NSURL fileURLWithPath:path] options:nil error:&error];
+    if (error) {
+        NSLog(@"%@", error);
+    }
+    
+    content.attachments = @[img_attachment];
+    //设置@“”以后，进入app将没有启动页
+    content.launchImageName = @"";
+    UNNotificationSound *sound = [UNNotificationSound defaultSound];
+    content.sound = sound;
+    //设置时间间隔的触发器
+    UNTimeIntervalNotificationTrigger *time_trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:10 repeats:NO];
+    NSString *requestIdentifer = @"time interval request";
+    content.categoryIdentifier = @"";
+    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:requestIdentifer content:content trigger:time_trigger];
+    [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+        NSLog(@"%@", error);
+    }];
+}
+
+#pragma mark - iOS10 远程通知
+- (void)setupNotification {
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    center.delegate = self;
+//    [center setNotificationCategories:[self createNotificationCategoryActions]];
+    [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+        if (settings.authorizationStatus == UNAuthorizationStatusNotDetermined) {
+            [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                if (granted) {
+                    
+                } else {
+                    
+                }
+            }];
+        } else {
+            // do other things
+        }
+    }];
 }
 
 @end

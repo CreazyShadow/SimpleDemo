@@ -9,9 +9,15 @@
 #import "ViewController.h"
 #import <AFNetworking.h>
 
+#import <objc/runtime.h>
+
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
+
+@property (nonatomic, copy) NSMutableArray *marr;
+
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
@@ -28,7 +34,8 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self testGCD];
+    _label.text = @"顶顶顶顶\nd改改";
+    _label.numberOfLines = 0;
 }
 
 #pragma mark - tableview delegate & datasource

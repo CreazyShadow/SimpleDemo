@@ -50,14 +50,14 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        [self yzt_init];
+        [self initSubViews];
     }
     return self;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        [self yzt_init];
+        [self initSubViews];
     }
     return self;
 }
@@ -67,7 +67,7 @@
     if (!self.isReload) {
         self.isReload = YES;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{            
-            [self yzt_loadData];
+            [self loadData];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.autoScrollInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 if (self.timer && self.timer.valid) {
                     [self.timer yzt_start];
@@ -88,7 +88,7 @@
 
 #pragma mark - private
 
-- (void)yzt_init {
+- (void)initSubViews {
     _registerItems = [NSMutableDictionary dictionaryWithCapacity:0];
     _reuseItems = [NSMutableDictionary dictionaryWithCapacity:0];
     _usingItems = [NSMutableArray array];
@@ -324,7 +324,7 @@
     }
 }
 
-- (void)yzt_loadData {
+- (void)loadData {
     if (!self.dataSource) {
         return;
     }
@@ -529,7 +529,7 @@
     } else {
         self.scrollView.contentOffset = CGPointMake(0, 0);
     }
-    [self yzt_loadData];
+    [self loadData];
     [self scrollToPage:page animated:NO];
 }
 

@@ -11,8 +11,9 @@ def share_pods
 	pod 'WSProgressHUD'
 	pod 'AFNetworking'
    	pod 'MJRefresh'
-    	pod 'SDWebImage'
+    pod 'SDWebImage'
 	pod 'MJExtension'
+    pod 'pop'
 end
 
 target 'SimpleApp' do

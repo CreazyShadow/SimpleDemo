@@ -26,11 +26,26 @@
 		732B3B7A1DB9A427000A6A25 /* PageViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B3B751DB9A427000A6A25 /* PageViewItem.m */; };
 		732B3B7D1DB9A874000A6A25 /* MyProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B3B7C1DB9A874000A6A25 /* MyProxy.m */; };
 		734C429E1D375FB800B19D82 /* NSTimer+YZT.m in Sources */ = {isa = PBXBuildFile; fileRef = 734C429D1D375FB800B19D82 /* NSTimer+YZT.m */; };
+		735ADFBF1E83624D00F79620 /* TestViewController_1.h in Headers */ = {isa = PBXBuildFile; fileRef = 735ADFBD1E83624D00F79620 /* TestViewController_1.h */; };
+		735ADFC01E83624D00F79620 /* TestViewController_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 735ADFBE1E83624D00F79620 /* TestViewController_1.m */; };
+		735ADFD31E83679000F79620 /* commonBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 735ADFD21E83679000F79620 /* commonBundle.bundle */; };
 		739F10B11D055065005DA096 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739F10B01D055065005DA096 /* CoreFoundation.framework */; };
 		739F10B41D0550DC005DA096 /* RunLoopManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 739F10B31D0550DC005DA096 /* RunLoopManager.m */; };
 		73A041261DF7A7E100C44D22 /* RaySingleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A041251DF7A7E100C44D22 /* RaySingleCommand.m */; };
 		73A041291DF7AA3C00C44D22 /* UIButton+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A041281DF7AA3C00C44D22 /* UIButton+Signal.m */; };
+		73A042421DF93A6600C44D22 /* UIImage+Subimage.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A042411DF93A6600C44D22 /* UIImage+Subimage.m */; };
+		73DFA7F21E0BAB0600CF2D84 /* UIView+Shape.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DFA7F11E0BAB0600CF2D84 /* UIView+Shape.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		735ADFD61E83688B00F79620 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7373D2D51CD0B7FB00332D91 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 735ADFCA1E83673F00F79620;
+			remoteInfo = simpleCommonBundle;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		7373D2DB1CD0B7FB00332D91 /* CopyFiles */ = {
@@ -85,6 +100,11 @@
 		732B3B7C1DB9A874000A6A25 /* MyProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProxy.m; sourceTree = "<group>"; };
 		734C429C1D375FB800B19D82 /* NSTimer+YZT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+YZT.h"; sourceTree = "<group>"; };
 		734C429D1D375FB800B19D82 /* NSTimer+YZT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+YZT.m"; sourceTree = "<group>"; };
+		735ADFBD1E83624D00F79620 /* TestViewController_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController_1.h; sourceTree = "<group>"; };
+		735ADFBE1E83624D00F79620 /* TestViewController_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController_1.m; sourceTree = "<group>"; };
+		735ADFCB1E83673F00F79620 /* simpleCommonBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = simpleCommonBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		735ADFCD1E83673F00F79620 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		735ADFD21E83679000F79620 /* commonBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = commonBundle.bundle; sourceTree = "<group>"; };
 		7373D2DD1CD0B7FB00332D91 /* libSimpleCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSimpleCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		739F10B01D055065005DA096 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		739F10B21D0550DC005DA096 /* RunLoopManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunLoopManager.h; sourceTree = "<group>"; };
@@ -93,9 +113,20 @@
 		73A041251DF7A7E100C44D22 /* RaySingleCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaySingleCommand.m; sourceTree = "<group>"; };
 		73A041271DF7AA3C00C44D22 /* UIButton+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Signal.h"; sourceTree = "<group>"; };
 		73A041281DF7AA3C00C44D22 /* UIButton+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Signal.m"; sourceTree = "<group>"; };
+		73A042401DF93A6600C44D22 /* UIImage+Subimage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Subimage.h"; sourceTree = "<group>"; };
+		73A042411DF93A6600C44D22 /* UIImage+Subimage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Subimage.m"; sourceTree = "<group>"; };
+		73DFA7F01E0BAB0600CF2D84 /* UIView+Shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shape.h"; sourceTree = "<group>"; };
+		73DFA7F11E0BAB0600CF2D84 /* UIView+Shape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shape.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		735ADFC81E83673F00F79620 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7373D2DA1CD0B7FB00332D91 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -165,14 +196,44 @@
 			children = (
 				734C429C1D375FB800B19D82 /* NSTimer+YZT.h */,
 				734C429D1D375FB800B19D82 /* NSTimer+YZT.m */,
+				73A042401DF93A6600C44D22 /* UIImage+Subimage.h */,
+				73A042411DF93A6600C44D22 /* UIImage+Subimage.m */,
+				73DFA7F01E0BAB0600CF2D84 /* UIView+Shape.h */,
+				73DFA7F11E0BAB0600CF2D84 /* UIView+Shape.m */,
 			);
 			path = CommonCategory;
+			sourceTree = "<group>";
+		};
+		735ADFBC1E83622300F79620 /* TestModule */ = {
+			isa = PBXGroup;
+			children = (
+				735ADFBD1E83624D00F79620 /* TestViewController_1.h */,
+				735ADFBE1E83624D00F79620 /* TestViewController_1.m */,
+			);
+			path = TestModule;
+			sourceTree = "<group>";
+		};
+		735ADFCC1E83673F00F79620 /* simpleCommonBundle */ = {
+			isa = PBXGroup;
+			children = (
+				735ADFCD1E83673F00F79620 /* Info.plist */,
+			);
+			path = simpleCommonBundle;
+			sourceTree = "<group>";
+		};
+		735ADFD11E83679000F79620 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				735ADFD21E83679000F79620 /* commonBundle.bundle */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		7373D2D41CD0B7FB00332D91 = {
 			isa = PBXGroup;
 			children = (
 				7373D2DF1CD0B7FB00332D91 /* SimpleCommon */,
+				735ADFCC1E83673F00F79620 /* simpleCommonBundle */,
 				739F10AB1D051C2A005DA096 /* Frameworks */,
 				7373D2DE1CD0B7FB00332D91 /* Products */,
 			);
@@ -182,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				7373D2DD1CD0B7FB00332D91 /* libSimpleCommon.a */,
+				735ADFCB1E83673F00F79620 /* simpleCommonBundle.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,6 +251,8 @@
 		7373D2DF1CD0B7FB00332D91 /* SimpleCommon */ = {
 			isa = PBXGroup;
 			children = (
+				735ADFD11E83679000F79620 /* Resource */,
+				735ADFBC1E83622300F79620 /* TestModule */,
 				73A041231DF7A7C600C44D22 /* Signal */,
 				732B3B681DB9A427000A6A25 /* Utility */,
 				732B3B6B1DB9A427000A6A25 /* View */,
@@ -259,7 +323,35 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		735ADFB81E8359C200F79620 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				735ADFBF1E83624D00F79620 /* TestViewController_1.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		735ADFCA1E83673F00F79620 /* simpleCommonBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 735ADFCE1E83673F00F79620 /* Build configuration list for PBXNativeTarget "simpleCommonBundle" */;
+			buildPhases = (
+				735ADFC71E83673F00F79620 /* Sources */,
+				735ADFC81E83673F00F79620 /* Frameworks */,
+				735ADFC91E83673F00F79620 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = simpleCommonBundle;
+			productName = simpleCommonBundle;
+			productReference = 735ADFCB1E83673F00F79620 /* simpleCommonBundle.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 		7373D2DC1CD0B7FB00332D91 /* SimpleCommon */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7373D2E61CD0B7FB00332D91 /* Build configuration list for PBXNativeTarget "SimpleCommon" */;
@@ -269,10 +361,12 @@
 				7373D2DB1CD0B7FB00332D91 /* CopyFiles */,
 				731A04B31CD3449100BFA726 /* Resources */,
 				731A04B51CD3469800BFA726 /* ShellScript */,
+				735ADFB81E8359C200F79620 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				735ADFD71E83688B00F79620 /* PBXTargetDependency */,
 			);
 			name = SimpleCommon;
 			productName = SimpleCommon;
@@ -288,6 +382,11 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = wuyp;
 				TargetAttributes = {
+					735ADFCA1E83673F00F79620 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = F74GWC55U7;
+						ProvisioningStyle = Automatic;
+					};
 					7373D2DC1CD0B7FB00332D91 = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -306,6 +405,7 @@
 			projectRoot = "";
 			targets = (
 				7373D2DC1CD0B7FB00332D91 /* SimpleCommon */,
+				735ADFCA1E83673F00F79620 /* simpleCommonBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -315,6 +415,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		735ADFC91E83673F00F79620 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				735ADFD31E83679000F79620 /* commonBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +445,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		735ADFC71E83673F00F79620 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7373D2D91CD0B7FB00332D91 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,11 +464,14 @@
 				731A048F1CD30FE200BFA726 /* UIViewController+URLRouter.m in Sources */,
 				73A041261DF7A7E100C44D22 /* RaySingleCommand.m in Sources */,
 				731A048C1CD30FBA00BFA726 /* NSError+URLRouter.m in Sources */,
+				73A042421DF93A6600C44D22 /* UIImage+Subimage.m in Sources */,
 				732B3B761DB9A427000A6A25 /* FileManager.m in Sources */,
 				732B3B781DB9A427000A6A25 /* CircleLayer.m in Sources */,
+				735ADFC01E83624D00F79620 /* TestViewController_1.m in Sources */,
 				731A04A41CD3103A00BFA726 /* URLOpenOptions.m in Sources */,
 				739F10B41D0550DC005DA096 /* RunLoopManager.m in Sources */,
 				73A041291DF7AA3C00C44D22 /* UIButton+Signal.m in Sources */,
+				73DFA7F21E0BAB0600CF2D84 /* UIView+Shape.m in Sources */,
 				732B3B7A1DB9A427000A6A25 /* PageViewItem.m in Sources */,
 				732B3B7D1DB9A874000A6A25 /* MyProxy.m in Sources */,
 				731A04AA1CD3104A00BFA726 /* URLRouter.m in Sources */,
@@ -368,7 +486,55 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		735ADFD71E83688B00F79620 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 735ADFCA1E83673F00F79620 /* simpleCommonBundle */;
+			targetProxy = 735ADFD61E83688B00F79620 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		735ADFCF1E83673F00F79620 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = F74GWC55U7;
+				INFOPLIST_FILE = simpleCommonBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raymond.simpleCommonBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		735ADFD01E83673F00F79620 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = F74GWC55U7;
+				INFOPLIST_FILE = simpleCommonBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raymond.simpleCommonBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		7373D2E41CD0B7FB00332D91 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -481,6 +647,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		735ADFCE1E83673F00F79620 /* Build configuration list for PBXNativeTarget "simpleCommonBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				735ADFCF1E83673F00F79620 /* Debug */,
+				735ADFD01E83673F00F79620 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7373D2D81CD0B7FB00332D91 /* Build configuration list for PBXProject "SimpleCommon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -11,6 +11,4 @@
 
 @interface FirstViewController : BaseViewController
 
-- (int)add:(int)a;
-
 @end

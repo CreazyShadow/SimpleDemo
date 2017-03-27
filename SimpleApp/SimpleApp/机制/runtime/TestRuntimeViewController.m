@@ -9,6 +9,13 @@
 #import "TestRuntimeViewController.h"
 //#import "Dog.h"
 #import "Dog+Fly.h"
+#import <Cat.h>
+
+#import <objc/runtime.h>
+#import <objc/message.h>
+
+#import "ClassA.h"
+#import "ClassB.h"
 
 @interface TestRuntimeViewController ()
 
@@ -18,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithRed:arc4random() % 255 / 255.0 green:arc4random() % 255 / 255.0 blue:arc4random() % 255 / 255.0 alpha:1];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 #pragma mark - event
@@ -26,22 +33,34 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self testAddMethod];
 //    [self testDogFlyProperty];
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+//    [self testAddMethodWithRuntime];
+    [self swizzleFunction];
     
-//    TestRuntimeViewController *vc = [[TestRuntimeViewController alloc] init];
-    UIViewController *vc = window.rootViewController;
-    if ([vc isKindOfClass:[UINavigationController class]]) {
-        vc = ((UINavigationController *)vc).topViewController;
-    }
+    ClassA *a = [[ClassA alloc] init];
+    [a print];
     
-    [self presentViewController:vc animated:YES completion:nil];
+//    ClassB *b = [[ClassB alloc] init];
+//    [b print];
 }
 
-#pragma mark - addMethod
+#pragma mark - addMethod : 消息转发和添加
 
 - (void)testAddMethod {
     Dog *dog = [[Dog alloc] init];
     [dog eat];
+}
+
+- (void)testAddMethodWithRuntime {
+    IMP imp = class_getMethodImplementation([self class], @selector(sleep));
+    BOOL success = class_addMethod([Cat class], NSSelectorFromString(@"sleep"), imp, "v@:");
+    NSLog(@"add sleep method for Cat: %@", success ? @"success" : @"failed");
+    
+    Cat *cat = [[Cat alloc] init];
+    ((void (*)(id,SEL))objc_msgSend)(cat, @selector(sleep));
+}
+
+- (void)sleep {
+    NSLog(@"----sleep");
 }
 
 #pragma mark - category property
@@ -50,6 +69,15 @@
     Dog *dog = [[Dog alloc] init];
     dog.flyType = @"curve fly";
     NSLog(@"dog fly type:%@", dog.flyType);
+}
+
+#pragma mark - swizzle
+
+- (void)swizzleFunction {
+    Method a = class_getInstanceMethod([ClassA class], NSSelectorFromString(@"print"));
+    Method b = class_getInstanceMethod([ClassB class], NSSelectorFromString(@"print"));
+    
+    method_exchangeImplementations(a, b);
 }
 
 @end

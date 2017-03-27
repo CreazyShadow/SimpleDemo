@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "SecondViewController.h"
+#import "GestureViewController.h"
 #import "ScrapeView.h"
 #import "TestWebviewViewController.h"
 #import "DrawViewController.h"
@@ -41,19 +42,26 @@
     
     [self.view addSubview:self.button1];
     [self.view addSubview:self.label];
+    
+    self.view.circle = YES;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSMutableSet *set = [NSMutableSet set];
-    [set addObject:@1];
-    [set addObject:@12];
-    [set addObject:@11];
-    [set addObject:@3];
     
-    for (NSNumber *item in set) {
-        NSLog(@"%d", item.intValue);
-    }
 }
+
+- (NSString *)prefixForCarNum:(NSString *)cardNo {
+    int i = 0;
+    for (; i < cardNo.length; i++) {
+        char c = [cardNo characterAtIndex:i];
+        if (!(c >= 'a' && c <= 'z') && !(c >= 'A' && c <= 'Z')) {
+            break;
+        }
+    }
+    
+    return [cardNo substringToIndex:i];
+}
+
 
 #pragma mark - override
 
@@ -108,7 +116,9 @@
     if (!_button1) {
         _button1 = [[UIButton alloc] initWithFrame:CGRectMake(20, 80, 100, 30)];
         _button1.backgroundColor = [UIColor purpleColor];
-        [_button1 setTitle:@"button1" forState:UIControlStateNormal];
+        [_button1 setImage:[UIImage imageNamed:@"circle"] forState:UIControlStateNormal];
+        _button1.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 5);
+//        [_button1 setTitle:@"button1" forState:UIControlStateNormal];
         [_button1 addTarget:self action:@selector(clickButton1) forControlEvents:UIControlEventTouchUpInside];
     }
     

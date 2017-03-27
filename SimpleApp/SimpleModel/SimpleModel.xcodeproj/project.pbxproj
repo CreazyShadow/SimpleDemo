@@ -11,6 +11,9 @@
 		7304CE971CF53F9D00C5E349 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7304CE961CF53F9D00C5E349 /* Dog.m */; };
 		7326401D1D12462500AB2EA7 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = 7326401C1D12462500AB2EA7 /* People.m */; };
 		732640231D12466600AB2EA7 /* Man.m in Sources */ = {isa = PBXBuildFile; fileRef = 732640221D12466600AB2EA7 /* Man.m */; };
+		734AB13D1E11FA31006B184C /* Man.m in Sources */ = {isa = PBXBuildFile; fileRef = 734AB13C1E11FA31006B184C /* Man.m */; };
+		735EDABA1E1DDAC0002962DB /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 735EDAB91E1DDAC0002962DB /* Animal.m */; };
+		735EDABD1E1DDB93002962DB /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = 735EDABC1E1DDB93002962DB /* Cat.m */; };
 		7373D3221CD0C62100332D91 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7373D3211CD0C62100332D91 /* BaseModel.m */; };
 		7373D3251CD0C65200332D91 /* GPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7373D3241CD0C65200332D91 /* GPModel.m */; };
 		73A827B81D66C43600248578 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A827B71D66C43600248578 /* Person.m */; };
@@ -38,6 +41,13 @@
 		7326401C1D12462500AB2EA7 /* People.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
 		732640211D12466600AB2EA7 /* Man.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
 		732640221D12466600AB2EA7 /* Man.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Man.m; sourceTree = "<group>"; };
+		734AB13B1E11FA31006B184C /* Man.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
+		734AB13C1E11FA31006B184C /* Man.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Man.m; sourceTree = "<group>"; };
+		734AB13E1E11FCA7006B184C /* EatProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EatProtocol.h; sourceTree = "<group>"; };
+		735EDAB81E1DDAC0002962DB /* Animal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
+		735EDAB91E1DDAC0002962DB /* Animal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
+		735EDABB1E1DDB93002962DB /* Cat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cat.h; sourceTree = "<group>"; };
+		735EDABC1E1DDB93002962DB /* Cat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cat.m; sourceTree = "<group>"; };
 		7373D2B31CD0B7A800332D91 /* libSimpleModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSimpleModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7373D31B1CD0C5E800332D91 /* Goods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Goods.h; sourceTree = "<group>"; };
 		7373D31C1CD0C5E800332D91 /* Goods.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Goods.m; sourceTree = "<group>"; };
@@ -69,6 +79,10 @@
 				7304CE961CF53F9D00C5E349 /* Dog.m */,
 				73EDBEDC1D2A56BA00B72294 /* Dog+Fly.h */,
 				73EDBEDD1D2A56BA00B72294 /* Dog+Fly.m */,
+				735EDAB81E1DDAC0002962DB /* Animal.h */,
+				735EDAB91E1DDAC0002962DB /* Animal.m */,
+				735EDABB1E1DDB93002962DB /* Cat.h */,
+				735EDABC1E1DDB93002962DB /* Cat.m */,
 			);
 			path = runtime;
 			sourceTree = "<group>";
@@ -139,6 +153,9 @@
 			children = (
 				73A827B61D66C43600248578 /* Person.h */,
 				73A827B71D66C43600248578 /* Person.m */,
+				734AB13B1E11FA31006B184C /* Man.h */,
+				734AB13C1E11FA31006B184C /* Man.m */,
+				734AB13E1E11FCA7006B184C /* EatProtocol.h */,
 			);
 			path = Person;
 			sourceTree = "<group>";
@@ -199,12 +216,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				735EDABD1E1DDB93002962DB /* Cat.m in Sources */,
+				734AB13D1E11FA31006B184C /* Man.m in Sources */,
 				7326401D1D12462500AB2EA7 /* People.m in Sources */,
 				7304CE971CF53F9D00C5E349 /* Dog.m in Sources */,
 				73A827B81D66C43600248578 /* Person.m in Sources */,
 				73EDBEDE1D2A56BA00B72294 /* Dog+Fly.m in Sources */,
 				7301A1961DF53AD700274358 /* Book.m in Sources */,
 				732640231D12466600AB2EA7 /* Man.m in Sources */,
+				735EDABA1E1DDAC0002962DB /* Animal.m in Sources */,
 				7373D3251CD0C65200332D91 /* GPModel.m in Sources */,
 				7373D3221CD0C62100332D91 /* BaseModel.m in Sources */,
 			);

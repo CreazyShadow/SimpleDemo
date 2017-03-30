@@ -1116,8 +1116,9 @@
 				TargetAttributes = {
 					7373D2431CD0AA2600332D91 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = F74GWC55U7;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					7373D25C1CD0AA2600332D91 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1496,9 +1497,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 568256030@qq.com (EAQJ6NC596)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 568256030@qq.com (EAQJ6NC596)";
+				DEVELOPMENT_TEAM = F74GWC55U7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/cc/build/Debug-iphoneos",
@@ -1546,9 +1547,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 568256030@qq.com (EAQJ6NC596)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 568256030@qq.com (EAQJ6NC596)";
+				DEVELOPMENT_TEAM = F74GWC55U7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/cc/build/Debug-iphoneos",

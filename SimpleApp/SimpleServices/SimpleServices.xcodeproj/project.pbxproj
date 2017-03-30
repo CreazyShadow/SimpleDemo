@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		736F65D81DDC43CA00DA9092 /* RayBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 736F65D71DDC43CA00DA9092 /* RayBaseRequest.m */; };
 		7373D2EB1CD0C1A100332D91 /* libSimpleModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7373D2EA1CD0C1A100332D91 /* libSimpleModel.a */; };
 /* End PBXBuildFile section */
 
@@ -24,8 +23,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		736F65D61DDC43CA00DA9092 /* RayBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RayBaseRequest.h; sourceTree = "<group>"; };
-		736F65D71DDC43CA00DA9092 /* RayBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RayBaseRequest.m; sourceTree = "<group>"; };
 		7373D2C81CD0B7DE00332D91 /* libSimpleServices.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSimpleServices.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7373D2EA1CD0C1A100332D91 /* libSimpleModel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSimpleModel.a; path = "../Debug-iphonesimulator/libSimpleModel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -62,9 +59,7 @@
 		7373D2CA1CD0B7DE00332D91 /* SimpleServices */ = {
 			isa = PBXGroup;
 			children = (
-				737DED981CD1DD0500D97A9F /* Tools */,
 				7373D2F51CD0C2AF00332D91 /* ServicesFactory */,
-				7373D2F41CD0C2A400332D91 /* GoodsServices */,
 			);
 			path = SimpleServices;
 			sourceTree = "<group>";
@@ -77,67 +72,19 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		7373D2F41CD0C2A400332D91 /* GoodsServices */ = {
-			isa = PBXGroup;
-			children = (
-				7373D2FB1CD0C2C500332D91 /* Network */,
-				7373D2F61CD0C2C500332D91 /* FeatureSet */,
-			);
-			path = GoodsServices;
-			sourceTree = "<group>";
-		};
 		7373D2F51CD0C2AF00332D91 /* ServicesFactory */ = {
 			isa = PBXGroup;
 			children = (
-				7373D30C1CD0C3A300332D91 /* Network */,
-				7373D3011CD0C32B00332D91 /* FeatureSet */,
 				7373D3021CD0C32B00332D91 /* Service */,
 			);
 			path = ServicesFactory;
 			sourceTree = "<group>";
 		};
-		7373D2F61CD0C2C500332D91 /* FeatureSet */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FeatureSet;
-			sourceTree = "<group>";
-		};
-		7373D2FB1CD0C2C500332D91 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		7373D3011CD0C32B00332D91 /* FeatureSet */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FeatureSet;
-			sourceTree = "<group>";
-		};
 		7373D3021CD0C32B00332D91 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				736F65D61DDC43CA00DA9092 /* RayBaseRequest.h */,
-				736F65D71DDC43CA00DA9092 /* RayBaseRequest.m */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		7373D30C1CD0C3A300332D91 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		737DED981CD1DD0500D97A9F /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,7 +143,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				736F65D81DDC43CA00DA9092 /* RayBaseRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

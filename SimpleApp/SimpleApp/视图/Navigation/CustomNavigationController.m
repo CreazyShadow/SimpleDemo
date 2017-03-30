@@ -23,6 +23,8 @@
     nvc.interactivePopGestureRecognizer.delegate = self;
     nvc.delegate = self;
     [nvc.interactivePopGestureRecognizer addTarget:self action:@selector(interactivePopGestureRecognizerAction:)];
+    
+//    [self.navigationBar setBackgroundColor:[UIColor orangeColor]];
     return nvc;
 }
 

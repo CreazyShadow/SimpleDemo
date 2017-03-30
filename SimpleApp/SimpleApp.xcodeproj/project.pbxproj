@@ -36,6 +36,12 @@
 		732AE6201E5E89FF0068E1CE /* EKElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 732AE61F1E5E89FF0068E1CE /* EKElement.m */; };
 		732AE6231E5E8E680068E1CE /* ClassA.m in Sources */ = {isa = PBXBuildFile; fileRef = 732AE6221E5E8E680068E1CE /* ClassA.m */; };
 		732AE6261E5E8E710068E1CE /* ClassB.m in Sources */ = {isa = PBXBuildFile; fileRef = 732AE6251E5E8E710068E1CE /* ClassB.m */; };
+		732B50781E8B3DF8006F2677 /* VIewLifeCycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B50771E8B3DF8006F2677 /* VIewLifeCycleViewController.m */; };
+		732B507B1E8B3E5F006F2677 /* LifeCycleAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B507A1E8B3E5F006F2677 /* LifeCycleAViewController.m */; };
+		732B507F1E8B44B0006F2677 /* TimerAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B507E1E8B44B0006F2677 /* TimerAViewController.m */; };
+		732B50821E8B4602006F2677 /* TimerBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B50811E8B4602006F2677 /* TimerBViewController.m */; };
+		732B50851E8B489F006F2677 /* BaseHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B50841E8B489F006F2677 /* BaseHeaderViewController.m */; };
+		732B50881E8B567B006F2677 /* RayTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B50871E8B567B006F2677 /* RayTimer.m */; };
 		733C26331DD42213005FF7AE /* ProductSliderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 733C26311DD42213005FF7AE /* ProductSliderTableViewCell.m */; };
 		733C26341DD42213005FF7AE /* ProductSliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 733C26321DD42213005FF7AE /* ProductSliderTableViewCell.xib */; };
 		7340660A1E6CF82800E4E98B /* PushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 734066091E6CF82800E4E98B /* PushManager.m */; };
@@ -190,6 +196,18 @@
 		732AE6221E5E8E680068E1CE /* ClassA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassA.m; sourceTree = "<group>"; };
 		732AE6241E5E8E710068E1CE /* ClassB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassB.h; sourceTree = "<group>"; };
 		732AE6251E5E8E710068E1CE /* ClassB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassB.m; sourceTree = "<group>"; };
+		732B50761E8B3DF8006F2677 /* VIewLifeCycleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIewLifeCycleViewController.h; sourceTree = "<group>"; };
+		732B50771E8B3DF8006F2677 /* VIewLifeCycleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIewLifeCycleViewController.m; sourceTree = "<group>"; };
+		732B50791E8B3E5F006F2677 /* LifeCycleAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeCycleAViewController.h; sourceTree = "<group>"; };
+		732B507A1E8B3E5F006F2677 /* LifeCycleAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeCycleAViewController.m; sourceTree = "<group>"; };
+		732B507D1E8B44B0006F2677 /* TimerAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerAViewController.h; sourceTree = "<group>"; };
+		732B507E1E8B44B0006F2677 /* TimerAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerAViewController.m; sourceTree = "<group>"; };
+		732B50801E8B4602006F2677 /* TimerBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerBViewController.h; sourceTree = "<group>"; };
+		732B50811E8B4602006F2677 /* TimerBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerBViewController.m; sourceTree = "<group>"; };
+		732B50831E8B489F006F2677 /* BaseHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHeaderViewController.h; sourceTree = "<group>"; };
+		732B50841E8B489F006F2677 /* BaseHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHeaderViewController.m; sourceTree = "<group>"; };
+		732B50861E8B567B006F2677 /* RayTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RayTimer.h; sourceTree = "<group>"; };
+		732B50871E8B567B006F2677 /* RayTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RayTimer.m; sourceTree = "<group>"; };
 		7334FC331D6B271B0046DD4F /* SimpleApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleApp-Prefix.pch"; sourceTree = "<group>"; };
 		733C26301DD42213005FF7AE /* ProductSliderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSliderTableViewCell.h; sourceTree = "<group>"; };
 		733C26311DD42213005FF7AE /* ProductSliderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSliderTableViewCell.m; sourceTree = "<group>"; };
@@ -498,6 +516,30 @@
 			path = "框架解耦设计__1";
 			sourceTree = "<group>";
 		};
+		732B50751E8B3DC8006F2677 /* 生命周期 */ = {
+			isa = PBXGroup;
+			children = (
+				732B50761E8B3DF8006F2677 /* VIewLifeCycleViewController.h */,
+				732B50771E8B3DF8006F2677 /* VIewLifeCycleViewController.m */,
+				732B50791E8B3E5F006F2677 /* LifeCycleAViewController.h */,
+				732B507A1E8B3E5F006F2677 /* LifeCycleAViewController.m */,
+			);
+			path = "生命周期";
+			sourceTree = "<group>";
+		};
+		732B507C1E8B44A5006F2677 /* 定时器使用 */ = {
+			isa = PBXGroup;
+			children = (
+				732B507D1E8B44B0006F2677 /* TimerAViewController.h */,
+				732B507E1E8B44B0006F2677 /* TimerAViewController.m */,
+				732B50801E8B4602006F2677 /* TimerBViewController.h */,
+				732B50811E8B4602006F2677 /* TimerBViewController.m */,
+				732B50861E8B567B006F2677 /* RayTimer.h */,
+				732B50871E8B567B006F2677 /* RayTimer.m */,
+			);
+			path = "定时器使用";
+			sourceTree = "<group>";
+		};
 		732F245F1E4AF2A3002D01A7 /* 消息推送 */ = {
 			isa = PBXGroup;
 			children = (
@@ -804,6 +846,7 @@
 		73BA34861DB12E65007E9FC1 /* 机制 */ = {
 			isa = PBXGroup;
 			children = (
+				732B507C1E8B44A5006F2677 /* 定时器使用 */,
 				734DAE081E88FC7D00D553CC /* attributes */,
 				735ADFC11E8363B000F79620 /* 模块交互 */,
 				73A346A91E67A9780030CE9D /* RunLoop */,
@@ -886,6 +929,8 @@
 				73406E291E14F10100D5C58C /* GestureViewController.m */,
 				739A4AF91DD1654500CA2533 /* SubView.h */,
 				739A4AFA1DD1654500CA2533 /* SubView.m */,
+				732B50831E8B489F006F2677 /* BaseHeaderViewController.h */,
+				732B50841E8B489F006F2677 /* BaseHeaderViewController.m */,
 			);
 			path = baseviews;
 			sourceTree = "<group>";
@@ -893,6 +938,7 @@
 		73BA34A01DB12E65007E9FC1 /* 视图 */ = {
 			isa = PBXGroup;
 			children = (
+				732B50751E8B3DC8006F2677 /* 生命周期 */,
 				731DAD0A1E7B6EBB004E5F8D /* ScreenAndWindow */,
 				731DAD051E7A7E6C004E5F8D /* scrollview */,
 				73BA34A11DB12E65007E9FC1 /* Image */,
@@ -1205,6 +1251,7 @@
 				731DAD101E7B6ED1004E5F8D /* CustomWindow.m in Sources */,
 				735ADFE01E836ADB00F79620 /* CustomAppDelegate.m in Sources */,
 				73BA34DD1DB12E65007E9FC1 /* TestTableViewViewController.swift in Sources */,
+				732B50821E8B4602006F2677 /* TimerBViewController.m in Sources */,
 				731C12791E8504200034F361 /* NSURLProtocol+WebKitSupport.m in Sources */,
 				73B5A05E1DC6F15200477323 /* SelectImageView.m in Sources */,
 				73E5BA881E26097000CF3BD5 /* GestureSummary_ResponseTime.m in Sources */,
@@ -1219,6 +1266,7 @@
 				731C12731E84F6D70034F361 /* NaviBViewController.m in Sources */,
 				73BA34D51DB12E65007E9FC1 /* EventButton.m in Sources */,
 				7310AEE91E8215B800BAA0E8 /* SortHelper.m in Sources */,
+				732B507F1E8B44B0006F2677 /* TimerAViewController.m in Sources */,
 				73BA34CF1DB12E65007E9FC1 /* BaseKnowTestViewController.m in Sources */,
 				73BA34D21DB12E65007E9FC1 /* BaseViewController.m in Sources */,
 				73A3467A1E6557960030CE9D /* ReusingViewController.m in Sources */,
@@ -1227,6 +1275,7 @@
 				73BA34C91DB12E65007E9FC1 /* TestCommonViewController.m in Sources */,
 				73406E2A1E14F10100D5C58C /* GestureViewController.m in Sources */,
 				7323E9EB1DC1CDF300F053F8 /* RefreshViewController.m in Sources */,
+				732B50781E8B3DF8006F2677 /* VIewLifeCycleViewController.m in Sources */,
 				7323E9E61DBF5B9800F053F8 /* NSObject+Exception.m in Sources */,
 				7393FBCB1E49557300EF7BDF /* SendMessageClass.m in Sources */,
 				73BA34D71DB12E65007E9FC1 /* ImageViewController.m in Sources */,
@@ -1245,14 +1294,17 @@
 				731C12671E84F0060034F361 /* HttpSessionViewController.m in Sources */,
 				7323E9921DBD99EF00F053F8 /* DelayDrawView.m in Sources */,
 				73BE8D841E7284CC0073A2C6 /* PushManagerViewController.m in Sources */,
+				732B50881E8B567B006F2677 /* RayTimer.m in Sources */,
 				73BA34DC1DB12E65007E9FC1 /* MasonyTableViewController.m in Sources */,
 				732AE6261E5E8E710068E1CE /* ClassB.m in Sources */,
 				731C12661E84F0060034F361 /* SessionCustomeProtocol.m in Sources */,
 				731C12651E84F0060034F361 /* CustomURLProtocol.m in Sources */,
 				73B5A0671DC717ED00477323 /* UIView+XibMananger.m in Sources */,
 				73B5A05C1DC6F15200477323 /* SelectImageItemView.m in Sources */,
+				732B507B1E8B3E5F006F2677 /* LifeCycleAViewController.m in Sources */,
 				731C12691E84F0060034F361 /* UIWebView+Clean.m in Sources */,
 				731DAD131E7B805F004E5F8D /* OperationQueueViewController.m in Sources */,
+				732B50851E8B489F006F2677 /* BaseHeaderViewController.m in Sources */,
 				7393FBCE1E49559100EF7BDF /* MessageMechanismViewController.m in Sources */,
 				73BA34C61DB12E65007E9FC1 /* MasonryViewController.m in Sources */,
 				73BA34C71DB12E65007E9FC1 /* GcdViewController.m in Sources */,
@@ -1386,7 +1438,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "03edf288-fa4b-4d7b-b595-d48fa3127d54";
@@ -1429,7 +1481,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "03edf288-fa4b-4d7b-b595-d48fa3127d54";
 				SDKROOT = iphoneos;

@@ -14,6 +14,7 @@ def share_pods
     pod 'SDWebImage'
 	pod 'MJExtension'
     pod 'pop'
+    pod 'YTKNetwork'
 end
 
 target 'SimpleApp' do

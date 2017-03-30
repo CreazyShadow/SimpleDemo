@@ -24,4 +24,9 @@
 
 #import "GlobalInstance.h"
 
+#import <Masonry.h>
+
+#import "BaseViewController.h"
+#import "BaseHeaderViewController.h"
+
 #endif /* SimpleApp_pch */

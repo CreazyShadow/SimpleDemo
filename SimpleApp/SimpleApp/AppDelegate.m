@@ -85,7 +85,7 @@
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"DrawViewController";
+    NSString *className = @"TimerAViewController";
     switch (type) {
         case 0:
         {

@@ -26,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"1",nil,@"2",@"b",@"3",@"c",nil];
+
 }
 
 - (void)didReceiveMemoryWarning {

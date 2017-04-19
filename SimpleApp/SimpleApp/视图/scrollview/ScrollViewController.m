@@ -29,15 +29,14 @@
     self.scrollview = [[RecycleScrollView alloc] initWithFrame:CGRectMake(0, 250, kScreenWidth, 200)];
     _scrollview.backgroundColor = [UIColor purpleColor];
     _scrollview.dataSource = self;
-    [self.view addSubview:_scrollview];   
+//    [_scrollview registClass:[TextItem class] forItemIdentify:@"textitem"];
+    [self.view addSubview:_scrollview];
 }
 
 #pragma mark - event
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    _scrollview.layer.transform = CATransform3DMakeRotation(M_PI_2 * 2, 0, 1, 0);
-    BOOL isC = [self isKindOfClass:[UIViewController class]];
-    NSLog(@"---");
 }
 
 #pragma RecycleScrollViewDataSource
@@ -46,12 +45,12 @@
     return 5;
 }
 
-- (RecyleScrollViewItem *)recycleScrollView:(RecycleScrollView *)scrollview itemForPage:(NSInteger)page {
-    TextItem *item = [[TextItem alloc] init];
-    item.layer.borderColor = [UIColor orangeColor].CGColor;
-    item.layer.borderWidth = 1;
-    [item render:page];
-    return item;
-}
+//- (RecyleScrollViewItem *)recycleScrollView:(RecycleScrollView *)scrollview itemForPage:(NSInteger)page {
+//    TextItem *item = (TextItem *)[scrollview dequeueReusableItemWithIdentifier:@"textitem"];
+//    item.layer.borderColor = [UIColor orangeColor].CGColor;
+//    item.layer.borderWidth = 1;
+//    [item render:page];
+//    return item;
+//}
 
 @end

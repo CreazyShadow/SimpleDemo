@@ -8,6 +8,7 @@
 
 #import "RecycleScrollView.h"
 #import "RecyleScrollViewItem.h"
+#import "RecycleItemsPool.h"
 
 static NSInteger const kInitializedItemsCount = 3;
 static CGFloat const kCriticalPrecent = 0.7;
@@ -16,7 +17,7 @@ static CGFloat const kCriticalPrecent = 0.7;
 
 @property (nonatomic, strong) UIScrollView *scrollview;
 
-@property (nonatomic, strong) NSMutableDictionary<NSString *, RecyleScrollViewItem *> *itemsPool;
+@property (nonatomic, strong) RecycleItemsPool *itemsPool;
 
 @end
 
@@ -28,7 +29,7 @@ static CGFloat const kCriticalPrecent = 0.7;
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         
-        self.itemsPool = [[NSMutableDictionary alloc] init];
+        self.itemsPool = [[RecycleItemsPool alloc] init];
         
         self.scrollview = [[UIScrollView alloc] initWithFrame:self.bounds];
         [self addSubview:_scrollview];
@@ -41,49 +42,52 @@ static CGFloat const kCriticalPrecent = 0.7;
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    [self initializedItems];
+    [self loadItems:NO];
 }
 
 #pragma mark - init
 
-- (void)initializedItems {
-    for (int i = 0; i < kInitializedItemsCount; i++) {
-        RecyleScrollViewItem *item = [self itemForDataSource:i];
-        if (!item) {
-            item = [RecyleScrollViewItem new];
-        }
-        
-        [self.scrollview addSubview:item];
-        item.frame = CGRectMake(self.width * i, 0, self.width, self.height);
+- (void)loadItems:(BOOL)isReloadData {
+    
+    NSInteger didLoadedItemsCount = [self didLoadedItemCount];
+    if (didLoadedItemsCount >= kInitializedItemsCount) {
+        return;
     }
     
+    CGFloat startX = didLoadedItemsCount * self.width;
     NSInteger count = [self pagesCount];
-    _scrollview.contentSize = CGSizeMake(self.width * (kInitializedItemsCount > count ? count : kInitializedItemsCount) , 0);
+    NSInteger realCount = count > kInitializedItemsCount ? kInitializedItemsCount : count;
+    
+    if (realCount <= didLoadedItemsCount) { //items比较小
+        return;
+    } else { //items比以前多
+        realCount -= didLoadedItemsCount;
+    }
+    
+    for (int i = 0; i < realCount; i++) {
+        RecyleScrollViewItem *item = [self itemForDataSource:i];
+        NSAssert(item, @"item no allow nil");
+        
+        [self.scrollview addSubview:item];
+        item.frame = CGRectMake(self.width * i + startX, 0, self.width, self.height);
+    }
+    
+    _scrollview.contentSize = CGSizeMake(self.width * realCount , 0);
 }
 
 #pragma mark - public
 
 - (void)reloadData {
-    [self initializedItems];
+    _scrollview.contentOffset = CGPointZero;
+    [self loadItems:YES];
 }
 
 - (void)registClass:(Class)itemClass forItemIdentify:(NSString *)identify {
-    if (![self.itemsPool.allKeys containsObject:identify]) {
-        
-    }
+    [self.itemsPool registClass:itemClass identify:identify];
 }
 
 - (RecyleScrollViewItem *)dequeueReusableItemWithIdentifier:(NSString *)identify {
-    for (RecyleScrollViewItem *item in self.itemsPool) {
-        if ([item.identify isEqualToString:identify]) {
-//            [self.itemsPool removeObject:item];
-            return item;
-        }
-    }
-    
-    RecyleScrollViewItem *item = [[RecyleScrollViewItem alloc] init];
-//    [self.itemsPool addObject:item];
-    return item;
+    return [self.itemsPool dequeueResuableItemWithIdentify:identify];
 }
 
 #pragma mark - 复用
@@ -95,13 +99,12 @@ static CGFloat const kCriticalPrecent = 0.7;
     
     if (percent > oldPercent) { //向后滑动
         
-        if (_currentPage + 1 >= [self pagesCount]) {
+        if (_currentPage + 2 >= [self pagesCount]) {
             return;
         }
 
         if (current > floor(oldPercent)) {
             _currentPage += 1;
-            
         }
         
         oldPercent = percent;
@@ -127,6 +130,8 @@ static CGFloat const kCriticalPrecent = 0.7;
             [self scroll:YES];
         }
     }
+    
+    NSLog(@"---current:%ld", _currentPage);
 }
 
 - (void)scroll:(BOOL)isBefore {
@@ -167,6 +172,14 @@ static CGFloat const kCriticalPrecent = 0.7;
     return nil;
 }
 
+- (Class)itemType {
+    if ([self.dataSource respondsToSelector:@selector(itemClassInRecycleScrollView)]) {
+        return [self.dataSource itemClassInRecycleScrollView];
+    }
+    
+    return nil;
+}
+
 - (NSInteger)pagesCount {
     if ([self.dataSource respondsToSelector:@selector(numberOfPagesInRecyleScrollView)]) {
         return [self.dataSource numberOfPagesInRecyleScrollView];
@@ -175,7 +188,21 @@ static CGFloat const kCriticalPrecent = 0.7;
     return 0;
 }
 
+- (NSInteger)didLoadedItemCount {
+    NSInteger i = 0;
+    for (UIView *item in self.scrollview.subviews) {
+        if ([item isKindOfClass:[RecyleScrollViewItem class]]) {
+            i++;
+        }
+    }
+    
+    return i;
+}
+
 - (void)renderNextItem:(RecyleScrollViewItem *)item isBefore:(BOOL)isBefore {
+    [item removeFromSuperview];
+    [self.itemsPool cacheItem:item];
+    
     RecyleScrollViewItem *new = [self itemForDataSource:isBefore ? _currentPage - 1 : _currentPage + 2];
     new.frame = item.frame;
     [self.scrollview addSubview:new];

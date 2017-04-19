@@ -85,7 +85,7 @@
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"Class_Meta_ViewController";
+    NSString *className = @"ScrollViewController";
     switch (type) {
         case 0:
         {

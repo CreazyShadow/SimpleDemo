@@ -57,6 +57,7 @@
 		7359983A1EA6ECA400427C5B /* block_realize.mm in Sources */ = {isa = PBXBuildFile; fileRef = 735998381EA6ECA400427C5B /* block_realize.mm */; };
 		7359983E1EA6F64A00427C5B /* Animation_super.m in Sources */ = {isa = PBXBuildFile; fileRef = 7359983D1EA6F64A00427C5B /* Animation_super.m */; };
 		735998411EA6F6C900427C5B /* Class_Meta_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735998401EA6F6C900427C5B /* Class_Meta_ViewController.m */; };
+		735998441EA7142700427C5B /* RecycleItemsPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 735998431EA7142700427C5B /* RecycleItemsPool.m */; };
 		735A0D361E94F8FF00053ACB /* xxx.doc in Resources */ = {isa = PBXBuildFile; fileRef = 735A0D351E94F8FF00053ACB /* xxx.doc */; };
 		735ADFC41E8363CB00F79620 /* InteractionModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735ADFC31E8363CB00F79620 /* InteractionModuleViewController.m */; };
 		735ADFDA1E836ABB00F79620 /* NavigationAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735ADFD91E836ABB00F79620 /* NavigationAnimationViewController.m */; };
@@ -256,6 +257,8 @@
 		7359983D1EA6F64A00427C5B /* Animation_super.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animation_super.m; sourceTree = "<group>"; };
 		7359983F1EA6F6C900427C5B /* Class_Meta_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Class_Meta_ViewController.h; sourceTree = "<group>"; };
 		735998401EA6F6C900427C5B /* Class_Meta_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Class_Meta_ViewController.m; sourceTree = "<group>"; };
+		735998421EA7142700427C5B /* RecycleItemsPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecycleItemsPool.h; sourceTree = "<group>"; };
+		735998431EA7142700427C5B /* RecycleItemsPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecycleItemsPool.m; sourceTree = "<group>"; };
 		735A0D351E94F8FF00053ACB /* xxx.doc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xxx.doc; sourceTree = "<group>"; };
 		735ADFC21E8363CB00F79620 /* InteractionModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionModuleViewController.h; sourceTree = "<group>"; };
 		735ADFC31E8363CB00F79620 /* InteractionModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionModuleViewController.m; sourceTree = "<group>"; };
@@ -510,8 +513,10 @@
 				735998291EA5B06C00427C5B /* RecycleScrollView.m */,
 				7359982E1EA5E9CC00427C5B /* RecyleScrollViewItem.h */,
 				7359982F1EA5E9CC00427C5B /* RecyleScrollViewItem.m */,
-				735998311EA5EC1D00427C5B /* TextItem.h */,
+				735998421EA7142700427C5B /* RecycleItemsPool.h */,
+				735998431EA7142700427C5B /* RecycleItemsPool.m */,
 				735998321EA5EC1D00427C5B /* TextItem.m */,
+				735998311EA5EC1D00427C5B /* TextItem.h */,
 			);
 			path = scrollview;
 			sourceTree = "<group>";
@@ -1473,6 +1478,7 @@
 				73A8B72B1E8E551B00303C4D /* Bview.m in Sources */,
 				73BA34C81DB12E65007E9FC1 /* StructAndClass.m in Sources */,
 				735EDAB01E1CC77F002962DB /* SuperEventView.m in Sources */,
+				735998441EA7142700427C5B /* RecycleItemsPool.m in Sources */,
 				73BA34D41DB12E65007E9FC1 /* SecondViewController.m in Sources */,
 				731C127F1E8512970034F361 /* TestArithmeticViewController.m in Sources */,
 				73B5A0611DC7110200477323 /* TestCustomViewController.m in Sources */,

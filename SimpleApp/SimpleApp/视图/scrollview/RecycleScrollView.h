@@ -19,15 +19,19 @@
 
 - (RecyleScrollViewItem *)recycleScrollView:(RecycleScrollView *)scrollview itemForPage:(NSInteger)page;
 
+- (Class)itemClassInRecycleScrollView;
+
+- (void)renderingItem:(RecyleScrollViewItem *)item forPage:(NSInteger)page;
+
 @end
 
 @interface RecycleScrollView : UIView
 
 @property (nonatomic, weak) id<RecycleScrollViewDataSource> dataSource;
 
-- (void)registClass:(Class)itemClass forItemIdentify:(NSString *)identify;
-
-- (RecyleScrollViewItem *)dequeueReusableItemWithIdentifier:(NSString *)identify;
+//- (void)registClass:(Class)itemClass forItemIdentify:(NSString *)identify;
+//
+//- (RecyleScrollViewItem *)dequeueReusableItemWithIdentifier:(NSString *)identify;
 
 - (void)reloadData;
 

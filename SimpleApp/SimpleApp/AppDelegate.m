@@ -33,6 +33,8 @@
 
 #import "CustomNavigationController.h"
 
+#import "MRCObject.h"
+
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
 
 @property (nonatomic, strong, readwrite) id field;
@@ -47,17 +49,15 @@
 }
 
 - (void)printArray:(NSArray *)arr {
-    NSLog(@"\n");
-    for (id obj in arr) {
-        NSLog(@"%p", obj);
-    }
+    
 }
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     //网络请求重定向
 //    [NSURLProtocol registerClass:[CustomURLProtocol class]];
-    [[SessionCustomProtocolConfiguration shareManager] openHttpProtocol];
+//    [[SessionCustomProtocolConfiguration shareManager] openHttpProtocol];
     
     //捕获crash
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
@@ -85,7 +85,7 @@
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"TimerAViewController";
+    NSString *className = @"Class_Meta_ViewController";
     switch (type) {
         case 0:
         {
@@ -182,6 +182,13 @@ void uncaughtExceptionHandler(NSException *exception){
 void handleExceptions(NSException *exception) {
     NSLog(@"exception = %@",exception);
     NSLog(@"callStackSymbols = %@",[exception callStackSymbols]);
+}
+
+#pragma mark - 推送iOS9
+
+//后台 ios7之后
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    
 }
 
 #pragma mark - 通知ios10

@@ -8,7 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ClassB.h"
+
 @interface ClassA : NSObject
+
+@property (nonatomic, copy) NSString *name;
+
+@property (nonatomic, strong) ClassB *classB;
 
 - (void)print;
 

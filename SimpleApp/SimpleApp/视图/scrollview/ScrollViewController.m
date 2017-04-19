@@ -8,9 +8,12 @@
 
 #import "ScrollViewController.h"
 
-@interface ScrollViewController ()
+#import "RecycleScrollView.h"
+#import "TextItem.h"
 
-@property (nonatomic, strong) UIScrollView *scrollview;
+@interface ScrollViewController () <RecycleScrollViewDataSource>
+
+@property (nonatomic, strong) RecycleScrollView *scrollview;
 
 @end
 
@@ -21,49 +24,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 100, kScreenWidth, 300)];
-    [self.view addSubview:_scrollview];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
-    _scrollview.contentSize = CGSizeMake(kScreenWidth, 0);
-    _scrollview.backgroundColor = [UIColor orangeColor];
-    
-    [self setupSubviews];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
-#pragma mark - init subviews
-
-- (void)setupSubviews {
-    UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(-100, 0, 100, 30)];
-    lbl.backgroundColor = [UIColor redColor];
-    [_scrollview addSubview:lbl];
-    
-    UILabel *l2 = [[UILabel alloc] initWithFrame:CGRectMake(100, 30, 100, 30)];
-    l2.backgroundColor = [UIColor greenColor];
-    [_scrollview addSubview:l2];
-    
-    UILabel *l3 = [[UILabel alloc] initWithFrame:CGRectMake(250, 50, 100, 30)];
-    l3.backgroundColor = [UIColor yellowColor];
-    [_scrollview addSubview:l3];
+    self.scrollview = [[RecycleScrollView alloc] initWithFrame:CGRectMake(0, 250, kScreenWidth, 200)];
+    _scrollview.backgroundColor = [UIColor purpleColor];
+    _scrollview.dataSource = self;
+    [self.view addSubview:_scrollview];   
 }
 
 #pragma mark - event
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    _scrollview.layer.transform = CATransform3DMakeRotation(M_PI_2 * 2, 0, 1, 0);
+//    _scrollview.layer.transform = CATransform3DMakeRotation(M_PI_2 * 2, 0, 1, 0);
+    BOOL isC = [self isKindOfClass:[UIViewController class]];
+    NSLog(@"---");
 }
 
-#pragma mark - network
+#pragma RecycleScrollViewDataSource
 
-#pragma mark - private
+- (NSInteger)numberOfPagesInRecyleScrollView {
+    return 5;
+}
 
-#pragma mark - getter & setter
+- (RecyleScrollViewItem *)recycleScrollView:(RecycleScrollView *)scrollview itemForPage:(NSInteger)page {
+    TextItem *item = [[TextItem alloc] init];
+    item.layer.borderColor = [UIColor orangeColor].CGColor;
+    item.layer.borderWidth = 1;
+    [item render:page];
+    return item;
+}
 
 @end

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7373D2EB1CD0C1A100332D91 /* libSimpleModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7373D2EA1CD0C1A100332D91 /* libSimpleModel.a */; };
+		73A8B7021E8D024500303C4D /* RayBaseSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A8B7011E8D024500303C4D /* RayBaseSessionManager.m */; };
+		73A8B7481E8F449A00303C4D /* libPods-SimpleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A8B7471E8F449A00303C4D /* libPods-SimpleApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,9 @@
 /* Begin PBXFileReference section */
 		7373D2C81CD0B7DE00332D91 /* libSimpleServices.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSimpleServices.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7373D2EA1CD0C1A100332D91 /* libSimpleModel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSimpleModel.a; path = "../Debug-iphonesimulator/libSimpleModel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73A8B7001E8D024500303C4D /* RayBaseSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RayBaseSessionManager.h; sourceTree = "<group>"; };
+		73A8B7011E8D024500303C4D /* RayBaseSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RayBaseSessionManager.m; sourceTree = "<group>"; };
+		73A8B7471E8F449A00303C4D /* libPods-SimpleApp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-SimpleApp.a"; path = "../../../../../../Library/Developer/Xcode/DerivedData/SimpleApp-cswqutjhlfbmkqbsnbwnxbznehzs/Build/Products/Debug-iphonesimulator/libPods-SimpleApp.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A8B7481E8F449A00303C4D /* libPods-SimpleApp.a in Frameworks */,
 				7373D2EB1CD0C1A100332D91 /* libSimpleModel.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +73,7 @@
 		7373D2E91CD0C03C00332D91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				73A8B7471E8F449A00303C4D /* libPods-SimpleApp.a */,
 				7373D2EA1CD0C1A100332D91 /* libSimpleModel.a */,
 			);
 			path = Frameworks;
@@ -83,6 +90,8 @@
 		7373D3021CD0C32B00332D91 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				73A8B7001E8D024500303C4D /* RayBaseSessionManager.h */,
+				73A8B7011E8D024500303C4D /* RayBaseSessionManager.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -143,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A8B7021E8D024500303C4D /* RayBaseSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

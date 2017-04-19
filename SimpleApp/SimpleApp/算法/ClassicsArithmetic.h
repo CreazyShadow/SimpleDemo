@@ -10,7 +10,6 @@
 
 @interface ClassicsArithmetic : NSObject
 
-
 /**
  @param total 总人数
  @param range 间隔人数 当间隔为0时range：1 当间隔为1时，range：2

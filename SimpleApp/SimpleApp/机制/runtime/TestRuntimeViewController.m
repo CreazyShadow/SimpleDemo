@@ -31,16 +31,7 @@
 #pragma mark - event
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [self testAddMethod];
-//    [self testDogFlyProperty];
-//    [self testAddMethodWithRuntime];
-    [self swizzleFunction];
-    
-    ClassA *a = [[ClassA alloc] init];
-    [a print];
-    
-//    ClassB *b = [[ClassB alloc] init];
-//    [b print];
+    [self allKeyPath:[NSString class]];
 }
 
 #pragma mark - addMethod : 消息转发和添加
@@ -78,6 +69,20 @@
     Method b = class_getInstanceMethod([ClassB class], NSSelectorFromString(@"print"));
     
     method_exchangeImplementations(a, b);
+}
+
+#pragma mark - 属性
+
+- (NSArray *)allKeyPath:(Class)cls {
+    unsigned int count;
+    const objc_property_t *props = class_copyPropertyList(cls, &count);
+    for (int i = 0; i < count; i++) {
+        const char *name = property_getName(props[i]);
+        Class sub = NSClassFromString([NSString stringWithUTF8String:name]);
+        [self allKeyPath:sub];
+    }
+    
+    return nil;
 }
 
 @end

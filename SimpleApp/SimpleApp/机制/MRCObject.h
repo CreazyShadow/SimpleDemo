@@ -1,16 +1,14 @@
 //
-//  ClassB.h
+//  MRCObject.h
 //  SimpleApp
 //
-//  Created by wuyp on 2017/2/23.
+//  Created by wuyp on 2017/4/18.
 //  Copyright © 2017年 wuyp. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface ClassB : NSObject
-
-@property (nonatomic, copy) NSString *pwd;
+@interface MRCObject : NSObject
 
 - (void)print;
 

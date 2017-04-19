@@ -34,6 +34,10 @@
 		73A041261DF7A7E100C44D22 /* RaySingleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A041251DF7A7E100C44D22 /* RaySingleCommand.m */; };
 		73A041291DF7AA3C00C44D22 /* UIButton+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A041281DF7AA3C00C44D22 /* UIButton+Signal.m */; };
 		73A042421DF93A6600C44D22 /* UIImage+Subimage.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A042411DF93A6600C44D22 /* UIImage+Subimage.m */; };
+		73A8B78D1E8F8C6B00303C4D /* LoadDataChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 73A8B78B1E8F8C6B00303C4D /* LoadDataChart.h */; };
+		73A8B78E1E8F8C6B00303C4D /* LoadDataChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A8B78C1E8F8C6B00303C4D /* LoadDataChart.m */; };
+		73A8B7911E8F8C7E00303C4D /* LoadChartDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 73A8B78F1E8F8C7E00303C4D /* LoadChartDataSource.h */; };
+		73A8B7921E8F8C7E00303C4D /* LoadChartDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A8B7901E8F8C7E00303C4D /* LoadChartDataSource.m */; };
 		73DFA7F21E0BAB0600CF2D84 /* UIView+Shape.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DFA7F11E0BAB0600CF2D84 /* UIView+Shape.m */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +119,10 @@
 		73A041281DF7AA3C00C44D22 /* UIButton+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Signal.m"; sourceTree = "<group>"; };
 		73A042401DF93A6600C44D22 /* UIImage+Subimage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Subimage.h"; sourceTree = "<group>"; };
 		73A042411DF93A6600C44D22 /* UIImage+Subimage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Subimage.m"; sourceTree = "<group>"; };
+		73A8B78B1E8F8C6B00303C4D /* LoadDataChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadDataChart.h; sourceTree = "<group>"; };
+		73A8B78C1E8F8C6B00303C4D /* LoadDataChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadDataChart.m; sourceTree = "<group>"; };
+		73A8B78F1E8F8C7E00303C4D /* LoadChartDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadChartDataSource.h; sourceTree = "<group>"; };
+		73A8B7901E8F8C7E00303C4D /* LoadChartDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadChartDataSource.m; sourceTree = "<group>"; };
 		73DFA7F01E0BAB0600CF2D84 /* UIView+Shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shape.h"; sourceTree = "<group>"; };
 		73DFA7F11E0BAB0600CF2D84 /* UIView+Shape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shape.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +171,7 @@
 		732B3B6B1DB9A427000A6A25 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				73A8B78A1E8F8C3900303C4D /* LoadDataChart */,
 				732B3B6C1DB9A427000A6A25 /* Category */,
 				732B3B6F1DB9A427000A6A25 /* CircleLayer.h */,
 				732B3B701DB9A427000A6A25 /* CircleLayer.m */,
@@ -321,6 +330,17 @@
 			path = Signal;
 			sourceTree = "<group>";
 		};
+		73A8B78A1E8F8C3900303C4D /* LoadDataChart */ = {
+			isa = PBXGroup;
+			children = (
+				73A8B78B1E8F8C6B00303C4D /* LoadDataChart.h */,
+				73A8B78C1E8F8C6B00303C4D /* LoadDataChart.m */,
+				73A8B78F1E8F8C7E00303C4D /* LoadChartDataSource.h */,
+				73A8B7901E8F8C7E00303C4D /* LoadChartDataSource.m */,
+			);
+			path = LoadDataChart;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -328,7 +348,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A8B7911E8F8C7E00303C4D /* LoadChartDataSource.h in Headers */,
 				735ADFBF1E83624D00F79620 /* TestViewController_1.h in Headers */,
+				73A8B78D1E8F8C6B00303C4D /* LoadDataChart.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73A8B7921E8F8C7E00303C4D /* LoadChartDataSource.m in Sources */,
 				732B3B771DB9A427000A6A25 /* UIView+Extension.m in Sources */,
 				7301A1991DF54D2700274358 /* NSObject+Single.m in Sources */,
 				730A348A1CF46497001847E0 /* URLResult.m in Sources */,
@@ -466,6 +489,7 @@
 				731A048C1CD30FBA00BFA726 /* NSError+URLRouter.m in Sources */,
 				73A042421DF93A6600C44D22 /* UIImage+Subimage.m in Sources */,
 				732B3B761DB9A427000A6A25 /* FileManager.m in Sources */,
+				73A8B78E1E8F8C6B00303C4D /* LoadDataChart.m in Sources */,
 				732B3B781DB9A427000A6A25 /* CircleLayer.m in Sources */,
 				735ADFC01E83624D00F79620 /* TestViewController_1.m in Sources */,
 				731A04A41CD3103A00BFA726 /* URLOpenOptions.m in Sources */,

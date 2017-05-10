@@ -42,7 +42,7 @@
 #pragma mark - event
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self semaphore];
+    [self gcd_concurrentQueue_searilQueue];
 }
 
 - (void)invocationDoSomething:(id)data {
@@ -81,6 +81,23 @@
             dispatch_semaphore_signal(sem);
         }];
     }
+}
+
+#pragma mark - gcd死锁
+
+- (void)gcd_concurrentQueue_searilQueue {
+    
+    dispatch_queue_t con = dispatch_queue_create("con-current", DISPATCH_QUEUE_CONCURRENT);
+    
+    NSLog(@"1");
+    dispatch_async(con, ^{
+        NSLog(@"2---%@", [NSThread mainThread]);
+        dispatch_sync(con, ^{
+            NSLog(@"3---%@", [NSThread mainThread]);
+        });
+        NSLog(@"4");
+    });
+    NSLog(@"5");
 }
 
 #pragma mark - network

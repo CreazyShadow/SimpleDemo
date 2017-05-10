@@ -22,7 +22,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     //    [self threadAlive];
-    [self threadRunTimer];
+//    [self threadRunTimer];
+    [self testCrash];
 }
 
 #pragma mark - 线程保活
@@ -52,8 +53,14 @@
 #pragma mark - RunLoop
 
 - (void)testrunloop {
-    CFRunLoopSourceRef source;
-//    CFRunLoopSourceSignal(source)
+    
+}
+
+#pragma mark - runloop crash
+
+- (void)testCrash {
+    id arr = @[@1, @2, @3];
+    [arr addObject:@4];
 }
 
 @end

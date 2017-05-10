@@ -9,6 +9,7 @@
 #import "TestArithmeticViewController.h"
 
 #import "ClassicsArithmetic.h"
+#import "SortHelper.h"
 
 @interface TestArithmeticViewController ()
 
@@ -38,8 +39,12 @@
 #pragma mark - event
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSInteger index = [ClassicsArithmetic selectedIndexWithTotalCount:100 range:1];
-    NSLog(@"----select index:%ld", index);
+    NSArray *arr = @[@19, @28, @71, @26, @15, @34, @53, @22, @31];
+    arr = [SortHelper quickSort:arr withCompare:^NSComparisonResult(id obj1, id obj2) {
+        return [obj1 intValue] > [obj2 intValue] ? NSOrderedAscending : NSOrderedDescending;
+    }];
+    
+    NSLog(@"%@", arr);
 }
 
 #pragma mark - network

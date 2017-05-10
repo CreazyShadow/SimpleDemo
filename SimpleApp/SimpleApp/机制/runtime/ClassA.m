@@ -8,10 +8,18 @@
 
 #import "ClassA.h"
 
+#import <objc/runtime.h>
+
+#define __keyN(i) const void *key_i = &key_i
+
 @implementation ClassA
+{
+    NSMutableDictionary *_d;
+}
 
 - (void)print {
     NSLog(@"----class A");
 }
+
 
 @end

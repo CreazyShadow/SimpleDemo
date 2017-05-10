@@ -26,7 +26,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self syncBlock];
+    [self testBarrier];
 }
 
 #pragma mark - 多个列队同步控制
@@ -187,6 +187,30 @@
         dispatch_semaphore_wait(single3, DISPATCH_TIME_FOREVER);
         NSLog(@"----thread3---end");
     }];
+}
+
+#pragma mark - barr
+
+- (void)testBarrier {
+    dispatch_queue_t queue = dispatch_queue_create(0, DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+        [NSThread sleepForTimeInterval:1];
+        NSLog(@"----1");
+    });
+    
+    dispatch_async(queue, ^{
+        [NSThread sleepForTimeInterval:2];
+        NSLog(@"----2");
+    });
+    
+    dispatch_barrier_async(queue, ^{
+        NSLog(@"-----4");
+        [NSThread sleepForTimeInterval:1];
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"----3");
+    });
 }
 
 @end

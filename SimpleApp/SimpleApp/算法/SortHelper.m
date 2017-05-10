@@ -1,4 +1,4 @@
-//
+
 //  SortHelper.m
 //  SimpleApp
 //
@@ -8,7 +8,15 @@
 
 #import "SortHelper.h"
 
+#define exchange(source, left, right) {\
+    id temp = source[left];\
+    source[left] = source[right];\
+    source[right] = temp;\
+}
+
 static NSComparisonResult(^_compare)(id obj1, id obj2);
+
+static int count;
 
 @implementation SortHelper
 
@@ -22,11 +30,74 @@ static NSComparisonResult(^_compare)(id obj1, id obj2);
     return ^SortHelper *{ return instance; };
 }
 
+#pragma mark - 快速排序
+
++ (NSArray *)quickSort:(NSArray *)source withCompare:(compareBlock)compare {
+    if (!compare) {
+        return source;
+    }
+    
+    NSMutableArray *result = [source mutableCopy];
+    [self quickSort:result left:0 right:result.count - 1 compare:compare];
+    
+    return [result copy];
+}
+
++ (void)quickSort:(NSMutableArray *)source left:(NSInteger)left right:(NSInteger)right compare:(compareBlock)block {
+    if (left >= right) {
+        return;
+    }
+    
+    NSInteger pivot_index = [self partition:source left:left right:right compare:block];
+    [self quickSort:source left:left right:pivot_index - 1 compare:block];
+    [self quickSort:source left:pivot_index + 1 right:right compare:block];
+}
+
++ (NSInteger)partition:(NSMutableArray *)source left:(NSInteger)left right:(NSInteger)right compare:(compareBlock)compare {
+    id pivot = source[right];
+    NSInteger tail = left;
+    for (NSInteger i = left; i <= right; i++) {
+        NSComparisonResult temp = compare(source[i], pivot);
+        if (temp == NSOrderedDescending || temp == NSOrderedSame) {
+            if (i == tail) {
+                tail++;
+                continue;
+            }
+            
+            exchange(source, tail, i);
+            tail++;
+        }
+    }
+    
+    return tail;
+}
+
 #pragma mark - 冒泡排序
 
 #pragma mark - 选择排序
 
 #pragma mark - 插入排序
+
++ (NSArray *)selectSort:(NSArray *)source withCompare:(compareBlock)compare {
+    
+    if (!compare) {
+        return source;
+    }
+    
+    NSMutableArray *result = [source mutableCopy];
+    for (int i = 1; i < result.count; i++) {
+        int j = i - 1;
+        id temp = result[i];
+        while (j >= 0 && compare(temp, result[j]) == NSOrderedAscending) {
+            result[j + 1] = result[j];
+            j--;
+        }
+        
+        result[j + 1] = temp;
+    }
+    
+    return [result copy];
+}
 
 #pragma mark - 归并排序
 

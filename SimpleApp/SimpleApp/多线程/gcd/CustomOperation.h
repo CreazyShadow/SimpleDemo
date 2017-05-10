@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+
+@protocol UIText <NSObject>
+
+
+
+@end
+
 @interface CustomOperation : NSOperation
 
 @end

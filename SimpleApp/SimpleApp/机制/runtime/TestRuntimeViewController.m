@@ -31,7 +31,7 @@
 #pragma mark - event
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self allKeyPath:[NSString class]];
+//    [self allKeyPath:[NSString class]];
 }
 
 #pragma mark - addMethod : 消息转发和添加

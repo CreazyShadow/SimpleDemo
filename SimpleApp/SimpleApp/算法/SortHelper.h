@@ -8,7 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NSComparisonResult(^compareBlock)(id obj1, id obj2);
+
 @interface SortHelper : NSObject
+
++ (NSArray *)selectSort:(NSArray *)source withCompare:(compareBlock)compare;
+
++ (NSArray *)quickSort:(NSArray *)source withCompare:(compareBlock)compare;
 
 + (NSArray *)mergerSort:(NSArray *)arr withCompareBlock:(NSComparisonResult(^)(id obj1, id obj2))block;
 

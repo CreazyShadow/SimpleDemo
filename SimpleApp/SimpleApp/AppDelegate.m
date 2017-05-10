@@ -34,6 +34,7 @@
 #import "CustomNavigationController.h"
 
 #import "MRCObject.h"
+#import "RunLoopUtility.h"
 
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
 
@@ -51,7 +52,6 @@
 - (void)printArray:(NSArray *)arr {
     
 }
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -85,7 +85,7 @@
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"ScrollViewController";
+    NSString *className = @"LockViewController";
     switch (type) {
         case 0:
         {
@@ -121,15 +121,6 @@
     return tbc;
 }
 
-// 设置一个C函数，用来接收崩溃信息
-void uncaughtExceptionHandler(NSException *exception){
-    // 可以通过exception对象获取一些崩溃信息，我们就是通过这些崩溃信息来进行解析的，例如下面的symbols数组就是我们的崩溃堆栈。
-    NSArray *symbols = [exception callStackSymbols];
-    NSString *reason = [exception reason];
-    NSString *name = [exception name];
-    NSLog(@"崩溃信息：%@ %@ %@", symbols, reason, name);
-}
-
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -163,6 +154,8 @@ void uncaughtExceptionHandler(NSException *exception){
     return YES;
 }
 
+#pragma mark - Crash收集
+
 - (void)initHandler {
     
     struct sigaction newSignalAction;
@@ -183,6 +176,18 @@ void handleExceptions(NSException *exception) {
     NSLog(@"exception = %@",exception);
     NSLog(@"callStackSymbols = %@",[exception callStackSymbols]);
 }
+
+// 设置一个C函数，用来接收崩溃信息
+void uncaughtExceptionHandler(NSException *exception){
+    // 可以通过exception对象获取一些崩溃信息，我们就是通过这些崩溃信息来进行解析的，例如下面的symbols数组就是我们的崩溃堆栈。
+    NSArray *symbols = [exception callStackSymbols];
+    NSString *reason = [exception reason];
+    NSString *name = [exception name];
+    NSLog(@"崩溃信息：%@ %@ %@", symbols, reason, name);
+    
+    [RunLoopUtility crashRecycle];
+}
+
 
 #pragma mark - 推送iOS9
 

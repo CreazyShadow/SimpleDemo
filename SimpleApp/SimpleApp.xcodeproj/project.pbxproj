@@ -24,6 +24,9 @@
 		731C12791E8504200034F361 /* NSURLProtocol+WebKitSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 731C12781E8504200034F361 /* NSURLProtocol+WebKitSupport.m */; };
 		731C127C1E850BA20034F361 /* ClassicsArithmetic.m in Sources */ = {isa = PBXBuildFile; fileRef = 731C127B1E850BA20034F361 /* ClassicsArithmetic.m */; };
 		731C127F1E8512970034F361 /* TestArithmeticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731C127E1E8512970034F361 /* TestArithmeticViewController.m */; };
+		731C661C1EB86EC8008DF9D1 /* NotificationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 731C661B1EB86EC8008DF9D1 /* NotificationObject.m */; };
+		731C66261EBB2C38008DF9D1 /* RunLoopUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 731C66251EBB2C38008DF9D1 /* RunLoopUtility.m */; };
+		731C664D1EC15791008DF9D1 /* LockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731C664C1EC15791008DF9D1 /* LockViewController.m */; };
 		731DAD081E7A7E7E004E5F8D /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731DAD071E7A7E7E004E5F8D /* ScrollViewController.m */; };
 		731DAD0D1E7B6EC4004E5F8D /* UIScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731DAD0C1E7B6EC4004E5F8D /* UIScreenViewController.m */; };
 		731DAD101E7B6ED1004E5F8D /* CustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 731DAD0F1E7B6ED1004E5F8D /* CustomWindow.m */; };
@@ -42,6 +45,9 @@
 		732B50821E8B4602006F2677 /* TimerBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B50811E8B4602006F2677 /* TimerBViewController.m */; };
 		732B50851E8B489F006F2677 /* BaseHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B50841E8B489F006F2677 /* BaseHeaderViewController.m */; };
 		732B50881E8B567B006F2677 /* RayTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B50871E8B567B006F2677 /* RayTimer.m */; };
+		732D80351EB42E3D0003FD18 /* ANotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732D80341EB42E3D0003FD18 /* ANotificationViewController.m */; };
+		732D80381EB42E480003FD18 /* BNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732D80371EB42E480003FD18 /* BNotificationViewController.m */; };
+		732D803B1EB435D90003FD18 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 732D803A1EB435D90003FD18 /* BaseView.m */; };
 		733C26331DD42213005FF7AE /* ProductSliderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 733C26311DD42213005FF7AE /* ProductSliderTableViewCell.m */; };
 		733C26341DD42213005FF7AE /* ProductSliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 733C26321DD42213005FF7AE /* ProductSliderTableViewCell.xib */; };
 		7340660A1E6CF82800E4E98B /* PushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 734066091E6CF82800E4E98B /* PushManager.m */; };
@@ -58,6 +64,8 @@
 		7359983E1EA6F64A00427C5B /* Animation_super.m in Sources */ = {isa = PBXBuildFile; fileRef = 7359983D1EA6F64A00427C5B /* Animation_super.m */; };
 		735998411EA6F6C900427C5B /* Class_Meta_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735998401EA6F6C900427C5B /* Class_Meta_ViewController.m */; };
 		735998441EA7142700427C5B /* RecycleItemsPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 735998431EA7142700427C5B /* RecycleItemsPool.m */; };
+		735998471EA73CE000427C5B /* FirstBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735998461EA73CE000427C5B /* FirstBlockViewController.m */; };
+		7359984A1EA73CE800427C5B /* SecondBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735998491EA73CE800427C5B /* SecondBlockViewController.m */; };
 		735A0D361E94F8FF00053ACB /* xxx.doc in Resources */ = {isa = PBXBuildFile; fileRef = 735A0D351E94F8FF00053ACB /* xxx.doc */; };
 		735ADFC41E8363CB00F79620 /* InteractionModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735ADFC31E8363CB00F79620 /* InteractionModuleViewController.m */; };
 		735ADFDA1E836ABB00F79620 /* NavigationAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735ADFD91E836ABB00F79620 /* NavigationAnimationViewController.m */; };
@@ -193,6 +201,12 @@
 		731C127B1E850BA20034F361 /* ClassicsArithmetic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassicsArithmetic.m; sourceTree = "<group>"; };
 		731C127D1E8512970034F361 /* TestArithmeticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestArithmeticViewController.h; sourceTree = "<group>"; };
 		731C127E1E8512970034F361 /* TestArithmeticViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestArithmeticViewController.m; sourceTree = "<group>"; };
+		731C661A1EB86EC8008DF9D1 /* NotificationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationObject.h; sourceTree = "<group>"; };
+		731C661B1EB86EC8008DF9D1 /* NotificationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationObject.m; sourceTree = "<group>"; };
+		731C66241EBB2C38008DF9D1 /* RunLoopUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunLoopUtility.h; sourceTree = "<group>"; };
+		731C66251EBB2C38008DF9D1 /* RunLoopUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunLoopUtility.m; sourceTree = "<group>"; };
+		731C664B1EC15791008DF9D1 /* LockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LockViewController.h; sourceTree = "<group>"; };
+		731C664C1EC15791008DF9D1 /* LockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LockViewController.m; sourceTree = "<group>"; };
 		731DAD061E7A7E7E004E5F8D /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
 		731DAD071E7A7E7E004E5F8D /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
 		731DAD0B1E7B6EC4004E5F8D /* UIScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIScreenViewController.h; sourceTree = "<group>"; };
@@ -229,6 +243,12 @@
 		732B50841E8B489F006F2677 /* BaseHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHeaderViewController.m; sourceTree = "<group>"; };
 		732B50861E8B567B006F2677 /* RayTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RayTimer.h; sourceTree = "<group>"; };
 		732B50871E8B567B006F2677 /* RayTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RayTimer.m; sourceTree = "<group>"; };
+		732D80331EB42E3D0003FD18 /* ANotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANotificationViewController.h; sourceTree = "<group>"; };
+		732D80341EB42E3D0003FD18 /* ANotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANotificationViewController.m; sourceTree = "<group>"; };
+		732D80361EB42E480003FD18 /* BNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNotificationViewController.h; sourceTree = "<group>"; };
+		732D80371EB42E480003FD18 /* BNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNotificationViewController.m; sourceTree = "<group>"; };
+		732D80391EB435D90003FD18 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		732D803A1EB435D90003FD18 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		7334FC331D6B271B0046DD4F /* SimpleApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleApp-Prefix.pch"; sourceTree = "<group>"; };
 		733C26301DD42213005FF7AE /* ProductSliderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSliderTableViewCell.h; sourceTree = "<group>"; };
 		733C26311DD42213005FF7AE /* ProductSliderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSliderTableViewCell.m; sourceTree = "<group>"; };
@@ -259,6 +279,10 @@
 		735998401EA6F6C900427C5B /* Class_Meta_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Class_Meta_ViewController.m; sourceTree = "<group>"; };
 		735998421EA7142700427C5B /* RecycleItemsPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecycleItemsPool.h; sourceTree = "<group>"; };
 		735998431EA7142700427C5B /* RecycleItemsPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecycleItemsPool.m; sourceTree = "<group>"; };
+		735998451EA73CE000427C5B /* FirstBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstBlockViewController.h; sourceTree = "<group>"; };
+		735998461EA73CE000427C5B /* FirstBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstBlockViewController.m; sourceTree = "<group>"; };
+		735998481EA73CE800427C5B /* SecondBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondBlockViewController.h; sourceTree = "<group>"; };
+		735998491EA73CE800427C5B /* SecondBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondBlockViewController.m; sourceTree = "<group>"; };
 		735A0D351E94F8FF00053ACB /* xxx.doc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xxx.doc; sourceTree = "<group>"; };
 		735ADFC21E8363CB00F79620 /* InteractionModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionModuleViewController.h; sourceTree = "<group>"; };
 		735ADFC31E8363CB00F79620 /* InteractionModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionModuleViewController.m; sourceTree = "<group>"; };
@@ -611,6 +635,19 @@
 			path = "定时器使用";
 			sourceTree = "<group>";
 		};
+		732D80321EB42E1E0003FD18 /* 通知和KVO */ = {
+			isa = PBXGroup;
+			children = (
+				732D80331EB42E3D0003FD18 /* ANotificationViewController.h */,
+				732D80341EB42E3D0003FD18 /* ANotificationViewController.m */,
+				732D80361EB42E480003FD18 /* BNotificationViewController.h */,
+				732D80371EB42E480003FD18 /* BNotificationViewController.m */,
+				731C661A1EB86EC8008DF9D1 /* NotificationObject.h */,
+				731C661B1EB86EC8008DF9D1 /* NotificationObject.m */,
+			);
+			path = "通知和KVO";
+			sourceTree = "<group>";
+		};
 		732F245F1E4AF2A3002D01A7 /* 消息推送 */ = {
 			isa = PBXGroup;
 			children = (
@@ -645,6 +682,10 @@
 			isa = PBXGroup;
 			children = (
 				735998381EA6ECA400427C5B /* block_realize.mm */,
+				735998451EA73CE000427C5B /* FirstBlockViewController.h */,
+				735998461EA73CE000427C5B /* FirstBlockViewController.m */,
+				735998481EA73CE800427C5B /* SecondBlockViewController.h */,
+				735998491EA73CE800427C5B /* SecondBlockViewController.m */,
 			);
 			path = block;
 			sourceTree = "<group>";
@@ -819,6 +860,8 @@
 			children = (
 				73A346AA1E67A9780030CE9D /* ThreadViewController.h */,
 				73A346AB1E67A9780030CE9D /* ThreadViewController.m */,
+				731C66241EBB2C38008DF9D1 /* RunLoopUtility.h */,
+				731C66251EBB2C38008DF9D1 /* RunLoopUtility.m */,
 			);
 			path = RunLoop;
 			sourceTree = "<group>";
@@ -898,6 +941,8 @@
 			isa = PBXGroup;
 			children = (
 				73BA347A1DB12E65007E9FC1 /* gcd */,
+				731C664B1EC15791008DF9D1 /* LockViewController.h */,
+				731C664C1EC15791008DF9D1 /* LockViewController.m */,
 			);
 			path = "多线程";
 			sourceTree = "<group>";
@@ -939,6 +984,7 @@
 		73BA34861DB12E65007E9FC1 /* 机制 */ = {
 			isa = PBXGroup;
 			children = (
+				732D80321EB42E1E0003FD18 /* 通知和KVO */,
 				7359983B1EA6F61B00427C5B /* 类和元类 */,
 				735998371EA6EC6E00427C5B /* block */,
 				732B507C1E8B44A5006F2677 /* 定时器使用 */,
@@ -1028,6 +1074,8 @@
 				739A4AFA1DD1654500CA2533 /* SubView.m */,
 				732B50831E8B489F006F2677 /* BaseHeaderViewController.h */,
 				732B50841E8B489F006F2677 /* BaseHeaderViewController.m */,
+				732D80391EB435D90003FD18 /* BaseView.h */,
+				732D803A1EB435D90003FD18 /* BaseView.m */,
 			);
 			path = baseviews;
 			sourceTree = "<group>";
@@ -1390,6 +1438,7 @@
 				735ADFE61E837AAC00F79620 /* FromViewController.m in Sources */,
 				731DAD101E7B6ED1004E5F8D /* CustomWindow.m in Sources */,
 				7359983A1EA6ECA400427C5B /* block_realize.mm in Sources */,
+				735998471EA73CE000427C5B /* FirstBlockViewController.m in Sources */,
 				735ADFE01E836ADB00F79620 /* CustomAppDelegate.m in Sources */,
 				73BA34DD1DB12E65007E9FC1 /* TestTableViewViewController.swift in Sources */,
 				732B50821E8B4602006F2677 /* TimerBViewController.m in Sources */,
@@ -1424,6 +1473,7 @@
 				732B50781E8B3DF8006F2677 /* VIewLifeCycleViewController.m in Sources */,
 				7323E9E61DBF5B9800F053F8 /* NSObject+Exception.m in Sources */,
 				7393FBCB1E49557300EF7BDF /* SendMessageClass.m in Sources */,
+				731C66261EBB2C38008DF9D1 /* RunLoopUtility.m in Sources */,
 				73F5C2971E9DBE580016A44D /* TextFieldViewController.m in Sources */,
 				73BA34D71DB12E65007E9FC1 /* ImageViewController.m in Sources */,
 				73E5BA8B1E260AA500CF3BD5 /* GestureSummaryViewController.m in Sources */,
@@ -1448,7 +1498,9 @@
 				732AE6261E5E8E710068E1CE /* ClassB.m in Sources */,
 				731C12661E84F0060034F361 /* SessionCustomeProtocol.m in Sources */,
 				731C12651E84F0060034F361 /* CustomURLProtocol.m in Sources */,
+				7359984A1EA73CE800427C5B /* SecondBlockViewController.m in Sources */,
 				73B5A0671DC717ED00477323 /* UIView+XibMananger.m in Sources */,
+				732D80381EB42E480003FD18 /* BNotificationViewController.m in Sources */,
 				73B5A05C1DC6F15200477323 /* SelectImageItemView.m in Sources */,
 				735998301EA5E9CC00427C5B /* RecyleScrollViewItem.m in Sources */,
 				735998411EA6F6C900427C5B /* Class_Meta_ViewController.m in Sources */,
@@ -1457,6 +1509,7 @@
 				731C12691E84F0060034F361 /* UIWebView+Clean.m in Sources */,
 				731DAD131E7B805F004E5F8D /* OperationQueueViewController.m in Sources */,
 				7359982A1EA5B06C00427C5B /* RecycleScrollView.m in Sources */,
+				732D803B1EB435D90003FD18 /* BaseView.m in Sources */,
 				732B50851E8B489F006F2677 /* BaseHeaderViewController.m in Sources */,
 				7393FBCE1E49559100EF7BDF /* MessageMechanismViewController.m in Sources */,
 				73BA34C61DB12E65007E9FC1 /* MasonryViewController.m in Sources */,
@@ -1466,6 +1519,7 @@
 				7340660A1E6CF82800E4E98B /* PushManager.m in Sources */,
 				735EDAB31E1CC790002962DB /* ChildEventView.m in Sources */,
 				735ADFE91E837AB500F79620 /* ToViewController.m in Sources */,
+				731C664D1EC15791008DF9D1 /* LockViewController.m in Sources */,
 				73A8B7251E8E54CD00303C4D /* TapAViewController.m in Sources */,
 				735EDAB61E1CC818002962DB /* EventViewController.m in Sources */,
 				731C12701E84F6CD0034F361 /* NaviAViewController.m in Sources */,
@@ -1480,10 +1534,12 @@
 				735EDAB01E1CC77F002962DB /* SuperEventView.m in Sources */,
 				735998441EA7142700427C5B /* RecycleItemsPool.m in Sources */,
 				73BA34D41DB12E65007E9FC1 /* SecondViewController.m in Sources */,
+				732D80351EB42E3D0003FD18 /* ANotificationViewController.m in Sources */,
 				731C127F1E8512970034F361 /* TestArithmeticViewController.m in Sources */,
 				73B5A0611DC7110200477323 /* TestCustomViewController.m in Sources */,
 				73BA34D11DB12E65007E9FC1 /* Company.m in Sources */,
 				73A3467D1E6557C60030CE9D /* ReusingCell.m in Sources */,
+				731C661C1EB86EC8008DF9D1 /* NotificationObject.m in Sources */,
 				731C12641E84F0060034F361 /* AFNViewController.m in Sources */,
 				73BA34D81DB12E65007E9FC1 /* CustomerLayer.m in Sources */,
 				7323E98F1DBD99DD00F053F8 /* DrawViewController.m in Sources */,
@@ -1662,6 +1718,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/cc/build/Debug-iphoneos",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"TEST_DEFINE=0",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

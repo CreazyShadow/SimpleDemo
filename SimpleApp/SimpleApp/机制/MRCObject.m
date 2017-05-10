@@ -8,6 +8,8 @@
 
 #import "MRCObject.h"
 
+
+
 @implementation MRCObject
 
 - (void)print {
@@ -15,6 +17,8 @@
     NSObject *obj1 = obj;
     
     NSLog(@"%lu---%lu", [obj retainCount], [obj1 retainCount]);
+    
+    
 }
 
 @end

@@ -8,9 +8,9 @@
 
 #import "BaseHeaderViewController.h"
 
-@interface BaseHeaderViewController ()
+#import "BaseView.h"
 
-@property (nonatomic, strong) NSMutableArray<UIButton *> *headerBtns;
+@interface BaseHeaderViewController ()
 
 @end
 
@@ -19,15 +19,17 @@
 #pragma mark - life cycle
 
 - (void)loadView {
-    [super loadView];
+    self.view = [[BaseView alloc] init];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor colorWithRed:(arc4random() % 256) / 255.0 green:(arc4random() % 256) / 255.0 blue:(arc4random() % 256) / 255.0 alpha:1];
-    
-    [self setupHeaderBtn];
+    __weak typeof(self) weakSelf = self;
+    ((BaseView *)self.view).clickIndex = ^(NSInteger index) {
+        [weakSelf selectHeaderAction:index];
+    };
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -50,35 +52,9 @@
 
 #pragma mark - init subviews
 
-- (void)setupHeaderBtn {
-    _headerBtns = [[NSMutableArray alloc] initWithCapacity:3];
-    
-    UIView *container = [[UIView alloc] initWithFrame:CGRectMake(0, -50, kScreenWidth, 50)];
-    container.backgroundColor = self.view.backgroundColor;
-    [self.view addSubview:container];
-    
-    for (int i = 0; i < 3; i++) {
-        UIButton *btn = [[UIButton alloc] init];
-        [btn setTitle:[NSString stringWithFormat:@"test%d", i] forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        btn.backgroundColor = [UIColor purpleColor];
-        [btn addTarget:self action:@selector(clickHeaderAction:) forControlEvents:UIControlEventTouchUpInside];
-        [container addSubview:btn];
-        [_headerBtns addObject:btn];
-    }
-    
-    [_headerBtns mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(50);
-        make.top.equalTo(container.mas_top).offset(0);
-    }];
-    [_headerBtns mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:8 leadSpacing:0 tailSpacing:0];
-}
 
 #pragma mark - event
 
-- (void)clickHeaderAction:(UIButton *)btn {
-    [self selectHeaderAction:[_headerBtns indexOfObject:btn]];
-}
 
 - (void)selectHeaderAction:(NSInteger)index {
     
@@ -93,9 +69,9 @@
 - (void)setHeaderSource:(NSArray<NSString *> *)headerSource {
     _headerSource = headerSource;
     
-    for (int i = 0; i < headerSource.count && i < _headerBtns.count; i++) {
-        [_headerBtns[i] setTitle:headerSource[i] forState:UIControlStateNormal];
-    }
+    [headerSource enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [((BaseView *)self.view) updateHeaderTitle:obj index:idx];
+    }];
+    
 }
-
 @end

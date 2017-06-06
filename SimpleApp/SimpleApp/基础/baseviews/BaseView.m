@@ -24,6 +24,7 @@
     if (self) {
         [self initSubViews];
     }
+    
     return self;
 }
 

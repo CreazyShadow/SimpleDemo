@@ -14,10 +14,20 @@
 #import "DrawViewController.h"
 
 #import <Person.h>
+#import <objc/runtime.h>
 
 #import "SubView.h"
 
 #import "MasonryViewController.h"
+
+#import "HealthInfoModel.h"
+
+#define bytesPerMB 1048576.0f
+#define bytesPerPixel 4.0f
+#define pixelsPerMB ( bytesPerMB / bytesPerPixel ) // 262144 pixels, for 4 bytes per pixel.
+#define destTotalPixels kDestImageSizeMB * pixelsPerMB
+#define tileTotalPixels kSourceImageTileSizeMB * pixelsPerMB
+#define destSeemOverlap 2.0f // the numbers of pixels to overlap the seems where tiles meet.
 
 @interface FirstViewController ()
 
@@ -34,6 +44,7 @@
 @implementation FirstViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"FirstViewController";
@@ -47,6 +58,19 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    HealthInfoModel *health = [[HealthInfoModel alloc] init];
+    id obj = health;
+    [obj print];
+    
+//    id class = objc_getClass("HealthInfoModel");
+//    unsigned int count = 0;
+//    Method *me = class_copyMethodList(class, &count);
+//    for (int i = 0; i < count; i++) {
+//        Method temp = me[i];
+//        SEL method = method_getName(temp);
+//        NSLog(@"----%@", NSStringFromSelector(method));
+//    }
+    
     
 }
 
@@ -91,7 +115,7 @@
     NSLog(@"%@", textField.text);
 }
 
-#pragma mark - getter & setter 
+#pragma mark - getter & setter
 
 - (ScrapeView *)scrapeView {
     if (!_scrapeView) {
@@ -118,7 +142,7 @@
         _button1.backgroundColor = [UIColor purpleColor];
         [_button1 setImage:[UIImage imageNamed:@"circle"] forState:UIControlStateNormal];
         _button1.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 5);
-//        [_button1 setTitle:@"button1" forState:UIControlStateNormal];
+        //        [_button1 setTitle:@"button1" forState:UIControlStateNormal];
         [_button1 addTarget:self action:@selector(clickButton1) forControlEvents:UIControlEventTouchUpInside];
     }
     
@@ -136,6 +160,5 @@
     
     return _label;
 }
-
 
 @end

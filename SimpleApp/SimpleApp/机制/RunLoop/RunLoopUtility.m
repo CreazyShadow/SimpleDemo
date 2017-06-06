@@ -25,4 +25,14 @@
     }
 }
 
+#pragma mark - 监听runloop状态
+
++ (void)observerRunloopStatus {
+    CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, kCFRunLoopEntry | kCFRunLoopBeforeWaiting | kCFRunLoopExit , YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+        NSLog(@"------%lu", activity);
+    });
+    
+    CFRunLoopAddObserver(CFRunLoopGetMain(), observer, kCFRunLoopDefaultMode);
+}
+
 @end

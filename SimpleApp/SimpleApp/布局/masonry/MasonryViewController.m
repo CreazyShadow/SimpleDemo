@@ -47,4 +47,17 @@
     }];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [UIView animateWithDuration:1 animations:^{
+        [_eventButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(150);
+            make.height.mas_equalTo(50);
+            make.top.mas_equalTo(200);
+            make.left.mas_equalTo(100);
+        }];
+        
+        [self.view layoutIfNeeded];
+    }];
+}
+
 @end

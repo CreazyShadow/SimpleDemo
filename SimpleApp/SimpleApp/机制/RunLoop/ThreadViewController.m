@@ -10,6 +10,8 @@
 
 #import <CoreFoundation/CoreFoundation.h>
 
+#import "RunLoopUtility.h"
+
 @interface ThreadViewController ()
 
 @end
@@ -18,12 +20,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [RunLoopUtility observerRunloopStatus];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     //    [self threadAlive];
-//    [self threadRunTimer];
-    [self testCrash];
+    //    [self threadRunTimer];
+    //    [self testCrash];
+    
+    
 }
 
 #pragma mark - 线程保活
@@ -62,5 +68,7 @@
     id arr = @[@1, @2, @3];
     [arr addObject:@4];
 }
+
+#pragma mark -
 
 @end

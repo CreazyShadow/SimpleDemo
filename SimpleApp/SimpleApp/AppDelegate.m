@@ -40,7 +40,6 @@
 
 @property (nonatomic, strong, readwrite) id field;
 
-
 @end
 
 @implementation AppDelegate
@@ -85,7 +84,7 @@
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"LockViewController";
+    NSString *className = @"AutoChartViewController";
     switch (type) {
         case 0:
         {
@@ -185,7 +184,7 @@ void uncaughtExceptionHandler(NSException *exception){
     NSString *name = [exception name];
     NSLog(@"崩溃信息：%@ %@ %@", symbols, reason, name);
     
-    [RunLoopUtility crashRecycle];
+//    [RunLoopUtility crashRecycle];
 }
 
 

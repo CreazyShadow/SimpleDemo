@@ -8,6 +8,8 @@
 
 #import "BaseViewController.h"
 
+#import <objc/runtime.h>
+
 @interface BaseViewController ()
 
 @end
@@ -25,6 +27,8 @@
 - (void)print {
     NSLog(@"----base---print");
 }
+
+#pragma mark - override
 
 #pragma mark - construction
 

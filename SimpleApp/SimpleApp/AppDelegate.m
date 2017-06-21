@@ -45,6 +45,11 @@
 @implementation AppDelegate
 
 - (void)test {
+    NSDate *date = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    dateFormat.dateFormat = @"yyyy.MM.dd HH:ss";
+    NSDate *d = [dateFormat dateFromString:@"2017.6.12 13:00"];
+    
     
 }
 
@@ -84,7 +89,7 @@
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"AutoChartViewController";
+    NSString *className = @"HealthChartViewController";
     switch (type) {
         case 0:
         {

@@ -39,6 +39,8 @@
 		732AE6201E5E89FF0068E1CE /* EKElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 732AE61F1E5E89FF0068E1CE /* EKElement.m */; };
 		732AE6231E5E8E680068E1CE /* ClassA.m in Sources */ = {isa = PBXBuildFile; fileRef = 732AE6221E5E8E680068E1CE /* ClassA.m */; };
 		732AE6261E5E8E710068E1CE /* ClassB.m in Sources */ = {isa = PBXBuildFile; fileRef = 732AE6251E5E8E710068E1CE /* ClassB.m */; };
+		732B1BED1EEE29E000B26A70 /* PhoneNumPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B1BEC1EEE29E000B26A70 /* PhoneNumPerson.m */; };
+		732B1BF01EEE2B5F00B26A70 /* PropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B1BEF1EEE2B5F00B26A70 /* PropertyViewController.m */; };
 		732B50781E8B3DF8006F2677 /* VIewLifeCycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B50771E8B3DF8006F2677 /* VIewLifeCycleViewController.m */; };
 		732B507B1E8B3E5F006F2677 /* LifeCycleAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B507A1E8B3E5F006F2677 /* LifeCycleAViewController.m */; };
 		732B507F1E8B44B0006F2677 /* TimerAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B507E1E8B44B0006F2677 /* TimerAViewController.m */; };
@@ -91,6 +93,7 @@
 		7373D2621CD0AA2600332D91 /* SimpleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7373D2611CD0AA2600332D91 /* SimpleAppTests.m */; };
 		7373D26D1CD0AA2600332D91 /* SimpleAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7373D26C1CD0AA2600332D91 /* SimpleAppUITests.m */; };
 		737B107E1E63B6E1001FF92A /* ProxyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 737B107D1E63B6E1001FF92A /* ProxyViewController.m */; };
+		7388312C1EE8E993002D7A1A /* UIView+Identify.m in Sources */ = {isa = PBXBuildFile; fileRef = 7388312B1EE8E993002D7A1A /* UIView+Identify.m */; };
 		7393FBC41E48533B00EF7BDF /* Hit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7393FBC31E48533B00EF7BDF /* Hit.m */; };
 		7393FBCB1E49557300EF7BDF /* SendMessageClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7393FBCA1E49557300EF7BDF /* SendMessageClass.m */; };
 		7393FBCE1E49559100EF7BDF /* MessageMechanismViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7393FBCD1E49559100EF7BDF /* MessageMechanismViewController.m */; };
@@ -133,6 +136,8 @@
 		73BA34DC1DB12E65007E9FC1 /* MasonyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BA34B11DB12E65007E9FC1 /* MasonyTableViewController.m */; };
 		73BA34DD1DB12E65007E9FC1 /* TestTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA34B31DB12E65007E9FC1 /* TestTableViewViewController.swift */; };
 		73BA34E01DB12E65007E9FC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BA34BC1DB12E65007E9FC1 /* ViewController.m */; };
+		73BBE7611EE67BB400FC76BB /* HealthChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BBE7601EE67BB400FC76BB /* HealthChartView.m */; };
+		73BBE7D41EE7D38700FC76BB /* HealthChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BBE7D31EE7D38700FC76BB /* HealthChartViewController.m */; };
 		73BE8D841E7284CC0073A2C6 /* PushManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BE8D831E7284CC0073A2C6 /* PushManagerViewController.m */; };
 		73BE8D861E7287820073A2C6 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73BE8D851E7287810073A2C6 /* 1.jpg */; };
 		73D4B2791ECADB64002E952E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D4B2781ECADB64002E952E /* Photos.framework */; };
@@ -235,6 +240,10 @@
 		732AE6221E5E8E680068E1CE /* ClassA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassA.m; sourceTree = "<group>"; };
 		732AE6241E5E8E710068E1CE /* ClassB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassB.h; sourceTree = "<group>"; };
 		732AE6251E5E8E710068E1CE /* ClassB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassB.m; sourceTree = "<group>"; };
+		732B1BEB1EEE29E000B26A70 /* PhoneNumPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneNumPerson.h; sourceTree = "<group>"; };
+		732B1BEC1EEE29E000B26A70 /* PhoneNumPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneNumPerson.m; sourceTree = "<group>"; };
+		732B1BEE1EEE2B5F00B26A70 /* PropertyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyViewController.h; sourceTree = "<group>"; };
+		732B1BEF1EEE2B5F00B26A70 /* PropertyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyViewController.m; sourceTree = "<group>"; };
 		732B50761E8B3DF8006F2677 /* VIewLifeCycleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIewLifeCycleViewController.h; sourceTree = "<group>"; };
 		732B50771E8B3DF8006F2677 /* VIewLifeCycleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIewLifeCycleViewController.m; sourceTree = "<group>"; };
 		732B50791E8B3E5F006F2677 /* LifeCycleAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeCycleAViewController.h; sourceTree = "<group>"; };
@@ -336,6 +345,8 @@
 		7373D26E1CD0AA2600332D91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		737B107C1E63B6E1001FF92A /* ProxyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProxyViewController.h; sourceTree = "<group>"; };
 		737B107D1E63B6E1001FF92A /* ProxyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProxyViewController.m; sourceTree = "<group>"; };
+		7388312A1EE8E993002D7A1A /* UIView+Identify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Identify.h"; sourceTree = "<group>"; };
+		7388312B1EE8E993002D7A1A /* UIView+Identify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Identify.m"; sourceTree = "<group>"; };
 		7393FBC21E48533B00EF7BDF /* Hit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hit.h; sourceTree = "<group>"; };
 		7393FBC31E48533B00EF7BDF /* Hit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hit.m; sourceTree = "<group>"; };
 		7393FBC51E48538600EF7BDF /* Hit+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Hit+Private.h"; sourceTree = "<group>"; };
@@ -418,6 +429,10 @@
 		73BA34B31DB12E65007E9FC1 /* TestTableViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewViewController.swift; sourceTree = "<group>"; };
 		73BA34BB1DB12E65007E9FC1 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		73BA34BC1DB12E65007E9FC1 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		73BBE75F1EE67BB400FC76BB /* HealthChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthChartView.h; sourceTree = "<group>"; };
+		73BBE7601EE67BB400FC76BB /* HealthChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthChartView.m; sourceTree = "<group>"; };
+		73BBE7D21EE7D38700FC76BB /* HealthChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthChartViewController.h; sourceTree = "<group>"; };
+		73BBE7D31EE7D38700FC76BB /* HealthChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthChartViewController.m; sourceTree = "<group>"; };
 		73BE8D821E7284CC0073A2C6 /* PushManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushManagerViewController.h; sourceTree = "<group>"; };
 		73BE8D831E7284CC0073A2C6 /* PushManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushManagerViewController.m; sourceTree = "<group>"; };
 		73BE8D851E7287810073A2C6 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
@@ -622,6 +637,17 @@
 				732AE61F1E5E89FF0068E1CE /* EKElement.m */,
 			);
 			path = "框架解耦设计__1";
+			sourceTree = "<group>";
+		};
+		732B1BEA1EEE28B900B26A70 /* 属性 */ = {
+			isa = PBXGroup;
+			children = (
+				732B1BEB1EEE29E000B26A70 /* PhoneNumPerson.h */,
+				732B1BEC1EEE29E000B26A70 /* PhoneNumPerson.m */,
+				732B1BEE1EEE2B5F00B26A70 /* PropertyViewController.h */,
+				732B1BEF1EEE2B5F00B26A70 /* PropertyViewController.m */,
+			);
+			path = "属性";
 			sourceTree = "<group>";
 		};
 		732B50751E8B3DC8006F2677 /* 生命周期 */ = {
@@ -1003,6 +1029,7 @@
 		73BA34861DB12E65007E9FC1 /* 机制 */ = {
 			isa = PBXGroup;
 			children = (
+				732B1BEA1EEE28B900B26A70 /* 属性 */,
 				732D80321EB42E1E0003FD18 /* 通知和KVO */,
 				7359983B1EA6F61B00427C5B /* 类和元类 */,
 				735998371EA6EC6E00427C5B /* block */,
@@ -1102,6 +1129,7 @@
 		73BA34A01DB12E65007E9FC1 /* 视图 */ = {
 			isa = PBXGroup;
 			children = (
+				73BBE75E1EE67BA300FC76BB /* HealthChart */,
 				73F5C2911E9DBDC70016A44D /* UITextField */,
 				73E540F81E9639F8007C6584 /* AutoLoadingChart */,
 				732B50751E8B3DC8006F2677 /* 生命周期 */,
@@ -1189,6 +1217,19 @@
 			children = (
 			);
 			path = UIPickerView;
+			sourceTree = "<group>";
+		};
+		73BBE75E1EE67BA300FC76BB /* HealthChart */ = {
+			isa = PBXGroup;
+			children = (
+				73BBE75F1EE67BB400FC76BB /* HealthChartView.h */,
+				73BBE7601EE67BB400FC76BB /* HealthChartView.m */,
+				73BBE7D21EE7D38700FC76BB /* HealthChartViewController.h */,
+				73BBE7D31EE7D38700FC76BB /* HealthChartViewController.m */,
+				7388312A1EE8E993002D7A1A /* UIView+Identify.h */,
+				7388312B1EE8E993002D7A1A /* UIView+Identify.m */,
+			);
+			path = HealthChart;
 			sourceTree = "<group>";
 		};
 		73E540F81E9639F8007C6584 /* AutoLoadingChart */ = {
@@ -1458,6 +1499,7 @@
 				7362AB3A1ECDAE3600B2E933 /* HealthInfoModel.m in Sources */,
 				731DAD101E7B6ED1004E5F8D /* CustomWindow.m in Sources */,
 				7359983A1EA6ECA400427C5B /* block_realize.mm in Sources */,
+				732B1BED1EEE29E000B26A70 /* PhoneNumPerson.m in Sources */,
 				735998471EA73CE000427C5B /* FirstBlockViewController.m in Sources */,
 				735ADFE01E836ADB00F79620 /* CustomAppDelegate.m in Sources */,
 				73BA34DD1DB12E65007E9FC1 /* TestTableViewViewController.swift in Sources */,
@@ -1499,6 +1541,7 @@
 				73E5BA8B1E260AA500CF3BD5 /* GestureSummaryViewController.m in Sources */,
 				735ADFC41E8363CB00F79620 /* InteractionModuleViewController.m in Sources */,
 				7362AB401ECDAE5F00B2E933 /* HealthInfoModel+Test.m in Sources */,
+				73BBE7D41EE7D38700FC76BB /* HealthChartViewController.m in Sources */,
 				7362AB491ECE9DF500B2E933 /* NSObject+MsgOperation.m in Sources */,
 				731C12681E84F0060034F361 /* TestWebviewViewController.m in Sources */,
 				73BA34D31DB12E65007E9FC1 /* FirstViewController.m in Sources */,
@@ -1559,7 +1602,9 @@
 				732D80351EB42E3D0003FD18 /* ANotificationViewController.m in Sources */,
 				731C127F1E8512970034F361 /* TestArithmeticViewController.m in Sources */,
 				73B5A0611DC7110200477323 /* TestCustomViewController.m in Sources */,
+				732B1BF01EEE2B5F00B26A70 /* PropertyViewController.m in Sources */,
 				73BA34D11DB12E65007E9FC1 /* Company.m in Sources */,
+				7388312C1EE8E993002D7A1A /* UIView+Identify.m in Sources */,
 				73A3467D1E6557C60030CE9D /* ReusingCell.m in Sources */,
 				731C661C1EB86EC8008DF9D1 /* NotificationObject.m in Sources */,
 				731C12641E84F0060034F361 /* AFNViewController.m in Sources */,
@@ -1572,6 +1617,7 @@
 				731DAD0D1E7B6EC4004E5F8D /* UIScreenViewController.m in Sources */,
 				735ADFDA1E836ABB00F79620 /* NavigationAnimationViewController.m in Sources */,
 				73BA34CE1DB12E65007E9FC1 /* Agreement.m in Sources */,
+				73BBE7611EE67BB400FC76BB /* HealthChartView.m in Sources */,
 				73ED0C241E514C0600E2A662 /* RayAnimation.m in Sources */,
 				735998331EA5EC1D00427C5B /* TextItem.m in Sources */,
 				734DAE0B1E88FC8900D553CC /* AttributeViewController.m in Sources */,

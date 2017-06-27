@@ -45,23 +45,14 @@
 @implementation AppDelegate
 
 - (void)test {
-    NSDate *date = [NSDate date];
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    dateFormat.dateFormat = @"yyyy.MM.dd HH:ss";
-    NSDate *d = [dateFormat dateFromString:@"2017.6.12 13:00"];
-    
-    
-}
-
-- (void)printArray:(NSArray *)arr {
-    
+    class_copyMethodList(<#__unsafe_unretained Class cls#>, <#unsigned int *outCount#>)
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     //网络请求重定向
-//    [NSURLProtocol registerClass:[CustomURLProtocol class]];
-//    [[SessionCustomProtocolConfiguration shareManager] openHttpProtocol];
+    //    [NSURLProtocol registerClass:[CustomURLProtocol class]];
+    //    [[SessionCustomProtocolConfiguration shareManager] openHttpProtocol];
     
     //捕获crash
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
@@ -72,11 +63,11 @@
     //重定向NSLOG
     //[[LogHelper shareInstance] redirectSTD:STDERR_FILENO];
     
-//    渲染window
+    //    渲染window
     self.window = [[CustomWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor]; 
+    self.window.backgroundColor = [UIColor whiteColor];
     
-//    设置启动方式
+    //    设置启动方式
     [self setupStartType:0];
     
     [self.window makeKeyAndVisible];
@@ -89,7 +80,7 @@
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"HealthChartViewController";
+    NSString *className = @"FirstViewController";
     switch (type) {
         case 0:
         {
@@ -189,7 +180,7 @@ void uncaughtExceptionHandler(NSException *exception){
     NSString *name = [exception name];
     NSLog(@"崩溃信息：%@ %@ %@", symbols, reason, name);
     
-//    [RunLoopUtility crashRecycle];
+    //    [RunLoopUtility crashRecycle];
 }
 
 
@@ -229,15 +220,15 @@ void uncaughtExceptionHandler(NSException *exception){
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
     //可判断response的种类和request的触发器是什么,可根据远程通知和本地通知分别处理，再根据action进行后续回调
     
-//    //获取在Pending状态下待触发的通知
-//    - (void)getPendingNotificationRequestsWithCompletionHandler:(void(^)(NSArray *requests))completionHandler;
-//    //移除未触发的通知
-//    - (void)removePendingNotificationRequestsWithIdentifiers:(NSArray *)identifiers;
-//    - (void)removeAllPendingNotificationRequests;
-//    // 通知已经触发，但是还在操作系统的通知中心上，可以进行查询和删除
-//    - (void)getDeliveredNotificationsWithCompletionHandler:(void(^)(NSArray *notifications))completionHandler;
-//    - (void)removeDeliveredNotificationsWithIdentifiers:(NSArray *)identifiers;
-//    - (void)removeAllDeliveredNotifications;
+    //    //获取在Pending状态下待触发的通知
+    //    - (void)getPendingNotificationRequestsWithCompletionHandler:(void(^)(NSArray *requests))completionHandler;
+    //    //移除未触发的通知
+    //    - (void)removePendingNotificationRequestsWithIdentifiers:(NSArray *)identifiers;
+    //    - (void)removeAllPendingNotificationRequests;
+    //    // 通知已经触发，但是还在操作系统的通知中心上，可以进行查询和删除
+    //    - (void)getDeliveredNotificationsWithCompletionHandler:(void(^)(NSArray *notifications))completionHandler;
+    //    - (void)removeDeliveredNotificationsWithIdentifiers:(NSArray *)identifiers;
+    //    - (void)removeAllDeliveredNotifications;
 }
 
 #pragma mark - ios10本地通知
@@ -274,7 +265,7 @@ void uncaughtExceptionHandler(NSException *exception){
 - (void)setupNotification {
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     center.delegate = self;
-//    [center setNotificationCategories:[self createNotificationCategoryActions]];
+    //    [center setNotificationCategories:[self createNotificationCategoryActions]];
     [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
         if (settings.authorizationStatus == UNAuthorizationStatusNotDetermined) {
             [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {

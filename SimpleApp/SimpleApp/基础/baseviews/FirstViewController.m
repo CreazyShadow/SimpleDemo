@@ -58,20 +58,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    HealthInfoModel *health = [[HealthInfoModel alloc] init];
-    id obj = health;
-    [obj print];
-    
-//    id class = objc_getClass("HealthInfoModel");
-//    unsigned int count = 0;
-//    Method *me = class_copyMethodList(class, &count);
-//    for (int i = 0; i < count; i++) {
-//        Method temp = me[i];
-//        SEL method = method_getName(temp);
-//        NSLog(@"----%@", NSStringFromSelector(method));
-//    }
-    
-    
+
 }
 
 - (NSString *)prefixForCarNum:(NSString *)cardNo {
@@ -115,6 +102,10 @@
     NSLog(@"%@", textField.text);
 }
 
+- (void)labelPanGes:(UIPanGestureRecognizer *)ges {
+    
+}
+
 #pragma mark - getter & setter
 
 - (ScrapeView *)scrapeView {
@@ -156,6 +147,9 @@
         _label.textColor = [UIColor orangeColor];
         _label.backgroundColor = [UIColor purpleColor];
         _label.text = @"ABCCC";
+        
+        UIGestureRecognizer *ges = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(labelPanGes:)];
+        [_label addGestureRecognizer:ges];
     }
     
     return _label;

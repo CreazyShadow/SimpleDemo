@@ -36,8 +36,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    _label.text = @"顶顶顶顶\nd改改";
-    _label.numberOfLines = 0;
+//    NSLog(@"%@", test_key);
 }
 
 #pragma mark - tableview delegate & datasource

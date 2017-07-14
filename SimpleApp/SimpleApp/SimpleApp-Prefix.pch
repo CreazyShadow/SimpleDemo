@@ -6,6 +6,8 @@
 //  Copyright © 2016年 wuyp. All rights reserved.
 //
 
+#ifdef __OBJC__
+
 #ifndef SimpleApp_pch
 #define SimpleApp_pch
 
@@ -30,3 +32,5 @@
 #import "BaseHeaderViewController.h"
 
 #endif /* SimpleApp_pch */
+
+#endif

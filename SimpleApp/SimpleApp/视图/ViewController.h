@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+//extern NSString *test_key;
 
+@interface ViewController : UIViewController
 
 @end
 

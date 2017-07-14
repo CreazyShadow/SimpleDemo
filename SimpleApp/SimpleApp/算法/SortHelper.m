@@ -16,8 +16,6 @@
 
 static NSComparisonResult(^_compare)(id obj1, id obj2);
 
-static int count;
-
 @implementation SortHelper
 
 + (SortHelper *(^)(void))instance {

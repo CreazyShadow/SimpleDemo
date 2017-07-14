@@ -45,7 +45,7 @@
 @implementation AppDelegate
 
 - (void)test {
-    class_copyMethodList(<#__unsafe_unretained Class cls#>, <#unsigned int *outCount#>)
+    
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -80,7 +80,7 @@
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"FirstViewController";
+    NSString *className = @"ALockViewController";
     switch (type) {
         case 0:
         {

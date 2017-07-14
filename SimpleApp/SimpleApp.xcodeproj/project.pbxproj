@@ -144,6 +144,7 @@
 		73BBE7D41EE7D38700FC76BB /* HealthChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BBE7D31EE7D38700FC76BB /* HealthChartViewController.m */; };
 		73BE8D841E7284CC0073A2C6 /* PushManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BE8D831E7284CC0073A2C6 /* PushManagerViewController.m */; };
 		73BE8D861E7287820073A2C6 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73BE8D851E7287810073A2C6 /* 1.jpg */; };
+		73CF06EA1F1875DC0029B67B /* CommonArithmetic.c in Sources */ = {isa = PBXBuildFile; fileRef = 73CF06E81F1875DC0029B67B /* CommonArithmetic.c */; };
 		73D4B2791ECADB64002E952E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D4B2781ECADB64002E952E /* Photos.framework */; };
 		73E540FB1E963A09007C6584 /* DataSourcePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E540FA1E963A09007C6584 /* DataSourcePool.m */; };
 		73E540FE1E963A18007C6584 /* AutoChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E540FD1E963A18007C6584 /* AutoChart.m */; };
@@ -448,6 +449,8 @@
 		73BE8D821E7284CC0073A2C6 /* PushManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushManagerViewController.h; sourceTree = "<group>"; };
 		73BE8D831E7284CC0073A2C6 /* PushManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushManagerViewController.m; sourceTree = "<group>"; };
 		73BE8D851E7287810073A2C6 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		73CF06E81F1875DC0029B67B /* CommonArithmetic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CommonArithmetic.c; sourceTree = "<group>"; };
+		73CF06E91F1875DC0029B67B /* CommonArithmetic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonArithmetic.h; sourceTree = "<group>"; };
 		73D4B2781ECADB64002E952E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		73E540F91E963A09007C6584 /* DataSourcePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourcePool.h; sourceTree = "<group>"; };
 		73E540FA1E963A09007C6584 /* DataSourcePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourcePool.m; sourceTree = "<group>"; };
@@ -536,6 +539,8 @@
 				731C127B1E850BA20034F361 /* ClassicsArithmetic.m */,
 				731C127D1E8512970034F361 /* TestArithmeticViewController.h */,
 				731C127E1E8512970034F361 /* TestArithmeticViewController.m */,
+				73CF06E91F1875DC0029B67B /* CommonArithmetic.h */,
+				73CF06E81F1875DC0029B67B /* CommonArithmetic.c */,
 			);
 			path = "算法";
 			sourceTree = "<group>";
@@ -1617,6 +1622,7 @@
 				73B5A06C1DC868B200477323 /* FitCommentViewController.m in Sources */,
 				732AE6231E5E8E680068E1CE /* ClassA.m in Sources */,
 				73BA34DA1DB12E65007E9FC1 /* ExpandTableViewCell.swift in Sources */,
+				73CF06EA1F1875DC0029B67B /* CommonArithmetic.c in Sources */,
 				73A8B72B1E8E551B00303C4D /* Bview.m in Sources */,
 				73BA34C81DB12E65007E9FC1 /* StructAndClass.m in Sources */,
 				735EDAB01E1CC77F002962DB /* SuperEventView.m in Sources */,

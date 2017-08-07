@@ -45,7 +45,9 @@
 @implementation AppDelegate
 
 - (void)test {
-    
+//    NSString *ustr = @"https://www.baidu.com?user=jack&pwd=123456";
+//    NSURL *url = [NSURL URLWithString:ustr];
+//    NSLog(@"%@", url.scheme);
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -80,7 +82,7 @@
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"ALockViewController";
+    NSString *className = @"WKWebViewViewController";
     switch (type) {
         case 0:
         {

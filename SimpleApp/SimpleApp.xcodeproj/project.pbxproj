@@ -159,6 +159,9 @@
 		73F5C2901E9DB8150016A44D /* DrawCurveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C28F1E9DB8150016A44D /* DrawCurveViewController.m */; };
 		73F5C2941E9DBDE10016A44D /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C2931E9DBDE10016A44D /* CustomTextField.m */; };
 		73F5C2971E9DBE580016A44D /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C2961E9DBE580016A44D /* TextFieldViewController.m */; };
+		AEDEB4CD1F3803E300A05940 /* HXWebViewPage.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDEB4CC1F3803E300A05940 /* HXWebViewPage.m */; };
+		AEDEB4D01F380D4D00A05940 /* HXWebViewActionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDEB4CF1F380D4D00A05940 /* HXWebViewActionHandler.m */; };
+		AEDEB4D31F380D9C00A05940 /* HXWebViewLoadInterrupt.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDEB4D21F380D9C00A05940 /* HXWebViewLoadInterrupt.m */; };
 		B980A19BF0CE00920C503208 /* libPods-SimpleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ADD0F38396CB07FF3AB19A5 /* libPods-SimpleApp.a */; };
 /* End PBXBuildFile section */
 
@@ -478,6 +481,12 @@
 		73F5C2931E9DBDE10016A44D /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTextField.m; sourceTree = "<group>"; };
 		73F5C2951E9DBE580016A44D /* TextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldViewController.h; sourceTree = "<group>"; };
 		73F5C2961E9DBE580016A44D /* TextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldViewController.m; sourceTree = "<group>"; };
+		AEDEB4CB1F3803E300A05940 /* HXWebViewPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXWebViewPage.h; sourceTree = "<group>"; };
+		AEDEB4CC1F3803E300A05940 /* HXWebViewPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXWebViewPage.m; sourceTree = "<group>"; };
+		AEDEB4CE1F380D4D00A05940 /* HXWebViewActionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXWebViewActionHandler.h; sourceTree = "<group>"; };
+		AEDEB4CF1F380D4D00A05940 /* HXWebViewActionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXWebViewActionHandler.m; sourceTree = "<group>"; };
+		AEDEB4D11F380D9C00A05940 /* HXWebViewLoadInterrupt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXWebViewLoadInterrupt.h; sourceTree = "<group>"; };
+		AEDEB4D21F380D9C00A05940 /* HXWebViewLoadInterrupt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXWebViewLoadInterrupt.m; sourceTree = "<group>"; };
 		AF1F2D7D0AFC0A3595B79DEB /* Pods-SimpleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -563,6 +572,7 @@
 		731C125D1E84F0060034F361 /* webview */ = {
 			isa = PBXGroup;
 			children = (
+				AEDEB4CA1F3803B000A05940 /* H5Container */,
 				731C125E1E84F0060034F361 /* TestWebviewViewController.h */,
 				731C125F1E84F0060034F361 /* TestWebviewViewController.m */,
 				731C12601E84F0060034F361 /* UIWebView+Clean.h */,
@@ -1311,6 +1321,19 @@
 			path = UITextField;
 			sourceTree = "<group>";
 		};
+		AEDEB4CA1F3803B000A05940 /* H5Container */ = {
+			isa = PBXGroup;
+			children = (
+				AEDEB4CB1F3803E300A05940 /* HXWebViewPage.h */,
+				AEDEB4CC1F3803E300A05940 /* HXWebViewPage.m */,
+				AEDEB4CE1F380D4D00A05940 /* HXWebViewActionHandler.h */,
+				AEDEB4CF1F380D4D00A05940 /* HXWebViewActionHandler.m */,
+				AEDEB4D11F380D9C00A05940 /* HXWebViewLoadInterrupt.h */,
+				AEDEB4D21F380D9C00A05940 /* HXWebViewLoadInterrupt.m */,
+			);
+			path = H5Container;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1552,6 +1575,7 @@
 				73E540FB1E963A09007C6584 /* DataSourcePool.m in Sources */,
 				732116CF1EFA1DD20041BF6E /* Object_Super.m in Sources */,
 				731C12321E84A9750034F361 /* PopAnimationViewController.m in Sources */,
+				AEDEB4D01F380D4D00A05940 /* HXWebViewActionHandler.m in Sources */,
 				73F5C2941E9DBDE10016A44D /* CustomTextField.m in Sources */,
 				73E5BA8F1E262A0200CF3BD5 /* SearchViewController.m in Sources */,
 				73BA34C91DB12E65007E9FC1 /* TestCommonViewController.m in Sources */,
@@ -1577,6 +1601,7 @@
 				7373D2491CD0AA2600332D91 /* main.m in Sources */,
 				73BA34E01DB12E65007E9FC1 /* ViewController.m in Sources */,
 				735ADFDD1E836AC800F79620 /* TabBarAnimationViewController.m in Sources */,
+				AEDEB4CD1F3803E300A05940 /* HXWebViewPage.m in Sources */,
 				7359982D1EA5D1C200427C5B /* MRCObject.m in Sources */,
 				737B107E1E63B6E1001FF92A /* ProxyViewController.m in Sources */,
 				73BA34D91DB12E65007E9FC1 /* CellModel.swift in Sources */,
@@ -1587,6 +1612,7 @@
 				73BE8D841E7284CC0073A2C6 /* PushManagerViewController.m in Sources */,
 				732B50881E8B567B006F2677 /* RayTimer.m in Sources */,
 				73BA34DC1DB12E65007E9FC1 /* MasonyTableViewController.m in Sources */,
+				AEDEB4D31F380D9C00A05940 /* HXWebViewLoadInterrupt.m in Sources */,
 				732AE6261E5E8E710068E1CE /* ClassB.m in Sources */,
 				732116D21EFA1E0B0041BF6E /* Object_Super+Introduce.m in Sources */,
 				731C12661E84F0060034F361 /* SessionCustomeProtocol.m in Sources */,

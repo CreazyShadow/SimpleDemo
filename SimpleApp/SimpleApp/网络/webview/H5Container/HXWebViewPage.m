@@ -10,14 +10,18 @@
 #import <WebKit/WebKit.h>
 #import <WKWebViewJavascriptBridge.h>
 
+#import "HXWebViewActionHandler.h"
+#import "HXWebViewLoadInterceptor.h"
+
+
 @interface HXWebViewPage ()<WKUIDelegate, WKNavigationDelegate>
 
 @property (nonatomic, strong) WKWebView *webView;
 
-@property (nonatomic, strong) WKWebViewJavascriptBridge *bridge;
+@property (nonatomic, strong, readwrite) WKWebViewJavascriptBridge *bridge;
 
-@property (nonatomic, strong) NSArray<HXWebViewActionHandler *> *handlers;
-@property (nonatomic, strong) HXWebViewLoadInterrupt *interrupt;
+@property (nonatomic, strong) HXWebViewActionHandler   *handlers;
+@property (nonatomic, strong) HXWebViewLoadInterceptor *interrupt;
 
 @end
 
@@ -40,14 +44,11 @@
 
 #pragma mark - init
 
-- (void)openUrl:(NSString *)url actionHandler:(NSArray *)handler interrupt:(HXWebViewLoadInterrupt *)interrupt {
-    if (url.length == 0) {
-        return;
-    }
-    
-    _handlers = handler && [handler isKindOfClass:[NSArray class]] ? [handler copy] : nil;
-    _interrupt = interrupt;
-    
+- (void)loadURL:(NSString *)url {
+    [self loadURL:url interceptor:nil];
+}
+
+- (void)loadURL:(NSString *)url interceptor:(HXWebViewLoadInterceptor *)interceptor {
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [self.webView loadRequest:request];
 }
@@ -89,7 +90,9 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     //处理webview打开方式
     if (_interrupt) {
-        [_interrupt excute];
+        [_interrupt excuteWithCompletionHandler:^(BOOL isAllow) {
+            decisionHandler(isAllow ? WKNavigationActionPolicyAllow : WKNavigationActionPolicyCancel);
+        }];
     }
     
     decisionHandler(WKNavigationActionPolicyAllow);

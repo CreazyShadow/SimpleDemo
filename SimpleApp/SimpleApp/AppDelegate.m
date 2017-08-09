@@ -36,6 +36,10 @@
 #import "MRCObject.h"
 #import "RunLoopUtility.h"
 
+#import <IQKeyboardManager.h>
+
+#import "HXWebViewActionHandler.h"
+
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
 
 @property (nonatomic, strong, readwrite) id field;
@@ -45,9 +49,8 @@
 @implementation AppDelegate
 
 - (void)test {
-//    NSString *ustr = @"https://www.baidu.com?user=jack&pwd=123456";
-//    NSURL *url = [NSURL URLWithString:ustr];
-//    NSLog(@"%@", url.scheme);
+    HXWebViewActionHandler *handler = [[HXWebViewActionHandler alloc] init];
+    [handler excute];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -74,6 +77,8 @@
     
     [self.window makeKeyAndVisible];
     
+    [IQKeyboardManager sharedManager].enable = YES;
+    
     //通知
     [self setupNotification];
     
@@ -82,7 +87,7 @@
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"WKWebViewViewController";
+    NSString *className = @"TextInputViewController";
     switch (type) {
         case 0:
         {

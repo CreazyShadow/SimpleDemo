@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-#import "HXWebViewActionHandler.h"
-#import "HXWebViewLoadInterrupt.h"
+@class WKWebViewJavascriptBridge;
+@class HXWebViewLoadInterceptor;
 
 @interface HXWebViewPage : UIViewController
 
-- (void)openUrl:(NSString *)url actionHandler:(NSArray *)handler interrupt:(HXWebViewLoadInterrupt *)interrupt;
+@property (nonatomic, strong, readonly) WKWebViewJavascriptBridge *bridge;
+
+- (void)loadURL:(NSString *)url;
+
+- (void)loadURL:(NSString *)url interceptor:(HXWebViewLoadInterceptor *)interceptor;
 
 @end

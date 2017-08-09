@@ -17,6 +17,7 @@ def share_pods
     pod 'YTKNetwork'
     pod 'WebViewJavascriptBridge'
     pod 'FBMemoryProfiler'
+    pod 'IQKeyboardManager'
 end
 
 target 'SimpleApp' do

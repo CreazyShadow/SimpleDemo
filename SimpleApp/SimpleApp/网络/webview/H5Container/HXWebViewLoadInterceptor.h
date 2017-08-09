@@ -10,12 +10,10 @@
 
 #import <WebKit/WebKit.h>
 
-@interface HXWebViewLoadInterrupt : NSObject
+@interface HXWebViewLoadInterceptor : NSObject
 
-@property (nonatomic, assign) BOOL allow;
+@property (nonatomic, strong) WKNavigationAction *navigatorAction;
 
-- (instancetype)initWithWebView:(WKWebView *)webview;
-
-- (void)excute;
+- (void)excuteWithCompletionHandler:(void(^)(BOOL isAllow))completion;
 
 @end

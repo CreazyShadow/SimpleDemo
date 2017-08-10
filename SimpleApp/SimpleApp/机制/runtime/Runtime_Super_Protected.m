@@ -29,6 +29,11 @@ static NSString * const method = @"method_1";
         return YES;
     }
     
+    
+    /**
+     * 由于Self对象会发生改变 当前self = Runtime_Super_Inner_Class
+     * 所以直接调用IMP来继续原来的处理逻辑
+     */
     Method method = class_getInstanceMethod([Runtime_Super_Protected class], @selector(pro_method_1));
     IMP imp = method_getImplementation(method);
     return ((BOOL(*)(id))imp)(self);

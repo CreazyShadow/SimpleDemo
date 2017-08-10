@@ -87,7 +87,7 @@
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"TextInputViewController";
+    NSString *className = @"TestRuntimeViewController";
     switch (type) {
         case 0:
         {

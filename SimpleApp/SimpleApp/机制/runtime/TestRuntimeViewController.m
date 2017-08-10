@@ -17,6 +17,9 @@
 #import "ClassA.h"
 #import "ClassB.h"
 
+#import "Runtime_Super.h"
+#import "Runtime_Sub.h"
+
 @interface TestRuntimeViewController ()
 
 @end
@@ -31,7 +34,30 @@
 #pragma mark - event
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [self allKeyPath:[NSString class]];
+//    [self testRuntimeSuper];
+    [self testPrivateClassProtected];
+}
+
+#pragma mark - RuntimeSuper And Sub
+
+- (void)testRuntimeSuper {
+    Runtime_Super *sup = [[Runtime_Super alloc] init];
+    Runtime_Sub *sub = [[Runtime_Sub alloc] init];
+    
+    id id_sup __attribute__((unused)) = sup;
+    id id_sub __attribute__((unused)) = sub;
+    
+    [id_sub addObject:@"1"];
+}
+
+#pragma mark - private class protected
+
+- (void)testPrivateClassProtected {
+    Class cls = NSClassFromString(@"Runtime_Super_Inner_Class");
+    id instance = [[cls alloc] init];
+    [instance setValue:@"jack" forKey:@"name"];
+    BOOL value = ((BOOL(*)(id, SEL))objc_msgSend)(instance, NSSelectorFromString(@"method_1"));
+    NSLog(@"%d", value);
 }
 
 #pragma mark - addMethod : 消息转发和添加

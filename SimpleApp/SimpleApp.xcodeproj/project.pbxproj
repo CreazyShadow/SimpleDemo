@@ -159,9 +159,12 @@
 		73F5C2901E9DB8150016A44D /* DrawCurveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C28F1E9DB8150016A44D /* DrawCurveViewController.m */; };
 		73F5C2941E9DBDE10016A44D /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C2931E9DBDE10016A44D /* CustomTextField.m */; };
 		73F5C2971E9DBE580016A44D /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C2961E9DBE580016A44D /* TextFieldViewController.m */; };
+		AE16FECF1F3BFB390050E892 /* Runtime_Super_Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = AE16FECE1F3BFB390050E892 /* Runtime_Super_Protected.m */; };
 		AE8BD43C1F38772500169FA3 /* PerformanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8BD43B1F38772500169FA3 /* PerformanceViewController.m */; };
 		AE8BD43F1F38845200169FA3 /* TextInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8BD43E1F38845200169FA3 /* TextInputViewController.m */; };
 		AE8BD4451F3989C200169FA3 /* HXWebViewLoadInterceptorOpenNew.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8BD4441F3989C200169FA3 /* HXWebViewLoadInterceptorOpenNew.m */; };
+		AE8BD4851F3BEA9E00169FA3 /* Runtime_Super.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8BD4841F3BEA9E00169FA3 /* Runtime_Super.m */; };
+		AE8BD4881F3BEAAA00169FA3 /* Runtime_Sub.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8BD4871F3BEAAA00169FA3 /* Runtime_Sub.m */; };
 		AEDEB4CD1F3803E300A05940 /* HXWebViewPage.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDEB4CC1F3803E300A05940 /* HXWebViewPage.m */; };
 		AEDEB4D01F380D4D00A05940 /* HXWebViewActionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDEB4CF1F380D4D00A05940 /* HXWebViewActionHandler.m */; };
 		AEDEB4D31F380D9C00A05940 /* HXWebViewLoadInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDEB4D21F380D9C00A05940 /* HXWebViewLoadInterceptor.m */; };
@@ -484,12 +487,18 @@
 		73F5C2931E9DBDE10016A44D /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTextField.m; sourceTree = "<group>"; };
 		73F5C2951E9DBE580016A44D /* TextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldViewController.h; sourceTree = "<group>"; };
 		73F5C2961E9DBE580016A44D /* TextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldViewController.m; sourceTree = "<group>"; };
+		AE16FECD1F3BFB390050E892 /* Runtime_Super_Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Runtime_Super_Protected.h; sourceTree = "<group>"; };
+		AE16FECE1F3BFB390050E892 /* Runtime_Super_Protected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Runtime_Super_Protected.m; sourceTree = "<group>"; };
 		AE8BD43A1F38772500169FA3 /* PerformanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerformanceViewController.h; sourceTree = "<group>"; };
 		AE8BD43B1F38772500169FA3 /* PerformanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerformanceViewController.m; sourceTree = "<group>"; };
 		AE8BD43D1F38845200169FA3 /* TextInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextInputViewController.h; sourceTree = "<group>"; };
 		AE8BD43E1F38845200169FA3 /* TextInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextInputViewController.m; sourceTree = "<group>"; };
 		AE8BD4431F3989C200169FA3 /* HXWebViewLoadInterceptorOpenNew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXWebViewLoadInterceptorOpenNew.h; sourceTree = "<group>"; };
 		AE8BD4441F3989C200169FA3 /* HXWebViewLoadInterceptorOpenNew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXWebViewLoadInterceptorOpenNew.m; sourceTree = "<group>"; };
+		AE8BD4831F3BEA9E00169FA3 /* Runtime_Super.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Runtime_Super.h; sourceTree = "<group>"; };
+		AE8BD4841F3BEA9E00169FA3 /* Runtime_Super.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Runtime_Super.m; sourceTree = "<group>"; };
+		AE8BD4861F3BEAAA00169FA3 /* Runtime_Sub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Runtime_Sub.h; sourceTree = "<group>"; };
+		AE8BD4871F3BEAAA00169FA3 /* Runtime_Sub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Runtime_Sub.m; sourceTree = "<group>"; };
 		AEDEB4CB1F3803E300A05940 /* HXWebViewPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXWebViewPage.h; sourceTree = "<group>"; };
 		AEDEB4CC1F3803E300A05940 /* HXWebViewPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXWebViewPage.m; sourceTree = "<group>"; };
 		AEDEB4CE1F380D4D00A05940 /* HXWebViewActionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXWebViewActionHandler.h; sourceTree = "<group>"; };
@@ -1119,6 +1128,12 @@
 				732AE6221E5E8E680068E1CE /* ClassA.m */,
 				732AE6241E5E8E710068E1CE /* ClassB.h */,
 				732AE6251E5E8E710068E1CE /* ClassB.m */,
+				AE8BD4831F3BEA9E00169FA3 /* Runtime_Super.h */,
+				AE8BD4841F3BEA9E00169FA3 /* Runtime_Super.m */,
+				AE8BD4861F3BEAAA00169FA3 /* Runtime_Sub.h */,
+				AE8BD4871F3BEAAA00169FA3 /* Runtime_Sub.m */,
+				AE16FECD1F3BFB390050E892 /* Runtime_Super_Protected.h */,
+				AE16FECE1F3BFB390050E892 /* Runtime_Super_Protected.m */,
 			);
 			path = runtime;
 			sourceTree = "<group>";
@@ -1592,6 +1607,7 @@
 				731C126A1E84F0060034F361 /* WKWebViewViewController.m in Sources */,
 				731C12731E84F6D70034F361 /* NaviBViewController.m in Sources */,
 				73BA34D51DB12E65007E9FC1 /* EventButton.m in Sources */,
+				AE16FECF1F3BFB390050E892 /* Runtime_Super_Protected.m in Sources */,
 				7310AEE91E8215B800BAA0E8 /* SortHelper.m in Sources */,
 				732B507F1E8B44B0006F2677 /* TimerAViewController.m in Sources */,
 				73BA34CF1DB12E65007E9FC1 /* BaseKnowTestViewController.m in Sources */,
@@ -1606,6 +1622,7 @@
 				73BA34C91DB12E65007E9FC1 /* TestCommonViewController.m in Sources */,
 				73406E2A1E14F10100D5C58C /* GestureViewController.m in Sources */,
 				73F5C2691E9B4F290016A44D /* AutoChartPageView.m in Sources */,
+				AE8BD4881F3BEAAA00169FA3 /* Runtime_Sub.m in Sources */,
 				7323E9EB1DC1CDF300F053F8 /* RefreshViewController.m in Sources */,
 				732B50781E8B3DF8006F2677 /* VIewLifeCycleViewController.m in Sources */,
 				7323E9E61DBF5B9800F053F8 /* NSObject+Exception.m in Sources */,
@@ -1675,6 +1692,7 @@
 				732AE6231E5E8E680068E1CE /* ClassA.m in Sources */,
 				73BA34DA1DB12E65007E9FC1 /* ExpandTableViewCell.swift in Sources */,
 				73CF06EA1F1875DC0029B67B /* CommonArithmetic.c in Sources */,
+				AE8BD4851F3BEA9E00169FA3 /* Runtime_Super.m in Sources */,
 				73A8B72B1E8E551B00303C4D /* Bview.m in Sources */,
 				73BA34C81DB12E65007E9FC1 /* StructAndClass.m in Sources */,
 				735EDAB01E1CC77F002962DB /* SuperEventView.m in Sources */,

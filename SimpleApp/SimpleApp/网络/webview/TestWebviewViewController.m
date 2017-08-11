@@ -136,7 +136,8 @@
 
 - (WKWebView *)wkwebview {
     if (!_wkwebview) {
-        _wkwebview = [[WKWebView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, 400) configuration:[WKWebViewConfiguration new]];
+        _wkwebview = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 500) configuration:[WKWebViewConfiguration new]];
+        _wkwebview.allowsBackForwardNavigationGestures = YES;
         _wkwebview.navigationDelegate = self;
     }
     

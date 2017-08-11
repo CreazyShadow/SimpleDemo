@@ -32,6 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self loadURL:@"https://www.baidu.com"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -68,6 +69,8 @@
         _bridge = [WKWebViewJavascriptBridge bridgeForWebView:_webView];
         [_bridge setWebViewDelegate:self];
         
+        [self loadHandler];
+        
         //监控加载进度
         [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:NULL];
         
@@ -88,14 +91,18 @@
 #pragma mark - WKNavigationDelegate
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    __block BOOL hasAccess = NO;
     //处理webview打开方式
     if (_interrupt) {
-        [_interrupt excuteWithCompletionHandler:^(BOOL isAllow) {
+        [_interrupt excuteWithNavigation:navigationAction completionHandler:^(BOOL isAllow) {
             decisionHandler(isAllow ? WKNavigationActionPolicyAllow : WKNavigationActionPolicyCancel);
+            hasAccess = YES;
         }];
     }
     
-    decisionHandler(WKNavigationActionPolicyAllow);
+    if (!hasAccess) {
+        decisionHandler(WKNavigationActionPolicyAllow);
+    }
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
@@ -108,5 +115,12 @@
     
 }
 
+
+#pragma mark - Load Handler
+
+- (void)loadHandler {
+    self.handlers = [[HXWebViewActionHandler alloc] init];
+    [_handlers excute];
+}
 
 @end

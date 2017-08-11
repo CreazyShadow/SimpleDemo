@@ -12,8 +12,8 @@
 
 @interface HXWebViewLoadInterceptor : NSObject
 
-@property (nonatomic, strong) WKNavigationAction *navigatorAction;
+@property (nonatomic, weak) WKWebView *webview;
 
-- (void)excuteWithCompletionHandler:(void(^)(BOOL isAllow))completion;
+- (void)excuteWithNavigation:(WKNavigationAction *)action completionHandler:(void(^)(BOOL isAllow))completion;
 
 @end

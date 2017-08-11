@@ -159,6 +159,8 @@
 		73F5C2901E9DB8150016A44D /* DrawCurveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C28F1E9DB8150016A44D /* DrawCurveViewController.m */; };
 		73F5C2941E9DBDE10016A44D /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C2931E9DBDE10016A44D /* CustomTextField.m */; };
 		73F5C2971E9DBE580016A44D /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C2961E9DBE580016A44D /* TextFieldViewController.m */; };
+		AE0E032D1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0E032C1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.m */; };
+		AE0E03301F3D905E00CCD9EC /* HXWebViewActionHandler+OpenAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0E032F1F3D905E00CCD9EC /* HXWebViewActionHandler+OpenAccount.m */; };
 		AE16FECF1F3BFB390050E892 /* Runtime_Super_Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = AE16FECE1F3BFB390050E892 /* Runtime_Super_Protected.m */; };
 		AE8BD43C1F38772500169FA3 /* PerformanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8BD43B1F38772500169FA3 /* PerformanceViewController.m */; };
 		AE8BD43F1F38845200169FA3 /* TextInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8BD43E1F38845200169FA3 /* TextInputViewController.m */; };
@@ -487,6 +489,10 @@
 		73F5C2931E9DBDE10016A44D /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTextField.m; sourceTree = "<group>"; };
 		73F5C2951E9DBE580016A44D /* TextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldViewController.h; sourceTree = "<group>"; };
 		73F5C2961E9DBE580016A44D /* TextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldViewController.m; sourceTree = "<group>"; };
+		AE0E032B1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HXWebViewActionHandler+Share.h"; sourceTree = "<group>"; };
+		AE0E032C1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HXWebViewActionHandler+Share.m"; sourceTree = "<group>"; };
+		AE0E032E1F3D905E00CCD9EC /* HXWebViewActionHandler+OpenAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HXWebViewActionHandler+OpenAccount.h"; sourceTree = "<group>"; };
+		AE0E032F1F3D905E00CCD9EC /* HXWebViewActionHandler+OpenAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HXWebViewActionHandler+OpenAccount.m"; sourceTree = "<group>"; };
 		AE16FECD1F3BFB390050E892 /* Runtime_Super_Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Runtime_Super_Protected.h; sourceTree = "<group>"; };
 		AE16FECE1F3BFB390050E892 /* Runtime_Super_Protected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Runtime_Super_Protected.m; sourceTree = "<group>"; };
 		AE8BD43A1F38772500169FA3 /* PerformanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerformanceViewController.h; sourceTree = "<group>"; };
@@ -1362,12 +1368,16 @@
 			children = (
 				AEDEB4CB1F3803E300A05940 /* HXWebViewPage.h */,
 				AEDEB4CC1F3803E300A05940 /* HXWebViewPage.m */,
-				AEDEB4CE1F380D4D00A05940 /* HXWebViewActionHandler.h */,
-				AEDEB4CF1F380D4D00A05940 /* HXWebViewActionHandler.m */,
 				AEDEB4D11F380D9C00A05940 /* HXWebViewLoadInterceptor.h */,
 				AEDEB4D21F380D9C00A05940 /* HXWebViewLoadInterceptor.m */,
 				AE8BD4431F3989C200169FA3 /* HXWebViewLoadInterceptorOpenNew.h */,
 				AE8BD4441F3989C200169FA3 /* HXWebViewLoadInterceptorOpenNew.m */,
+				AEDEB4CE1F380D4D00A05940 /* HXWebViewActionHandler.h */,
+				AEDEB4CF1F380D4D00A05940 /* HXWebViewActionHandler.m */,
+				AE0E032B1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.h */,
+				AE0E032C1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.m */,
+				AE0E032E1F3D905E00CCD9EC /* HXWebViewActionHandler+OpenAccount.h */,
+				AE0E032F1F3D905E00CCD9EC /* HXWebViewActionHandler+OpenAccount.m */,
 			);
 			path = H5Container;
 			sourceTree = "<group>";
@@ -1686,6 +1696,7 @@
 				735EDAB61E1CC818002962DB /* EventViewController.m in Sources */,
 				731C12701E84F6CD0034F361 /* NaviAViewController.m in Sources */,
 				731C127C1E850BA20034F361 /* ClassicsArithmetic.m in Sources */,
+				AE0E03301F3D905E00CCD9EC /* HXWebViewActionHandler+OpenAccount.m in Sources */,
 				736CB27D1E81087400AC3EEF /* NativeHandle.m in Sources */,
 				73E541041E96408D007C6584 /* AutoChartPageModel.m in Sources */,
 				73B5A06C1DC868B200477323 /* FitCommentViewController.m in Sources */,
@@ -1701,6 +1712,7 @@
 				732D80351EB42E3D0003FD18 /* ANotificationViewController.m in Sources */,
 				731C127F1E8512970034F361 /* TestArithmeticViewController.m in Sources */,
 				73B5A0611DC7110200477323 /* TestCustomViewController.m in Sources */,
+				AE0E032D1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.m in Sources */,
 				732B1BF01EEE2B5F00B26A70 /* PropertyViewController.m in Sources */,
 				73BA34D11DB12E65007E9FC1 /* Company.m in Sources */,
 				7388312C1EE8E993002D7A1A /* UIView+Identify.m in Sources */,

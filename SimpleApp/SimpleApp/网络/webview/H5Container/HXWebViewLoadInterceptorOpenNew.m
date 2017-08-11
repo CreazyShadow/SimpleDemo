@@ -10,10 +10,15 @@
 
 @implementation HXWebViewLoadInterceptorOpenNew
 
-- (void)excuteWithCompletionHandler:(void (^)(BOOL))completion {
-    if (completion) {
+- (void)excuteWithNavigation:(WKNavigationAction *)action completionHandler:(void (^)(BOOL))completion {
+    NSString *url = action.request.URL.absoluteString;
+    if ([url isEqualToString:@"flag"]) {
         completion(YES);
+        return;
     }
+    
+    [super excuteWithNavigation:action completionHandler:completion];
+
 }
 
 @end

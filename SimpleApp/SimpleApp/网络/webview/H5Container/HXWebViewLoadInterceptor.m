@@ -14,8 +14,10 @@
 
 @implementation HXWebViewLoadInterceptor
 
-- (void)excuteWithCompletionHandler:(void (^)(BOOL))completion {
-    NSString *url = self.navigatorAction.request.URL.absoluteString;
+//https://10.112.90.129?flag=300&hx_scheme=abc&title=jack
+
+- (void)excuteWithNavigation:(WKNavigationAction *)action completionHandler:(void (^)(BOOL))completion {
+    NSString *url = action.request.URL.absoluteString;
     BOOL flag = YES;
     
     if ([url containsString:@"flag"]) {
@@ -25,6 +27,8 @@
     } else if ([url containsString:@"hx_scheme"]) {
         //...
         flag = NO;
+    } else if (0) { //需要解析URL
+        
     }
     
     if (completion) {

@@ -13,7 +13,21 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 
+@interface HXWebViewActionHandler()
+
+@property (nonatomic, strong) NSMutableDictionary<NSString *, id> *h5SharedDataPool;
+
+@end
+
 @implementation HXWebViewActionHandler
+
+- (instancetype)init {
+    if (self = [super init]) {
+        self.h5SharedDataPool = [[NSMutableDictionary alloc] init];
+    }
+    
+    return self;
+}
 
 - (void)excute {
     unsigned int count = 0;
@@ -27,16 +41,16 @@
     }
 }
 
-- (void)js_share {
-    NSLog(@"----1");
+- (id)jsResponseDataForHandler:(NSString *)handler {
+    return self.h5SharedDataPool[handler];
 }
 
-- (void)js_login {
-    NSLog(@"----2");
-}
-
-- (void)js_openAccount {
-    NSLog(@"----3");
+- (void)cacheH5ResponseData:(NSString *)handlerName reponse:(id)data {
+    if (!data || !handlerName) {
+        return;
+    }
+    
+    [self.h5SharedDataPool setObject:data forKey:handlerName];
 }
 
 @end

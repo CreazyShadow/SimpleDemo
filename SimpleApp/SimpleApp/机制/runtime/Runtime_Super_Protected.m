@@ -29,7 +29,6 @@ static NSString * const method = @"method_1";
         return YES;
     }
     
-    
     /**
      * 由于Self对象会发生改变 当前self = Runtime_Super_Inner_Class
      * 所以直接调用IMP来继续原来的处理逻辑

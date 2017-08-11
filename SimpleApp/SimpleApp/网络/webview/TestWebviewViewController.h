@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TestWebviewViewController : UIViewController
+#import "BaseHeaderViewController.h"
+
+@interface TestWebviewViewController : BaseHeaderViewController
 
 @end

@@ -87,7 +87,7 @@
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"TestRuntimeViewController";
+    NSString *className = @"TestWebviewViewController";
     switch (type) {
         case 0:
         {

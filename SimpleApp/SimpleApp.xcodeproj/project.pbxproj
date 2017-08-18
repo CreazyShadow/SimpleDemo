@@ -154,6 +154,7 @@
 		73E5BA8F1E262A0200CF3BD5 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E5BA8E1E262A0200CF3BD5 /* SearchViewController.m */; };
 		73ED0C241E514C0600E2A662 /* RayAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ED0C231E514C0600E2A662 /* RayAnimation.m */; };
 		73ED0C271E514C8100E2A662 /* TestProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ED0C261E514C8100E2A662 /* TestProtocolViewController.m */; };
+		73F3AD4D1F468B08004450F8 /* RayWkWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F3AD4C1F468B08004450F8 /* RayWkWebView.m */; };
 		73F5C2691E9B4F290016A44D /* AutoChartPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C2681E9B4F290016A44D /* AutoChartPageView.m */; };
 		73F5C26C1E9B53720016A44D /* AutoChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C26B1E9B53720016A44D /* AutoChartViewController.m */; };
 		73F5C2901E9DB8150016A44D /* DrawCurveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C28F1E9DB8150016A44D /* DrawCurveViewController.m */; };
@@ -164,7 +165,6 @@
 		AE16FECF1F3BFB390050E892 /* Runtime_Super_Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = AE16FECE1F3BFB390050E892 /* Runtime_Super_Protected.m */; };
 		AE8BD43C1F38772500169FA3 /* PerformanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8BD43B1F38772500169FA3 /* PerformanceViewController.m */; };
 		AE8BD43F1F38845200169FA3 /* TextInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8BD43E1F38845200169FA3 /* TextInputViewController.m */; };
-		AE8BD4451F3989C200169FA3 /* HXWebViewLoadInterceptorOpenNew.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8BD4441F3989C200169FA3 /* HXWebViewLoadInterceptorOpenNew.m */; };
 		AE8BD4851F3BEA9E00169FA3 /* Runtime_Super.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8BD4841F3BEA9E00169FA3 /* Runtime_Super.m */; };
 		AE8BD4881F3BEAAA00169FA3 /* Runtime_Sub.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8BD4871F3BEAAA00169FA3 /* Runtime_Sub.m */; };
 		AEDEB4CD1F3803E300A05940 /* HXWebViewPage.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDEB4CC1F3803E300A05940 /* HXWebViewPage.m */; };
@@ -479,6 +479,8 @@
 		73ED0C231E514C0600E2A662 /* RayAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RayAnimation.m; sourceTree = "<group>"; };
 		73ED0C251E514C8100E2A662 /* TestProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProtocolViewController.h; sourceTree = "<group>"; };
 		73ED0C261E514C8100E2A662 /* TestProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestProtocolViewController.m; sourceTree = "<group>"; };
+		73F3AD4B1F468B08004450F8 /* RayWkWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RayWkWebView.h; sourceTree = "<group>"; };
+		73F3AD4C1F468B08004450F8 /* RayWkWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RayWkWebView.m; sourceTree = "<group>"; };
 		73F5C2671E9B4F290016A44D /* AutoChartPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoChartPageView.h; sourceTree = "<group>"; };
 		73F5C2681E9B4F290016A44D /* AutoChartPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoChartPageView.m; sourceTree = "<group>"; };
 		73F5C26A1E9B53720016A44D /* AutoChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoChartViewController.h; sourceTree = "<group>"; };
@@ -499,8 +501,6 @@
 		AE8BD43B1F38772500169FA3 /* PerformanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerformanceViewController.m; sourceTree = "<group>"; };
 		AE8BD43D1F38845200169FA3 /* TextInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextInputViewController.h; sourceTree = "<group>"; };
 		AE8BD43E1F38845200169FA3 /* TextInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextInputViewController.m; sourceTree = "<group>"; };
-		AE8BD4431F3989C200169FA3 /* HXWebViewLoadInterceptorOpenNew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXWebViewLoadInterceptorOpenNew.h; sourceTree = "<group>"; };
-		AE8BD4441F3989C200169FA3 /* HXWebViewLoadInterceptorOpenNew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXWebViewLoadInterceptorOpenNew.m; sourceTree = "<group>"; };
 		AE8BD4831F3BEA9E00169FA3 /* Runtime_Super.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Runtime_Super.h; sourceTree = "<group>"; };
 		AE8BD4841F3BEA9E00169FA3 /* Runtime_Super.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Runtime_Super.m; sourceTree = "<group>"; };
 		AE8BD4861F3BEAAA00169FA3 /* Runtime_Sub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Runtime_Sub.h; sourceTree = "<group>"; };
@@ -603,6 +603,8 @@
 				731C12611E84F0060034F361 /* UIWebView+Clean.m */,
 				731C12621E84F0060034F361 /* WKWebViewViewController.h */,
 				731C12631E84F0060034F361 /* WKWebViewViewController.m */,
+				73F3AD4B1F468B08004450F8 /* RayWkWebView.h */,
+				73F3AD4C1F468B08004450F8 /* RayWkWebView.m */,
 			);
 			path = webview;
 			sourceTree = "<group>";
@@ -1087,6 +1089,7 @@
 		73BA34861DB12E65007E9FC1 /* 机制 */ = {
 			isa = PBXGroup;
 			children = (
+				AE0E03341F42CA4100CCD9EC /* ScrollView */,
 				732B1BEA1EEE28B900B26A70 /* 属性 */,
 				732D80321EB42E1E0003FD18 /* 通知和KVO */,
 				7359983B1EA6F61B00427C5B /* 类和元类 */,
@@ -1354,6 +1357,13 @@
 			path = UITextField;
 			sourceTree = "<group>";
 		};
+		AE0E03341F42CA4100CCD9EC /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
 		AE8BD4391F38770000169FA3 /* 性能 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1370,8 +1380,6 @@
 				AEDEB4CC1F3803E300A05940 /* HXWebViewPage.m */,
 				AEDEB4D11F380D9C00A05940 /* HXWebViewLoadInterceptor.h */,
 				AEDEB4D21F380D9C00A05940 /* HXWebViewLoadInterceptor.m */,
-				AE8BD4431F3989C200169FA3 /* HXWebViewLoadInterceptorOpenNew.h */,
-				AE8BD4441F3989C200169FA3 /* HXWebViewLoadInterceptorOpenNew.m */,
 				AEDEB4CE1F380D4D00A05940 /* HXWebViewActionHandler.h */,
 				AEDEB4CF1F380D4D00A05940 /* HXWebViewActionHandler.m */,
 				AE0E032B1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.h */,
@@ -1609,6 +1617,7 @@
 				73BA34CB1DB12E65007E9FC1 /* JSContextDemo.m in Sources */,
 				AE8BD43C1F38772500169FA3 /* PerformanceViewController.m in Sources */,
 				73BA34CA1DB12E65007E9FC1 /* ScrapeView.m in Sources */,
+				73F3AD4D1F468B08004450F8 /* RayWkWebView.m in Sources */,
 				73ED0C271E514C8100E2A662 /* TestProtocolViewController.m in Sources */,
 				73A8B7281E8E551200303C4D /* Aview.m in Sources */,
 				731DAD161E7B8B10004E5F8D /* CustomOperation.m in Sources */,
@@ -1657,7 +1666,6 @@
 				7359982D1EA5D1C200427C5B /* MRCObject.m in Sources */,
 				737B107E1E63B6E1001FF92A /* ProxyViewController.m in Sources */,
 				73BA34D91DB12E65007E9FC1 /* CellModel.swift in Sources */,
-				AE8BD4451F3989C200169FA3 /* HXWebViewLoadInterceptorOpenNew.m in Sources */,
 				732116D81EFA3F260041BF6E /* UIView+Event.m in Sources */,
 				733C26331DD42213005FF7AE /* ProductSliderTableViewCell.m in Sources */,
 				731C12671E84F0060034F361 /* HttpSessionViewController.m in Sources */,

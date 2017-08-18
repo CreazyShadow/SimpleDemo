@@ -18,6 +18,8 @@
 @property (nonatomic, strong) WKWebView *wkwebview;
 
 @property (nonatomic, strong) NSURLRequest *request;
+
+@property (nonatomic, strong) UILabel *bottomLabel;
 @end
 
 @implementation TestWebviewViewController
@@ -27,12 +29,9 @@
     
     self.view.backgroundColor = [UIColor orangeColor];
     
-//    [self.view addSubview:self.webview];
-    [self.wkwebview loadRequest:self.request];
     
-//    [self.webview loadRequest:request];
-//    [self.webview sizeToFit];
-//    [self.webview loadHTMLString:url baseURL:nil];
+    
+    [self.wkwebview loadRequest:self.request];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -84,6 +83,12 @@
     NSLog(@"----- wkwebview load finished.");
 }
 
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
+    if (webView.backForwardList) {
+        
+    }
+}
+
 #pragma mark - cookie
 
 - (void)setupCookie {
@@ -112,7 +117,10 @@
             break;
             
         case 1:
-            
+        {
+            id arr = @[@1, @2, @3];
+            [arr addObject:@"123"];
+        }
             break;
             
         case 2:
@@ -139,6 +147,9 @@
         _wkwebview = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 500) configuration:[WKWebViewConfiguration new]];
         _wkwebview.allowsBackForwardNavigationGestures = YES;
         _wkwebview.navigationDelegate = self;
+        [_wkwebview addSubview:self.bottomLabel];
+        _bottomLabel.y = _wkwebview.height - _bottomLabel.height;
+        [self gestureForWebView:_wkwebview];
     }
     
     return _wkwebview;
@@ -146,11 +157,46 @@
 
 - (NSURLRequest *)request {
     if (!_request) {
-        NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"];
+        NSURL *url = [NSURL URLWithString:@"https://h5-ztb-uat.shhxzq.com/h5/html/news/list.html?columnId=030008&deviceId=D53UkPveJGUqI56nlGUjpM&v=2.7.0&snsAccount=SNS20170510428902193139361348&deviceType=3&time=2017081809&token=&clientId=&hasActive=1"];
         _request = [NSURLRequest requestWithURL:url];
     }
     
     return _request;
+}
+
+- (UILabel *)bottomLabel {
+    if (!_bottomLabel) {
+        _bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 50)];
+        _bottomLabel.backgroundColor = [UIColor redColor];
+        _bottomLabel.text = @"QQQQQQQQQ";
+    }
+    
+    return _bottomLabel;
+}
+
+#pragma mark - wkwebview 边缘手势
+
+- (void)gestureForWebView:(WKWebView *)webview {
+    for (UIGestureRecognizer *ges in webview.gestureRecognizers) {
+        if ([ges isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
+            UIScreenEdgePanGestureRecognizer *screenGes = (UIScreenEdgePanGestureRecognizer *)ges;
+            [screenGes addTarget:self action:@selector(webviewScreenGes:)];
+        }
+    }
+}
+
+- (void)webviewScreenGes:(UIScreenEdgePanGestureRecognizer *)ges {
+    CGPoint point = [ges translationInView:self.view];
+    WKWebView *webview = (WKWebView *)ges.view;
+    [self printSubViews:webview];
+//    NSLog(@"%@", NSStringFromCGPoint([ges translationInView:self.view]));
+}
+
+- (void)printSubViews:(UIView *)view {
+    for (UIView *item in view.subviews) {
+        NSLog(@"%@", item);
+        [self printSubViews:item];
+    }
 }
 
 @end

@@ -10,4 +10,6 @@
 
 @interface HXWebViewActionHandler (Share)
 
+- (void)sendCommentRequest;
+
 @end

@@ -10,10 +10,22 @@
 
 #import <WebKit/WebKit.h>
 
+typedef NS_ENUM(NSInteger, InterceptorAction) {
+    InterceptorActionDefault,
+    InterceptorActionSpecial,
+    InterceptorActionCommon,
+};
+
+@class HXWebViewPage;
+
+typedef void(^completionHander)(BOOL isAllow);
+
 @interface HXWebViewLoadInterceptor : NSObject
 
-@property (nonatomic, weak) WKWebView *webview;
+@property (nonatomic, weak) HXWebViewPage *webviewPage;
 
-- (void)excuteWithNavigation:(WKNavigationAction *)action completionHandler:(void(^)(BOOL isAllow))completion;
++ (instancetype)interceptorWithAction:(InterceptorAction)action;
+
+- (void)excuteWithNavigation:(WKNavigationAction *)action completionHandler:(completionHander)completion;
 
 @end

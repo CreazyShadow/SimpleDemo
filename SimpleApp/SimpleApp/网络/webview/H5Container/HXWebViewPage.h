@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @class WKWebViewJavascriptBridge;
-@class HXWebViewLoadInterceptor;
+
+#import "HXWebViewActionHandler.h"
+#import "HXWebViewLoadInterceptor.h"
 
 @interface HXWebViewPage : UIViewController
 
@@ -17,6 +19,6 @@
 
 - (void)loadURL:(NSString *)url;
 
-- (void)loadURL:(NSString *)url interceptor:(HXWebViewLoadInterceptor *)interceptor;
+- (void)loadURL:(NSString *)url interceptorAction:(InterceptorAction)action;
 
 @end

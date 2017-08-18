@@ -49,8 +49,8 @@
 @implementation AppDelegate
 
 - (void)test {
-    HXWebViewActionHandler *handler = [[HXWebViewActionHandler alloc] init];
-    [handler excute];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:nil];
+    NSLog(@"---%@", dic);
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -59,14 +59,14 @@
     //    [NSURLProtocol registerClass:[CustomURLProtocol class]];
     //    [[SessionCustomProtocolConfiguration shareManager] openHttpProtocol];
     
+    //重定向NSLOG
+//    [[LogHelper shareInstance] redirectSTD:STDERR_FILENO];
+    
     //捕获crash
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     
     //测试方法
     [self test];
-    
-    //重定向NSLOG
-    //[[LogHelper shareInstance] redirectSTD:STDERR_FILENO];
     
     //    渲染window
     self.window = [[CustomWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

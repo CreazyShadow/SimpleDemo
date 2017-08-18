@@ -18,4 +18,17 @@
     NSLog(@"---- share event");
 }
 
+- (void)sendCommentRequest {
+    NSLog(@"-----");
+}
+
+#pragma mark - 相关业务逻辑
+
+- (void)js_showShareDialog {
+    //1....show
+    //2....填写信息
+    //3....发布
+    [self sendCommentRequest];
+}
+
 @end

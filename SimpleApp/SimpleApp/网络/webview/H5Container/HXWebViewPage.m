@@ -10,10 +10,6 @@
 #import <WebKit/WebKit.h>
 #import <WKWebViewJavascriptBridge.h>
 
-#import "HXWebViewActionHandler.h"
-#import "HXWebViewLoadInterceptor.h"
-
-
 @interface HXWebViewPage ()<WKUIDelegate, WKNavigationDelegate>
 
 @property (nonatomic, strong) WKWebView *webView;

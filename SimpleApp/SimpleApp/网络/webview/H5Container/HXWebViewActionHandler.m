@@ -33,10 +33,14 @@
     unsigned int count = 0;
     Method *methods = class_copyMethodList([self class], &count);
     for (int i = 0; i < count; i++) {
-        SEL sel = method_getName(methods[i]);
-        NSString *selName = NSStringFromSelector(sel);
-        if ([selName hasPrefix:@"js_"]) {
-            ((void(*)(id,SEL))objc_msgSend)(self, sel);
+        @try {
+            SEL sel = method_getName(methods[i]);
+            NSString *selName = NSStringFromSelector(sel);
+            if ([selName hasPrefix:@"js_"]) {
+                ((void(*)(id,SEL))objc_msgSend)(self, sel);
+            }
+        } @catch (NSException *exception) {
+            NSLog(@"%@", exception);
         }
     }
 }

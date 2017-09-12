@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Aspects (1.4.1)
   - EGOCache (2.1.3)
   - FBAllocationTracker (0.1.5)
   - FBMemoryProfiler (0.1.3):
@@ -23,7 +24,6 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
-  - IQKeyboardManager (4.0.11)
   - Masonry (1.0.2)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
@@ -42,10 +42,10 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - Aspects
   - EGOCache
   - FBMemoryProfiler
   - FMDB
-  - IQKeyboardManager
   - Masonry
   - MJExtension
   - MJRefresh
@@ -59,12 +59,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   EGOCache: f0295dbe041156acabd39021354ad1045ee49e72
   FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
   FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
   FBRetainCycleDetector: f0c7b290bf48ae77f6ae060843ce34ae341781eb
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  IQKeyboardManager: 83eae5318483a34eb2069ef413d195b97605232e
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
@@ -77,6 +77,6 @@ SPEC CHECKSUMS:
   YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 5ffd623870798e52362ef32daf9714aff65343ee
+PODFILE CHECKSUM: 3eba79e520cd5ae0f0a2760a652cd8efcdf3026d
 
 COCOAPODS: 1.2.0

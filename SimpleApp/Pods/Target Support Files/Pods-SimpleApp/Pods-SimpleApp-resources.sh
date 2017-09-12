@@ -77,12 +77,10 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "WSProgressHUD/WSProgressHUD/WSProgressBundle.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "WSProgressHUD/WSProgressHUD/WSProgressBundle.bundle"
 fi

@@ -45,8 +45,8 @@
     }
 }
 
-- (id)jsResponseDataForHandler:(NSString *)handler {
-    return self.h5SharedDataPool[handler];
+- (id)jsResponseDataForHandler:(NSString *)bridgeHandler {
+    return self.h5SharedDataPool[bridgeHandler];
 }
 
 - (void)cacheH5ResponseData:(NSString *)handlerName reponse:(id)data {

@@ -16,6 +16,6 @@
 
 - (void)excute;
 
-- (id)jsResponseDataForHandler:(NSString *)handler;
+- (id)jsResponseDataForHandler:(NSString *)bridgeHandler;
 
 @end

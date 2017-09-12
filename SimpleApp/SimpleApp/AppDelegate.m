@@ -32,13 +32,16 @@
 #import "CustomWindow.h"
 
 #import "CustomNavigationController.h"
+#import "SubView.h"
 
 #import "MRCObject.h"
 #import "RunLoopUtility.h"
 
-#import <IQKeyboardManager.h>
+//#import <IQKeyboardManager.h>
 
 #import "HXWebViewActionHandler.h"
+
+NSString *const maxCount = @"100";
 
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
 
@@ -49,8 +52,7 @@
 @implementation AppDelegate
 
 - (void)test {
-    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:nil];
-    NSLog(@"---%@", dic);
+    SubView *sub = [[SubView alloc] initWithFrame:CGRectMake(0, 0, 200, 100) name:@"jack"];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -77,7 +79,7 @@
     
     [self.window makeKeyAndVisible];
     
-    [IQKeyboardManager sharedManager].enable = YES;
+//    [IQKeyboardManager sharedManager].enable = YES;
     
     //通知
     [self setupNotification];
@@ -87,7 +89,7 @@
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"TestWebviewViewController";
+    NSString *className = @"FirstViewController";
     switch (type) {
         case 0:
         {

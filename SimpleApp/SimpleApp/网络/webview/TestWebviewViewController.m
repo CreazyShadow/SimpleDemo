@@ -9,9 +9,14 @@
 #import "TestWebviewViewController.h"
 #import "UIWebView+Clean.h"
 
+#import <JavaScriptCore/JavaScriptCore.h>
 #import <WebKit/WebKit.h>
 
-@interface TestWebviewViewController ()<UIWebViewDelegate, WKNavigationDelegate>
+#import <Aspects.h>
+
+extern NSString * const maxCount;
+
+@interface TestWebviewViewController ()<UIWebViewDelegate, WKNavigationDelegate, WKScriptMessageHandler>
 
 @property (nonatomic, strong) UIWebView *webview;
 
@@ -20,6 +25,8 @@
 @property (nonatomic, strong) NSURLRequest *request;
 
 @property (nonatomic, strong) UILabel *bottomLabel;
+
+@property (nonatomic, strong) JSContext *jsContext;
 @end
 
 @implementation TestWebviewViewController
@@ -29,9 +36,8 @@
     
     self.view.backgroundColor = [UIColor orangeColor];
     
-    
-    
     [self.wkwebview loadRequest:self.request];
+    [self.view addSubview:self.wkwebview];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -79,13 +85,45 @@
 
 #pragma mark - WKNavigationDelegate
 
-- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    NSLog(@"----- wkwebview load finished.");
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
+    NSLog(@"---- START");
 }
 
-- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
-    if (webView.backForwardList) {
-        
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+    NSLog(@"----- finish");
+    NSString *js = @"document.readyState";
+    [webView evaluateJavaScript:js completionHandler:^(id _Nullable state, NSError * _Nullable error) {
+        if ([state isKindOfClass:[NSString class]] && [state isEqualToString:@"complete"]) {
+            NSLog(@"------ load complete");
+        }
+    }];
+}
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
+    
+    [self listenWebviewLoadingState:webView];
+    [webView evaluateJavaScript:@"document.body.innerHTML" completionHandler:^(id _Nullable data, NSError * _Nullable error) {
+        NSLog(@"----- document length:%@", data);
+    }];
+    
+    decisionHandler(WKNavigationResponsePolicyAllow);
+}
+
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    
+    decisionHandler(WKNavigationActionPolicyAllow);
+}
+
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    
+}
+
+#pragma mark - WKScriptMessageHandler
+
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    if ([message.name isEqualToString:@"Native"]) {
+        NSLog(@"---------%@--%@", message.body, _wkwebview.URL);
     }
 }
 
@@ -113,19 +151,26 @@
 - (void)selectHeaderAction:(NSInteger)index {
     switch (index) {
         case 0:
-            [self.view addSubview:self.wkwebview];
+            [self.wkwebview reload];
+            
             break;
             
         case 1:
         {
-            id arr = @[@1, @2, @3];
-            [arr addObject:@"123"];
+            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:63342/HtmlNote/Base/InteractionNative.html?_ijt=b0cj9nhpp63esnkk1ev2pnnod3"]];
+            [self.wkwebview loadRequest:request];
         }
             break;
             
         case 2:
             
             break;
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"estimatedProgress"]) {
+        NSLog(@"---%@", change[NSKeyValueChangeNewKey]);
     }
 }
 
@@ -144,12 +189,23 @@
 
 - (WKWebView *)wkwebview {
     if (!_wkwebview) {
-        _wkwebview = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 500) configuration:[WKWebViewConfiguration new]];
+        
+        WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
+        config.userContentController = [[WKUserContentController alloc] init];
+        [config.userContentController addScriptMessageHandler:self name:@"Native"];
+        
+        _wkwebview = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 500) configuration:config];
         _wkwebview.allowsBackForwardNavigationGestures = YES;
         _wkwebview.navigationDelegate = self;
-        [_wkwebview addSubview:self.bottomLabel];
         _bottomLabel.y = _wkwebview.height - _bottomLabel.height;
-        [self gestureForWebView:_wkwebview];
+        
+        [_wkwebview aspect_hookSelector:@selector(goBack) withOptions:AspectPositionAfter usingBlock: ^{
+            NSLog(@"------go back");
+        } error:nil];
+        
+        [_wkwebview aspect_hookSelector:@selector(reload) withOptions:AspectPositionAfter usingBlock:^ {
+            NSLog(@"----- reload");
+        }error:nil];
     }
     
     return _wkwebview;
@@ -157,7 +213,7 @@
 
 - (NSURLRequest *)request {
     if (!_request) {
-        NSURL *url = [NSURL URLWithString:@"https://h5-ztb-uat.shhxzq.com/h5/html/news/list.html?columnId=030008&deviceId=D53UkPveJGUqI56nlGUjpM&v=2.7.0&snsAccount=SNS20170510428902193139361348&deviceType=3&time=2017081809&token=&clientId=&hasActive=1"];
+        NSURL *url = [NSURL URLWithString:@"http://localhost:63342/HtmlNote/Base/InteractionNative.html?_ijt=b0cj9nhpp63esnkk1ev2pnnod3"];
         _request = [NSURLRequest requestWithURL:url];
     }
     
@@ -172,6 +228,20 @@
     }
     
     return _bottomLabel;
+}
+
+#pragma mark - 监听WKwebview加载状态
+
+- (void)listenWebviewLoadingState:(WKWebView *)webview {
+    NSString *js =
+    @"document.onreadystatechange = function () {"
+    " var dic = {'name' : 'jack'};"
+    "    window.webkit.messageHandlers['Native'].postMessage(dic);"
+    "};";
+    
+    [webview evaluateJavaScript:js completionHandler:^(id _Nullable data, NSError * _Nullable error) {
+        NSLog(@"-------%@", data);
+    }];
 }
 
 #pragma mark - wkwebview 边缘手势

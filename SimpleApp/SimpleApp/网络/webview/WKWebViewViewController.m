@@ -27,10 +27,6 @@
     [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]]];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
@@ -87,15 +83,7 @@
 - (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation{
     
 }
-// 在收到响应后，决定是否跳转
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
-    
-    NSLog(@"%@",navigationResponse.response.URL.absoluteString);
-    //允许跳转
-    decisionHandler(WKNavigationResponsePolicyAllow);
-    //不允许跳转
-    //decisionHandler(WKNavigationResponsePolicyCancel);
-}
+
 // 在发送请求之前，决定是否跳转
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     
@@ -106,6 +94,16 @@
     //decisionHandler(WKNavigationActionPolicyCancel);
 }
 
+// 在收到响应后，决定是否跳转
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
+    
+    NSLog(@"%@",navigationResponse.response.URL.absoluteString);
+    //允许跳转
+    decisionHandler(WKNavigationResponsePolicyAllow);
+    //不允许跳转
+    //decisionHandler(WKNavigationResponsePolicyCancel);
+}
+
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
     
 }
@@ -114,8 +112,20 @@
     
 }
 
+#pragma mark - 处理wkwebview白屏问题
+
+// 当wkwebview内存过大，页面即将白屏时调用
 - (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView {
+    [webView reload];
+}
+
+// 打开高内存消耗操作时，当返回页面时webview会白屏
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
+    if (_webview.title.length == 0) {
+        [_webview reload];
+    }
 }
 
 #pragma mark - private

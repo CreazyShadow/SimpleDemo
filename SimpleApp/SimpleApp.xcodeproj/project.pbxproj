@@ -32,6 +32,10 @@
 		731DAD101E7B6ED1004E5F8D /* CustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 731DAD0F1E7B6ED1004E5F8D /* CustomWindow.m */; };
 		731DAD131E7B805F004E5F8D /* OperationQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731DAD121E7B805F004E5F8D /* OperationQueueViewController.m */; };
 		731DAD161E7B8B10004E5F8D /* CustomOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 731DAD151E7B8B10004E5F8D /* CustomOperation.m */; };
+		732116CF1EFA1DD20041BF6E /* Object_Super.m in Sources */ = {isa = PBXBuildFile; fileRef = 732116CE1EFA1DD20041BF6E /* Object_Super.m */; };
+		732116D21EFA1E0B0041BF6E /* Object_Super+Introduce.m in Sources */ = {isa = PBXBuildFile; fileRef = 732116D11EFA1E0B0041BF6E /* Object_Super+Introduce.m */; };
+		732116D51EFA1E520041BF6E /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732116D41EFA1E520041BF6E /* CategoryViewController.m */; };
+		732116D81EFA3F260041BF6E /* UIView+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 732116D71EFA3F260041BF6E /* UIView+Event.m */; };
 		7323E98F1DBD99DD00F053F8 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7323E98E1DBD99DD00F053F8 /* DrawViewController.m */; };
 		7323E9921DBD99EF00F053F8 /* DelayDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7323E9911DBD99EF00F053F8 /* DelayDrawView.m */; };
 		7323E9E61DBF5B9800F053F8 /* NSObject+Exception.m in Sources */ = {isa = PBXBuildFile; fileRef = 7323E9E51DBF5B9800F053F8 /* NSObject+Exception.m */; };
@@ -39,6 +43,8 @@
 		732AE6201E5E89FF0068E1CE /* EKElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 732AE61F1E5E89FF0068E1CE /* EKElement.m */; };
 		732AE6231E5E8E680068E1CE /* ClassA.m in Sources */ = {isa = PBXBuildFile; fileRef = 732AE6221E5E8E680068E1CE /* ClassA.m */; };
 		732AE6261E5E8E710068E1CE /* ClassB.m in Sources */ = {isa = PBXBuildFile; fileRef = 732AE6251E5E8E710068E1CE /* ClassB.m */; };
+		732B1BED1EEE29E000B26A70 /* PhoneNumPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B1BEC1EEE29E000B26A70 /* PhoneNumPerson.m */; };
+		732B1BF01EEE2B5F00B26A70 /* PropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B1BEF1EEE2B5F00B26A70 /* PropertyViewController.m */; };
 		732B50781E8B3DF8006F2677 /* VIewLifeCycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B50771E8B3DF8006F2677 /* VIewLifeCycleViewController.m */; };
 		732B507B1E8B3E5F006F2677 /* LifeCycleAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B507A1E8B3E5F006F2677 /* LifeCycleAViewController.m */; };
 		732B507F1E8B44B0006F2677 /* TimerAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B507E1E8B44B0006F2677 /* TimerAViewController.m */; };
@@ -77,6 +83,9 @@
 		735EDAB01E1CC77F002962DB /* SuperEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 735EDAAF1E1CC77F002962DB /* SuperEventView.m */; };
 		735EDAB31E1CC790002962DB /* ChildEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 735EDAB21E1CC790002962DB /* ChildEventView.m */; };
 		735EDAB61E1CC818002962DB /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735EDAB51E1CC818002962DB /* EventViewController.m */; };
+		7362AB3A1ECDAE3600B2E933 /* HealthInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7362AB391ECDAE3600B2E933 /* HealthInfoModel.m */; };
+		7362AB401ECDAE5F00B2E933 /* HealthInfoModel+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 7362AB3F1ECDAE5F00B2E933 /* HealthInfoModel+Test.m */; };
+		7362AB491ECE9DF500B2E933 /* NSObject+MsgOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7362AB481ECE9DF500B2E933 /* NSObject+MsgOperation.m */; };
 		736CB2751E80F60000AC3EEF /* JSCoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 736CB2741E80F60000AC3EEF /* JSCoreViewController.m */; };
 		736CB2771E80F74200AC3EEF /* jscontextdemo.js in Resources */ = {isa = PBXBuildFile; fileRef = 736CB2761E80F74200AC3EEF /* jscontextdemo.js */; };
 		736CB27D1E81087400AC3EEF /* NativeHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 736CB27C1E81087400AC3EEF /* NativeHandle.m */; };
@@ -88,6 +97,7 @@
 		7373D2621CD0AA2600332D91 /* SimpleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7373D2611CD0AA2600332D91 /* SimpleAppTests.m */; };
 		7373D26D1CD0AA2600332D91 /* SimpleAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7373D26C1CD0AA2600332D91 /* SimpleAppUITests.m */; };
 		737B107E1E63B6E1001FF92A /* ProxyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 737B107D1E63B6E1001FF92A /* ProxyViewController.m */; };
+		7388312C1EE8E993002D7A1A /* UIView+Identify.m in Sources */ = {isa = PBXBuildFile; fileRef = 7388312B1EE8E993002D7A1A /* UIView+Identify.m */; };
 		7393FBC41E48533B00EF7BDF /* Hit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7393FBC31E48533B00EF7BDF /* Hit.m */; };
 		7393FBCB1E49557300EF7BDF /* SendMessageClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7393FBCA1E49557300EF7BDF /* SendMessageClass.m */; };
 		7393FBCE1E49559100EF7BDF /* MessageMechanismViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7393FBCD1E49559100EF7BDF /* MessageMechanismViewController.m */; };
@@ -130,10 +140,14 @@
 		73BA34DC1DB12E65007E9FC1 /* MasonyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BA34B11DB12E65007E9FC1 /* MasonyTableViewController.m */; };
 		73BA34DD1DB12E65007E9FC1 /* TestTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA34B31DB12E65007E9FC1 /* TestTableViewViewController.swift */; };
 		73BA34E01DB12E65007E9FC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BA34BC1DB12E65007E9FC1 /* ViewController.m */; };
+		73BBE7611EE67BB400FC76BB /* HealthChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BBE7601EE67BB400FC76BB /* HealthChartView.m */; };
+		73BBE7D41EE7D38700FC76BB /* HealthChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BBE7D31EE7D38700FC76BB /* HealthChartViewController.m */; };
 		73BE8D841E7284CC0073A2C6 /* PushManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BE8D831E7284CC0073A2C6 /* PushManagerViewController.m */; };
 		73BE8D861E7287820073A2C6 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73BE8D851E7287810073A2C6 /* 1.jpg */; };
 		73C07FA31ECB34460033977B /* ObjectiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C07FA21ECB34460033977B /* ObjectiveViewController.m */; };
 		73C07FA61ECB345E0033977B /* ObjectiveSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C07FA51ECB345E0033977B /* ObjectiveSummary.m */; };
+		73CF06EA1F1875DC0029B67B /* CommonArithmetic.c in Sources */ = {isa = PBXBuildFile; fileRef = 73CF06E81F1875DC0029B67B /* CommonArithmetic.c */; };
+		73D4B2791ECADB64002E952E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D4B2781ECADB64002E952E /* Photos.framework */; };
 		73E540FB1E963A09007C6584 /* DataSourcePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E540FA1E963A09007C6584 /* DataSourcePool.m */; };
 		73E540FE1E963A18007C6584 /* AutoChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E540FD1E963A18007C6584 /* AutoChart.m */; };
 		73E541041E96408D007C6584 /* AutoChartPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E541031E96408D007C6584 /* AutoChartPageModel.m */; };
@@ -142,11 +156,22 @@
 		73E5BA8F1E262A0200CF3BD5 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E5BA8E1E262A0200CF3BD5 /* SearchViewController.m */; };
 		73ED0C241E514C0600E2A662 /* RayAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ED0C231E514C0600E2A662 /* RayAnimation.m */; };
 		73ED0C271E514C8100E2A662 /* TestProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ED0C261E514C8100E2A662 /* TestProtocolViewController.m */; };
+		73F3AD4D1F468B08004450F8 /* RayWkWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F3AD4C1F468B08004450F8 /* RayWkWebView.m */; };
 		73F5C2691E9B4F290016A44D /* AutoChartPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C2681E9B4F290016A44D /* AutoChartPageView.m */; };
 		73F5C26C1E9B53720016A44D /* AutoChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C26B1E9B53720016A44D /* AutoChartViewController.m */; };
 		73F5C2901E9DB8150016A44D /* DrawCurveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C28F1E9DB8150016A44D /* DrawCurveViewController.m */; };
 		73F5C2941E9DBDE10016A44D /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C2931E9DBDE10016A44D /* CustomTextField.m */; };
 		73F5C2971E9DBE580016A44D /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C2961E9DBE580016A44D /* TextFieldViewController.m */; };
+		AE0E032D1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0E032C1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.m */; };
+		AE0E03301F3D905E00CCD9EC /* HXWebViewActionHandler+OpenAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0E032F1F3D905E00CCD9EC /* HXWebViewActionHandler+OpenAccount.m */; };
+		AE16FECF1F3BFB390050E892 /* Runtime_Super_Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = AE16FECE1F3BFB390050E892 /* Runtime_Super_Protected.m */; };
+		AE8BD43C1F38772500169FA3 /* PerformanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8BD43B1F38772500169FA3 /* PerformanceViewController.m */; };
+		AE8BD43F1F38845200169FA3 /* TextInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8BD43E1F38845200169FA3 /* TextInputViewController.m */; };
+		AE8BD4851F3BEA9E00169FA3 /* Runtime_Super.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8BD4841F3BEA9E00169FA3 /* Runtime_Super.m */; };
+		AE8BD4881F3BEAAA00169FA3 /* Runtime_Sub.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8BD4871F3BEAAA00169FA3 /* Runtime_Sub.m */; };
+		AEDEB4CD1F3803E300A05940 /* HXWebViewPage.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDEB4CC1F3803E300A05940 /* HXWebViewPage.m */; };
+		AEDEB4D01F380D4D00A05940 /* HXWebViewActionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDEB4CF1F380D4D00A05940 /* HXWebViewActionHandler.m */; };
+		AEDEB4D31F380D9C00A05940 /* HXWebViewLoadInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDEB4D21F380D9C00A05940 /* HXWebViewLoadInterceptor.m */; };
 		B980A19BF0CE00920C503208 /* libPods-SimpleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ADD0F38396CB07FF3AB19A5 /* libPods-SimpleApp.a */; };
 /* End PBXBuildFile section */
 
@@ -219,6 +244,14 @@
 		731DAD121E7B805F004E5F8D /* OperationQueueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationQueueViewController.m; sourceTree = "<group>"; };
 		731DAD141E7B8B10004E5F8D /* CustomOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomOperation.h; sourceTree = "<group>"; };
 		731DAD151E7B8B10004E5F8D /* CustomOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomOperation.m; sourceTree = "<group>"; };
+		732116CD1EFA1DD20041BF6E /* Object_Super.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object_Super.h; sourceTree = "<group>"; };
+		732116CE1EFA1DD20041BF6E /* Object_Super.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Object_Super.m; sourceTree = "<group>"; };
+		732116D01EFA1E0B0041BF6E /* Object_Super+Introduce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Object_Super+Introduce.h"; sourceTree = "<group>"; };
+		732116D11EFA1E0B0041BF6E /* Object_Super+Introduce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Object_Super+Introduce.m"; sourceTree = "<group>"; };
+		732116D31EFA1E520041BF6E /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		732116D41EFA1E520041BF6E /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
+		732116D61EFA3F260041BF6E /* UIView+Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Event.h"; sourceTree = "<group>"; };
+		732116D71EFA3F260041BF6E /* UIView+Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Event.m"; sourceTree = "<group>"; };
 		7323E98D1DBD99DD00F053F8 /* DrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawViewController.h; sourceTree = "<group>"; };
 		7323E98E1DBD99DD00F053F8 /* DrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
 		7323E9901DBD99EF00F053F8 /* DelayDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelayDrawView.h; sourceTree = "<group>"; };
@@ -233,6 +266,10 @@
 		732AE6221E5E8E680068E1CE /* ClassA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassA.m; sourceTree = "<group>"; };
 		732AE6241E5E8E710068E1CE /* ClassB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassB.h; sourceTree = "<group>"; };
 		732AE6251E5E8E710068E1CE /* ClassB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassB.m; sourceTree = "<group>"; };
+		732B1BEB1EEE29E000B26A70 /* PhoneNumPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneNumPerson.h; sourceTree = "<group>"; };
+		732B1BEC1EEE29E000B26A70 /* PhoneNumPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneNumPerson.m; sourceTree = "<group>"; };
+		732B1BEE1EEE2B5F00B26A70 /* PropertyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyViewController.h; sourceTree = "<group>"; };
+		732B1BEF1EEE2B5F00B26A70 /* PropertyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyViewController.m; sourceTree = "<group>"; };
 		732B50761E8B3DF8006F2677 /* VIewLifeCycleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIewLifeCycleViewController.h; sourceTree = "<group>"; };
 		732B50771E8B3DF8006F2677 /* VIewLifeCycleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIewLifeCycleViewController.m; sourceTree = "<group>"; };
 		732B50791E8B3E5F006F2677 /* LifeCycleAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeCycleAViewController.h; sourceTree = "<group>"; };
@@ -306,6 +343,12 @@
 		735EDAB21E1CC790002962DB /* ChildEventView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildEventView.m; sourceTree = "<group>"; };
 		735EDAB41E1CC818002962DB /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
 		735EDAB51E1CC818002962DB /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		7362AB381ECDAE3600B2E933 /* HealthInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoModel.h; sourceTree = "<group>"; };
+		7362AB391ECDAE3600B2E933 /* HealthInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoModel.m; sourceTree = "<group>"; };
+		7362AB3E1ECDAE5F00B2E933 /* HealthInfoModel+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HealthInfoModel+Test.h"; sourceTree = "<group>"; };
+		7362AB3F1ECDAE5F00B2E933 /* HealthInfoModel+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HealthInfoModel+Test.m"; sourceTree = "<group>"; };
+		7362AB471ECE9DF500B2E933 /* NSObject+MsgOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MsgOperation.h"; sourceTree = "<group>"; };
+		7362AB481ECE9DF500B2E933 /* NSObject+MsgOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MsgOperation.m"; sourceTree = "<group>"; };
 		736CB2731E80F60000AC3EEF /* JSCoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCoreViewController.h; sourceTree = "<group>"; };
 		736CB2741E80F60000AC3EEF /* JSCoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCoreViewController.m; sourceTree = "<group>"; };
 		736CB2761E80F74200AC3EEF /* jscontextdemo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jscontextdemo.js; sourceTree = "<group>"; };
@@ -328,6 +371,8 @@
 		7373D26E1CD0AA2600332D91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		737B107C1E63B6E1001FF92A /* ProxyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProxyViewController.h; sourceTree = "<group>"; };
 		737B107D1E63B6E1001FF92A /* ProxyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProxyViewController.m; sourceTree = "<group>"; };
+		7388312A1EE8E993002D7A1A /* UIView+Identify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Identify.h"; sourceTree = "<group>"; };
+		7388312B1EE8E993002D7A1A /* UIView+Identify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Identify.m"; sourceTree = "<group>"; };
 		7393FBC21E48533B00EF7BDF /* Hit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hit.h; sourceTree = "<group>"; };
 		7393FBC31E48533B00EF7BDF /* Hit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hit.m; sourceTree = "<group>"; };
 		7393FBC51E48538600EF7BDF /* Hit+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Hit+Private.h"; sourceTree = "<group>"; };
@@ -410,6 +455,10 @@
 		73BA34B31DB12E65007E9FC1 /* TestTableViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewViewController.swift; sourceTree = "<group>"; };
 		73BA34BB1DB12E65007E9FC1 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		73BA34BC1DB12E65007E9FC1 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		73BBE75F1EE67BB400FC76BB /* HealthChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthChartView.h; sourceTree = "<group>"; };
+		73BBE7601EE67BB400FC76BB /* HealthChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthChartView.m; sourceTree = "<group>"; };
+		73BBE7D21EE7D38700FC76BB /* HealthChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthChartViewController.h; sourceTree = "<group>"; };
+		73BBE7D31EE7D38700FC76BB /* HealthChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthChartViewController.m; sourceTree = "<group>"; };
 		73BE8D821E7284CC0073A2C6 /* PushManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushManagerViewController.h; sourceTree = "<group>"; };
 		73BE8D831E7284CC0073A2C6 /* PushManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushManagerViewController.m; sourceTree = "<group>"; };
 		73BE8D851E7287810073A2C6 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
@@ -417,6 +466,9 @@
 		73C07FA21ECB34460033977B /* ObjectiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveViewController.m; sourceTree = "<group>"; };
 		73C07FA41ECB345E0033977B /* ObjectiveSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveSummary.h; sourceTree = "<group>"; };
 		73C07FA51ECB345E0033977B /* ObjectiveSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveSummary.m; sourceTree = "<group>"; };
+		73CF06E81F1875DC0029B67B /* CommonArithmetic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CommonArithmetic.c; sourceTree = "<group>"; };
+		73CF06E91F1875DC0029B67B /* CommonArithmetic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonArithmetic.h; sourceTree = "<group>"; };
+		73D4B2781ECADB64002E952E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		73E540F91E963A09007C6584 /* DataSourcePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourcePool.h; sourceTree = "<group>"; };
 		73E540FA1E963A09007C6584 /* DataSourcePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourcePool.m; sourceTree = "<group>"; };
 		73E540FC1E963A18007C6584 /* AutoChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoChart.h; sourceTree = "<group>"; };
@@ -433,6 +485,8 @@
 		73ED0C231E514C0600E2A662 /* RayAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RayAnimation.m; sourceTree = "<group>"; };
 		73ED0C251E514C8100E2A662 /* TestProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProtocolViewController.h; sourceTree = "<group>"; };
 		73ED0C261E514C8100E2A662 /* TestProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestProtocolViewController.m; sourceTree = "<group>"; };
+		73F3AD4B1F468B08004450F8 /* RayWkWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RayWkWebView.h; sourceTree = "<group>"; };
+		73F3AD4C1F468B08004450F8 /* RayWkWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RayWkWebView.m; sourceTree = "<group>"; };
 		73F5C2671E9B4F290016A44D /* AutoChartPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoChartPageView.h; sourceTree = "<group>"; };
 		73F5C2681E9B4F290016A44D /* AutoChartPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoChartPageView.m; sourceTree = "<group>"; };
 		73F5C26A1E9B53720016A44D /* AutoChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoChartViewController.h; sourceTree = "<group>"; };
@@ -443,6 +497,26 @@
 		73F5C2931E9DBDE10016A44D /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTextField.m; sourceTree = "<group>"; };
 		73F5C2951E9DBE580016A44D /* TextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldViewController.h; sourceTree = "<group>"; };
 		73F5C2961E9DBE580016A44D /* TextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldViewController.m; sourceTree = "<group>"; };
+		AE0E032B1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HXWebViewActionHandler+Share.h"; sourceTree = "<group>"; };
+		AE0E032C1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HXWebViewActionHandler+Share.m"; sourceTree = "<group>"; };
+		AE0E032E1F3D905E00CCD9EC /* HXWebViewActionHandler+OpenAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HXWebViewActionHandler+OpenAccount.h"; sourceTree = "<group>"; };
+		AE0E032F1F3D905E00CCD9EC /* HXWebViewActionHandler+OpenAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HXWebViewActionHandler+OpenAccount.m"; sourceTree = "<group>"; };
+		AE16FECD1F3BFB390050E892 /* Runtime_Super_Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Runtime_Super_Protected.h; sourceTree = "<group>"; };
+		AE16FECE1F3BFB390050E892 /* Runtime_Super_Protected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Runtime_Super_Protected.m; sourceTree = "<group>"; };
+		AE8BD43A1F38772500169FA3 /* PerformanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerformanceViewController.h; sourceTree = "<group>"; };
+		AE8BD43B1F38772500169FA3 /* PerformanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerformanceViewController.m; sourceTree = "<group>"; };
+		AE8BD43D1F38845200169FA3 /* TextInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextInputViewController.h; sourceTree = "<group>"; };
+		AE8BD43E1F38845200169FA3 /* TextInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextInputViewController.m; sourceTree = "<group>"; };
+		AE8BD4831F3BEA9E00169FA3 /* Runtime_Super.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Runtime_Super.h; sourceTree = "<group>"; };
+		AE8BD4841F3BEA9E00169FA3 /* Runtime_Super.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Runtime_Super.m; sourceTree = "<group>"; };
+		AE8BD4861F3BEAAA00169FA3 /* Runtime_Sub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Runtime_Sub.h; sourceTree = "<group>"; };
+		AE8BD4871F3BEAAA00169FA3 /* Runtime_Sub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Runtime_Sub.m; sourceTree = "<group>"; };
+		AEDEB4CB1F3803E300A05940 /* HXWebViewPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXWebViewPage.h; sourceTree = "<group>"; };
+		AEDEB4CC1F3803E300A05940 /* HXWebViewPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXWebViewPage.m; sourceTree = "<group>"; };
+		AEDEB4CE1F380D4D00A05940 /* HXWebViewActionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXWebViewActionHandler.h; sourceTree = "<group>"; };
+		AEDEB4CF1F380D4D00A05940 /* HXWebViewActionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXWebViewActionHandler.m; sourceTree = "<group>"; };
+		AEDEB4D11F380D9C00A05940 /* HXWebViewLoadInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXWebViewLoadInterceptor.h; sourceTree = "<group>"; };
+		AEDEB4D21F380D9C00A05940 /* HXWebViewLoadInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXWebViewLoadInterceptor.m; sourceTree = "<group>"; };
 		AF1F2D7D0AFC0A3595B79DEB /* Pods-SimpleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -451,6 +525,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73D4B2791ECADB64002E952E /* Photos.framework in Frameworks */,
 				7304CE9F1CF542B300C5E349 /* libSimpleModel.a in Frameworks */,
 				735432F21CF4653300FA966A /* libSimpleCommon.a in Frameworks */,
 				B980A19BF0CE00920C503208 /* libPods-SimpleApp.a in Frameworks */,
@@ -477,6 +552,7 @@
 		46ADEDCDB75D7E1A2BEBBA6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				73D4B2781ECADB64002E952E /* Photos.framework */,
 				7304CE9E1CF542B300C5E349 /* libSimpleModel.a */,
 				735432F11CF4653300FA966A /* libSimpleCommon.a */,
 				1ADD0F38396CB07FF3AB19A5 /* libPods-SimpleApp.a */,
@@ -502,6 +578,8 @@
 				731C127B1E850BA20034F361 /* ClassicsArithmetic.m */,
 				731C127D1E8512970034F361 /* TestArithmeticViewController.h */,
 				731C127E1E8512970034F361 /* TestArithmeticViewController.m */,
+				73CF06E91F1875DC0029B67B /* CommonArithmetic.h */,
+				73CF06E81F1875DC0029B67B /* CommonArithmetic.c */,
 			);
 			path = "算法";
 			sourceTree = "<group>";
@@ -524,12 +602,15 @@
 		731C125D1E84F0060034F361 /* webview */ = {
 			isa = PBXGroup;
 			children = (
+				AEDEB4CA1F3803B000A05940 /* H5Container */,
 				731C125E1E84F0060034F361 /* TestWebviewViewController.h */,
 				731C125F1E84F0060034F361 /* TestWebviewViewController.m */,
 				731C12601E84F0060034F361 /* UIWebView+Clean.h */,
 				731C12611E84F0060034F361 /* UIWebView+Clean.m */,
 				731C12621E84F0060034F361 /* WKWebViewViewController.h */,
 				731C12631E84F0060034F361 /* WKWebViewViewController.m */,
+				73F3AD4B1F468B08004450F8 /* RayWkWebView.h */,
+				73F3AD4C1F468B08004450F8 /* RayWkWebView.m */,
 			);
 			path = webview;
 			sourceTree = "<group>";
@@ -617,6 +698,17 @@
 			path = "框架解耦设计__1";
 			sourceTree = "<group>";
 		};
+		732B1BEA1EEE28B900B26A70 /* 属性 */ = {
+			isa = PBXGroup;
+			children = (
+				732B1BEB1EEE29E000B26A70 /* PhoneNumPerson.h */,
+				732B1BEC1EEE29E000B26A70 /* PhoneNumPerson.m */,
+				732B1BEE1EEE2B5F00B26A70 /* PropertyViewController.h */,
+				732B1BEF1EEE2B5F00B26A70 /* PropertyViewController.m */,
+			);
+			path = "属性";
+			sourceTree = "<group>";
+		};
 		732B50751E8B3DC8006F2677 /* 生命周期 */ = {
 			isa = PBXGroup;
 			children = (
@@ -661,6 +753,8 @@
 				734066091E6CF82800E4E98B /* PushManager.m */,
 				73BE8D821E7284CC0073A2C6 /* PushManagerViewController.h */,
 				73BE8D831E7284CC0073A2C6 /* PushManagerViewController.m */,
+				7362AB471ECE9DF500B2E933 /* NSObject+MsgOperation.h */,
+				7362AB481ECE9DF500B2E933 /* NSObject+MsgOperation.m */,
 			);
 			path = "消息推送";
 			sourceTree = "<group>";
@@ -703,6 +797,12 @@
 				7359983D1EA6F64A00427C5B /* Animation_super.m */,
 				7359983F1EA6F6C900427C5B /* Class_Meta_ViewController.h */,
 				735998401EA6F6C900427C5B /* Class_Meta_ViewController.m */,
+				732116CD1EFA1DD20041BF6E /* Object_Super.h */,
+				732116CE1EFA1DD20041BF6E /* Object_Super.m */,
+				732116D01EFA1E0B0041BF6E /* Object_Super+Introduce.h */,
+				732116D11EFA1E0B0041BF6E /* Object_Super+Introduce.m */,
+				732116D31EFA1E520041BF6E /* CategoryViewController.h */,
+				732116D41EFA1E520041BF6E /* CategoryViewController.m */,
 			);
 			path = "类和元类";
 			sourceTree = "<group>";
@@ -768,6 +868,7 @@
 			isa = PBXGroup;
 			children = (
 				735A0D351E94F8FF00053ACB /* xxx.doc */,
+				AE8BD4391F38770000169FA3 /* 性能 */,
 				735ADF4C1E82829600F79620 /* 网络 */,
 				7310AEE61E8215A500BAA0E8 /* 算法 */,
 				732AE61C1E5E89510068E1CE /* 设计 */,
@@ -788,6 +889,10 @@
 				7373D2551CD0AA2600332D91 /* LaunchScreen.storyboard */,
 				7373D2581CD0AA2600332D91 /* Info.plist */,
 				7373D2471CD0AA2600332D91 /* Supporting Files */,
+				7362AB381ECDAE3600B2E933 /* HealthInfoModel.h */,
+				7362AB391ECDAE3600B2E933 /* HealthInfoModel.m */,
+				7362AB3E1ECDAE5F00B2E933 /* HealthInfoModel+Test.h */,
+				7362AB3F1ECDAE5F00B2E933 /* HealthInfoModel+Test.m */,
 			);
 			path = SimpleApp;
 			sourceTree = "<group>";
@@ -991,6 +1096,8 @@
 			isa = PBXGroup;
 			children = (
 				73C07FA01ECB33110033977B /* Objective-c */,
+				AE0E03341F42CA4100CCD9EC /* ScrollView */,
+				732B1BEA1EEE28B900B26A70 /* 属性 */,
 				732D80321EB42E1E0003FD18 /* 通知和KVO */,
 				7359983B1EA6F61B00427C5B /* 类和元类 */,
 				735998371EA6EC6E00427C5B /* block */,
@@ -1037,6 +1144,12 @@
 				732AE6221E5E8E680068E1CE /* ClassA.m */,
 				732AE6241E5E8E710068E1CE /* ClassB.h */,
 				732AE6251E5E8E710068E1CE /* ClassB.m */,
+				AE8BD4831F3BEA9E00169FA3 /* Runtime_Super.h */,
+				AE8BD4841F3BEA9E00169FA3 /* Runtime_Super.m */,
+				AE8BD4861F3BEAAA00169FA3 /* Runtime_Sub.h */,
+				AE8BD4871F3BEAAA00169FA3 /* Runtime_Sub.m */,
+				AE16FECD1F3BFB390050E892 /* Runtime_Super_Protected.h */,
+				AE16FECE1F3BFB390050E892 /* Runtime_Super_Protected.m */,
 			);
 			path = runtime;
 			sourceTree = "<group>";
@@ -1062,6 +1175,8 @@
 				73BA34961DB12E65007E9FC1 /* Company.h */,
 				73BA34971DB12E65007E9FC1 /* Company.m */,
 				73BA34981DB12E65007E9FC1 /* CompanyProtocol.h */,
+				AE8BD43D1F38845200169FA3 /* TextInputViewController.h */,
+				AE8BD43E1F38845200169FA3 /* TextInputViewController.m */,
 			);
 			path = BaseKnow;
 			sourceTree = "<group>";
@@ -1083,6 +1198,8 @@
 				732B50841E8B489F006F2677 /* BaseHeaderViewController.m */,
 				732D80391EB435D90003FD18 /* BaseView.h */,
 				732D803A1EB435D90003FD18 /* BaseView.m */,
+				732116D61EFA3F260041BF6E /* UIView+Event.h */,
+				732116D71EFA3F260041BF6E /* UIView+Event.m */,
 			);
 			path = baseviews;
 			sourceTree = "<group>";
@@ -1090,6 +1207,7 @@
 		73BA34A01DB12E65007E9FC1 /* 视图 */ = {
 			isa = PBXGroup;
 			children = (
+				73BBE75E1EE67BA300FC76BB /* HealthChart */,
 				73F5C2911E9DBDC70016A44D /* UITextField */,
 				73E540F81E9639F8007C6584 /* AutoLoadingChart */,
 				732B50751E8B3DC8006F2677 /* 生命周期 */,
@@ -1188,6 +1306,17 @@
 				73C07FA51ECB345E0033977B /* ObjectiveSummary.m */,
 			);
 			path = "Objective-c";
+		73BBE75E1EE67BA300FC76BB /* HealthChart */ = {
+			isa = PBXGroup;
+			children = (
+				73BBE75F1EE67BB400FC76BB /* HealthChartView.h */,
+				73BBE7601EE67BB400FC76BB /* HealthChartView.m */,
+				73BBE7D21EE7D38700FC76BB /* HealthChartViewController.h */,
+				73BBE7D31EE7D38700FC76BB /* HealthChartViewController.m */,
+				7388312A1EE8E993002D7A1A /* UIView+Identify.h */,
+				7388312B1EE8E993002D7A1A /* UIView+Identify.m */,
+			);
+			path = HealthChart;
 			sourceTree = "<group>";
 		};
 		73E540F81E9639F8007C6584 /* AutoLoadingChart */ = {
@@ -1242,6 +1371,39 @@
 				73F5C2961E9DBE580016A44D /* TextFieldViewController.m */,
 			);
 			path = UITextField;
+			sourceTree = "<group>";
+		};
+		AE0E03341F42CA4100CCD9EC /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		AE8BD4391F38770000169FA3 /* 性能 */ = {
+			isa = PBXGroup;
+			children = (
+				AE8BD43A1F38772500169FA3 /* PerformanceViewController.h */,
+				AE8BD43B1F38772500169FA3 /* PerformanceViewController.m */,
+			);
+			path = "性能";
+			sourceTree = "<group>";
+		};
+		AEDEB4CA1F3803B000A05940 /* H5Container */ = {
+			isa = PBXGroup;
+			children = (
+				AEDEB4CB1F3803E300A05940 /* HXWebViewPage.h */,
+				AEDEB4CC1F3803E300A05940 /* HXWebViewPage.m */,
+				AEDEB4D11F380D9C00A05940 /* HXWebViewLoadInterceptor.h */,
+				AEDEB4D21F380D9C00A05940 /* HXWebViewLoadInterceptor.m */,
+				AEDEB4CE1F380D4D00A05940 /* HXWebViewActionHandler.h */,
+				AEDEB4CF1F380D4D00A05940 /* HXWebViewActionHandler.m */,
+				AE0E032B1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.h */,
+				AE0E032C1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.m */,
+				AE0E032E1F3D905E00CCD9EC /* HXWebViewActionHandler+OpenAccount.h */,
+				AE0E032F1F3D905E00CCD9EC /* HXWebViewActionHandler+OpenAccount.m */,
+			);
+			path = H5Container;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1315,7 +1477,7 @@
 				TargetAttributes = {
 					7373D2431CD0AA2600332D91 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = F74GWC55U7;
+						DevelopmentTeam = ECZZB9QM5Y;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1454,11 +1616,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				735ADFE61E837AAC00F79620 /* FromViewController.m in Sources */,
+				7362AB3A1ECDAE3600B2E933 /* HealthInfoModel.m in Sources */,
 				731DAD101E7B6ED1004E5F8D /* CustomWindow.m in Sources */,
 				7359983A1EA6ECA400427C5B /* block_realize.mm in Sources */,
+				732B1BED1EEE29E000B26A70 /* PhoneNumPerson.m in Sources */,
 				735998471EA73CE000427C5B /* FirstBlockViewController.m in Sources */,
 				735ADFE01E836ADB00F79620 /* CustomAppDelegate.m in Sources */,
 				73BA34DD1DB12E65007E9FC1 /* TestTableViewViewController.swift in Sources */,
+				AE8BD43F1F38845200169FA3 /* TextInputViewController.m in Sources */,
 				732B50821E8B4602006F2677 /* TimerBViewController.m in Sources */,
 				731C12791E8504200034F361 /* NSURLProtocol+WebKitSupport.m in Sources */,
 				73B5A05E1DC6F15200477323 /* SelectImageView.m in Sources */,
@@ -1466,7 +1631,9 @@
 				73F5C2901E9DB8150016A44D /* DrawCurveViewController.m in Sources */,
 				7373D24C1CD0AA2600332D91 /* AppDelegate.m in Sources */,
 				73BA34CB1DB12E65007E9FC1 /* JSContextDemo.m in Sources */,
+				AE8BD43C1F38772500169FA3 /* PerformanceViewController.m in Sources */,
 				73BA34CA1DB12E65007E9FC1 /* ScrapeView.m in Sources */,
+				73F3AD4D1F468B08004450F8 /* RayWkWebView.m in Sources */,
 				73ED0C271E514C8100E2A662 /* TestProtocolViewController.m in Sources */,
 				73A8B7281E8E551200303C4D /* Aview.m in Sources */,
 				731DAD161E7B8B10004E5F8D /* CustomOperation.m in Sources */,
@@ -1475,6 +1642,7 @@
 				731C126A1E84F0060034F361 /* WKWebViewViewController.m in Sources */,
 				731C12731E84F6D70034F361 /* NaviBViewController.m in Sources */,
 				73BA34D51DB12E65007E9FC1 /* EventButton.m in Sources */,
+				AE16FECF1F3BFB390050E892 /* Runtime_Super_Protected.m in Sources */,
 				7310AEE91E8215B800BAA0E8 /* SortHelper.m in Sources */,
 				732B507F1E8B44B0006F2677 /* TimerAViewController.m in Sources */,
 				73BA34CF1DB12E65007E9FC1 /* BaseKnowTestViewController.m in Sources */,
@@ -1482,12 +1650,15 @@
 				73A3467A1E6557960030CE9D /* ReusingViewController.m in Sources */,
 				73C07FA61ECB345E0033977B /* ObjectiveSummary.m in Sources */,
 				73E540FB1E963A09007C6584 /* DataSourcePool.m in Sources */,
+				732116CF1EFA1DD20041BF6E /* Object_Super.m in Sources */,
 				731C12321E84A9750034F361 /* PopAnimationViewController.m in Sources */,
+				AEDEB4D01F380D4D00A05940 /* HXWebViewActionHandler.m in Sources */,
 				73F5C2941E9DBDE10016A44D /* CustomTextField.m in Sources */,
 				73E5BA8F1E262A0200CF3BD5 /* SearchViewController.m in Sources */,
 				73BA34C91DB12E65007E9FC1 /* TestCommonViewController.m in Sources */,
 				73406E2A1E14F10100D5C58C /* GestureViewController.m in Sources */,
 				73F5C2691E9B4F290016A44D /* AutoChartPageView.m in Sources */,
+				AE8BD4881F3BEAAA00169FA3 /* Runtime_Sub.m in Sources */,
 				7323E9EB1DC1CDF300F053F8 /* RefreshViewController.m in Sources */,
 				732B50781E8B3DF8006F2677 /* VIewLifeCycleViewController.m in Sources */,
 				7323E9E61DBF5B9800F053F8 /* NSObject+Exception.m in Sources */,
@@ -1497,6 +1668,9 @@
 				73BA34D71DB12E65007E9FC1 /* ImageViewController.m in Sources */,
 				73E5BA8B1E260AA500CF3BD5 /* GestureSummaryViewController.m in Sources */,
 				735ADFC41E8363CB00F79620 /* InteractionModuleViewController.m in Sources */,
+				7362AB401ECDAE5F00B2E933 /* HealthInfoModel+Test.m in Sources */,
+				73BBE7D41EE7D38700FC76BB /* HealthChartViewController.m in Sources */,
+				7362AB491ECE9DF500B2E933 /* NSObject+MsgOperation.m in Sources */,
 				731C12681E84F0060034F361 /* TestWebviewViewController.m in Sources */,
 				73BA34D31DB12E65007E9FC1 /* FirstViewController.m in Sources */,
 				735998271EA4A18000427C5B /* ConstrantViewController.m in Sources */,
@@ -1505,16 +1679,20 @@
 				7373D2491CD0AA2600332D91 /* main.m in Sources */,
 				73BA34E01DB12E65007E9FC1 /* ViewController.m in Sources */,
 				735ADFDD1E836AC800F79620 /* TabBarAnimationViewController.m in Sources */,
+				AEDEB4CD1F3803E300A05940 /* HXWebViewPage.m in Sources */,
 				7359982D1EA5D1C200427C5B /* MRCObject.m in Sources */,
 				737B107E1E63B6E1001FF92A /* ProxyViewController.m in Sources */,
 				73BA34D91DB12E65007E9FC1 /* CellModel.swift in Sources */,
+				732116D81EFA3F260041BF6E /* UIView+Event.m in Sources */,
 				733C26331DD42213005FF7AE /* ProductSliderTableViewCell.m in Sources */,
 				731C12671E84F0060034F361 /* HttpSessionViewController.m in Sources */,
 				7323E9921DBD99EF00F053F8 /* DelayDrawView.m in Sources */,
 				73BE8D841E7284CC0073A2C6 /* PushManagerViewController.m in Sources */,
 				732B50881E8B567B006F2677 /* RayTimer.m in Sources */,
 				73BA34DC1DB12E65007E9FC1 /* MasonyTableViewController.m in Sources */,
+				AEDEB4D31F380D9C00A05940 /* HXWebViewLoadInterceptor.m in Sources */,
 				732AE6261E5E8E710068E1CE /* ClassB.m in Sources */,
+				732116D21EFA1E0B0041BF6E /* Object_Super+Introduce.m in Sources */,
 				731C12661E84F0060034F361 /* SessionCustomeProtocol.m in Sources */,
 				731C12651E84F0060034F361 /* CustomURLProtocol.m in Sources */,
 				7359984A1EA73CE800427C5B /* SecondBlockViewController.m in Sources */,
@@ -1544,11 +1722,14 @@
 				735EDAB61E1CC818002962DB /* EventViewController.m in Sources */,
 				731C12701E84F6CD0034F361 /* NaviAViewController.m in Sources */,
 				731C127C1E850BA20034F361 /* ClassicsArithmetic.m in Sources */,
+				AE0E03301F3D905E00CCD9EC /* HXWebViewActionHandler+OpenAccount.m in Sources */,
 				736CB27D1E81087400AC3EEF /* NativeHandle.m in Sources */,
 				73E541041E96408D007C6584 /* AutoChartPageModel.m in Sources */,
 				73B5A06C1DC868B200477323 /* FitCommentViewController.m in Sources */,
 				732AE6231E5E8E680068E1CE /* ClassA.m in Sources */,
 				73BA34DA1DB12E65007E9FC1 /* ExpandTableViewCell.swift in Sources */,
+				73CF06EA1F1875DC0029B67B /* CommonArithmetic.c in Sources */,
+				AE8BD4851F3BEA9E00169FA3 /* Runtime_Super.m in Sources */,
 				73A8B72B1E8E551B00303C4D /* Bview.m in Sources */,
 				73BA34C81DB12E65007E9FC1 /* StructAndClass.m in Sources */,
 				735EDAB01E1CC77F002962DB /* SuperEventView.m in Sources */,
@@ -1557,7 +1738,10 @@
 				732D80351EB42E3D0003FD18 /* ANotificationViewController.m in Sources */,
 				731C127F1E8512970034F361 /* TestArithmeticViewController.m in Sources */,
 				73B5A0611DC7110200477323 /* TestCustomViewController.m in Sources */,
+				AE0E032D1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.m in Sources */,
+				732B1BF01EEE2B5F00B26A70 /* PropertyViewController.m in Sources */,
 				73BA34D11DB12E65007E9FC1 /* Company.m in Sources */,
+				7388312C1EE8E993002D7A1A /* UIView+Identify.m in Sources */,
 				73A3467D1E6557C60030CE9D /* ReusingCell.m in Sources */,
 				731C661C1EB86EC8008DF9D1 /* NotificationObject.m in Sources */,
 				731C12641E84F0060034F361 /* AFNViewController.m in Sources */,
@@ -1570,9 +1754,11 @@
 				731DAD0D1E7B6EC4004E5F8D /* UIScreenViewController.m in Sources */,
 				735ADFDA1E836ABB00F79620 /* NavigationAnimationViewController.m in Sources */,
 				73BA34CE1DB12E65007E9FC1 /* Agreement.m in Sources */,
+				73BBE7611EE67BB400FC76BB /* HealthChartView.m in Sources */,
 				73ED0C241E514C0600E2A662 /* RayAnimation.m in Sources */,
 				735998331EA5EC1D00427C5B /* TextItem.m in Sources */,
 				734DAE0B1E88FC8900D553CC /* AttributeViewController.m in Sources */,
+				732116D51EFA1E520041BF6E /* CategoryViewController.m in Sources */,
 				7393FBC41E48533B00EF7BDF /* Hit.m in Sources */,
 				735ADFE31E8377FA00F79620 /* RayNavigationTransition.m in Sources */,
 				7359983E1EA6F64A00427C5B /* Animation_super.m in Sources */,
@@ -1733,8 +1919,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 568256030@qq.com (EAQJ6NC596)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 568256030@qq.com (EAQJ6NC596)";
-				DEVELOPMENT_TEAM = F74GWC55U7;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = ECZZB9QM5Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/cc/build/Debug-iphoneos",
@@ -1769,7 +1955,7 @@
 					"$(SRCROOT)/Users/wuyp/Library/Developer/Xcode/DerivedData/SimpleApp-cswqutjhlfbmkqbsnbwnxbznehzs/Build/Products/Debug-iphonesimulator/libSimpleCommon.a",
 					"$(PROJECT_DIR)/SimpleCommon/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raymond.simpleapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shhxzq.ztbUA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1788,8 +1974,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 568256030@qq.com (EAQJ6NC596)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 568256030@qq.com (EAQJ6NC596)";
-				DEVELOPMENT_TEAM = F74GWC55U7;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = ECZZB9QM5Y;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/cc/build/Debug-iphoneos",
@@ -1819,9 +2005,10 @@
 					"$(SRCROOT)/Users/wuyp/Library/Developer/Xcode/DerivedData/SimpleApp-cswqutjhlfbmkqbsnbwnxbznehzs/Build/Products/Debug-iphonesimulator/libSimpleCommon.a",
 					"$(PROJECT_DIR)/SimpleCommon/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raymond.simpleapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shhxzq.ztbUA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -47,15 +47,13 @@
 #pragma mark - event
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    NSMutableArray *source = [NSMutableArray array];
-//    for (int i = 0; i < 3; i++) {
-//        AutoChartPageModel *model = [[AutoChartPageModel alloc] init];
-//        model.xSource = @[@"1", @"2", @"3", @"4"];
-//        model.ySource = @[@"10", @"20", @"30", @"45"];
-//        [source addObject:model];
-//    }
-//    
-//    self.chart.source = source;
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSString *str1 = @"2010-01-01";
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    format.dateFormat = @"yyyy-MM-dd";
+    NSDate *date1 = [format dateFromString:str1];
+    NSDateComponents *comp = [cal components:NSCalendarUnitYear fromDate:date1 toDate:[NSDate date] options:0];
+    
 }
 
 #pragma mark - network

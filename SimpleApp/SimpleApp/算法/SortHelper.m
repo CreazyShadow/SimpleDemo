@@ -16,8 +16,6 @@
 
 static NSComparisonResult(^_compare)(id obj1, id obj2);
 
-static int count;
-
 @implementation SortHelper
 
 + (SortHelper *(^)(void))instance {
@@ -49,8 +47,8 @@ static int count;
     }
     
     NSInteger pivot_index = [self partition:source left:left right:right compare:block];
-    [self quickSort:source left:left right:pivot_index - 1 compare:block];
-    [self quickSort:source left:pivot_index + 1 right:right compare:block];
+    [self quickSort:source left:left right:pivot_index - 2 compare:block];
+    [self quickSort:source left:pivot_index right:right compare:block];
 }
 
 + (NSInteger)partition:(NSMutableArray *)source left:(NSInteger)left right:(NSInteger)right compare:(compareBlock)compare {

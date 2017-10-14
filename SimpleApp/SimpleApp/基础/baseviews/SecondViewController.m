@@ -11,6 +11,11 @@
 #import <CoreFoundation/CFRunLoop.h>
 #import "ProductSliderTableViewCell.h"
 
+#import "SubView.h"
+
+#import <Photos/PHImageManager.h>
+
+
 @interface SecondViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -35,6 +40,9 @@
     self.cycleBlock = ^ {
         _cycleName = @"cycle";
     };
+    
+    SubView *sub = [[SubView alloc] initWithColor:[UIColor redColor]];
+    [self.view addSubview:sub];
 }
 
 - (void)dealloc {

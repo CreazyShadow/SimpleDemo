@@ -32,6 +32,8 @@
         [invocation invokeWithTarget:_object];
         NSLog(@"MyProxy after call selector: %@", NSStringFromSelector(invocation.selector));
     }
+    
+    
 }
 
 @end

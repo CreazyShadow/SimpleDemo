@@ -12,4 +12,6 @@
 
 + (void)crashRecycle;
 
++ (void)observerRunloopStatus;
+
 @end

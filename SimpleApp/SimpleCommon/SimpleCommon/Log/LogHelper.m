@@ -31,7 +31,7 @@
 
 - (void)redirectNotificationHandle:(NSNotification *)nf {
     NSData *data = [[nf userInfo] objectForKey:NSFileHandleNotificationDataItem];
-    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSString *str __attribute__((unused)) = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     [[nf object] readInBackgroundAndNotify];
 }
 

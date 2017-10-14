@@ -6,6 +6,8 @@
 //  Copyright © 2016年 wuyp. All rights reserved.
 //
 
+#ifdef __OBJC__
+
 #ifndef SimpleApp_pch
 #define SimpleApp_pch
 
@@ -15,7 +17,10 @@
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
+#define PrintMethodDescription NSLog(@"%@----%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+
 #import <UIView+Extension.h>
+#import <NSObject+Runtime.h>
 #import "UIView+XibMananger.h"
 
 #import <UIImageView+WebCache.h>
@@ -30,3 +35,5 @@
 #import "BaseHeaderViewController.h"
 
 #endif /* SimpleApp_pch */
+
+#endif

@@ -14,10 +14,20 @@
 #import "DrawViewController.h"
 
 #import <Person.h>
+#import <objc/runtime.h>
 
 #import "SubView.h"
 
 #import "MasonryViewController.h"
+
+#import "HealthInfoModel.h"
+
+#define bytesPerMB 1048576.0f
+#define bytesPerPixel 4.0f
+#define pixelsPerMB ( bytesPerMB / bytesPerPixel ) // 262144 pixels, for 4 bytes per pixel.
+#define destTotalPixels kDestImageSizeMB * pixelsPerMB
+#define tileTotalPixels kSourceImageTileSizeMB * pixelsPerMB
+#define destSeemOverlap 2.0f // the numbers of pixels to overlap the seems where tiles meet.
 
 @interface FirstViewController ()
 
@@ -34,6 +44,7 @@
 @implementation FirstViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"FirstViewController";
@@ -47,7 +58,8 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.navigationController pushViewController:[SecondViewController new] animated:YES];
+    SecondViewController *second = [[SecondViewController alloc] init];
+    [self.navigationController pushViewController:second animated:YES];
 }
 
 - (NSString *)prefixForCarNum:(NSString *)cardNo {
@@ -91,7 +103,11 @@
     NSLog(@"%@", textField.text);
 }
 
-#pragma mark - getter & setter 
+- (void)labelPanGes:(UIPanGestureRecognizer *)ges {
+    
+}
+
+#pragma mark - getter & setter
 
 - (ScrapeView *)scrapeView {
     if (!_scrapeView) {
@@ -118,7 +134,7 @@
         _button1.backgroundColor = [UIColor purpleColor];
         [_button1 setImage:[UIImage imageNamed:@"circle"] forState:UIControlStateNormal];
         _button1.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 5);
-//        [_button1 setTitle:@"button1" forState:UIControlStateNormal];
+        //        [_button1 setTitle:@"button1" forState:UIControlStateNormal];
         [_button1 addTarget:self action:@selector(clickButton1) forControlEvents:UIControlEventTouchUpInside];
     }
     
@@ -132,10 +148,12 @@
         _label.textColor = [UIColor orangeColor];
         _label.backgroundColor = [UIColor purpleColor];
         _label.text = @"ABCCC";
+        
+        UIGestureRecognizer *ges = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(labelPanGes:)];
+        [_label addGestureRecognizer:ges];
     }
     
     return _label;
 }
-
 
 @end

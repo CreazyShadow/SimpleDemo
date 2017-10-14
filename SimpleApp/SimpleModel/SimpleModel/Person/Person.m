@@ -14,6 +14,14 @@
     self.name = @"123";
 }
 
+- (NSString *)phoneNum {
+    if (_phoneNum.length == 0) {
+        return @"18516518602";
+    }
+    
+    return _phoneNum;
+}
+
 #pragma mark - 消息
 
 - (id)forwardingTargetForSelector:(SEL)aSelector {

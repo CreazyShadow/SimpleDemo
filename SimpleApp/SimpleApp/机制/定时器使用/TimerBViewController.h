@@ -6,6 +6,9 @@
 //  Copyright © 2017年 wuyp. All rights reserved.
 //
 
+#import "BaseHeaderViewController.h"
+
 @interface TimerBViewController : BaseHeaderViewController
 
 @end
+

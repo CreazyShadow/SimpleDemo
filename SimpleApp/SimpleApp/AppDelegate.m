@@ -32,32 +32,37 @@
 #import "CustomWindow.h"
 
 #import "CustomNavigationController.h"
+#import "SubView.h"
 
 #import "MRCObject.h"
 #import "RunLoopUtility.h"
 
+//#import <IQKeyboardManager.h>
+
+#import "HXWebViewActionHandler.h"
+
+NSString *const maxCount = @"100";
+
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
 
 @property (nonatomic, strong, readwrite) id field;
-
 
 @end
 
 @implementation AppDelegate
 
 - (void)test {
-    
-}
-
-- (void)printArray:(NSArray *)arr {
-    
+    SubView *sub = [[SubView alloc] initWithFrame:CGRectMake(0, 0, 200, 100) name:@"jack"];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     //网络请求重定向
-//    [NSURLProtocol registerClass:[CustomURLProtocol class]];
-//    [[SessionCustomProtocolConfiguration shareManager] openHttpProtocol];
+    //    [NSURLProtocol registerClass:[CustomURLProtocol class]];
+    //    [[SessionCustomProtocolConfiguration shareManager] openHttpProtocol];
+    
+    //重定向NSLOG
+//    [[LogHelper shareInstance] redirectSTD:STDERR_FILENO];
     
     //捕获crash
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
@@ -65,17 +70,16 @@
     //测试方法
     [self test];
     
-    //重定向NSLOG
-    //[[LogHelper shareInstance] redirectSTD:STDERR_FILENO];
-    
-//    渲染window
+    //    渲染window
     self.window = [[CustomWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor]; 
+    self.window.backgroundColor = [UIColor whiteColor];
     
-//    设置启动方式
+    //    设置启动方式
     [self setupStartType:0];
     
     [self.window makeKeyAndVisible];
+    
+//    [IQKeyboardManager sharedManager].enable = YES;
     
     //通知
 //    [self setupNotification];
@@ -185,7 +189,7 @@ void uncaughtExceptionHandler(NSException *exception){
     NSString *name = [exception name];
     NSLog(@"崩溃信息：%@ %@ %@", symbols, reason, name);
     
-    [RunLoopUtility crashRecycle];
+    //    [RunLoopUtility crashRecycle];
 }
 
 
@@ -225,15 +229,15 @@ void uncaughtExceptionHandler(NSException *exception){
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
     //可判断response的种类和request的触发器是什么,可根据远程通知和本地通知分别处理，再根据action进行后续回调
     
-//    //获取在Pending状态下待触发的通知
-//    - (void)getPendingNotificationRequestsWithCompletionHandler:(void(^)(NSArray *requests))completionHandler;
-//    //移除未触发的通知
-//    - (void)removePendingNotificationRequestsWithIdentifiers:(NSArray *)identifiers;
-//    - (void)removeAllPendingNotificationRequests;
-//    // 通知已经触发，但是还在操作系统的通知中心上，可以进行查询和删除
-//    - (void)getDeliveredNotificationsWithCompletionHandler:(void(^)(NSArray *notifications))completionHandler;
-//    - (void)removeDeliveredNotificationsWithIdentifiers:(NSArray *)identifiers;
-//    - (void)removeAllDeliveredNotifications;
+    //    //获取在Pending状态下待触发的通知
+    //    - (void)getPendingNotificationRequestsWithCompletionHandler:(void(^)(NSArray *requests))completionHandler;
+    //    //移除未触发的通知
+    //    - (void)removePendingNotificationRequestsWithIdentifiers:(NSArray *)identifiers;
+    //    - (void)removeAllPendingNotificationRequests;
+    //    // 通知已经触发，但是还在操作系统的通知中心上，可以进行查询和删除
+    //    - (void)getDeliveredNotificationsWithCompletionHandler:(void(^)(NSArray *notifications))completionHandler;
+    //    - (void)removeDeliveredNotificationsWithIdentifiers:(NSArray *)identifiers;
+    //    - (void)removeAllDeliveredNotifications;
 }
 
 #pragma mark - ios10本地通知
@@ -270,7 +274,7 @@ void uncaughtExceptionHandler(NSException *exception){
 - (void)setupNotification {
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     center.delegate = self;
-//    [center setNotificationCategories:[self createNotificationCategoryActions]];
+    //    [center setNotificationCategories:[self createNotificationCategoryActions]];
     [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
         if (settings.authorizationStatus == UNAuthorizationStatusNotDetermined) {
             [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {

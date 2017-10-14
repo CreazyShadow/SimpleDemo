@@ -10,4 +10,7 @@
 
 @interface SubView : UIView
 
+- (instancetype)initWithColor:(UIColor *)color;
+
+- (instancetype)initWithFrame:(CGRect)frame name:(NSString *)name;
 @end

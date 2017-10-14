@@ -27,11 +27,9 @@
 #pragma mark - test proxy
 
 - (void)testProxy {
-    dispatch_semaphore_t sem = dispatch_semaphore_create(0);
     NSURL *baidu = [NSURL URLWithString:@"https://www.baidu.com"];
     NSURL *url = [MyProxy proxyForObject:baidu];
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        dispatch_semaphore_signal(sem);
         NSLog(@"request successed.");
     }];
     

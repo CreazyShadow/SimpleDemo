@@ -47,7 +47,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
+    [self.navigationController pushViewController:[SecondViewController new] animated:YES];
 }
 
 - (NSString *)prefixForCarNum:(NSString *)cardNo {

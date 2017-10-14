@@ -22,6 +22,9 @@
 @end
 
 @implementation SecondViewController
+{
+    UIView *_maskView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,12 +43,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO];
 }
 
 - (UITableView *)tableView {
@@ -106,7 +107,17 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.navigationController popViewControllerAnimated:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
+    
+    if (!_maskView.superview) {
+        UIView *maskView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+        maskView.backgroundColor = [UIColor orangeColor];
+        maskView.alpha = 0.3;
+        maskView.userInteractionEnabled = NO;
+//        [self.navigationController.view insertSubview:maskView atIndex:0];
+        [self.view.superview insertSubview:maskView atIndex:0];
+        _maskView = maskView;
+    }
 }
 
 @end

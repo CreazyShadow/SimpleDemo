@@ -132,6 +132,8 @@
 		73BA34E01DB12E65007E9FC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BA34BC1DB12E65007E9FC1 /* ViewController.m */; };
 		73BE8D841E7284CC0073A2C6 /* PushManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BE8D831E7284CC0073A2C6 /* PushManagerViewController.m */; };
 		73BE8D861E7287820073A2C6 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73BE8D851E7287810073A2C6 /* 1.jpg */; };
+		73C07FA31ECB34460033977B /* ObjectiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C07FA21ECB34460033977B /* ObjectiveViewController.m */; };
+		73C07FA61ECB345E0033977B /* ObjectiveSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C07FA51ECB345E0033977B /* ObjectiveSummary.m */; };
 		73E540FB1E963A09007C6584 /* DataSourcePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E540FA1E963A09007C6584 /* DataSourcePool.m */; };
 		73E540FE1E963A18007C6584 /* AutoChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E540FD1E963A18007C6584 /* AutoChart.m */; };
 		73E541041E96408D007C6584 /* AutoChartPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E541031E96408D007C6584 /* AutoChartPageModel.m */; };
@@ -411,6 +413,10 @@
 		73BE8D821E7284CC0073A2C6 /* PushManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushManagerViewController.h; sourceTree = "<group>"; };
 		73BE8D831E7284CC0073A2C6 /* PushManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushManagerViewController.m; sourceTree = "<group>"; };
 		73BE8D851E7287810073A2C6 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		73C07FA11ECB34460033977B /* ObjectiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveViewController.h; sourceTree = "<group>"; };
+		73C07FA21ECB34460033977B /* ObjectiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveViewController.m; sourceTree = "<group>"; };
+		73C07FA41ECB345E0033977B /* ObjectiveSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveSummary.h; sourceTree = "<group>"; };
+		73C07FA51ECB345E0033977B /* ObjectiveSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveSummary.m; sourceTree = "<group>"; };
 		73E540F91E963A09007C6584 /* DataSourcePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourcePool.h; sourceTree = "<group>"; };
 		73E540FA1E963A09007C6584 /* DataSourcePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourcePool.m; sourceTree = "<group>"; };
 		73E540FC1E963A18007C6584 /* AutoChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoChart.h; sourceTree = "<group>"; };
@@ -984,6 +990,7 @@
 		73BA34861DB12E65007E9FC1 /* 机制 */ = {
 			isa = PBXGroup;
 			children = (
+				73C07FA01ECB33110033977B /* Objective-c */,
 				732D80321EB42E1E0003FD18 /* 通知和KVO */,
 				7359983B1EA6F61B00427C5B /* 类和元类 */,
 				735998371EA6EC6E00427C5B /* block */,
@@ -1170,6 +1177,17 @@
 			children = (
 			);
 			path = UIPickerView;
+			sourceTree = "<group>";
+		};
+		73C07FA01ECB33110033977B /* Objective-c */ = {
+			isa = PBXGroup;
+			children = (
+				73C07FA11ECB34460033977B /* ObjectiveViewController.h */,
+				73C07FA21ECB34460033977B /* ObjectiveViewController.m */,
+				73C07FA41ECB345E0033977B /* ObjectiveSummary.h */,
+				73C07FA51ECB345E0033977B /* ObjectiveSummary.m */,
+			);
+			path = "Objective-c";
 			sourceTree = "<group>";
 		};
 		73E540F81E9639F8007C6584 /* AutoLoadingChart */ = {
@@ -1462,6 +1480,7 @@
 				73BA34CF1DB12E65007E9FC1 /* BaseKnowTestViewController.m in Sources */,
 				73BA34D21DB12E65007E9FC1 /* BaseViewController.m in Sources */,
 				73A3467A1E6557960030CE9D /* ReusingViewController.m in Sources */,
+				73C07FA61ECB345E0033977B /* ObjectiveSummary.m in Sources */,
 				73E540FB1E963A09007C6584 /* DataSourcePool.m in Sources */,
 				731C12321E84A9750034F361 /* PopAnimationViewController.m in Sources */,
 				73F5C2941E9DBDE10016A44D /* CustomTextField.m in Sources */,
@@ -1517,6 +1536,7 @@
 				731C12761E84F8D30034F361 /* CustomNavigationController.m in Sources */,
 				73BA34D61DB12E65007E9FC1 /* EventTextField.m in Sources */,
 				7340660A1E6CF82800E4E98B /* PushManager.m in Sources */,
+				73C07FA31ECB34460033977B /* ObjectiveViewController.m in Sources */,
 				735EDAB31E1CC790002962DB /* ChildEventView.m in Sources */,
 				735ADFE91E837AB500F79620 /* ToViewController.m in Sources */,
 				731C664D1EC15791008DF9D1 /* LockViewController.m in Sources */,

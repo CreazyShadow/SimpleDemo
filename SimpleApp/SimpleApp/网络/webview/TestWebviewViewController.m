@@ -24,22 +24,13 @@
     
     [self.view addSubview:self.webview];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:63342/JSNote/HtmlBase/test.html"]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:63342/FirstProject/basehtml.html?_ijt=fl27hleo8fnk5jh4254cbgu6ml"]];
     
     [self.webview loadRequest:request];
-//    [self.webview sizeToFit];
-//    [self.webview loadHTMLString:url baseURL:nil];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSDictionary *dic = @{@"YYTISRSA_KEY":@"Zc2dduYM4lxeB5GtzWvUqut5+1ickaYT9hUX4oKxh34AiaAmWoFyR/svGUV57BCgFVdFht1e0bAJfDZfwGz+w89ajvb1251PoWupAhYhWAfcqqsUswNNnQ7CSCm3oVl9YYF3MC7dSlFIVlZlEHZ/2n0nW4KPALkKQb+ATFnazdc=",
-                          @"a":@"fVmwqp2zVmQFWNA2JGXdOSzg41DraDuXFMgHV1wN7g/8eb9j8vRbreqlvXmObHSsK9ouRP/BTmIDWweDkc7tcUL1EKEHKfrrjWH0yBNa5WhcVj6DyCELQByE2/U4vf8Nhv8jRiJElTePag0SkcoC3N0D1bARpz6SLIE9xWGIs0g=",
-                          @"pageNo":@"OZexXFkSHDehRxdTjrP2V3uzkpi/iLFpeo6IceBnymag9Zyg+bU5ISgAFNjQVw5MDzcb0qT5wimxoyB//CzuTlEm1BvzjiZNrlRSQg2kSZOojbBdtSw0DzbTT3JwXGPatsMLaa/wLyVIK9m+LPuy7K9ZIu0jB8c6iwkmm4qVLdw=",
-                          @"regionId":@"laJpHoPkAX9F2K+KPyqGI3IgN9jrRNo19VczuDm4c4Th8reMnu7Ws2S7y2cy0JlpxgGmHxXBr3eFXloWxf7NBTHU1eqG/SkacaNIIbTd6mp7puTq2mSmptnm6m0/N1ZNu8ZO9IbLLT5lKEfiA3ElNXh6ArNZ/RaQGI3mTiplonk="};
-    dic = @{@"abc" : @"1321热热我发的范德萨范德萨"};
-    NSString *str = [NSString stringWithFormat:@"log('%@')", [self dictionaryToJson:dic]];
-   str = [str stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-    [self.webview stringByEvaluatingJavaScriptFromString:str];
+    
 }
 
 - (NSString*)dictionaryToJson:(NSDictionary *)dic

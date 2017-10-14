@@ -78,14 +78,14 @@
     [self.window makeKeyAndVisible];
     
     //通知
-    [self setupNotification];
+//    [self setupNotification];
     
     return YES;
 }
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"LockViewController";
+    NSString *className = @"FirstViewController";
     switch (type) {
         case 0:
         {

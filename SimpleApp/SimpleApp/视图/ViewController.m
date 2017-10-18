@@ -11,13 +11,13 @@
 
 #import <objc/runtime.h>
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource, UIWebViewDelegate>
 
-@property (nonatomic, strong) UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 @property (nonatomic, copy) NSMutableArray *marr;
 
-@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (nonatomic, strong) UIWebView *webview;
 
 @end
 
@@ -25,18 +25,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"1",nil,@"2",@"b",@"3",@"c",nil];
 
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
+    [self addWeb];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    NSLog(@"%@", test_key);
+    
 }
 
 #pragma mark - tableview delegate & datasource
@@ -59,23 +53,39 @@
     return cell;
 }
 
-#pragma mark - GCD
+#pragma mark - UIWebViewDelegate
 
-- (void)testGCD {
-    dispatch_barrier_sync(dispatch_get_main_queue(), ^{
-        
-    });
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSLog(@"---finished");
 }
 
-- (UITableView *)tableView {
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-    }
-    
-    return _tableView;
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    NSLog(@"---failed");
 }
 
+#pragma mark - events
+
+- (IBAction)btnClick:(id)sender {
+    self.containerHeight.constant = 400;
+    self.webview.height = 400;
+    self.container.height = 1400;
+    CGFloat height = self.tableview.contentSize.height;
+    self.tableview.contentSize = CGSizeMake(0, height + 400);
+}
+
+#pragma mark - getter & setter
+
+
+#pragma mark - private
+
+- (void)addWeb {
+    UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 0)];
+    NSString *url = @"http://10.199.101.221:8086/h5/discuss/analogCombination/analogCombination.html?sourceId=666800000587&deviceId=DFATcFuHdM46W7tQs6nJY1&v=2.8.0&snsAccount=SNS20170316045336411461002871&deviceType=3&time=2017091915&token=&clientId=&hasActive=1";
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]];
+    web.delegate = self;
+    [web loadRequest:request];
+    [self.webviewContainer addSubview:web];
+    self.webview = web;
+}
 
 @end

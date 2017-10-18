@@ -45,9 +45,7 @@
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string></string>
 	<key>NSCalendarsUsageDescription</key>
-	<string></string>
-	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>使用相机</string>
 	<key>NSContactsUsageDescription</key>
 	<string></string>
 	<key>NSHealthShareUsageDescription</key>
@@ -63,7 +61,7 @@
 	<key>NSMicrophoneUsageDescription</key>
 	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>使用。。</string>
 	<key>NSRemindersUsageDescription</key>
 	<string></string>
 	<key>UIBackgroundModes</key>

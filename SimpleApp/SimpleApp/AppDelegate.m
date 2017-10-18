@@ -47,12 +47,19 @@ NSString *const maxCount = @"100";
 
 @property (nonatomic, strong, readwrite) id field;
 
+@property (nonatomic, copy) void(^block1)();
+@property (nonatomic, copy) void(^block2)();
+
 @end
 
 @implementation AppDelegate
 
 - (void)test {
-    SubView *sub = [[SubView alloc] initWithFrame:CGRectMake(0, 0, 200, 100) name:@"jack"];
+    NSNumberFormatter *formater = [[NSNumberFormatter alloc] init];
+    formater.positiveFormat = @"#####0.0000;";
+    NSNumber *number = [NSNumber numberWithDouble:12345678];
+    NSString *str = [formater stringFromNumber:number];
+    NSLog(@"%@", str);
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -62,7 +69,7 @@ NSString *const maxCount = @"100";
     //    [[SessionCustomProtocolConfiguration shareManager] openHttpProtocol];
     
     //重定向NSLOG
-//    [[LogHelper shareInstance] redirectSTD:STDERR_FILENO];
+    //    [[LogHelper shareInstance] redirectSTD:STDERR_FILENO];
     
     //捕获crash
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
@@ -79,7 +86,7 @@ NSString *const maxCount = @"100";
     
     [self.window makeKeyAndVisible];
     
-//    [IQKeyboardManager sharedManager].enable = YES;
+    //    [IQKeyboardManager sharedManager].enable = YES;
     
     //通知
     [self setupNotification];
@@ -89,7 +96,7 @@ NSString *const maxCount = @"100";
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"FirstViewController";
+    NSString *className = @"BgViewController";
     switch (type) {
         case 0:
         {

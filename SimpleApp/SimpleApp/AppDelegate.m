@@ -89,7 +89,7 @@ NSString *const maxCount = @"100";
     //    [IQKeyboardManager sharedManager].enable = YES;
     
     //通知
-    [self setupNotification];
+//    [self setupNotification];
     
     return YES;
 }

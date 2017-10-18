@@ -58,8 +58,6 @@
     }
 }
 
-
-
 #pragma mark - event
 
 - (void)interactivePopGestureRecognizerAction:(UIGestureRecognizer *)ges {

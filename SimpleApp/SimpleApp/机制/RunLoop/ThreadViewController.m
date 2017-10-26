@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [RunLoopUtility observerRunloopStatus];
+//    [RunLoopUtility observerRunloopStatus];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -29,7 +29,7 @@
     //    [self threadRunTimer];
     //    [self testCrash];
     
-    
+    [RunLoopUtility testRunLoopRunMaching];
 }
 
 #pragma mark - 线程保活

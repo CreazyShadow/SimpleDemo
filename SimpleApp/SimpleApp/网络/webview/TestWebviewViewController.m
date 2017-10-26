@@ -16,9 +16,9 @@
 
 extern NSString * const maxCount;
 
-@interface TestWebviewViewController ()<UIWebViewDelegate, WKNavigationDelegate, WKScriptMessageHandler>
+@interface TestWebviewViewController ()< WKNavigationDelegate, WKScriptMessageHandler>
 
-@property (nonatomic, strong) UIWebView *webview;
+@property (nonatomic, strong) UIScrollView *scrollview;
 
 @property (nonatomic, strong) WKWebView *wkwebview;
 
@@ -36,8 +36,12 @@ extern NSString * const maxCount;
     
     self.view.backgroundColor = [UIColor orangeColor];
     
+    [self.view addSubview:self.scrollview];
+    
+    [self.scrollview addSubview:self.wkwebview];
+    self.wkwebview.frame = CGRectMake(0, 300, 375, 500);
+    
     [self.wkwebview loadRequest:self.request];
-    [self.view addSubview:self.wkwebview];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -127,25 +131,6 @@ extern NSString * const maxCount;
     }
 }
 
-#pragma mark - cookie
-
-- (void)setupCookie {
-    NSMutableDictionary *fromappDict = [NSMutableDictionary dictionary];
-    [fromappDict setObject:@"fromapp" forKey:NSHTTPCookieName];
-    [fromappDict setObject:@"ios" forKey:NSHTTPCookieValue];
-    // kDomain是公司app网址
-    [fromappDict setObject:@"" forKey:NSHTTPCookieDomain];
-    [fromappDict setObject:@"" forKey:NSHTTPCookieOriginURL];
-    [fromappDict setObject:@"/" forKey:NSHTTPCookiePath];
-    [fromappDict setObject:@"0" forKey:NSHTTPCookieVersion];
-    
-    NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:fromappDict];
-    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    [storage setCookie:cookie];
-    
-    [self.webview stringByEvaluatingJavaScriptFromString:@"document.cookit=''"];
-}
-
 #pragma mark - events
 
 - (void)selectHeaderAction:(NSInteger)index {
@@ -176,15 +161,15 @@ extern NSString * const maxCount;
 
 #pragma mark - getter & setter 
 
--(UIWebView *)webview {
-    if (!_webview) {
-        _webview = [[UIWebView alloc] initWithFrame:self.view.bounds];
-        _webview.delegate = self;
-        
-        _webview.height = 400;
+- (UIScrollView *)scrollview {
+    if (!_scrollview) {
+        _scrollview = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+        _scrollview.contentSize = CGSizeMake(175, 2000);
+        _scrollview.layer.borderWidth = 3;
+        _scrollview.layer.borderColor = [UIColor purpleColor].CGColor;
     }
     
-    return _webview;
+    return _scrollview;
 }
 
 - (WKWebView *)wkwebview {
@@ -213,7 +198,7 @@ extern NSString * const maxCount;
 
 - (NSURLRequest *)request {
     if (!_request) {
-        NSURL *url = [NSURL URLWithString:@"http://localhost:63342/HtmlNote/Base/InteractionNative.html?_ijt=b0cj9nhpp63esnkk1ev2pnnod3"];
+        NSURL *url = [NSURL URLWithString:@"http://10.199.72.195:8080/html/information/test.html"];
         _request = [NSURLRequest requestWithURL:url];
     }
     

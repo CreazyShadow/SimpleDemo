@@ -96,7 +96,7 @@ NSString *const maxCount = @"100";
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"BgViewController";
+    NSString *className = @"WKWebViewViewController";
     switch (type) {
         case 0:
         {

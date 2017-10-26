@@ -14,4 +14,6 @@
 
 + (void)observerRunloopStatus;
 
++ (void)testRunLoopRunMaching;
+
 @end

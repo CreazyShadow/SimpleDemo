@@ -8,10 +8,13 @@
 
 #import "BgViewController.h"
 
+#import <Security/Security.h>
+
 @interface BgViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *table;
 @property (nonatomic, strong) UIImageView *bgImageView;
+@property (nonatomic, strong) UIButton *btn;
 
 @end
 
@@ -48,6 +51,14 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+- (void)btnAction {
+    NSLog(@"---btn action");
+}
+
 - (UITableView *)table {
     if (!_table) {
         _table = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
@@ -68,6 +79,13 @@
     if (!_bgImageView) {
         _bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"InviteSendGift"]];
         _bgImageView.contentMode = UIViewContentModeScaleAspectFill;
+//        _bgImageView.userInteractionEnabled = YES;
+        
+        _btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+        _btn.backgroundColor = [UIColor purpleColor];
+        [_btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
+        
+        [_bgImageView addSubview:_btn];
     }
     
     return _bgImageView;

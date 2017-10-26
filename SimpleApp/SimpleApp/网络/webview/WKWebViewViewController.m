@@ -24,7 +24,7 @@
     [super viewDidLoad];
     
     [self.view addSubview:self.webview];
-    [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]]];
+    [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://10.199.72.195:8080/html/information/test.html"]]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

@@ -10,6 +10,12 @@
 
 #import <CoreFoundation/CoreFoundation.h>
 
+@interface RunLoopUtility()
+
+@property (nonatomic, strong) NSThread *thread;
+
+@end
+
 @implementation RunLoopUtility
 
 + (void)crashRecycle {
@@ -35,6 +41,28 @@
     CFRunLoopAddObserver(CFRunLoopGetMain(), observer, kCFRunLoopDefaultMode);
 }
 
+#pragma mark - runloop
 
++ (void)testRunLoopRunMaching {
+    RunLoopUtility *utility = [[RunLoopUtility alloc] init];
+    utility.thread = [[NSThread alloc] initWithTarget:utility selector:@selector(threadAction) object:nil];
+    [utility.thread start];
+ 
+    [utility performSelector:@selector(threadTestMethod) onThread:utility.thread withObject:nil waitUntilDone:NO];
+}
+
+- (void)threadAction {
+    NSLog(@"----%@", [NSRunLoop currentRunLoop]);
+    
+//    NSMachPort *port = [[NSMachPort alloc] init];
+//    [[NSRunLoop currentRunLoop] addPort:port forMode:NSDefaultRunLoopMode];
+//    [[NSRunLoop currentRunLoop] run];
+    
+    NSLog(@"++++++++++");
+}
+
+- (void)threadTestMethod {
+    NSLog(@"------ %@", NSStringFromSelector(_cmd));
+}
 
 @end

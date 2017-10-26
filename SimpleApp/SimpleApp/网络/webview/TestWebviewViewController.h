@@ -10,6 +10,6 @@
 
 #import "BaseHeaderViewController.h"
 
-@interface TestWebviewViewController : BaseHeaderViewController
+@interface TestWebviewViewController : UIViewController
 
 @end

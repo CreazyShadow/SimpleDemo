@@ -16,13 +16,11 @@
 #import <Photos/PHImageManager.h>
 
 
-@interface SecondViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface SecondViewController () <UITableViewDelegate, UITableViewDataSource, HXEmptyDataSetSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 
-@property (nonatomic, copy) void(^cycleBlock)(void);
-
-@property (nonatomic, copy) NSString *cycleName;
+@property (nonatomic, strong) NSArray *source;
 
 @end
 
@@ -37,24 +35,8 @@
     
     [self.view addSubview:self.tableView];
     
-    self.cycleBlock = ^ {
-        _cycleName = @"cycle";
-    };
-    
-    SubView *sub = [[SubView alloc] initWithColor:[UIColor redColor]];
-    [self.view addSubview:sub];
-}
-
-- (void)dealloc {
-    
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
+    self.tableView.canDisplayEmptyPlaceView = YES;
+    self.tableView.emptyDataSource = self;
 }
 
 - (UITableView *)tableView {
@@ -63,9 +45,24 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         [_tableView registerNib:[UINib nibWithNibName:@"ProductSliderTableViewCell" bundle:nil] forCellReuseIdentifier:@"sliderCell"];
+        
+        _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            __weak typeof(self) weakS = self;
+            weakS.source = @[@1, @2];
+            [weakS.tableView reloadData];
+            [_tableView.mj_header endRefreshing];
+        }];
     }
     
     return _tableView;
+}
+
+#pragma mark - HXDataSource
+
+- (UIView *)placeHolderViewForDataSet:(UIScrollView *)scrollView {
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = [UIColor purpleColor];
+    return view;
 }
 
 #pragma mark - tableivew delegate & datasource
@@ -75,7 +72,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.source.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

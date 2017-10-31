@@ -38,6 +38,8 @@
 		73A8B78E1E8F8C6B00303C4D /* LoadDataChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A8B78C1E8F8C6B00303C4D /* LoadDataChart.m */; };
 		73A8B7911E8F8C7E00303C4D /* LoadChartDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 73A8B78F1E8F8C7E00303C4D /* LoadChartDataSource.h */; };
 		73A8B7921E8F8C7E00303C4D /* LoadChartDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A8B7901E8F8C7E00303C4D /* LoadChartDataSource.m */; };
+		73C10A631FA81A0A005E2B3B /* UIScrollView+EmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 73C10A611FA81A0A005E2B3B /* UIScrollView+EmptyDataSet.h */; };
+		73C10A641FA81A0A005E2B3B /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C10A621FA81A0A005E2B3B /* UIScrollView+EmptyDataSet.m */; };
 		73DFA7F21E0BAB0600CF2D84 /* UIView+Shape.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DFA7F11E0BAB0600CF2D84 /* UIView+Shape.m */; };
 		AE16FEC71F3BF5FB0050E892 /* ObjectProtectedManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AE16FEC51F3BF5FB0050E892 /* ObjectProtectedManager.h */; };
 		AE16FEC81F3BF5FB0050E892 /* ObjectProtectedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE16FEC61F3BF5FB0050E892 /* ObjectProtectedManager.m */; };
@@ -127,6 +129,8 @@
 		73A8B78C1E8F8C6B00303C4D /* LoadDataChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadDataChart.m; sourceTree = "<group>"; };
 		73A8B78F1E8F8C7E00303C4D /* LoadChartDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadChartDataSource.h; sourceTree = "<group>"; };
 		73A8B7901E8F8C7E00303C4D /* LoadChartDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadChartDataSource.m; sourceTree = "<group>"; };
+		73C10A611FA81A0A005E2B3B /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		73C10A621FA81A0A005E2B3B /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 		73DFA7F01E0BAB0600CF2D84 /* UIView+Shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shape.h"; sourceTree = "<group>"; };
 		73DFA7F11E0BAB0600CF2D84 /* UIView+Shape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shape.m"; sourceTree = "<group>"; };
 		AE16FEC51F3BF5FB0050E892 /* ObjectProtectedManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectProtectedManager.h; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 		732B3B6B1DB9A427000A6A25 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				73C10A601FA81918005E2B3B /* EmptyPlaceView */,
 				73A8B78A1E8F8C3900303C4D /* LoadDataChart */,
 				732B3B6C1DB9A427000A6A25 /* Category */,
 				732B3B6F1DB9A427000A6A25 /* CircleLayer.h */,
@@ -352,6 +357,15 @@
 			path = LoadDataChart;
 			sourceTree = "<group>";
 		};
+		73C10A601FA81918005E2B3B /* EmptyPlaceView */ = {
+			isa = PBXGroup;
+			children = (
+				73C10A611FA81A0A005E2B3B /* UIScrollView+EmptyDataSet.h */,
+				73C10A621FA81A0A005E2B3B /* UIScrollView+EmptyDataSet.m */,
+			);
+			path = EmptyPlaceView;
+			sourceTree = "<group>";
+		};
 		AE16FEC41F3BF5E80050E892 /* ObjectProtected */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +382,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73C10A631FA81A0A005E2B3B /* UIScrollView+EmptyDataSet.h in Headers */,
 				73A8B7911E8F8C7E00303C4D /* LoadChartDataSource.h in Headers */,
 				AE16FECB1F3BF6DA0050E892 /* NSObject+Runtime.h in Headers */,
 				735ADFBF1E83624D00F79620 /* TestViewController_1.h in Headers */,
@@ -509,6 +524,7 @@
 				731A04981CD3100900BFA726 /* URLInput.m in Sources */,
 				731A048F1CD30FE200BFA726 /* UIViewController+URLRouter.m in Sources */,
 				73A041261DF7A7E100C44D22 /* RaySingleCommand.m in Sources */,
+				73C10A641FA81A0A005E2B3B /* UIScrollView+EmptyDataSet.m in Sources */,
 				731A048C1CD30FBA00BFA726 /* NSError+URLRouter.m in Sources */,
 				73A042421DF93A6600C44D22 /* UIImage+Subimage.m in Sources */,
 				732B3B761DB9A427000A6A25 /* FileManager.m in Sources */,

@@ -10,6 +10,8 @@
 
 #import <objc/runtime.h>
 
+typedef void(^HandlerBlock)(id repsonse);
+
 @interface BaseViewController ()
 
 @end
@@ -21,7 +23,13 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self print];
+}
+
+
+- (void)jumpNativeDealViewControllerparam:(id)data WVJBResponseCallback:(void(^)(id data))responseCallback {
+    
+    
+    
 }
 
 - (void)print {

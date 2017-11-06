@@ -27,6 +27,8 @@
     
     [self.view addSubview:self.mainScrollView];
     
+    self.mainScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 400)];
     header.backgroundColor = [UIColor purpleColor];
     [self.mainScrollView addSubview:header];

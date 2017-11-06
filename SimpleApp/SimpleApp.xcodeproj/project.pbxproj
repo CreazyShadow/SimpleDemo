@@ -86,6 +86,8 @@
 		735EDAB01E1CC77F002962DB /* SuperEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 735EDAAF1E1CC77F002962DB /* SuperEventView.m */; };
 		735EDAB31E1CC790002962DB /* ChildEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 735EDAB21E1CC790002962DB /* ChildEventView.m */; };
 		735EDAB61E1CC818002962DB /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735EDAB51E1CC818002962DB /* EventViewController.m */; };
+		736266C91FB06EE1000A518B /* MultipleScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 736266C81FB06EE1000A518B /* MultipleScrollViewController.m */; };
+		736266CC1FB06F5C000A518B /* UIScrollView+Multiple.m in Sources */ = {isa = PBXBuildFile; fileRef = 736266CB1FB06F5C000A518B /* UIScrollView+Multiple.m */; };
 		7362AB3A1ECDAE3600B2E933 /* HealthInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7362AB391ECDAE3600B2E933 /* HealthInfoModel.m */; };
 		7362AB401ECDAE5F00B2E933 /* HealthInfoModel+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 7362AB3F1ECDAE5F00B2E933 /* HealthInfoModel+Test.m */; };
 		7362AB491ECE9DF500B2E933 /* NSObject+MsgOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7362AB481ECE9DF500B2E933 /* NSObject+MsgOperation.m */; };
@@ -355,6 +357,10 @@
 		735EDAB21E1CC790002962DB /* ChildEventView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildEventView.m; sourceTree = "<group>"; };
 		735EDAB41E1CC818002962DB /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
 		735EDAB51E1CC818002962DB /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		736266C71FB06EE1000A518B /* MultipleScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultipleScrollViewController.h; sourceTree = "<group>"; };
+		736266C81FB06EE1000A518B /* MultipleScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultipleScrollViewController.m; sourceTree = "<group>"; };
+		736266CA1FB06F5C000A518B /* UIScrollView+Multiple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Multiple.h"; sourceTree = "<group>"; };
+		736266CB1FB06F5C000A518B /* UIScrollView+Multiple.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Multiple.m"; sourceTree = "<group>"; };
 		7362AB381ECDAE3600B2E933 /* HealthInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthInfoModel.h; sourceTree = "<group>"; };
 		7362AB391ECDAE3600B2E933 /* HealthInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthInfoModel.m; sourceTree = "<group>"; };
 		7362AB3E1ECDAE5F00B2E933 /* HealthInfoModel+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HealthInfoModel+Test.h"; sourceTree = "<group>"; };
@@ -1385,6 +1391,10 @@
 				73D61A871F8B77170088C39C /* MoreScrollViewController.m */,
 				73D61A891F8B77540088C39C /* ChildTableViewCell.h */,
 				73D61A8A1F8B77540088C39C /* ChildTableViewCell.m */,
+				736266C71FB06EE1000A518B /* MultipleScrollViewController.h */,
+				736266C81FB06EE1000A518B /* MultipleScrollViewController.m */,
+				736266CA1FB06F5C000A518B /* UIScrollView+Multiple.h */,
+				736266CB1FB06F5C000A518B /* UIScrollView+Multiple.m */,
 			);
 			path = ScrollView;
 			sourceTree = "<group>";
@@ -1654,6 +1664,7 @@
 				73A346AC1E67A9780030CE9D /* ThreadViewController.m in Sources */,
 				732AE6201E5E89FF0068E1CE /* EKElement.m in Sources */,
 				731C126A1E84F0060034F361 /* WKWebViewViewController.m in Sources */,
+				736266C91FB06EE1000A518B /* MultipleScrollViewController.m in Sources */,
 				731C12731E84F6D70034F361 /* NaviBViewController.m in Sources */,
 				73BA34D51DB12E65007E9FC1 /* EventButton.m in Sources */,
 				AE16FECF1F3BFB390050E892 /* Runtime_Super_Protected.m in Sources */,
@@ -1698,6 +1709,7 @@
 				7359982D1EA5D1C200427C5B /* MRCObject.m in Sources */,
 				737B107E1E63B6E1001FF92A /* ProxyViewController.m in Sources */,
 				73BA34D91DB12E65007E9FC1 /* CellModel.swift in Sources */,
+				736266CC1FB06F5C000A518B /* UIScrollView+Multiple.m in Sources */,
 				732116D81EFA3F260041BF6E /* UIView+Event.m in Sources */,
 				733C26331DD42213005FF7AE /* ProductSliderTableViewCell.m in Sources */,
 				731C12671E84F0060034F361 /* HttpSessionViewController.m in Sources */,

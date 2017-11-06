@@ -96,7 +96,7 @@ NSString *const maxCount = @"100";
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"BaseViewController";
+    NSString *className = @"MultipleScrollViewController";
     switch (type) {
         case 0:
         {

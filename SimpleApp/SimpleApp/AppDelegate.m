@@ -114,7 +114,7 @@ NSString *const maxCount = @"100";
     }
     
     CustomNavigationController *nc = [[CustomNavigationController alloc] initWithRootViewController:vc];
-    self.window.rootViewController = nc;
+    self.window.rootViewController = vc;
 }
 
 - (UITabBarController *)setupTabBarController {

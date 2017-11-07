@@ -27,7 +27,7 @@
     
     [self.view addSubview:self.mainScrollView];
     
-    self.mainScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//    self.mainScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 400)];
     header.backgroundColor = [UIColor purpleColor];
@@ -43,16 +43,17 @@
 #pragma mark - scroll delegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+
     [self setupScrollOffsetState:scrollView maxCondtion:^BOOL{
         return scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.height - 0.5;
     }];
-    
+
     if ([scrollView isEqual:self.mainScrollView]) {
-      
+        NSLog(@"-------%@", NSStringFromCGPoint(scrollView.contentOffset));
         if (self.webView.scrollView.offsetState != ScrollOffsetStateMin || self.subScrollView.offsetState != ScrollOffsetStateMin) {
-            scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, scrollView.contentSize.height - 600);
+            scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, scrollView.contentSize.height - scrollView.height);
         }
-        
+
     } else {
         if (self.mainScrollView.offsetState != ScrollOffsetStateMax) {
             self.webView.scrollView.contentOffset = CGPointZero;
@@ -100,9 +101,9 @@
         _subScrollView.delegate = self;
         _subScrollView.needMultipleScroll = YES;
         _subScrollView.isSuperScroll = NO;
-        _subScrollView.showsVerticalScrollIndicator = NO;
+//        _subScrollView.showsVerticalScrollIndicator = NO;
         _subScrollView.contentSize = CGSizeMake(0, 1000);
-        _subScrollView.backgroundColor = [UIColor redColor];
+//        _subScrollView.backgroundColor = [UIColor redColor];
         _subScrollView.layer.borderWidth = 1;
         _subScrollView.layer.borderColor = [UIColor blueColor].CGColor;
     }

@@ -10,6 +10,7 @@
 
 @protocol EatProtocol <NSObject>
 
+@optional
 - (void)eat;
 
 @end

@@ -10,6 +10,8 @@
 
 #import "EatProtocol.h"
 
-@interface Man : NSObject <EatProtocol>
+@interface Man : NSObject <EatProtocol, NSCopying, NSMutableCopying>
+
+@property (nonatomic, copy) NSString *name;
 
 @end

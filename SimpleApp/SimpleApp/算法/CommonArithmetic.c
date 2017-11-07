@@ -8,6 +8,8 @@
 
 #include "CommonArithmetic.h"
 
+static int linkListCount = 10;
+
 #pragma mark - 倒叙
 int reverse(int num) {
     int temp = 0;
@@ -22,7 +24,8 @@ int reverse(int num) {
 #pragma mark - 链表
 typedef struct student {
     int num;
-    struct student *next;
+    struct student *prior; //before
+    struct student *next;  //next
 } STU;
 
 STU *mergeStuList(STU *stu1, STU *stu2) {
@@ -48,7 +51,108 @@ STU *mergeStuList(STU *stu1, STU *stu2) {
     return result;
 }
 
-int *quickSort(int *arr) {
+#pragma mark - 单向链表
+
+STU *singleLinkList() {
+    STU *head, *tail, *temp;
+    head = tail = temp = NULL;
     
-    return arr;
+    head = (STU *)calloc(1, sizeof(STU));
+    if (head == NULL) {
+        perror("malloc error");
+        return NULL;
+    }
+    
+    int i = 0;
+    
+    do {
+        temp = (STU *)calloc(1, sizeof(STU));
+        temp->next = NULL;
+        
+        if (head->next == NULL) {
+            head->num = i;
+            head->next = temp;
+            tail = temp;
+        } else {
+            tail->next = temp;
+            tail = temp;
+        }
+        
+        tail->num = ++i;
+        
+    } while (i + 1 < linkListCount);
+    
+    return head;
+}
+
+#pragma mark - 双向链表
+
+STU *bothWayLinkList() {
+    STU *head, *tail, *temp;
+    head = tail = temp = NULL;
+    
+    head = (STU *)calloc(1, sizeof(STU));
+    if (head == NULL) {
+        perror("malloc error");
+        return NULL;
+    }
+    
+    int i = 0;
+    do {
+        temp = calloc(1, sizeof(STU));
+        temp->prior = tail;
+        temp->next = NULL;
+        
+        if (head->next == NULL) {
+            tail = temp;
+            head->num = i;
+            head->prior = NULL;
+            head->next = tail;
+            tail->prior = head;
+        } else {
+            tail->next = temp;
+            tail = temp;
+        }
+        
+        tail->num = i++;
+        
+    } while (i + 1 < linkListCount);
+    
+    return head;
+}
+
+#pragma mark - 循环链表
+
+STU *circleLinkList() {
+    STU *head, *tail, *temp;
+    head = tail = temp = NULL;
+    
+    head = (STU *)calloc(1, sizeof(STU));
+    if (head == NULL) {
+        perror("malloc error");
+        return NULL;
+    }
+    
+    int i = 0;
+    
+    do {
+        temp = (STU *)calloc(1, sizeof(STU));
+        temp->next = NULL;
+        
+        if (head->next == NULL) {
+            head->num = i;
+            head->next = temp;
+            tail = temp;
+        } else {
+            tail->next = temp;
+            tail = temp;
+        }
+        
+        tail->num = ++i;
+        
+    } while (i + 1 < linkListCount);
+    
+    tail->next = head;
+    
+    return head;
 }

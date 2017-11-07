@@ -55,11 +55,10 @@ NSString *const maxCount = @"100";
 @implementation AppDelegate
 
 - (void)test {
-    NSNumberFormatter *formater = [[NSNumberFormatter alloc] init];
-    formater.positiveFormat = @"#####0.0000;";
-    NSNumber *number = [NSNumber numberWithDouble:12345678];
-    NSString *str = [formater stringFromNumber:number];
-    NSLog(@"%@", str);
+    int i = 0;
+    do {
+        NSLog(@"%d", ++i);
+    } while (i < 10);
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

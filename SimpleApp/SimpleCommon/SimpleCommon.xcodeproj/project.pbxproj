@@ -29,6 +29,12 @@
 		735ADFBF1E83624D00F79620 /* TestViewController_1.h in Headers */ = {isa = PBXBuildFile; fileRef = 735ADFBD1E83624D00F79620 /* TestViewController_1.h */; };
 		735ADFC01E83624D00F79620 /* TestViewController_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 735ADFBE1E83624D00F79620 /* TestViewController_1.m */; };
 		735ADFD31E83679000F79620 /* commonBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 735ADFD21E83679000F79620 /* commonBundle.bundle */; };
+		736266F81FB2D3E6000A518B /* EmptySuperObj.h in Headers */ = {isa = PBXBuildFile; fileRef = 736266F61FB2D3E6000A518B /* EmptySuperObj.h */; };
+		736266F91FB2D3E6000A518B /* EmptySuperObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 736266F71FB2D3E6000A518B /* EmptySuperObj.m */; };
+		736266FC1FB2D3FC000A518B /* EmptySubObj.h in Headers */ = {isa = PBXBuildFile; fileRef = 736266FA1FB2D3FC000A518B /* EmptySubObj.h */; };
+		736266FD1FB2D3FC000A518B /* EmptySubObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 736266FB1FB2D3FC000A518B /* EmptySubObj.m */; };
+		736267001FB2D46B000A518B /* EmptySuperObj+Empty.h in Headers */ = {isa = PBXBuildFile; fileRef = 736266FE1FB2D46B000A518B /* EmptySuperObj+Empty.h */; };
+		736267011FB2D46B000A518B /* EmptySuperObj+Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = 736266FF1FB2D46B000A518B /* EmptySuperObj+Empty.m */; };
 		739F10B11D055065005DA096 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739F10B01D055065005DA096 /* CoreFoundation.framework */; };
 		739F10B41D0550DC005DA096 /* RunLoopManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 739F10B31D0550DC005DA096 /* RunLoopManager.m */; };
 		73A041261DF7A7E100C44D22 /* RaySingleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A041251DF7A7E100C44D22 /* RaySingleCommand.m */; };
@@ -115,6 +121,12 @@
 		735ADFCB1E83673F00F79620 /* simpleCommonBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = simpleCommonBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		735ADFCD1E83673F00F79620 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		735ADFD21E83679000F79620 /* commonBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = commonBundle.bundle; sourceTree = "<group>"; };
+		736266F61FB2D3E6000A518B /* EmptySuperObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptySuperObj.h; sourceTree = "<group>"; };
+		736266F71FB2D3E6000A518B /* EmptySuperObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptySuperObj.m; sourceTree = "<group>"; };
+		736266FA1FB2D3FC000A518B /* EmptySubObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptySubObj.h; sourceTree = "<group>"; };
+		736266FB1FB2D3FC000A518B /* EmptySubObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptySubObj.m; sourceTree = "<group>"; };
+		736266FE1FB2D46B000A518B /* EmptySuperObj+Empty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EmptySuperObj+Empty.h"; sourceTree = "<group>"; };
+		736266FF1FB2D46B000A518B /* EmptySuperObj+Empty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "EmptySuperObj+Empty.m"; sourceTree = "<group>"; };
 		7373D2DD1CD0B7FB00332D91 /* libSimpleCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSimpleCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		739F10B01D055065005DA096 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		739F10B21D0550DC005DA096 /* RunLoopManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunLoopManager.h; sourceTree = "<group>"; };
@@ -362,6 +374,12 @@
 			children = (
 				73C10A611FA81A0A005E2B3B /* UIScrollView+EmptyDataSet.h */,
 				73C10A621FA81A0A005E2B3B /* UIScrollView+EmptyDataSet.m */,
+				736266F61FB2D3E6000A518B /* EmptySuperObj.h */,
+				736266F71FB2D3E6000A518B /* EmptySuperObj.m */,
+				736266FA1FB2D3FC000A518B /* EmptySubObj.h */,
+				736266FB1FB2D3FC000A518B /* EmptySubObj.m */,
+				736266FE1FB2D46B000A518B /* EmptySuperObj+Empty.h */,
+				736266FF1FB2D46B000A518B /* EmptySuperObj+Empty.m */,
 			);
 			path = EmptyPlaceView;
 			sourceTree = "<group>";
@@ -387,7 +405,10 @@
 				AE16FECB1F3BF6DA0050E892 /* NSObject+Runtime.h in Headers */,
 				735ADFBF1E83624D00F79620 /* TestViewController_1.h in Headers */,
 				AE16FEC71F3BF5FB0050E892 /* ObjectProtectedManager.h in Headers */,
+				736266F81FB2D3E6000A518B /* EmptySuperObj.h in Headers */,
 				73A8B78D1E8F8C6B00303C4D /* LoadDataChart.h in Headers */,
+				736267001FB2D46B000A518B /* EmptySuperObj+Empty.h in Headers */,
+				736266FC1FB2D3FC000A518B /* EmptySubObj.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +546,7 @@
 				731A048F1CD30FE200BFA726 /* UIViewController+URLRouter.m in Sources */,
 				73A041261DF7A7E100C44D22 /* RaySingleCommand.m in Sources */,
 				73C10A641FA81A0A005E2B3B /* UIScrollView+EmptyDataSet.m in Sources */,
+				736267011FB2D46B000A518B /* EmptySuperObj+Empty.m in Sources */,
 				731A048C1CD30FBA00BFA726 /* NSError+URLRouter.m in Sources */,
 				73A042421DF93A6600C44D22 /* UIImage+Subimage.m in Sources */,
 				732B3B761DB9A427000A6A25 /* FileManager.m in Sources */,
@@ -536,12 +558,14 @@
 				73A041291DF7AA3C00C44D22 /* UIButton+Signal.m in Sources */,
 				73DFA7F21E0BAB0600CF2D84 /* UIView+Shape.m in Sources */,
 				732B3B7A1DB9A427000A6A25 /* PageViewItem.m in Sources */,
+				736266F91FB2D3E6000A518B /* EmptySuperObj.m in Sources */,
 				732B3B7D1DB9A874000A6A25 /* MyProxy.m in Sources */,
 				731A04AA1CD3104A00BFA726 /* URLRouter.m in Sources */,
 				732640271D1281CE00AB2EA7 /* LogHelper.m in Sources */,
 				731A04A11CD3102E00BFA726 /* URLManager.m in Sources */,
 				AE16FEC81F3BF5FB0050E892 /* ObjectProtectedManager.m in Sources */,
 				734C429E1D375FB800B19D82 /* NSTimer+YZT.m in Sources */,
+				736266FD1FB2D3FC000A518B /* EmptySubObj.m in Sources */,
 				732B3B791DB9A427000A6A25 /* PageView.m in Sources */,
 				731A049B1CD3101300BFA726 /* URLInterceptor.m in Sources */,
 				731A04AF1CD3341B00BFA726 /* URLHandler.m in Sources */,

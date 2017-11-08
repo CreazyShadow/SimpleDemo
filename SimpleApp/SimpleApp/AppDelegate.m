@@ -41,6 +41,10 @@
 
 #import "HXWebViewActionHandler.h"
 
+#import <EmptySuperObj.h>
+#import <EmptySubObj.h>
+#import <EmptySuperObj+Empty.h>
+
 NSString *const maxCount = @"100";
 
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
@@ -55,10 +59,15 @@ NSString *const maxCount = @"100";
 @implementation AppDelegate
 
 - (void)test {
-    int i = 0;
-    do {
-        NSLog(@"%d", ++i);
-    } while (i < 10);
+    EmptySuperObj *sup = [[EmptySuperObj alloc] init];
+    sup.needExchange = YES;
+    [sup print];
+
+    EmptySubObj *sub = [[EmptySubObj alloc] init];
+    sub.needExchange = YES;
+    [sub print];
+    
+    NSLog(@"%d", [sub isKindOfClass:[EmptySuperObj class]]);
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -95,7 +104,7 @@ NSString *const maxCount = @"100";
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"MultipleScrollViewController";
+    NSString *className = @"FirstViewController";
     switch (type) {
         case 0:
         {
@@ -112,8 +121,8 @@ NSString *const maxCount = @"100";
             break;
     }
     
-    CustomNavigationController *nc = [[CustomNavigationController alloc] initWithRootViewController:vc];
-    self.window.rootViewController = vc;
+    CustomNavigationController *root = [[CustomNavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = root;
 }
 
 - (UITabBarController *)setupTabBarController {

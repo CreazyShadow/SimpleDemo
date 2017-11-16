@@ -13,6 +13,7 @@
 #import <WebKit/WebKit.h>
 
 #import <Aspects.h>
+#import <MJRefresh.h>
 
 extern NSString * const maxCount;
 
@@ -36,9 +37,7 @@ extern NSString * const maxCount;
     
     self.view.backgroundColor = [UIColor orangeColor];
     
-    [self.view addSubview:self.scrollview];
-    
-    [self.scrollview addSubview:self.wkwebview];
+    [self.view addSubview:self.wkwebview];
     self.wkwebview.frame = CGRectMake(0, 300, 375, 500);
     
     [self.wkwebview loadRequest:self.request];
@@ -142,7 +141,7 @@ extern NSString * const maxCount;
             
         case 1:
         {
-            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:63342/HtmlNote/Base/InteractionNative.html?_ijt=b0cj9nhpp63esnkk1ev2pnnod3"]];
+            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:63342/StudyNote/test/FixLayoutRefresh.html?_ijt=i6nml82a1m1lsuffiqao6gttb3"]];
             [self.wkwebview loadRequest:request];
         }
             break;
@@ -160,17 +159,6 @@ extern NSString * const maxCount;
 }
 
 #pragma mark - getter & setter 
-
-- (UIScrollView *)scrollview {
-    if (!_scrollview) {
-        _scrollview = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-        _scrollview.contentSize = CGSizeMake(175, 2000);
-        _scrollview.layer.borderWidth = 3;
-        _scrollview.layer.borderColor = [UIColor purpleColor].CGColor;
-    }
-    
-    return _scrollview;
-}
 
 - (WKWebView *)wkwebview {
     if (!_wkwebview) {
@@ -191,6 +179,14 @@ extern NSString * const maxCount;
         [_wkwebview aspect_hookSelector:@selector(reload) withOptions:AspectPositionAfter usingBlock:^ {
             NSLog(@"----- reload");
         }error:nil];
+        
+        __weak typeof(self) weakSelf = self;
+        _wkwebview.scrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            [weakSelf.wkwebview reload];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [_wkwebview.scrollView.mj_header endRefreshing];
+            });
+        }];
     }
     
     return _wkwebview;
@@ -198,7 +194,7 @@ extern NSString * const maxCount;
 
 - (NSURLRequest *)request {
     if (!_request) {
-        NSURL *url = [NSURL URLWithString:@"http://10.199.72.195:8080/html/information/test.html"];
+        NSURL *url = [NSURL URLWithString:@"http://localhost:63342/StudyNote/test/CacheStorage.html?_ijt=nke2uqt65n9s14bq65f4gr7aba"];
         _request = [NSURLRequest requestWithURL:url];
     }
     
@@ -251,6 +247,38 @@ extern NSString * const maxCount;
     for (UIView *item in view.subviews) {
         NSLog(@"%@", item);
         [self printSubViews:item];
+    }
+}
+
+#pragma mark - wkwebview清除缓存
+
+- (void)clearWkWebViewCache {
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 9.0) {
+        WKWebsiteDataStore *dateStore = [WKWebsiteDataStore defaultDataStore];
+        [dateStore fetchDataRecordsOfTypes:[WKWebsiteDataStore allWebsiteDataTypes]
+                         completionHandler:^(NSArray<WKWebsiteDataRecord *> * __nonnull records) {
+                             for (WKWebsiteDataRecord *record in records)
+                             {
+                                 [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:record.dataTypes
+                                                                           forDataRecords:@[record]
+                                                                        completionHandler:^{
+                                                                            NSLog(@"Cookies for %@ deleted successfully",record.displayName);
+                                                                        }];
+                             }
+                         }];
+    } else {
+        
+        NSString *libraryDir = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES)[0];
+        NSString *bundleId  =  [[[NSBundle mainBundle] infoDictionary]
+                                objectForKey:@"CFBundleIdentifier"];
+        NSString *webkitFolderInLib = [NSString stringWithFormat:@"%@/WebKit",libraryDir];
+        NSString *webKitFolderInCaches = [NSString
+                                          stringWithFormat:@"%@/Caches/%@/WebKit",libraryDir,bundleId];
+        
+        NSError *error;
+        /* iOS8.0 WebView Cache的存放路径 */
+        [[NSFileManager defaultManager] removeItemAtPath:webKitFolderInCaches error:&error];
+        [[NSFileManager defaultManager] removeItemAtPath:webkitFolderInLib error:nil];
     }
 }
 

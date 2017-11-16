@@ -11,7 +11,7 @@
 @implementation Object_Super (Introduce)
 
 - (void)introduce {
-    NSLog(@"----Category:%@", [self class]);
+    NSLog(@"---- introduce introduce.");
 }
 
 @end

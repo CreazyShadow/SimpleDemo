@@ -59,15 +59,18 @@ NSString *const maxCount = @"100";
 @implementation AppDelegate
 
 - (void)test {
-    EmptySuperObj *sup = [[EmptySuperObj alloc] init];
-    sup.needExchange = YES;
-    [sup print];
-
-    EmptySubObj *sub = [[EmptySubObj alloc] init];
-    sub.needExchange = YES;
-    [sub print];
+    dispatch_queue_t queue = dispatch_queue_create("com.ray.queue", DISPATCH_QUEUE_CONCURRENT);
+    NSLog(@"----start");
+    dispatch_async(queue, ^{
+        [NSThread sleepForTimeInterval:2];
+        NSLog(@"------");
+    });
     
-    NSLog(@"%d", [sub isKindOfClass:[EmptySuperObj class]]);
+    dispatch_barrier_sync(queue, ^{
+        NSLog(@"-----barrier");
+    });
+    
+    NSLog(@"------- 111");
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -104,7 +107,7 @@ NSString *const maxCount = @"100";
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"FirstViewController";
+    NSString *className = @"TestWebviewViewController";
     switch (type) {
         case 0:
         {

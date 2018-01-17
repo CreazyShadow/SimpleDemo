@@ -64,19 +64,7 @@ typedef NS_ENUM(NSInteger, AppType) {
 @implementation AppDelegate
 
 - (void)test {
-    NSMutableArray *arr = [NSMutableArray array];
     
-    for (int i = 0; i < 2; i++) {
-        Person *p = [[Person alloc] init];
-        p.name = @"jack";
-        p.phoneNum = @"185123";
-        [arr addObject:p];
-    }
-    
-    for (NSNumber *item in [self arr]) {
-        NSLog(@"%@", item);
-    }
-    NSLog(@"----");
 }
 
 - (NSArray *)arr {

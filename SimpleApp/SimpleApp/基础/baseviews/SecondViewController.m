@@ -35,7 +35,7 @@
     
     [self.view addSubview:self.tableView];
     
-    self.tableView.canDisplayEmptyPlaceView = YES;
+//    self.tableView.canDisplayEmptyPlaceView = YES;
     self.tableView.emptyDataSource = self;
 }
 
@@ -44,6 +44,15 @@
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        _tableView.canDisplayEmptyPlaceView = YES;
+//        @try {
+//            _tableView.canDisplayEmptyPlaceView = YES;
+//        } @catch (NSException *exception) {
+//            NSLog(@"%@", exception);
+//        } @finally {
+//
+//        }
+        
         [_tableView registerNib:[UINib nibWithNibName:@"ProductSliderTableViewCell" bundle:nil] forCellReuseIdentifier:@"sliderCell"];
         
         _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{

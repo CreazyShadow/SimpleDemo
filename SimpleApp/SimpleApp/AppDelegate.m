@@ -37,7 +37,7 @@
 #import "MRCObject.h"
 #import "RunLoopUtility.h"
 
-//#import <IQKeyboardManager.h>
+#import <IQKeyboardManager.h>
 
 #import "HXWebViewActionHandler.h"
 
@@ -46,6 +46,11 @@
 #import <EmptySuperObj+Empty.h>
 
 NSString *const maxCount = @"100";
+
+typedef NS_ENUM(NSInteger, AppType) {
+    AppTypeOne = 0,
+    AppTypeTwo = 1,
+};
 
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
 
@@ -59,18 +64,24 @@ NSString *const maxCount = @"100";
 @implementation AppDelegate
 
 - (void)test {
-    dispatch_queue_t queue = dispatch_queue_create("com.ray.queue", DISPATCH_QUEUE_CONCURRENT);
-    NSLog(@"----start");
-    dispatch_async(queue, ^{
-        [NSThread sleepForTimeInterval:2];
-        NSLog(@"------");
-    });
+    NSMutableArray *arr = [NSMutableArray array];
     
-    dispatch_barrier_sync(queue, ^{
-        NSLog(@"-----barrier");
-    });
+    for (int i = 0; i < 2; i++) {
+        Person *p = [[Person alloc] init];
+        p.name = @"jack";
+        p.phoneNum = @"185123";
+        [arr addObject:p];
+    }
     
-    NSLog(@"------- 111");
+    for (NSNumber *item in [self arr]) {
+        NSLog(@"%@", item);
+    }
+    NSLog(@"----");
+}
+
+- (NSArray *)arr {
+    NSLog(@"----- cycle");
+    return @[@1, @2];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -97,17 +108,17 @@ NSString *const maxCount = @"100";
     
     [self.window makeKeyAndVisible];
     
-    //    [IQKeyboardManager sharedManager].enable = YES;
+    [IQKeyboardManager sharedManager].enable = YES;
     
     //通知
-//    [self setupNotification];
+    //    [self setupNotification];
     
     return YES;
 }
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"TestWebviewViewController";
+    NSString *className = @"FirstViewController";
     switch (type) {
         case 0:
         {

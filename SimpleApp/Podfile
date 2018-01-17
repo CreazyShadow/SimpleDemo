@@ -18,7 +18,7 @@ def share_pods
     pod 'WebViewJavascriptBridge'
     pod 'FBMemoryProfiler'
     pod 'Aspects'
-#    pod 'IQKeyboardManager'
+    pod 'IQKeyboardManager'
 end
 
 target 'SimpleApp' do

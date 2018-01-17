@@ -59,6 +59,8 @@
 		733C26341DD42213005FF7AE /* ProductSliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 733C26321DD42213005FF7AE /* ProductSliderTableViewCell.xib */; };
 		7340660A1E6CF82800E4E98B /* PushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 734066091E6CF82800E4E98B /* PushManager.m */; };
 		73406E2A1E14F10100D5C58C /* GestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73406E291E14F10100D5C58C /* GestureViewController.m */; };
+		7341E10E1FE0CFB50017EF36 /* IQKeyBoardBugsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7341E10D1FE0CFB50017EF36 /* IQKeyBoardBugsViewController.m */; };
+		7341E1111FE0D0160017EF36 /* IQKeyBoardTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7341E1101FE0D0160017EF36 /* IQKeyBoardTextView.m */; };
 		734DAE0B1E88FC8900D553CC /* AttributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 734DAE0A1E88FC8900D553CC /* AttributeViewController.m */; };
 		734DAE0E1E89098000D553CC /* TailorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 734DAE0D1E89098000D553CC /* TailorView.m */; };
 		73523F741F7DE72100E8B81D /* RenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73523F721F7DE72100E8B81D /* RenderViewController.m */; };
@@ -157,6 +159,9 @@
 		73D4B2791ECADB64002E952E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D4B2781ECADB64002E952E /* Photos.framework */; };
 		73D61A881F8B77170088C39C /* MoreScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D61A871F8B77170088C39C /* MoreScrollViewController.m */; };
 		73D61A8B1F8B77540088C39C /* ChildTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D61A8A1F8B77540088C39C /* ChildTableViewCell.m */; };
+		73DEC2F41FE7935400F4D9CD /* UIViewController+MultipleScrollPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DEC2F31FE7935400F4D9CD /* UIViewController+MultipleScrollPool.m */; };
+		73E443C22005F5690038030F /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E443C12005F5690038030F /* CollectionViewController.m */; };
+		73E443D020060FDF0038030F /* DemoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E443CF20060FDF0038030F /* DemoCollectionViewCell.m */; };
 		73E540FB1E963A09007C6584 /* DataSourcePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E540FA1E963A09007C6584 /* DataSourcePool.m */; };
 		73E540FE1E963A18007C6584 /* AutoChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E540FD1E963A18007C6584 /* AutoChart.m */; };
 		73E541041E96408D007C6584 /* AutoChartPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E541031E96408D007C6584 /* AutoChartPageModel.m */; };
@@ -166,6 +171,7 @@
 		73ED0C241E514C0600E2A662 /* RayAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ED0C231E514C0600E2A662 /* RayAnimation.m */; };
 		73ED0C271E514C8100E2A662 /* TestProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ED0C261E514C8100E2A662 /* TestProtocolViewController.m */; };
 		73F3AD4D1F468B08004450F8 /* RayWkWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F3AD4C1F468B08004450F8 /* RayWkWebView.m */; };
+		73F48C8A1FC66DDC00ECCE05 /* ThridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F48C891FC66DDC00ECCE05 /* ThridViewController.m */; };
 		73F5C2691E9B4F290016A44D /* AutoChartPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C2681E9B4F290016A44D /* AutoChartPageView.m */; };
 		73F5C26C1E9B53720016A44D /* AutoChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C26B1E9B53720016A44D /* AutoChartViewController.m */; };
 		73F5C2901E9DB8150016A44D /* DrawCurveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F5C28F1E9DB8150016A44D /* DrawCurveViewController.m */; };
@@ -307,6 +313,10 @@
 		734066091E6CF82800E4E98B /* PushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushManager.m; sourceTree = "<group>"; };
 		73406E281E14F10100D5C58C /* GestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureViewController.h; sourceTree = "<group>"; };
 		73406E291E14F10100D5C58C /* GestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureViewController.m; sourceTree = "<group>"; };
+		7341E10C1FE0CFB50017EF36 /* IQKeyBoardBugsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IQKeyBoardBugsViewController.h; sourceTree = "<group>"; };
+		7341E10D1FE0CFB50017EF36 /* IQKeyBoardBugsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IQKeyBoardBugsViewController.m; sourceTree = "<group>"; };
+		7341E10F1FE0D0160017EF36 /* IQKeyBoardTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IQKeyBoardTextView.h; sourceTree = "<group>"; };
+		7341E1101FE0D0160017EF36 /* IQKeyBoardTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IQKeyBoardTextView.m; sourceTree = "<group>"; };
 		734DAE091E88FC8900D553CC /* AttributeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeViewController.h; sourceTree = "<group>"; };
 		734DAE0A1E88FC8900D553CC /* AttributeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributeViewController.m; sourceTree = "<group>"; };
 		734DAE0C1E89098000D553CC /* TailorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TailorView.h; sourceTree = "<group>"; };
@@ -494,6 +504,12 @@
 		73D61A871F8B77170088C39C /* MoreScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreScrollViewController.m; sourceTree = "<group>"; };
 		73D61A891F8B77540088C39C /* ChildTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChildTableViewCell.h; sourceTree = "<group>"; };
 		73D61A8A1F8B77540088C39C /* ChildTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChildTableViewCell.m; sourceTree = "<group>"; };
+		73DEC2F21FE7935400F4D9CD /* UIViewController+MultipleScrollPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MultipleScrollPool.h"; sourceTree = "<group>"; };
+		73DEC2F31FE7935400F4D9CD /* UIViewController+MultipleScrollPool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MultipleScrollPool.m"; sourceTree = "<group>"; };
+		73E443C02005F5690038030F /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		73E443C12005F5690038030F /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		73E443CE20060FDF0038030F /* DemoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoCollectionViewCell.h; sourceTree = "<group>"; };
+		73E443CF20060FDF0038030F /* DemoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoCollectionViewCell.m; sourceTree = "<group>"; };
 		73E540F91E963A09007C6584 /* DataSourcePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourcePool.h; sourceTree = "<group>"; };
 		73E540FA1E963A09007C6584 /* DataSourcePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourcePool.m; sourceTree = "<group>"; };
 		73E540FC1E963A18007C6584 /* AutoChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoChart.h; sourceTree = "<group>"; };
@@ -512,6 +528,8 @@
 		73ED0C261E514C8100E2A662 /* TestProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestProtocolViewController.m; sourceTree = "<group>"; };
 		73F3AD4B1F468B08004450F8 /* RayWkWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RayWkWebView.h; sourceTree = "<group>"; };
 		73F3AD4C1F468B08004450F8 /* RayWkWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RayWkWebView.m; sourceTree = "<group>"; };
+		73F48C881FC66DDC00ECCE05 /* ThridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThridViewController.h; sourceTree = "<group>"; };
+		73F48C891FC66DDC00ECCE05 /* ThridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThridViewController.m; sourceTree = "<group>"; };
 		73F5C2671E9B4F290016A44D /* AutoChartPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoChartPageView.h; sourceTree = "<group>"; };
 		73F5C2681E9B4F290016A44D /* AutoChartPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoChartPageView.m; sourceTree = "<group>"; };
 		73F5C26A1E9B53720016A44D /* AutoChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoChartViewController.h; sourceTree = "<group>"; };
@@ -797,6 +815,17 @@
 				733C26321DD42213005FF7AE /* ProductSliderTableViewCell.xib */,
 			);
 			path = Slider;
+			sourceTree = "<group>";
+		};
+		7341E10B1FE0CFA20017EF36 /* IQKeyboardBug */ = {
+			isa = PBXGroup;
+			children = (
+				7341E10C1FE0CFB50017EF36 /* IQKeyBoardBugsViewController.h */,
+				7341E10D1FE0CFB50017EF36 /* IQKeyBoardBugsViewController.m */,
+				7341E10F1FE0D0160017EF36 /* IQKeyBoardTextView.h */,
+				7341E1101FE0D0160017EF36 /* IQKeyBoardTextView.m */,
+			);
+			path = IQKeyboardBug;
 			sourceTree = "<group>";
 		};
 		734DAE081E88FC7D00D553CC /* attributes */ = {
@@ -1237,6 +1266,8 @@
 				732D803A1EB435D90003FD18 /* BaseView.m */,
 				732116D61EFA3F260041BF6E /* UIView+Event.h */,
 				732116D71EFA3F260041BF6E /* UIView+Event.m */,
+				73F48C881FC66DDC00ECCE05 /* ThridViewController.h */,
+				73F48C891FC66DDC00ECCE05 /* ThridViewController.m */,
 			);
 			path = baseviews;
 			sourceTree = "<group>";
@@ -1244,6 +1275,7 @@
 		73BA34A01DB12E65007E9FC1 /* 视图 */ = {
 			isa = PBXGroup;
 			children = (
+				7341E10B1FE0CFA20017EF36 /* IQKeyboardBug */,
 				738F579F1F74C48F004D6878 /* UIToolBar */,
 				73BBE75E1EE67BA300FC76BB /* HealthChart */,
 				73F5C2911E9DBDC70016A44D /* UITextField */,
@@ -1300,6 +1332,10 @@
 				73A3467C1E6557C60030CE9D /* ReusingCell.m */,
 				73A3467E1E6559F90030CE9D /* GlobalInstance.h */,
 				73A3467F1E6559F90030CE9D /* GlobalInstance.m */,
+				73E443C02005F5690038030F /* CollectionViewController.h */,
+				73E443C12005F5690038030F /* CollectionViewController.m */,
+				73E443CE20060FDF0038030F /* DemoCollectionViewCell.h */,
+				73E443CF20060FDF0038030F /* DemoCollectionViewCell.m */,
 			);
 			path = ListView;
 			sourceTree = "<group>";
@@ -1395,6 +1431,8 @@
 				736266C81FB06EE1000A518B /* MultipleScrollViewController.m */,
 				736266CA1FB06F5C000A518B /* UIScrollView+Multiple.h */,
 				736266CB1FB06F5C000A518B /* UIScrollView+Multiple.m */,
+				73DEC2F21FE7935400F4D9CD /* UIViewController+MultipleScrollPool.h */,
+				73DEC2F31FE7935400F4D9CD /* UIViewController+MultipleScrollPool.m */,
 			);
 			path = ScrollView;
 			sourceTree = "<group>";
@@ -1654,7 +1692,9 @@
 				733968491F948B700062DC9C /* RunLoopSourceCode.m in Sources */,
 				7373D24C1CD0AA2600332D91 /* AppDelegate.m in Sources */,
 				73BA34CB1DB12E65007E9FC1 /* JSContextDemo.m in Sources */,
+				73F48C8A1FC66DDC00ECCE05 /* ThridViewController.m in Sources */,
 				AE8BD43C1F38772500169FA3 /* PerformanceViewController.m in Sources */,
+				7341E10E1FE0CFB50017EF36 /* IQKeyBoardBugsViewController.m in Sources */,
 				73D61A881F8B77170088C39C /* MoreScrollViewController.m in Sources */,
 				73BA34CA1DB12E65007E9FC1 /* ScrapeView.m in Sources */,
 				73F3AD4D1F468B08004450F8 /* RayWkWebView.m in Sources */,
@@ -1665,6 +1705,7 @@
 				732AE6201E5E89FF0068E1CE /* EKElement.m in Sources */,
 				731C126A1E84F0060034F361 /* WKWebViewViewController.m in Sources */,
 				736266C91FB06EE1000A518B /* MultipleScrollViewController.m in Sources */,
+				73E443D020060FDF0038030F /* DemoCollectionViewCell.m in Sources */,
 				731C12731E84F6D70034F361 /* NaviBViewController.m in Sources */,
 				73BA34D51DB12E65007E9FC1 /* EventButton.m in Sources */,
 				AE16FECF1F3BFB390050E892 /* Runtime_Super_Protected.m in Sources */,
@@ -1705,10 +1746,12 @@
 				7373D2491CD0AA2600332D91 /* main.m in Sources */,
 				73BA34E01DB12E65007E9FC1 /* ViewController.m in Sources */,
 				735ADFDD1E836AC800F79620 /* TabBarAnimationViewController.m in Sources */,
+				73DEC2F41FE7935400F4D9CD /* UIViewController+MultipleScrollPool.m in Sources */,
 				AEDEB4CD1F3803E300A05940 /* HXWebViewPage.m in Sources */,
 				7359982D1EA5D1C200427C5B /* MRCObject.m in Sources */,
 				737B107E1E63B6E1001FF92A /* ProxyViewController.m in Sources */,
 				73BA34D91DB12E65007E9FC1 /* CellModel.swift in Sources */,
+				7341E1111FE0D0160017EF36 /* IQKeyBoardTextView.m in Sources */,
 				736266CC1FB06F5C000A518B /* UIScrollView+Multiple.m in Sources */,
 				732116D81EFA3F260041BF6E /* UIView+Event.m in Sources */,
 				733C26331DD42213005FF7AE /* ProductSliderTableViewCell.m in Sources */,
@@ -1722,6 +1765,7 @@
 				732116D21EFA1E0B0041BF6E /* Object_Super+Introduce.m in Sources */,
 				731C12661E84F0060034F361 /* SessionCustomeProtocol.m in Sources */,
 				731C12651E84F0060034F361 /* CustomURLProtocol.m in Sources */,
+				73E443C22005F5690038030F /* CollectionViewController.m in Sources */,
 				7359984A1EA73CE800427C5B /* SecondBlockViewController.m in Sources */,
 				73B5A0671DC717ED00477323 /* UIView+XibMananger.m in Sources */,
 				732D80381EB42E480003FD18 /* BNotificationViewController.m in Sources */,

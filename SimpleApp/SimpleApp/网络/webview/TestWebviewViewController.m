@@ -23,6 +23,8 @@ extern NSString * const maxCount;
 
 @property (nonatomic, strong) WKWebView *wkwebview;
 
+@property (nonatomic, strong) UIProgressView *progressView;
+
 @property (nonatomic, strong) NSURLRequest *request;
 
 @property (nonatomic, strong) UILabel *bottomLabel;
@@ -32,6 +34,10 @@ extern NSString * const maxCount;
 
 @implementation TestWebviewViewController
 
+- (void)dealloc {
+    [self.wkwebview removeObserver:self forKeyPath:@"estimatedProgress"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -40,7 +46,11 @@ extern NSString * const maxCount;
     [self.view addSubview:self.wkwebview];
     self.wkwebview.frame = CGRectMake(0, 300, 375, 500);
     
+    [self addProgressViewToWebView:self.wkwebview];
+    
     [self.wkwebview loadRequest:self.request];
+    
+    [self.wkwebview addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -154,8 +164,18 @@ extern NSString * const maxCount;
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"estimatedProgress"]) {
-        NSLog(@"---%@", change[NSKeyValueChangeNewKey]);
+        self.progressView.progress = [change[NSKeyValueChangeNewKey] floatValue];
     }
+}
+
+#pragma mark - 进度条
+
+- (void)addProgressViewToWebView:(WKWebView *)webview {
+    self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 12)];
+    _progressView.trackTintColor = [UIColor whiteColor];
+    _progressView.tintColor = [UIColor greenColor];
+    
+    [self.wkwebview addSubview:self.progressView];
 }
 
 #pragma mark - getter & setter 
@@ -170,6 +190,7 @@ extern NSString * const maxCount;
         _wkwebview = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 500) configuration:config];
         _wkwebview.allowsBackForwardNavigationGestures = YES;
         _wkwebview.navigationDelegate = self;
+        
         _bottomLabel.y = _wkwebview.height - _bottomLabel.height;
         
         [_wkwebview aspect_hookSelector:@selector(goBack) withOptions:AspectPositionAfter usingBlock: ^{
@@ -194,7 +215,7 @@ extern NSString * const maxCount;
 
 - (NSURLRequest *)request {
     if (!_request) {
-        NSURL *url = [NSURL URLWithString:@"http://localhost:63342/StudyNote/test/CacheStorage.html?_ijt=nke2uqt65n9s14bq65f4gr7aba"];
+        NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"];
         _request = [NSURLRequest requestWithURL:url];
     }
     

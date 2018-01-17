@@ -52,28 +52,13 @@
     [self setupSubViews];
     
     [self.view addSubview:self.button1];
-    [self.view addSubview:self.label];
     
     self.view.circle = YES;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    SecondViewController *second = [[SecondViewController alloc] init];
-    [self.navigationController pushViewController:second animated:YES];
-}
-
-- (NSString *)prefixForCarNum:(NSString *)cardNo {
-    int i = 0;
-    for (; i < cardNo.length; i++) {
-        char c = [cardNo characterAtIndex:i];
-        if (!(c >= 'a' && c <= 'z') && !(c >= 'A' && c <= 'Z')) {
-            break;
-        }
-    }
     
-    return [cardNo substringToIndex:i];
 }
-
 
 #pragma mark - override
 
@@ -84,8 +69,22 @@
 #pragma mark - init
 
 - (void)setupSubViews {
-    UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 300, kScreenWidth, 160)];
-    [self.view addSubview:datePicker];
+    _label = [[UILabel alloc] init];
+    [self.view addSubview:_label];
+    
+    _label.backgroundColor = [UIColor purpleColor];
+    _label.textColor = [UIColor whiteColor];
+    _label.font = [UIFont systemFontOfSize:18];
+    _label.text = @"测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试";
+    _label.numberOfLines = 0;
+    _label.lineBreakMode = NSLineBreakByTruncatingTail;
+    
+    [_label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(100);
+        make.left.mas_equalTo(50);
+        make.right.mas_equalTo(-50);
+        make.height.mas_equalTo(100);
+    }];
 }
 
 #pragma mark - event responder
@@ -139,21 +138,6 @@
     }
     
     return _button1;
-}
-
-- (UILabel *)label {
-    if (!_label) {
-        _label = [[UILabel alloc] initWithFrame:CGRectMake(20, 130, 100, 30)];
-        _label.font = [UIFont systemFontOfSize:14];
-        _label.textColor = [UIColor orangeColor];
-        _label.backgroundColor = [UIColor purpleColor];
-        _label.text = @"ABCCC";
-        
-        UIGestureRecognizer *ges = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(labelPanGes:)];
-        [_label addGestureRecognizer:ges];
-    }
-    
-    return _label;
 }
 
 @end

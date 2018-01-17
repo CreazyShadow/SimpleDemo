@@ -33,11 +33,11 @@
     header.backgroundColor = [UIColor purpleColor];
     [self.mainScrollView addSubview:header];
     
-    UIView *center = [[UIView alloc] initWithFrame:CGRectMake(0, 400, self.view.width, 400)];
-    center.backgroundColor = [UIColor yellowColor];
-    [self.mainScrollView addSubview:center];
-    
     [self.mainScrollView addSubview:self.subScrollView];
+    
+    UIView *bottom = [[UIView alloc] initWithFrame:CGRectMake(0, 1000, self.view.width, 400)];
+    bottom.backgroundColor = [UIColor yellowColor];
+    [self.mainScrollView addSubview:bottom];
 }
 
 #pragma mark - scroll delegate
@@ -49,7 +49,6 @@
     }];
 
     if ([scrollView isEqual:self.mainScrollView]) {
-        NSLog(@"-------%@", NSStringFromCGPoint(scrollView.contentOffset));
         if (self.webView.scrollView.offsetState != ScrollOffsetStateMin || self.subScrollView.offsetState != ScrollOffsetStateMin) {
             scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, scrollView.contentSize.height - scrollView.height);
         }
@@ -97,7 +96,7 @@
 
 - (UIScrollView *)subScrollView {
     if (!_subScrollView) {
-        _subScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 800, self.view.width, 600)];
+        _subScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 400, self.view.width, 600)];
         _subScrollView.delegate = self;
         _subScrollView.needMultipleScroll = YES;
         _subScrollView.isSuperScroll = NO;

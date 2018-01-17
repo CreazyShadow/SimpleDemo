@@ -24,9 +24,10 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - IQKeyboardManager (5.0.6)
   - Masonry (1.0.2)
   - MJExtension (3.0.13)
-  - MJRefresh (3.1.12)
+  - MJRefresh (3.1.15.1)
   - OpenShare (0.0.1)
   - pop (1.0.9)
   - SDWebImage (4.0.0):
@@ -46,6 +47,7 @@ DEPENDENCIES:
   - EGOCache
   - FBMemoryProfiler
   - FMDB
+  - IQKeyboardManager
   - Masonry
   - MJExtension
   - MJRefresh
@@ -65,9 +67,10 @@ SPEC CHECKSUMS:
   FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
   FBRetainCycleDetector: f0c7b290bf48ae77f6ae060843ce34ae341781eb
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  IQKeyboardManager: 077b7f691dfa9d69db9cff66f2bed68ebfc02d9b
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
-  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
   OpenShare: a560580dbb729d5c0c3cc1ee84cd6aa4a07e94c6
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
@@ -77,6 +80,6 @@ SPEC CHECKSUMS:
   YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 3eba79e520cd5ae0f0a2760a652cd8efcdf3026d
+PODFILE CHECKSUM: af1f26be412842c94efd3e0c0041bef72fb5064c
 
 COCOAPODS: 1.2.0

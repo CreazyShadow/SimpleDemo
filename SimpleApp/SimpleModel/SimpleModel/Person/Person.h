@@ -8,15 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+#import "BaseModel.h"
+
 @protocol Optional <NSObject>
 
 @end
 
-@interface Person : NSObject
+@interface Person : BaseModel
 
-@property (nonatomic, copy) NSString<Optional> *name;
+@property (nonatomic, copy) NSString *name;
 
 @property (nonatomic, copy) NSString *phoneNum;
+
+@property (nonatomic, assign) BOOL isBoy;
 
 - (void)test;
 

@@ -12,6 +12,7 @@
 #import "GcdViewController.h"
 #import "ScrapeView.h"
 #import <math.h>
+#import <AFNetworking.h>
 
 #import "CustomURLProtocol.h"
 #import "SessionCustomProtocolConfiguration.h"
@@ -64,12 +65,17 @@ typedef NS_ENUM(NSInteger, AppType) {
 @implementation AppDelegate
 
 - (void)test {
-    
+    NSDictionary *dict = @{@"name"  : @"jack",
+                           @"age"   : @"12",
+                           @"phone" : @"18657321",
+                           @"address" : @"啊啊啊啊啊啊啊"
+                           };
 }
 
 - (NSArray *)arr {
-    NSLog(@"----- cycle");
-    return @[@1, @2];
+    
+    
+    return @[];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -106,7 +112,7 @@ typedef NS_ENUM(NSInteger, AppType) {
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"FirstViewController";
+    NSString *className = @"HXListViewViewController";
     switch (type) {
         case 0:
         {

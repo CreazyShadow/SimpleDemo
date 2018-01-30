@@ -78,6 +78,10 @@
 		735998471EA73CE000427C5B /* FirstBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735998461EA73CE000427C5B /* FirstBlockViewController.m */; };
 		7359984A1EA73CE800427C5B /* SecondBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735998491EA73CE800427C5B /* SecondBlockViewController.m */; };
 		735A0D361E94F8FF00053ACB /* xxx.doc in Resources */ = {isa = PBXBuildFile; fileRef = 735A0D351E94F8FF00053ACB /* xxx.doc */; };
+		735A35512019BE640017D6EF /* HXListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 735A354E2019BE620017D6EF /* HXListViewCell.m */; };
+		735A35522019BE640017D6EF /* HXListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 735A354F2019BE630017D6EF /* HXListView.m */; };
+		735A35552019BE770017D6EF /* HXListViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735A35542019BE770017D6EF /* HXListViewViewController.m */; };
+		735A3571201AC5C60017D6EF /* CustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 735A3570201AC5C60017D6EF /* CustomLabel.m */; };
 		735ADFC41E8363CB00F79620 /* InteractionModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735ADFC31E8363CB00F79620 /* InteractionModuleViewController.m */; };
 		735ADFDA1E836ABB00F79620 /* NavigationAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735ADFD91E836ABB00F79620 /* NavigationAnimationViewController.m */; };
 		735ADFDD1E836AC800F79620 /* TabBarAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735ADFDC1E836AC800F79620 /* TabBarAnimationViewController.m */; };
@@ -88,6 +92,8 @@
 		735EDAB01E1CC77F002962DB /* SuperEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 735EDAAF1E1CC77F002962DB /* SuperEventView.m */; };
 		735EDAB31E1CC790002962DB /* ChildEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 735EDAB21E1CC790002962DB /* ChildEventView.m */; };
 		735EDAB61E1CC818002962DB /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735EDAB51E1CC818002962DB /* EventViewController.m */; };
+		7360632B20108B3900E7C9B5 /* SuperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7360632A20108B3900E7C9B5 /* SuperModel.m */; };
+		7360632E20108B4A00E7C9B5 /* SubModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7360632D20108B4A00E7C9B5 /* SubModel.m */; };
 		736266C91FB06EE1000A518B /* MultipleScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 736266C81FB06EE1000A518B /* MultipleScrollViewController.m */; };
 		736266CC1FB06F5C000A518B /* UIScrollView+Multiple.m in Sources */ = {isa = PBXBuildFile; fileRef = 736266CB1FB06F5C000A518B /* UIScrollView+Multiple.m */; };
 		7362AB3A1ECDAE3600B2E933 /* HealthInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7362AB391ECDAE3600B2E933 /* HealthInfoModel.m */; };
@@ -347,6 +353,14 @@
 		735998481EA73CE800427C5B /* SecondBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondBlockViewController.h; sourceTree = "<group>"; };
 		735998491EA73CE800427C5B /* SecondBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondBlockViewController.m; sourceTree = "<group>"; };
 		735A0D351E94F8FF00053ACB /* xxx.doc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xxx.doc; sourceTree = "<group>"; };
+		735A354D2019BE620017D6EF /* HXListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXListViewCell.h; sourceTree = "<group>"; };
+		735A354E2019BE620017D6EF /* HXListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXListViewCell.m; sourceTree = "<group>"; };
+		735A354F2019BE630017D6EF /* HXListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXListView.m; sourceTree = "<group>"; };
+		735A35502019BE640017D6EF /* HXListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXListView.h; sourceTree = "<group>"; };
+		735A35532019BE770017D6EF /* HXListViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HXListViewViewController.h; sourceTree = "<group>"; };
+		735A35542019BE770017D6EF /* HXListViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HXListViewViewController.m; sourceTree = "<group>"; };
+		735A356F201AC5C60017D6EF /* CustomLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomLabel.h; sourceTree = "<group>"; };
+		735A3570201AC5C60017D6EF /* CustomLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomLabel.m; sourceTree = "<group>"; };
 		735ADFC21E8363CB00F79620 /* InteractionModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionModuleViewController.h; sourceTree = "<group>"; };
 		735ADFC31E8363CB00F79620 /* InteractionModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionModuleViewController.m; sourceTree = "<group>"; };
 		735ADFD81E836ABB00F79620 /* NavigationAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationAnimationViewController.h; sourceTree = "<group>"; };
@@ -367,6 +381,10 @@
 		735EDAB21E1CC790002962DB /* ChildEventView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildEventView.m; sourceTree = "<group>"; };
 		735EDAB41E1CC818002962DB /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
 		735EDAB51E1CC818002962DB /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		7360632920108B3900E7C9B5 /* SuperModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperModel.h; sourceTree = "<group>"; };
+		7360632A20108B3900E7C9B5 /* SuperModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperModel.m; sourceTree = "<group>"; };
+		7360632C20108B4A00E7C9B5 /* SubModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubModel.h; sourceTree = "<group>"; };
+		7360632D20108B4A00E7C9B5 /* SubModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubModel.m; sourceTree = "<group>"; };
 		736266C71FB06EE1000A518B /* MultipleScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultipleScrollViewController.h; sourceTree = "<group>"; };
 		736266C81FB06EE1000A518B /* MultipleScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultipleScrollViewController.m; sourceTree = "<group>"; };
 		736266CA1FB06F5C000A518B /* UIScrollView+Multiple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Multiple.h"; sourceTree = "<group>"; };
@@ -1268,6 +1286,10 @@
 				732116D71EFA3F260041BF6E /* UIView+Event.m */,
 				73F48C881FC66DDC00ECCE05 /* ThridViewController.h */,
 				73F48C891FC66DDC00ECCE05 /* ThridViewController.m */,
+				7360632920108B3900E7C9B5 /* SuperModel.h */,
+				7360632A20108B3900E7C9B5 /* SuperModel.m */,
+				7360632C20108B4A00E7C9B5 /* SubModel.h */,
+				7360632D20108B4A00E7C9B5 /* SubModel.m */,
 			);
 			path = baseviews;
 			sourceTree = "<group>";
@@ -1316,6 +1338,10 @@
 		73BA34AB1DB12E65007E9FC1 /* ListView */ = {
 			isa = PBXGroup;
 			children = (
+				735A35502019BE640017D6EF /* HXListView.h */,
+				735A354F2019BE630017D6EF /* HXListView.m */,
+				735A354D2019BE620017D6EF /* HXListViewCell.h */,
+				735A354E2019BE620017D6EF /* HXListViewCell.m */,
 				73BA34AC1DB12E65007E9FC1 /* CellModel.swift */,
 				73BA34AD1DB12E65007E9FC1 /* ExpandTableViewCell.swift */,
 				73BA34AE1DB12E65007E9FC1 /* MasonryTableViewCell.h */,
@@ -1336,6 +1362,10 @@
 				73E443C12005F5690038030F /* CollectionViewController.m */,
 				73E443CE20060FDF0038030F /* DemoCollectionViewCell.h */,
 				73E443CF20060FDF0038030F /* DemoCollectionViewCell.m */,
+				735A35532019BE770017D6EF /* HXListViewViewController.h */,
+				735A35542019BE770017D6EF /* HXListViewViewController.m */,
+				735A356F201AC5C60017D6EF /* CustomLabel.h */,
+				735A3570201AC5C60017D6EF /* CustomLabel.m */,
 			);
 			path = ListView;
 			sourceTree = "<group>";
@@ -1674,6 +1704,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7360632B20108B3900E7C9B5 /* SuperModel.m in Sources */,
 				738F57A21F74C4A1004D6878 /* ToolBarViewController.m in Sources */,
 				735ADFE61E837AAC00F79620 /* FromViewController.m in Sources */,
 				7362AB3A1ECDAE3600B2E933 /* HealthInfoModel.m in Sources */,
@@ -1703,6 +1734,7 @@
 				731DAD161E7B8B10004E5F8D /* CustomOperation.m in Sources */,
 				73A346AC1E67A9780030CE9D /* ThreadViewController.m in Sources */,
 				732AE6201E5E89FF0068E1CE /* EKElement.m in Sources */,
+				735A35522019BE640017D6EF /* HXListView.m in Sources */,
 				731C126A1E84F0060034F361 /* WKWebViewViewController.m in Sources */,
 				736266C91FB06EE1000A518B /* MultipleScrollViewController.m in Sources */,
 				73E443D020060FDF0038030F /* DemoCollectionViewCell.m in Sources */,
@@ -1723,6 +1755,7 @@
 				73F5C2941E9DBDE10016A44D /* CustomTextField.m in Sources */,
 				73E5BA8F1E262A0200CF3BD5 /* SearchViewController.m in Sources */,
 				73BA34C91DB12E65007E9FC1 /* TestCommonViewController.m in Sources */,
+				7360632E20108B4A00E7C9B5 /* SubModel.m in Sources */,
 				73406E2A1E14F10100D5C58C /* GestureViewController.m in Sources */,
 				73F5C2691E9B4F290016A44D /* AutoChartPageView.m in Sources */,
 				AE8BD4881F3BEAAA00169FA3 /* Runtime_Sub.m in Sources */,
@@ -1769,10 +1802,12 @@
 				7359984A1EA73CE800427C5B /* SecondBlockViewController.m in Sources */,
 				73B5A0671DC717ED00477323 /* UIView+XibMananger.m in Sources */,
 				732D80381EB42E480003FD18 /* BNotificationViewController.m in Sources */,
+				735A35512019BE640017D6EF /* HXListViewCell.m in Sources */,
 				73B5A05C1DC6F15200477323 /* SelectImageItemView.m in Sources */,
 				735998301EA5E9CC00427C5B /* RecyleScrollViewItem.m in Sources */,
 				735998411EA6F6C900427C5B /* Class_Meta_ViewController.m in Sources */,
 				732B507B1E8B3E5F006F2677 /* LifeCycleAViewController.m in Sources */,
+				735A35552019BE770017D6EF /* HXListViewViewController.m in Sources */,
 				73E540FE1E963A18007C6584 /* AutoChart.m in Sources */,
 				731C12691E84F0060034F361 /* UIWebView+Clean.m in Sources */,
 				731DAD131E7B805F004E5F8D /* OperationQueueViewController.m in Sources */,
@@ -1838,6 +1873,7 @@
 				739A4AFB1DD1654500CA2533 /* SubView.m in Sources */,
 				736CB2751E80F60000AC3EEF /* JSCoreViewController.m in Sources */,
 				731DAD081E7A7E7E004E5F8D /* ScrollViewController.m in Sources */,
+				735A3571201AC5C60017D6EF /* CustomLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

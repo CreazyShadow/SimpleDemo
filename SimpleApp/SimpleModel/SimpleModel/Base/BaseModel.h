@@ -10,4 +10,6 @@
 
 @interface BaseModel : NSObject
 
+@property (nonatomic, copy) NSString *model_id;
+
 @end

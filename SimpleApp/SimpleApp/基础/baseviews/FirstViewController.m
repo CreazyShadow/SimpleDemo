@@ -18,6 +18,8 @@
 
 #import "SubView.h"
 
+#import "SubModel.h"
+
 #import "MasonryViewController.h"
 
 #import "HealthInfoModel.h"
@@ -32,12 +34,12 @@
 @interface FirstViewController ()
 
 @property (nonatomic, strong) UIButton *button1;
-
 @property (nonatomic, strong) UILabel *label;
-
 @property (nonatomic, strong) ScrapeView *scrapeView;
-
 @property (nonatomic, strong) UIStackView *stackView;
+
+@property (nonatomic, strong) NSArray<SubModel *> *oldSource;
+@property (nonatomic, strong) NSArray<SubModel *> *nowSource;
 
 @end
 
@@ -54,10 +56,14 @@
     [self.view addSubview:self.button1];
     
     self.view.circle = YES;
+    
+    [self setupSource];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
+    self.nowSource[0].isBoy = YES;
+    self.nowSource[0].name = @"danny";
+    NSLog(@"----");
 }
 
 #pragma mark - override
@@ -138,6 +144,27 @@
     }
     
     return _button1;
+}
+
+#pragma mark - test
+
+- (void)setupSource {
+    NSMutableArray *temp = [NSMutableArray array];
+    for (int i = 0 ; i < 3; i++) {
+        SubModel *p = [[SubModel alloc] init];
+        p.name = [NSString stringWithFormat:@"jack%d", i];
+        p.phone = @"18516518888";
+        p.isBoy = NO;
+        [temp addObject:p];
+    }
+    
+    self.nowSource = [temp copy];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject: _nowSource];
+    self.oldSource = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+}
+
+- (void)copySource {
+    
 }
 
 @end

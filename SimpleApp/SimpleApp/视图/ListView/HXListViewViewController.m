@@ -126,6 +126,9 @@
         _listView.delegate = self;
         _listView.dataSource = self;
 //        _listView.backgroundColor = [UIColor purpleColor];
+        UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 100)];
+        header.backgroundColor = [UIColor greenColor];
+        _listView.listHeaderView = header;
     }
     
     return _listView;

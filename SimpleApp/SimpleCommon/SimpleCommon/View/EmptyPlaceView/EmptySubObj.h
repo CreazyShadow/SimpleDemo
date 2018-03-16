@@ -10,4 +10,6 @@
 
 @interface EmptySubObj : EmptySuperObj
 
+@property (nonatomic, copy) NSString *name;
+
 @end

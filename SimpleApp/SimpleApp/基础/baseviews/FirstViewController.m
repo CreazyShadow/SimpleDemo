@@ -61,9 +61,8 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.nowSource[0].isBoy = YES;
-    self.nowSource[0].name = @"danny";
-    NSLog(@"----");
+    SecondViewController *second = [[SecondViewController alloc] init];
+    [self.navigationController pushViewController:second animated:YES];
 }
 
 #pragma mark - override

@@ -19,6 +19,7 @@ def share_pods
     pod 'FBMemoryProfiler'
     pod 'Aspects'
     pod 'IQKeyboardManager'
+    pod 'MLeaksFinder'
 end
 
 target 'SimpleApp' do

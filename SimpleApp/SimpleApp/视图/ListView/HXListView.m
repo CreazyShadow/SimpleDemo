@@ -78,8 +78,10 @@
 //    self.scrollView.contentOffset = CGPointMake(0, -64);
 //    self.tableView.contentOffset = CGPointZero;
     self.scrollView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-    self.scrollView.contentSize = CGSizeMake([self scrollViewContentSize], self.frame.size.height);
-    self.tableView.frame = CGRectMake(0, 0, [self scrollViewContentSize], self.frame.size.height);
+    CGFloat minWidth = [self scrollViewContentSize];
+    CGFloat actualWidth = minWidth > self.width ? minWidth : self.width;
+    self.scrollView.contentSize = CGSizeMake(actualWidth, self.frame.size.height);
+    self.tableView.frame = CGRectMake(0, 0, actualWidth, self.frame.size.height);
     [self.tableView reloadData];
 }
 
@@ -316,6 +318,10 @@
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
     [super setBackgroundColor:backgroundColor];
     self.tableView.backgroundColor  =  backgroundColor;
+}
+
+- (void)setListHeaderView:(UIView *)listHeaderView {
+    self.tableView.tableHeaderView = listHeaderView;
 }
 
 @end

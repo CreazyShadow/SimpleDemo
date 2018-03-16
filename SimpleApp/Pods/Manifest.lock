@@ -15,29 +15,31 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - Aspects (1.4.1)
-  - EGOCache (2.1.3)
+  - EGOCache (2.2.0)
   - FBAllocationTracker (0.1.5)
   - FBMemoryProfiler (0.1.3):
     - FBAllocationTracker (~> 0.1)
     - FBRetainCycleDetector (~> 0.1)
-  - FBRetainCycleDetector (0.1.3)
-  - FMDB (2.6.2):
-    - FMDB/standard (= 2.6.2)
-  - FMDB/standard (2.6.2)
-  - IQKeyboardManager (5.0.6)
-  - Masonry (1.0.2)
+  - FBRetainCycleDetector (0.1.4)
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/standard (2.7.2)
+  - IQKeyboardManager (5.0.7)
+  - Masonry (1.1.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.15.1)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
   - OpenShare (0.0.1)
-  - pop (1.0.9)
-  - SDWebImage (4.0.0):
-    - SDWebImage/Core (= 4.0.0)
-  - SDWebImage/Core (4.0.0)
+  - pop (1.0.10)
+  - SDWebImage (4.2.2):
+    - SDWebImage/Core (= 4.2.2)
+  - SDWebImage/Core (4.2.2)
   - Shimmer (1.0.2)
-  - WebViewJavascriptBridge (6.0.2)
-  - WSProgressHUD (1.1.1):
+  - WebViewJavascriptBridge (6.0.3)
+  - WSProgressHUD (1.1.3):
     - Shimmer
-  - YTKNetwork (2.0.3):
+  - YTKNetwork (2.0.4):
     - AFNetworking (~> 3.0)
   - YYModel (1.0.4)
 
@@ -51,6 +53,7 @@ DEPENDENCIES:
   - Masonry
   - MJExtension
   - MJRefresh
+  - MLeaksFinder
   - OpenShare
   - pop
   - SDWebImage
@@ -62,24 +65,25 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  EGOCache: f0295dbe041156acabd39021354ad1045ee49e72
+  EGOCache: 191fd213da6804d487b49b1a91772ba904f3e324
   FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
   FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
-  FBRetainCycleDetector: f0c7b290bf48ae77f6ae060843ce34ae341781eb
-  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  IQKeyboardManager: 077b7f691dfa9d69db9cff66f2bed68ebfc02d9b
-  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   OpenShare: a560580dbb729d5c0c3cc1ee84cd6aa4a07e94c6
-  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
-  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
-  WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
-  WSProgressHUD: 0ebb8dd846f7fb4715d42c87584456480cb7fbf0
-  YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
+  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
+  WSProgressHUD: a0902809c8af112fb34b004fdc75c16eb85167a3
+  YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: af1f26be412842c94efd3e0c0041bef72fb5064c
+PODFILE CHECKSUM: c879b3082bd6a799cae6c2c1d53f363cde330676
 
 COCOAPODS: 1.2.0

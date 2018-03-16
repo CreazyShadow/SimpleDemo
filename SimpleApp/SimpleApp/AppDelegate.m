@@ -65,11 +65,7 @@ typedef NS_ENUM(NSInteger, AppType) {
 @implementation AppDelegate
 
 - (void)test {
-    NSDictionary *dict = @{@"name"  : @"jack",
-                           @"age"   : @"12",
-                           @"phone" : @"18657321",
-                           @"address" : @"啊啊啊啊啊啊啊"
-                           };
+    
 }
 
 - (NSArray *)arr {
@@ -112,7 +108,7 @@ typedef NS_ENUM(NSInteger, AppType) {
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"HXListViewViewController";
+    NSString *className = @"FirstViewController";
     switch (type) {
         case 0:
         {

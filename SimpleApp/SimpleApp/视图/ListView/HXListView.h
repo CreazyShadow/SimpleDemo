@@ -21,6 +21,8 @@
 @property (nonatomic, strong) UIColor *backgroundColor;
 @property (nonatomic, strong) UIColor *selectionColor;
 @property (nonatomic, readonly) UIScrollView *contentScrollView;
+@property (nonatomic, strong) UIView *listHeaderView;
+@property (nonatomic, strong) UIView *listFooterView;
 
 - (NSIndexPath *)indexPathForRowAtPoint:(CGPoint)point;
 - (void)reloadData;

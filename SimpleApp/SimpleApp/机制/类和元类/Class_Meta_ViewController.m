@@ -41,18 +41,17 @@
     Monkey_sub *monkey = [[Monkey_sub alloc] init];
     Tiger_sub *tiger = [[Tiger_sub alloc] init];
     
-    Class monkey_sub = object_getClass(monkey);
-    Class ani = object_getClass(animation);
-    Class tig_sub = object_getClass(tiger);
+    Class monkey_cls = [monkey class];                      // 类对象
+    Class monkey_meta = object_getClass(monkey_cls);        //meta 对象
+    Class monkey_meta_ = objc_getMetaClass("Monkey_sub");   //meta 对象
+    Class monkey_root_meta = object_getClass(monkey_meta);  //meta的元类对象 --- 根类对象 root class object
+    NSLog(@"monkey类总结: instance:%p, class:%p, meta:%p-%p, meta meta|root:%p", monkey, monkey_cls, monkey_meta, monkey_meta_, monkey_root_meta);
     
-    Class monkey_meta = objc_getMetaClass("Monkey_sub");
-    Class tiger_meta = objc_getMetaClass("Tiger_sub");
-    Class anim_meta = objc_getMetaClass("Animation_super");
-    
-    
-    NSLog(@"%p--%p", class_getSuperclass(monkey_meta), anim_meta);
-    
-    NSLog(@"%p---%p---%p",object_getClass([NSObject new]) , object_getClass(object_getClass([NSObject new])), objc_getMetaClass("NSObject"));
+    NSObject *obj = [[NSObject alloc] init];
+    Class obj_cls = [obj class];
+    Class obj_meta = object_getClass(obj_cls);
+    Class obj_root_meta = object_getClass(obj_meta);
+    NSLog(@"NSObject类总结： instance:%p, class:%p, meta:%p, meta meta|root:%p", obj, obj_cls, obj_meta, obj_root_meta);
 }
 
 #pragma mark - network

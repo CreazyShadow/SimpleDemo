@@ -20,6 +20,8 @@ def share_pods
     pod 'Aspects'
     pod 'IQKeyboardManager'
     pod 'MLeaksFinder'
+    pod 'JDFlipNumberView'
+    pod 'FLEX', :configuration => 'Debug'
 end
 
 target 'SimpleApp' do

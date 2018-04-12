@@ -19,8 +19,6 @@
 
 #import <Person.h>
 
-#import "SimpleApp-Swift.h"
-
 #import <Dog.h>
 #import <Person.h>
 
@@ -65,6 +63,7 @@ typedef NS_ENUM(NSInteger, AppType) {
 @implementation AppDelegate
 
 - (void)test {
+    
     
 }
 

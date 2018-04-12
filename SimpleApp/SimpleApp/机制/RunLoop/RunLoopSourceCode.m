@@ -29,9 +29,9 @@ void CFRunLoopRun(void) {
 }
 
 /// 用指定的Mode启动，允许设置RunLoop超时时间
-int CFRunLoopRunInMode(CFStringRef modeName, CFTimeInterval seconds, Boolean stopAfterHandle) {
-    return CFRunLoopRunSepcific(CFRunLoopGetCurrent(), modeName, seconds, stopAfterHandle);
-}
+//int CFRunLoopRunInMode(CFStringRef modeName, CFTimeInterval seconds, Boolean stopAfterHandle) {
+//    return CFRunLoopRunSepcific(CFRunLoopGetCurrent(), modeName, seconds, stopAfterHandle);
+//}
 
 int CFRunLoopRunSepcific(CFRunLoopRef runloop, CFStringRef modeName, CFTimeInterval seconds, Boolean stopAfterHandle) {
 //    //根据modeName找到对应的mode

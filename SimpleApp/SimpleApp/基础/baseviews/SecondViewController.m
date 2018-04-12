@@ -21,6 +21,7 @@
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, strong) NSArray *source;
+@property (nonatomic, strong) NSTimer *timer;
 
 @end
 
@@ -34,8 +35,6 @@
     self.title = @"SecondViewController";
     
     [self.view addSubview:self.tableView];
-    
-//    self.tableView.canDisplayEmptyPlaceView = YES;
     self.tableView.emptyDataSource = self;
 }
 
@@ -45,13 +44,6 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.canDisplayEmptyPlaceView = YES;
-//        @try {
-//            _tableView.canDisplayEmptyPlaceView = YES;
-//        } @catch (NSException *exception) {
-//            NSLog(@"%@", exception);
-//        } @finally {
-//
-//        }
         
         [_tableView registerNib:[UINib nibWithNibName:@"ProductSliderTableViewCell" bundle:nil] forCellReuseIdentifier:@"sliderCell"];
         
@@ -64,6 +56,28 @@
     }
     
     return _tableView;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    __weak typeof(self) wSelf = self;
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:wSelf selector:@selector(timerRun) userInfo:nil repeats:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+//    [self.timer invalidate];
+}
+
+- (void)dealloc {
+    [self.timer invalidate];
+}
+
+#pragma mark - event
+
+- (void)timerRun {
+    NSLog(@"------first view controller timer run%@", [NSDate date]);
 }
 
 #pragma mark - HXDataSource

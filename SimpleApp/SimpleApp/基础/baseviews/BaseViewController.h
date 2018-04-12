@@ -10,6 +10,8 @@
 
 @interface BaseViewController : UIViewController
 
+@property (nonatomic, strong) UIView *name;
+
 + (instancetype)initWithName;
 
 - (instancetype)initWithAge;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0109B554207E148300625640 /* UIWindow+FlexSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 0109B553207E148300625640 /* UIWindow+FlexSetting.m */; };
 		7304CE9F1CF542B300C5E349 /* libSimpleModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7304CE9E1CF542B300C5E349 /* libSimpleModel.a */; };
 		7310AEE91E8215B800BAA0E8 /* SortHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7310AEE81E8215B800BAA0E8 /* SortHelper.m */; };
 		731C12321E84A9750034F361 /* PopAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731C12311E84A9750034F361 /* PopAnimationViewController.m */; };
@@ -214,6 +215,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0109B552207E148300625640 /* UIWindow+FlexSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+FlexSetting.h"; sourceTree = "<group>"; };
+		0109B553207E148300625640 /* UIWindow+FlexSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+FlexSetting.m"; sourceTree = "<group>"; };
 		192D915ABA8975E1A187A054 /* Pods-SimpleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp.release.xcconfig"; sourceTree = "<group>"; };
 		1ADD0F38396CB07FF3AB19A5 /* libPods-SimpleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7304CE9E1CF542B300C5E349 /* libSimpleModel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSimpleModel.a; path = "../../../../Library/Developer/Xcode/DerivedData/SimpleApp-cswqutjhlfbmkqbsnbwnxbznehzs/Build/Products/Debug-iphonesimulator/libSimpleModel.a"; sourceTree = "<group>"; };
@@ -610,6 +613,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0109B551207E120900625640 /* 第三方 */ = {
+			isa = PBXGroup;
+			children = (
+				0109B552207E148300625640 /* UIWindow+FlexSetting.h */,
+				0109B553207E148300625640 /* UIWindow+FlexSetting.m */,
+			);
+			path = "第三方";
+			sourceTree = "<group>";
+		};
 		46ADEDCDB75D7E1A2BEBBA6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -945,6 +957,7 @@
 			isa = PBXGroup;
 			children = (
 				735A0D351E94F8FF00053ACB /* xxx.doc */,
+				0109B551207E120900625640 /* 第三方 */,
 				AE8BD4391F38770000169FA3 /* 性能 */,
 				735ADF4C1E82829600F79620 /* 网络 */,
 				7310AEE61E8215A500BAA0E8 /* 算法 */,
@@ -1504,7 +1517,6 @@
 				7373D2401CD0AA2600332D91 /* Sources */,
 				7373D2411CD0AA2600332D91 /* Frameworks */,
 				7373D2421CD0AA2600332D91 /* Resources */,
-				F7087D09AEBC34B39C253E0A /* [CP] Embed Pods Frameworks */,
 				A9627E4735A38C62AD4E1B92 /* [CP] Copy Pods Resources */,
 				735ADFC61E83669800F79620 /* ShellScript */,
 			);
@@ -1645,13 +1657,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		735ADFC61E83669800F79620 /* ShellScript */ = {
@@ -1673,28 +1688,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/JDFlipNumberView/JDFlipNumberView/JDFlipNumberView.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/WSProgressHUD/WSProgressHUD/WSProgressBundle.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JDFlipNumberView.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WSProgressBundle.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F7087D09AEBC34B39C253E0A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1835,6 +1844,7 @@
 				73BA34DA1DB12E65007E9FC1 /* ExpandTableViewCell.swift in Sources */,
 				73CF06EA1F1875DC0029B67B /* CommonArithmetic.c in Sources */,
 				AE8BD4851F3BEA9E00169FA3 /* Runtime_Super.m in Sources */,
+				0109B554207E148300625640 /* UIWindow+FlexSetting.m in Sources */,
 				73A8B72B1E8E551B00303C4D /* Bview.m in Sources */,
 				73BA34C81DB12E65007E9FC1 /* StructAndClass.m in Sources */,
 				735EDAB01E1CC77F002962DB /* SuperEventView.m in Sources */,

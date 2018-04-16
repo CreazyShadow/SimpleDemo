@@ -21,13 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [RunLoopUtility observerRunloopStatus];
+//    [RunLoopUtility observerRunloopStatus];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     //    [self threadAlive];
     //    [self threadRunTimer];
     //    [self testCrash];
+    [self subThreadAlive];
     
 }
 
@@ -39,6 +40,10 @@
         [runloop addPort:[NSMachPort new] forMode:NSDefaultRunLoopMode];
         [runloop runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
     }];
+}
+
+- (void)subThreadAlive {
+    [RunLoopUtility testThreadRunloop];
 }
 
 #pragma mark - 子线程启动定时器

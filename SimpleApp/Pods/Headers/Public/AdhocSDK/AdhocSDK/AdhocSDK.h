@@ -1,0 +1,1 @@
+../../../../AdhocSDK/AdhocSDK.framework/Headers/AdhocSDK.h

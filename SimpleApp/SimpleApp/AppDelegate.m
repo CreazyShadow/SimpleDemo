@@ -107,7 +107,7 @@ typedef NS_ENUM(NSInteger, AppType) {
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"FirstViewController";
+    NSString *className = @"ThreadViewController";
     switch (type) {
         case 0:
         {

@@ -43,6 +43,16 @@ THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>See https://www.appadhoc.com/clause.html</string>
+			<key>License</key>
+			<string>Commercial</string>
+			<key>Title</key>
+			<string>AdhocSDK</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>The MIT License (MIT)
 
 Copyright (c) 2014 Peter Steinberger, steipete@gmail.com

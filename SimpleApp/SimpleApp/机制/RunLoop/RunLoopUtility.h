@@ -16,4 +16,6 @@
 
 + (void)testRunLoopRunMaching;
 
++ (void)testThreadRunloop;
+
 @end

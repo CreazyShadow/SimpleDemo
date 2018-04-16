@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0109B554207E148300625640 /* UIWindow+FlexSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 0109B553207E148300625640 /* UIWindow+FlexSetting.m */; };
+		0125887B208434FF00A2686D /* NatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01258879208434FF00A2686D /* NatureViewController.m */; };
+		0125887C208434FF00A2686D /* NatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0125887A208434FF00A2686D /* NatureViewController.xib */; };
+		0125887F20843A2000A2686D /* NatureClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0125887E20843A2000A2686D /* NatureClass.m */; };
+		01258883208482CA00A2686D /* ThridManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01258882208482CA00A2686D /* ThridManager.m */; };
 		7304CE9F1CF542B300C5E349 /* libSimpleModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7304CE9E1CF542B300C5E349 /* libSimpleModel.a */; };
 		7310AEE91E8215B800BAA0E8 /* SortHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7310AEE81E8215B800BAA0E8 /* SortHelper.m */; };
 		731C12321E84A9750034F361 /* PopAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731C12311E84A9750034F361 /* PopAnimationViewController.m */; };
@@ -78,7 +82,6 @@
 		735998441EA7142700427C5B /* RecycleItemsPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 735998431EA7142700427C5B /* RecycleItemsPool.m */; };
 		735998471EA73CE000427C5B /* FirstBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735998461EA73CE000427C5B /* FirstBlockViewController.m */; };
 		7359984A1EA73CE800427C5B /* SecondBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735998491EA73CE800427C5B /* SecondBlockViewController.m */; };
-		735A0D361E94F8FF00053ACB /* xxx.doc in Resources */ = {isa = PBXBuildFile; fileRef = 735A0D351E94F8FF00053ACB /* xxx.doc */; };
 		735A35512019BE640017D6EF /* HXListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 735A354E2019BE620017D6EF /* HXListViewCell.m */; };
 		735A35522019BE640017D6EF /* HXListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 735A354F2019BE630017D6EF /* HXListView.m */; };
 		735A35552019BE770017D6EF /* HXListViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735A35542019BE770017D6EF /* HXListViewViewController.m */; };
@@ -217,6 +220,14 @@
 /* Begin PBXFileReference section */
 		0109B552207E148300625640 /* UIWindow+FlexSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+FlexSetting.h"; sourceTree = "<group>"; };
 		0109B553207E148300625640 /* UIWindow+FlexSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+FlexSetting.m"; sourceTree = "<group>"; };
+		01258878208434FF00A2686D /* NatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NatureViewController.h; sourceTree = "<group>"; };
+		01258879208434FF00A2686D /* NatureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NatureViewController.m; sourceTree = "<group>"; };
+		0125887A208434FF00A2686D /* NatureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NatureViewController.xib; sourceTree = "<group>"; };
+		0125887D20843A2000A2686D /* NatureClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NatureClass.h; sourceTree = "<group>"; };
+		0125887E20843A2000A2686D /* NatureClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NatureClass.m; sourceTree = "<group>"; };
+		012588802084827300A2686D /* SimpleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleApp.entitlements; sourceTree = "<group>"; };
+		01258881208482CA00A2686D /* ThridManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThridManager.h; sourceTree = "<group>"; };
+		01258882208482CA00A2686D /* ThridManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThridManager.m; sourceTree = "<group>"; };
 		192D915ABA8975E1A187A054 /* Pods-SimpleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp.release.xcconfig"; sourceTree = "<group>"; };
 		1ADD0F38396CB07FF3AB19A5 /* libPods-SimpleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7304CE9E1CF542B300C5E349 /* libSimpleModel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSimpleModel.a; path = "../../../../Library/Developer/Xcode/DerivedData/SimpleApp-cswqutjhlfbmkqbsnbwnxbznehzs/Build/Products/Debug-iphonesimulator/libSimpleModel.a"; sourceTree = "<group>"; };
@@ -355,7 +366,6 @@
 		735998461EA73CE000427C5B /* FirstBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstBlockViewController.m; sourceTree = "<group>"; };
 		735998481EA73CE800427C5B /* SecondBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondBlockViewController.h; sourceTree = "<group>"; };
 		735998491EA73CE800427C5B /* SecondBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondBlockViewController.m; sourceTree = "<group>"; };
-		735A0D351E94F8FF00053ACB /* xxx.doc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xxx.doc; sourceTree = "<group>"; };
 		735A354D2019BE620017D6EF /* HXListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXListViewCell.h; sourceTree = "<group>"; };
 		735A354E2019BE620017D6EF /* HXListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXListViewCell.m; sourceTree = "<group>"; };
 		735A354F2019BE630017D6EF /* HXListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXListView.m; sourceTree = "<group>"; };
@@ -618,8 +628,22 @@
 			children = (
 				0109B552207E148300625640 /* UIWindow+FlexSetting.h */,
 				0109B553207E148300625640 /* UIWindow+FlexSetting.m */,
+				01258881208482CA00A2686D /* ThridManager.h */,
+				01258882208482CA00A2686D /* ThridManager.m */,
 			);
 			path = "第三方";
+			sourceTree = "<group>";
+		};
+		012588772084349700A2686D /* 底层原理和逆向 */ = {
+			isa = PBXGroup;
+			children = (
+				01258878208434FF00A2686D /* NatureViewController.h */,
+				01258879208434FF00A2686D /* NatureViewController.m */,
+				0125887A208434FF00A2686D /* NatureViewController.xib */,
+				0125887D20843A2000A2686D /* NatureClass.h */,
+				0125887E20843A2000A2686D /* NatureClass.m */,
+			);
+			path = "底层原理和逆向";
 			sourceTree = "<group>";
 		};
 		46ADEDCDB75D7E1A2BEBBA6B /* Frameworks */ = {
@@ -956,7 +980,8 @@
 		7373D2461CD0AA2600332D91 /* SimpleApp */ = {
 			isa = PBXGroup;
 			children = (
-				735A0D351E94F8FF00053ACB /* xxx.doc */,
+				012588802084827300A2686D /* SimpleApp.entitlements */,
+				012588772084349700A2686D /* 底层原理和逆向 */,
 				0109B551207E120900625640 /* 第三方 */,
 				AE8BD4391F38770000169FA3 /* 性能 */,
 				735ADF4C1E82829600F79620 /* 网络 */,
@@ -1583,6 +1608,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 						};
 					};
 					7373D25C1CD0AA2600332D91 = {
@@ -1626,11 +1654,11 @@
 				73523F751F7DE72100E8B81D /* RenderViewController.xib in Resources */,
 				7373D2571CD0AA2600332D91 /* LaunchScreen.storyboard in Resources */,
 				73B5A05D1DC6F15200477323 /* SelectImageItemView.xib in Resources */,
-				735A0D361E94F8FF00053ACB /* xxx.doc in Resources */,
 				738F57A71F74C617004D6878 /* ToolBarXibViewController.xib in Resources */,
 				7373D2541CD0AA2600332D91 /* Assets.xcassets in Resources */,
 				7373D2521CD0AA2600332D91 /* Main.storyboard in Resources */,
 				73BE8D861E7287820073A2C6 /* 1.jpg in Resources */,
+				0125887C208434FF00A2686D /* NatureViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1788,9 +1816,11 @@
 				7373D2491CD0AA2600332D91 /* main.m in Sources */,
 				73BA34E01DB12E65007E9FC1 /* ViewController.m in Sources */,
 				735ADFDD1E836AC800F79620 /* TabBarAnimationViewController.m in Sources */,
+				0125887B208434FF00A2686D /* NatureViewController.m in Sources */,
 				73DEC2F41FE7935400F4D9CD /* UIViewController+MultipleScrollPool.m in Sources */,
 				AEDEB4CD1F3803E300A05940 /* HXWebViewPage.m in Sources */,
 				7359982D1EA5D1C200427C5B /* MRCObject.m in Sources */,
+				01258883208482CA00A2686D /* ThridManager.m in Sources */,
 				737B107E1E63B6E1001FF92A /* ProxyViewController.m in Sources */,
 				73BA34D91DB12E65007E9FC1 /* CellModel.swift in Sources */,
 				7341E1111FE0D0160017EF36 /* IQKeyBoardTextView.m in Sources */,
@@ -1843,6 +1873,7 @@
 				732AE6231E5E8E680068E1CE /* ClassA.m in Sources */,
 				73BA34DA1DB12E65007E9FC1 /* ExpandTableViewCell.swift in Sources */,
 				73CF06EA1F1875DC0029B67B /* CommonArithmetic.c in Sources */,
+				0125887F20843A2000A2686D /* NatureClass.m in Sources */,
 				AE8BD4851F3BEA9E00169FA3 /* Runtime_Super.m in Sources */,
 				0109B554207E148300625640 /* UIWindow+FlexSetting.m in Sources */,
 				73A8B72B1E8E551B00303C4D /* Bview.m in Sources */,
@@ -2036,6 +2067,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SimpleApp/SimpleApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 568256030@qq.com (EAQJ6NC596)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -2093,6 +2125,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SimpleApp/SimpleApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 568256030@qq.com (EAQJ6NC596)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;

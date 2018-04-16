@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01258862208078BE00A2686D /* UIButton+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 01258860208078BE00A2686D /* UIButton+Utils.h */; };
+		01258863208078BE00A2686D /* UIButton+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01258861208078BE00A2686D /* UIButton+Utils.m */; };
 		7301A1991DF54D2700274358 /* NSObject+Single.m in Sources */ = {isa = PBXBuildFile; fileRef = 7301A1981DF54D2700274358 /* NSObject+Single.m */; };
 		730A34891CF46166001847E0 /* URLConfigurableInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 730A34881CF46166001847E0 /* URLConfigurableInterceptor.m */; };
 		730A348A1CF46497001847E0 /* URLResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 731A04A61CD3104300BFA726 /* URLResult.m */; };
@@ -76,6 +78,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		01258860208078BE00A2686D /* UIButton+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Utils.h"; sourceTree = "<group>"; };
+		01258861208078BE00A2686D /* UIButton+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Utils.m"; sourceTree = "<group>"; };
 		7301A1971DF54D2700274358 /* NSObject+Single.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Single.h"; sourceTree = "<group>"; };
 		7301A1981DF54D2700274358 /* NSObject+Single.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Single.m"; sourceTree = "<group>"; };
 		730A34871CF46166001847E0 /* URLConfigurableInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLConfigurableInterceptor.h; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 				73A042411DF93A6600C44D22 /* UIImage+Subimage.m */,
 				73DFA7F01E0BAB0600CF2D84 /* UIView+Shape.h */,
 				73DFA7F11E0BAB0600CF2D84 /* UIView+Shape.m */,
+				01258860208078BE00A2686D /* UIButton+Utils.h */,
+				01258861208078BE00A2686D /* UIButton+Utils.m */,
 			);
 			path = CommonCategory;
 			sourceTree = "<group>";
@@ -408,6 +414,7 @@
 				736266F81FB2D3E6000A518B /* EmptySuperObj.h in Headers */,
 				73A8B78D1E8F8C6B00303C4D /* LoadDataChart.h in Headers */,
 				736267001FB2D46B000A518B /* EmptySuperObj+Empty.h in Headers */,
+				01258862208078BE00A2686D /* UIButton+Utils.h in Headers */,
 				736266FC1FB2D3FC000A518B /* EmptySubObj.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -545,6 +552,7 @@
 				731A04981CD3100900BFA726 /* URLInput.m in Sources */,
 				731A048F1CD30FE200BFA726 /* UIViewController+URLRouter.m in Sources */,
 				73A041261DF7A7E100C44D22 /* RaySingleCommand.m in Sources */,
+				01258863208078BE00A2686D /* UIButton+Utils.m in Sources */,
 				73C10A641FA81A0A005E2B3B /* UIScrollView+EmptyDataSet.m in Sources */,
 				736267011FB2D46B000A518B /* EmptySuperObj+Empty.m in Sources */,
 				731A048C1CD30FBA00BFA726 /* NSError+URLRouter.m in Sources */,

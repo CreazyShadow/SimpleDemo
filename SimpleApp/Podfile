@@ -22,6 +22,7 @@ def share_pods
     pod 'MLeaksFinder'
     pod 'JDFlipNumberView'
     pod 'FLEX', :configuration => 'Debug'
+    pod 'AdhocSDK'
 end
 
 target 'SimpleApp' do

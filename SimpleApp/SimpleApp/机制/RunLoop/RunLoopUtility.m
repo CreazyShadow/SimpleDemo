@@ -10,6 +10,10 @@
 
 #import <CoreFoundation/CoreFoundation.h>
 
+#include <pthread.h>
+
+dispatch_source_t gcd_timer;
+
 @interface RunLoopUtility()
 
 @property (nonatomic, strong) NSThread *thread;
@@ -64,5 +68,44 @@
 - (void)threadTestMethod {
     NSLog(@"------ %@", NSStringFromSelector(_cmd));
 }
+
+#pragma mark - 子线程runloop
+
++ (void)testThreadRunloop {
+    [[RunLoopUtility new] serialQuqueRunloop];
+}
+
+
+- (void)serialQuqueRunloop {
+    __block CFRunLoopRef serialRunLoop = NULL;
+    dispatch_queue_t mainQueue = dispatch_get_main_queue();
+    dispatch_queue_t serialQueue = dispatch_queue_create("serial.queue", DISPATCH_QUEUE_SERIAL);
+
+    dispatch_async(serialQueue, ^{
+        NSLog(@"the task run int the thread: %@", [NSThread currentThread]);
+        [NSTimer scheduledTimerWithTimeInterval: 0.5 repeats: YES block: ^(NSTimer * _Nonnull timer) {
+            NSLog(@"ns timer in the thread: %@", [NSThread currentThread]);
+        }];
+        
+        serialRunLoop = [NSRunLoop currentRunLoop].getCFRunLoop;
+        [[NSRunLoop currentRunLoop] runUntilDate: [NSDate dateWithTimeIntervalSinceNow: 600]];
+    });
+    
+    gcd_timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, mainQueue);
+    dispatch_source_set_timer(gcd_timer, DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
+    dispatch_source_set_event_handler(gcd_timer, ^{
+        dispatch_async(serialQueue, ^{
+            NSLog(@"gcd timer in the thread: %@", [NSThread currentThread]);
+        });
+        
+        CFRunLoopPerformBlock(serialRunLoop, NSDefaultRunLoopMode, ^{
+            NSLog(@"perform block in thread: %@", [NSThread currentThread]);
+        });
+    });
+
+    dispatch_resume(gcd_timer);
+}
+
+
 
 @end

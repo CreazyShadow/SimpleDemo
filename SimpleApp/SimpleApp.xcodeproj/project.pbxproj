@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0109B554207E148300625640 /* UIWindow+FlexSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 0109B553207E148300625640 /* UIWindow+FlexSetting.m */; };
+		010D9C84208EC1B40066619A /* SHSingleOptionMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D9C82208EC1B40066619A /* SHSingleOptionMenuView.m */; };
 		0125887B208434FF00A2686D /* NatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01258879208434FF00A2686D /* NatureViewController.m */; };
 		0125887C208434FF00A2686D /* NatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0125887A208434FF00A2686D /* NatureViewController.xib */; };
 		0125887F20843A2000A2686D /* NatureClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0125887E20843A2000A2686D /* NatureClass.m */; };
@@ -220,6 +221,8 @@
 /* Begin PBXFileReference section */
 		0109B552207E148300625640 /* UIWindow+FlexSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+FlexSetting.h"; sourceTree = "<group>"; };
 		0109B553207E148300625640 /* UIWindow+FlexSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+FlexSetting.m"; sourceTree = "<group>"; };
+		010D9C82208EC1B40066619A /* SHSingleOptionMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSingleOptionMenuView.m; sourceTree = "<group>"; };
+		010D9C83208EC1B40066619A /* SHSingleOptionMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSingleOptionMenuView.h; sourceTree = "<group>"; };
 		01258878208434FF00A2686D /* NatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NatureViewController.h; sourceTree = "<group>"; };
 		01258879208434FF00A2686D /* NatureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NatureViewController.m; sourceTree = "<group>"; };
 		0125887A208434FF00A2686D /* NatureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NatureViewController.xib; sourceTree = "<group>"; };
@@ -632,6 +635,15 @@
 				01258882208482CA00A2686D /* ThridManager.m */,
 			);
 			path = "第三方";
+			sourceTree = "<group>";
+		};
+		010D9C81208EC1B40066619A /* 菜单控件 */ = {
+			isa = PBXGroup;
+			children = (
+				010D9C83208EC1B40066619A /* SHSingleOptionMenuView.h */,
+				010D9C82208EC1B40066619A /* SHSingleOptionMenuView.m */,
+			);
+			path = "菜单控件";
 			sourceTree = "<group>";
 		};
 		012588772084349700A2686D /* 底层原理和逆向 */ = {
@@ -1117,6 +1129,7 @@
 		73B5A0551DC6F14500477323 /* 自定义视图 */ = {
 			isa = PBXGroup;
 			children = (
+				010D9C81208EC1B40066619A /* 菜单控件 */,
 				733C262F1DD42213005FF7AE /* Slider */,
 				73B5A0561DC6F15200477323 /* SelectImage */,
 				73B5A05F1DC7110200477323 /* TestCustomViewController.h */,
@@ -1774,6 +1787,7 @@
 				735A35522019BE640017D6EF /* HXListView.m in Sources */,
 				731C126A1E84F0060034F361 /* WKWebViewViewController.m in Sources */,
 				736266C91FB06EE1000A518B /* MultipleScrollViewController.m in Sources */,
+				010D9C84208EC1B40066619A /* SHSingleOptionMenuView.m in Sources */,
 				73E443D020060FDF0038030F /* DemoCollectionViewCell.m in Sources */,
 				731C12731E84F6D70034F361 /* NaviBViewController.m in Sources */,
 				73BA34D51DB12E65007E9FC1 /* EventButton.m in Sources */,

@@ -23,6 +23,8 @@
 #import <NSObject+Runtime.h>
 #import "UIView+XibMananger.h"
 #import <UIScrollView+EmptyDataSet.h>
+#import <UIColor+Hex.h>
+#import <UIButton+ImageTitleStyle.h>
 
 #import <UIImageView+WebCache.h>
 

@@ -64,7 +64,6 @@ typedef NS_ENUM(NSInteger, AppType) {
 
 - (void)test {
     
-    
 }
 
 - (NSArray *)arr {
@@ -107,7 +106,7 @@ typedef NS_ENUM(NSInteger, AppType) {
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"ThreadViewController";
+    NSString *className = @"TestCustomViewController";
     switch (type) {
         case 0:
         {

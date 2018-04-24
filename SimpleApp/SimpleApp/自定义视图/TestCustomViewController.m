@@ -16,6 +16,8 @@
 
 @property (nonatomic, strong) SHSingleOptionMenuView *optionMenu;
 
+@property (nonatomic, strong) UIView *expandView;
+
 @end
 
 @implementation TestCustomViewController
@@ -24,11 +26,11 @@
     [super viewDidLoad];
     
     [self addOptionMenuView];
+    [self.view addSubview:self.expandView];
 }
 
 #pragma mark - touch event
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [self addSelectImageView];
 }
 
 #pragma mark - select image view
@@ -96,6 +98,37 @@
 - (void)didSelectedMenuItem:(UIButton *)btn index:(NSInteger)index entity:(SHSingleOptionMenuEntityModel *)entity {
     NSLog(@"%@ %ld %@", btn, index, entity.title);
 }
+
+#pragma mark - test
+
+- (void)headerAction {
+    self.expandView.height = 400;
+    [self.expandView viewWithTag:10].hidden = NO;
+}
+
+- (void)contentAction {
+    NSLog(@"------content click");
+}
+
+- (UIView *)expandView {
+    if (!_expandView) {
+        _expandView = [[UIView alloc] initWithFrame:CGRectMake(0, 100, kScreenWidth, 40)];
+        UIButton *header = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 120, 40)];
+        [header setTitle:@"触发" forState:UIControlStateNormal];
+        header.backgroundColor = [UIColor orangeColor];
+        [header addTarget:self action:@selector(headerAction) forControlEvents:UIControlEventTouchUpInside];
+        [_expandView addSubview:header];
+        
+        UIButton *content = [[UIButton alloc] initWithFrame:CGRectMake(0, header.maxY, kScreenWidth, 300)];
+        content.hidden = YES;
+        content.tag = 10;
+        content.backgroundColor = [UIColor yellowColor];
+        [content setTitle:@"DDDDDD" forState:UIControlStateNormal];
+        [content addTarget:self action:@selector(contentAction) forControlEvents:UIControlEventTouchUpInside];
+        [_expandView addSubview:content];
+    }
+    
+    return _expandView;
 
 
 @end

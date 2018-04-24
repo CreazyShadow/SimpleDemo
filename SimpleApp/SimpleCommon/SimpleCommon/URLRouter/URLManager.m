@@ -12,7 +12,7 @@
 #import "NSError+URLRouter.h"
 #import "URLHandler.h"
 #import "URLLog.h"
-#import "YYModel.h"
+#import <YYModel/YYModel.h>
 #import "URLInterceptor.h"
 
 @interface URLManager()

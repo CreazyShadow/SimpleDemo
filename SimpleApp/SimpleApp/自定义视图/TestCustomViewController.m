@@ -24,13 +24,6 @@
     [super viewDidLoad];
     
     [self addOptionMenuView];
-    
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 200, 120, 30)];
-    [btn setTitle:@"AAABBB" forState:UIControlStateNormal];
-    [btn setImage:[UIImage imageNamed:@"filter_img"] forState:UIControlStateNormal];
-    [btn setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:4.f];
-    [self.view addSubview:btn];
-    btn.backgroundColor = [UIColor orangeColor];
 }
 
 #pragma mark - touch event

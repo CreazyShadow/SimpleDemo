@@ -38,8 +38,6 @@ PODS:
   - Masonry (1.1.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.15.3)
-  - MLeaksFinder (1.0.0):
-    - FBRetainCycleDetector
   - OpenShare (0.0.1)
   - pop (1.0.10)
   - SDWebImage (4.3.3):
@@ -54,7 +52,7 @@ PODS:
   - YYModel (1.0.4)
 
 DEPENDENCIES:
-  - AdhocSDK (~> 3.1.1)
+  - AdhocSDK
   - AFNetworking
   - Aspects
   - EGOCache
@@ -66,7 +64,6 @@ DEPENDENCIES:
   - Masonry
   - MJExtension
   - MJRefresh
-  - MLeaksFinder
   - OpenShare
   - pop
   - SDWebImage
@@ -91,7 +88,6 @@ SPEC REPOS:
     - Masonry
     - MJExtension
     - MJRefresh
-    - MLeaksFinder
     - OpenShare
     - pop
     - SDWebImage
@@ -116,7 +112,6 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
-  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   OpenShare: a560580dbb729d5c0c3cc1ee84cd6aa4a07e94c6
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
@@ -126,6 +121,6 @@ SPEC CHECKSUMS:
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: ce065b8b9e83442b014074785832de4197360b9b
+PODFILE CHECKSUM: 5f7f040f491d6742b754579aac5cc523bbc68dde
 
 COCOAPODS: 1.5.0

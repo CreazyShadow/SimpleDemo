@@ -1,55 +1,76 @@
 //
 //  SHSingleOptionMenuView.h
-//  ShihuoIPhone
+//  SimpleApp
 //
-//  Created by 邬勇鹏 on 2018/4/23.
-//  Copyright © 2018年 hupu.com. All rights reserved.
+//  Created by 邬勇鹏 on 2018/4/25.
+//  Copyright © 2018年 wuyp. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, SHSingleOptionMenuSelectedStyle) {
-    SHSingleOptionMenuSelectedDefault,      ///< 红色文字
-    SHSingleOptionMenuSelectedRedBorder,    ///< 红色外框
-    SHSingleOptionMenuSelectedExpand        ///< 展开边框
-};
+#import "SHSingleOptionMenuHeaderView.h"
+#import "SHSingleOptionMenuContentView.h"
 
-@interface SHSingleOptionMenuEntityModel : NSObject
+@class SHSingleOptionMenuView;
 
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *icon;
-@property (nonatomic, copy) NSString *selectedIcon;
-@property (nonatomic, assign) BOOL iconIsRight;
-
-@end
-
-@protocol SingleOptionMenuDelegate <NSObject>
+@protocol SingleOptionMenuDelegate<NSObject>
 
 @optional
-- (CGFloat)singleOptionMenuItemSpace;
-- (CGFloat)singleOptionMenuitemHeight;
-- (CGFloat)singleOptionMenuMargin;
-
+#pragma mark - header setting
 /**
  用于设置item的样式
  */
-- (void)willDisplayMenuItem:(UIButton *)btn index:(NSInteger)index;
+- (void)willDisplayMenuHeaderItem:(UIButton *)btn index:(NSInteger)index;
 
 /**
- item选中时的样式
+ header item选中时的样式
  */
-- (SHSingleOptionMenuSelectedStyle)itemSelectedStyleWithIndex:(NSInteger)index;
+- (SHSingleOptionMenuHeaderSelectedStyle)menuHeaderItemSelectedStyleWithIndex:(NSInteger)index;
 
-- (void)didSelectedMenuItem:(UIButton *)btn index:(NSInteger)index entity:(SHSingleOptionMenuEntityModel *)entity;
+#pragma mark - content setting
+
+/**
+ item大小
+ */
+- (CGSize)itemSizeForMenu:(SHSingleOptionMenuView *)menu index:(NSInteger)index;
+
+/**
+ 设置内容view
+ */
+- (UIView *)menuContentView:(SHSingleOptionMenuView *)contentView itemForIndex:(NSInteger)index reusableItem:(UIView *)item itemSup:(UIView *)sup;
+
 
 @end
 
+#pragma mark - entity model
+
+@interface SHSingleOptionMenuEntity : NSObject
+
+@property (nonatomic, strong) SHSingleOptionMenuHeaderEntityModel *headerEntity;
+@property (nonatomic, strong) NSArray<NSString *> *content;
+
+@end
+
+#pragma mark - option menu
+
 @interface SHSingleOptionMenuView : UIView
 
-@property (nonatomic, strong) NSArray<SHSingleOptionMenuEntityModel *> *optionMenuSource;
 @property (nonatomic, weak) id<SingleOptionMenuDelegate> delegate;
 
+@property (nonatomic, strong) NSArray<SHSingleOptionMenuEntity *> *menuSource;
 
-- (void)resetMenuItemStatusWithIndex:(NSInteger)index;
+@property (nonatomic, assign) CGFloat expandHeight;       ///< 展开菜单项时的高度 必须设置
+
+#pragma mark - header
+@property (nonatomic, assign) CGFloat headerItemWidth;    ///< 默认等分
+@property (nonatomic, assign) CGFloat headerItemSpace;    ///< item 间隔
+@property (nonatomic, assign) CGFloat headerItemHeight;   ///< item 高度 默认25
+@property (nonatomic, assign) CGFloat headerHorPadding;   ///< 水平间隔 内边距
+
+#pragma mark - content
+
+#pragma mark - method
+
+- (void)reloadMenu;
 
 @end

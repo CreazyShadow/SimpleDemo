@@ -44,6 +44,7 @@
 #import <EmptySubObj.h>
 #import <EmptySuperObj+Empty.h>
 
+
 NSString *const maxCount = @"100";
 
 typedef NS_ENUM(NSInteger, AppType) {
@@ -63,7 +64,16 @@ typedef NS_ENUM(NSInteger, AppType) {
 @implementation AppDelegate
 
 - (void)test {
-    
+//    NSMutableArray *arr = nil;
+//    while (YES) {
+//        arr = [NSMutableArray array];
+//        [arr addObject:@"1"];
+//        [arr addObject:@"12"];
+//        [arr addObject:@"13"];
+////        NSLog(@"----%p---%ld--%@", arr, arr.count, arr);
+//
+//        [NSThread sleepForTimeInterval:0.2];
+//    }
 }
 
 - (NSArray *)arr {

@@ -19,7 +19,7 @@ def share_pods
     pod 'FBMemoryProfiler'
     pod 'Aspects'
     pod 'IQKeyboardManager'
-    pod 'MLeaksFinder'
+#    pod 'MLeaksFinder'
     pod 'JDFlipNumberView'
     pod 'FLEX', :configuration => 'Debug'
     pod 'AdhocSDK'

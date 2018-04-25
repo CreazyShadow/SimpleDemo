@@ -10,11 +10,13 @@
 
 #import "SelectImageItemView.h"
 #import "SelectImageView.h"
+#import "SHSingleOptionMenuHeaderView.h"
 #import "SHSingleOptionMenuView.h"
 
 @interface TestCustomViewController ()<SingleOptionMenuDelegate>
 
-@property (nonatomic, strong) SHSingleOptionMenuView *optionMenu;
+@property (nonatomic, strong) SHSingleOptionMenuHeaderView *optionMenu;
+@property (nonatomic, strong) SHSingleOptionMenuView *menu;
 
 @end
 
@@ -42,60 +44,67 @@
 #pragma mark - single option menu view
 
 - (void)addOptionMenuView {
-    self.optionMenu = [[SHSingleOptionMenuView alloc] initWithFrame:CGRectMake(0, 80, kScreenWidth, 40)];
-    _optionMenu.delegate = self;
-   
+    self.menu = [[SHSingleOptionMenuView alloc] initWithFrame:CGRectMake(0, 100, kScreenWidth, 45)];
+    _menu.delegate = self;
+    _menu.headerItemSpace = 10;
+    _menu.headerItemHeight = 25;
+    [self.view addSubview:_menu];
+    
+    NSMutableArray *entity = [NSMutableArray array];
     NSArray *titles = @[@"品牌", @"分类", @"尺码", @"闪电发货"];
-    NSMutableArray *models = [NSMutableArray arrayWithCapacity:titles.count];
     for (NSString *title in titles) {
-        SHSingleOptionMenuEntityModel *temp = [[SHSingleOptionMenuEntityModel alloc] init];
-        temp.title = title;
-        temp.icon = @"filter_img";
-        temp.selectedIcon = @"selectd_filter_img";
-        temp.iconIsRight = ![titles.lastObject isEqualToString:title];
+        SHSingleOptionMenuEntity *temp = [[SHSingleOptionMenuEntity alloc] init];
         
-        [models addObject:temp];
+        SHSingleOptionMenuHeaderEntityModel *header = [[SHSingleOptionMenuHeaderEntityModel alloc] init];
+        header.title = title;
+        header.icon = @"filter_img";
+        header.selectedIcon = @"selectd_filter_img";
+        header.iconIsLeft = ![titles.lastObject isEqualToString:title];
+        
+        temp.headerEntity = header;
+        
+        NSMutableArray *content = [NSMutableArray array];
+        for (int i = 0; i < 5; i++) {
+            [content addObject:[NSString stringWithFormat:@"%@----%d", title, i]];
+        }
+        temp.content = [content copy];
+        
+        [entity addObject:temp];
     }
     
-    _optionMenu.optionMenuSource = models;
-    
-    [self.view addSubview:self.optionMenu];
+    _menu.menuSource = entity;
 }
 
-- (CGFloat)singleOptionMenuMargin {
-    return 15.f;
-}
+#pragma mark - option menu header delegate
 
-- (CGFloat)singleOptionMenuItemSpace {
-    return 10;
-}
-
-- (CGFloat)singleOptionMenuitemHeight {
-    return 25;
-}
-
-- (void)willDisplayMenuItem:(UIButton *)btn index:(NSInteger)index {
-    if (index == 3) {
+- (void)willDisplayMenuHeaderItem:(UIButton *)btn index:(NSInteger)index {
+    if (index ==0 ) {
+        
+    }
+    else if (index == 3) {
         btn.backgroundColor = [UIColor hexStringToColor:@"F7F7F7"];
         return;
     }
 }
 
-- (SHSingleOptionMenuSelectedStyle)itemSelectedStyleWithIndex:(NSInteger)index {
+- (SHSingleOptionMenuHeaderSelectedStyle)menuHeaderItemSelectedStyleWithIndex:(NSInteger)index {
     if (index == 3) {
-        return SHSingleOptionMenuSelectedRedBorder;
+        return SHSingleOptionMenuHeaderSelectedRedBorder;
     }
     
     if (index == 2 || index == 1) {
-        return SHSingleOptionMenuSelectedExpand;
+        return SHSingleOptionMenuHeaderSelectedExpand;
     }
     
-    return SHSingleOptionMenuSelectedDefault;
+    return SHSingleOptionMenuHeaderSelectedDefault;
 }
 
-- (void)didSelectedMenuItem:(UIButton *)btn index:(NSInteger)index entity:(SHSingleOptionMenuEntityModel *)entity {
-    NSLog(@"%@ %ld %@", btn, index, entity.title);
+- (CGSize)itemSizeForMenu:(SHSingleOptionMenuView *)menu index:(NSInteger)index {
+    return CGSizeMake(kScreenWidth, 40);
 }
 
+- (UIView *)menuContentView:(SHSingleOptionMenuContentView *)contentView itemForIndex:(NSInteger)index reusableItem:(UIView *)item itemSup:(UIView *)sup {
+    return nil;
+}
 
 @end

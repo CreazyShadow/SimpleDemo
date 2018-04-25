@@ -18,6 +18,8 @@
 @property (nonatomic, strong) SHSingleOptionMenuHeaderView *optionMenu;
 @property (nonatomic, strong) SHSingleOptionMenuView *menu;
 
+@property (nonatomic, strong) UIView *expandView;
+
 @end
 
 @implementation TestCustomViewController
@@ -26,11 +28,11 @@
     [super viewDidLoad];
     
     [self addOptionMenuView];
+    [self.view addSubview:self.expandView];
 }
 
 #pragma mark - touch event
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [self addSelectImageView];
 }
 
 #pragma mark - select image view

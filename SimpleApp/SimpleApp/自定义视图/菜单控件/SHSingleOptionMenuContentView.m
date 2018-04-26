@@ -82,30 +82,20 @@ UICollectionViewDelegateFlowLayout>
 
 - (void)reloadData {
     [self.collectionView reloadData];
+    [self.collectionView layoutIfNeeded];
 }
 
-- (UIView *)dequeueReusableItem {
-    return nil;
-}
-
-#pragma mark - private
-
-- (UILabel *)textLblWithCell:(UICollectionViewCell *)cell {
-    UILabel *lbl = [cell viewWithTag:kItemTag];
-    if (!lbl) {
-        lbl = [[UILabel alloc] init];
-        lbl.tag = kItemTag;
-        lbl.font = [UIFont systemFontOfSize:16];
-        lbl.textColor = [UIColor orangeColor];
-        lbl.textAlignment = NSTextAlignmentLeft;
-        
-        [cell.contentView addSubview:lbl];
-        [lbl mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(cell.contentView).insets(UIEdgeInsetsMake(0, kTextLblLeftOrRightMargin, 0, kTextLblLeftOrRightMargin));
-        }];
+- (void)reloadItemsForIndexs:(NSSet *)indexs {
+    if (indexs.count == 0) {
+        return;
     }
     
-    return lbl;
+    NSMutableArray *indexPaths = [NSMutableArray arrayWithCapacity:indexs.count];
+    for (NSNumber *index in indexs) {
+        [indexPaths addObject:[NSIndexPath indexPathForItem:index.integerValue inSection:0]];
+    }
+    
+    [self.collectionView reloadItemsAtIndexPaths:indexPaths];
 }
 
 #pragma mark - getter & setter
@@ -114,11 +104,16 @@ UICollectionViewDelegateFlowLayout>
     return self.collectionView.contentSize.height;
 }
 
+- (void)setFrame:(CGRect)frame {
+    [super setFrame:frame];
+    self.collectionView.height = frame.size.height;
+}
+
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         flowLayout.minimumLineSpacing = 0;
-//        flowLayout.headerReferenceSize = CGSizeMake(0, 10);
+        flowLayout.minimumInteritemSpacing = 0;
         _collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
         _collectionView.dataSource = self;
         _collectionView.delegate = self;

@@ -52,4 +52,6 @@ typedef NS_ENUM(NSInteger, SHSingleOptionMenuHeaderSelectedStyle) {
 
 - (void)resetMenuHeaderItemStatusWithIndex:(NSInteger)index;
 
+- (void)reloadItemByEntity:(SHSingleOptionMenuHeaderEntityModel *)entity index:(NSInteger)index;
+
 @end

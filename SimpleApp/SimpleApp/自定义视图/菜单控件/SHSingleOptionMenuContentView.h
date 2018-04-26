@@ -26,7 +26,10 @@
 
 @property (nonatomic, weak) id<SingleOptionMenuContentViewDelegate> delegate;
 @property (nonatomic, assign, readonly) CGFloat expectHeight;
+@property (nonatomic, readonly) UICollectionView *collectionView;
 
 - (void)reloadData;
+
+- (void)reloadItemsForIndexs:(NSSet<NSNumber *> *)indexs;
 
 @end

@@ -13,7 +13,24 @@
 
 @class SHSingleOptionMenuView;
 
+#pragma mark - position indexpath
+
+@interface SHOptionMenuIndexPath : NSObject
+
+@property (nonatomic, assign) NSInteger headerIndex;
+@property (nonatomic, assign) NSInteger contentIndex;
+
++ (instancetype)indexPathForHeaderIndex:(NSInteger)hIndex contentIndex:(NSInteger)cIndex;
+
+@end
+
 @protocol SingleOptionMenuDelegate<NSObject>
+
+- (NSInteger)menu:(SHSingleOptionMenuView *)menu numberOfContentItemsCountForHeaderIndex:(NSInteger)index;
+
+- (CGSize)menu:(SHSingleOptionMenuView *)menu itemSizeForIndexPath:(SHOptionMenuIndexPath *)indexPath;
+
+- (UIView *)menu:(SHSingleOptionMenuView *)menu itemForIndexPath:(SHOptionMenuIndexPath *)indexPath reusableItem:(UIView *)item itemSup:(UIView *)sup;
 
 @optional
 #pragma mark - header setting
@@ -29,25 +46,13 @@
 
 #pragma mark - content setting
 
-/**
- item大小
- */
-- (CGSize)itemSizeForMenu:(SHSingleOptionMenuView *)menu index:(NSInteger)index;
+- (BOOL)menu:(SHSingleOptionMenuView *)menu canMulSelectedForHeaderIndex:(NSInteger)index;
 
-/**
- 设置内容view
- */
-- (UIView *)menuContentView:(SHSingleOptionMenuView *)contentView itemForIndex:(NSInteger)index reusableItem:(UIView *)item itemSup:(UIView *)sup;
+#pragma mark - click action
 
+- (void)menu:(SHSingleOptionMenuView *)menu didSelectedHeaderItem:(NSInteger)index;
 
-@end
-
-#pragma mark - entity model
-
-@interface SHSingleOptionMenuEntity : NSObject
-
-@property (nonatomic, strong) SHSingleOptionMenuHeaderEntityModel *headerEntity;
-@property (nonatomic, strong) NSArray<NSString *> *content;
+- (void)menu:(SHSingleOptionMenuView *)menu didSelectedContentItemForIndexPath:(SHOptionMenuIndexPath *)indexPath;
 
 @end
 
@@ -56,9 +61,7 @@
 @interface SHSingleOptionMenuView : UIView
 
 @property (nonatomic, weak) id<SingleOptionMenuDelegate> delegate;
-
-@property (nonatomic, strong) NSArray<SHSingleOptionMenuEntity *> *menuSource;
-
+@property (nonatomic, strong) NSArray<SHSingleOptionMenuHeaderEntityModel *> *menuHeaderSource;
 @property (nonatomic, assign) CGFloat expandHeight;       ///< 展开菜单项时的高度 必须设置
 
 #pragma mark - header
@@ -72,5 +75,7 @@
 #pragma mark - method
 
 - (void)reloadMenu;
+- (void)reloadHeaderItemWithEntity:(SHSingleOptionMenuHeaderEntityModel *)entity index:(NSInteger)index;
+- (void)reloadContentItemsAtIndexs:(NSSet<NSNumber *> *)indexs;
 
 @end

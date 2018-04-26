@@ -11,9 +11,17 @@
 #import "SHSingleOptionMenuHeaderView.h"
 #import "SHSingleOptionMenuContentView.h"
 
-#pragma mark - entity
+#pragma mark - position indexpath
 
-@implementation SHSingleOptionMenuEntity
+@implementation SHOptionMenuIndexPath
+
++ (instancetype)indexPathForHeaderIndex:(NSInteger)hIndex contentIndex:(NSInteger)cIndex {
+    SHOptionMenuIndexPath *instance = [[SHOptionMenuIndexPath alloc] init];
+    instance.headerIndex = hIndex;
+    instance.contentIndex = cIndex;
+    return instance;
+}
+
 @end
 
 #pragma mark - SHSingleOptionMenuView
@@ -25,9 +33,6 @@ static CGFloat const kContentMaxHeight = 260;
 @property (nonatomic, strong) SHSingleOptionMenuHeaderView *header;
 @property (nonatomic, strong) SHSingleOptionMenuContentView *content;
 @property (nonatomic, strong) UIControl *maskView; ///< 蒙板
-
-@property (nonatomic, strong) NSArray<SHSingleOptionMenuHeaderEntityModel *> *headerSource;
-@property (nonatomic, strong) NSArray<NSArray<NSString *> *> *contentSource;
 
 @end
 
@@ -57,6 +62,7 @@ static CGFloat const kContentMaxHeight = 260;
     
     self.maskView = [[UIControl alloc] initWithFrame:CGRectMake(0, _header.maxY, self.width, self.height)];
     _maskView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
+    [_maskView addTarget:self action:@selector(maskAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_maskView];
     
     self.content = [[SHSingleOptionMenuContentView alloc] initWithFrame:CGRectMake(0, _header.maxY, self.width, kContentMaxHeight)];
@@ -67,7 +73,27 @@ static CGFloat const kContentMaxHeight = 260;
 
 #pragma mark - event responder
 
+- (void)maskAction {
+    [self setupContentStatus:NO];
+}
+
 #pragma mark - public
+
+- (void)reloadMenu {
+    // 创建header
+    self.header.optionMenuSource = _menuHeaderSource;
+    
+    //创建content
+    [self.content reloadData];
+}
+
+- (void)reloadHeaderItemWithEntity:(SHSingleOptionMenuHeaderEntityModel *)entity index:(NSInteger)index {
+    [self.header reloadItemByEntity:entity index:index];
+}
+
+- (void)reloadContentItemsAtIndexs:(NSSet *)indexs {
+    [self.content reloadItemsForIndexs:indexs];
+}
 
 #pragma mark - SingleOptionMenuHeaderDelegate
 
@@ -90,8 +116,7 @@ static CGFloat const kContentMaxHeight = 260;
     
     //取消选中
     if (cancel) {
-        self.content.hidden = YES;
-        self.height = self.header.height;
+        [self setupContentStatus:NO];
         return;
     }
     
@@ -100,76 +125,59 @@ static CGFloat const kContentMaxHeight = 260;
     
     //展现content
     dispatch_async(dispatch_get_main_queue(), ^{
-        CGFloat height = self.content.expectHeight > kContentMaxHeight ? kContentMaxHeight : self.content.expectHeight;
-        self.content.height = height;
-        self.content.hidden = NO;
-        self.height = self.expandHeight;
-        self.maskView.height = self.height;
+        [self setupContentStatus:YES];
     });
+    
+    if ([self.delegate respondsToSelector:@selector(menu:didSelectedHeaderItem:)]) {
+        [self.delegate menu:self didSelectedHeaderItem:index];
+    }
 }
 
 #pragma mark - SingleOptionMenuContentViewDelegate
 
 - (NSInteger)itemCountForMenuContentView:(SHSingleOptionMenuContentView *)contentView {
-    if (_currentSelectedMenuIndex >=0 && _currentSelectedMenuIndex < _contentSource.count) {
-        return self.contentSource[_currentSelectedMenuIndex].count;
-    }
-    
-    return 0;
+    return [self.delegate menu:self numberOfContentItemsCountForHeaderIndex:_currentSelectedMenuIndex];
 }
 
 - (CGSize)itemSizeForMenuContentView:(SHSingleOptionMenuContentView *)contentView index:(NSInteger)index {
-    if ([self.delegate respondsToSelector:@selector(itemSizeForMenuContentView:index:)]) {
-        return [self.delegate itemSizeForMenu:self index:index];
-    }
-    
-    return CGSizeMake(self.width, 40);
+    SHOptionMenuIndexPath *indexPath = [SHOptionMenuIndexPath indexPathForHeaderIndex:_currentSelectedMenuIndex contentIndex:index];
+    return [self.delegate menu:self itemSizeForIndexPath:indexPath];
 }
 
 - (UIView *)menuContentView:(SHSingleOptionMenuView *)contentView itemForIndex:(NSInteger)index reusableItem:(UIView *)item itemSup:(UIView *)sup {
-    UILabel *actualItem = (UILabel *)item;
-    if (!item) {
-        actualItem = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
-        actualItem.textColor = [UIColor orangeColor];
-        actualItem.font = [UIFont systemFontOfSize:14];
-        actualItem.textAlignment = NSTextAlignmentLeft;
+    SHOptionMenuIndexPath *indexPath = [SHOptionMenuIndexPath indexPathForHeaderIndex:_currentSelectedMenuIndex contentIndex:index];
+    return [self.delegate menu:self itemForIndexPath:indexPath reusableItem:item itemSup:sup];
+}
+
+- (void)menuContentView:(SHSingleOptionMenuContentView *)contentView didSelectItem:(NSInteger)index {
+    SHOptionMenuIndexPath *indexPath = [SHOptionMenuIndexPath indexPathForHeaderIndex:_currentSelectedMenuIndex contentIndex:index];
+    if ([self.delegate respondsToSelector:@selector(menu:didSelectedContentItemForIndexPath:)]) {
+        [self.delegate menu:self didSelectedContentItemForIndexPath:indexPath];
     }
-    
-    actualItem.text = self.contentSource[_currentSelectedMenuIndex][index];
-    return actualItem;
 }
 
 #pragma mark - private
 
-- (void)convertHeaderAndContentSource {
-    NSMutableArray *header = [NSMutableArray arrayWithCapacity:_menuSource.count];
-    NSMutableArray *content = [NSMutableArray arrayWithCapacity:_menuSource.count];
-    for (SHSingleOptionMenuEntity *item in _menuSource) {
-        [header addObject:item.headerEntity];
-        [content addObject:item.content];
+- (void)setupContentStatus:(BOOL)isShow {
+    if (!isShow) {
+        self.content.hidden = YES;
+        self.height = self.header.height;
+        return;
     }
     
-    self.headerSource = [header copy];
-    self.contentSource = [content copy];
+    CGFloat height = self.content.expectHeight > kContentMaxHeight ? kContentMaxHeight : self.content.expectHeight;
+    self.content.height = height;
+    self.content.hidden = NO;
+    self.height = self.expandHeight;
+    self.maskView.height = self.height;
 }
 
 #pragma mark - getter & setter
 
-- (void)setMenuSource:(NSArray<SHSingleOptionMenuEntity *> *)menuSource {
-    _menuSource = [menuSource copy];
-    
-    // convert source
-    [self convertHeaderAndContentSource];
-    
-    //刷新视图
-    _header.optionMenuSource = _headerSource;
-    
+- (void)setMenuHeaderSource:(NSArray<SHSingleOptionMenuHeaderEntityModel *> *)menuHeaderSource {
+    _menuHeaderSource = [menuHeaderSource copy];
+    self.header.optionMenuSource = _menuHeaderSource;
 }
-
-//- (void)setDelegate:(id<SingleOptionMenuDelegate>)delegate {
-//    _delegate = delegate;
-////    _header.delegate = delegate;
-//}
 
 - (void)setHeaderItemSpace:(CGFloat)headerItemSpace {
     _headerItemSpace = headerItemSpace;

@@ -120,11 +120,23 @@ static CGFloat const kItemDefaultHeight = 25;
     self.menus[index].selected = NO;
 }
 
+- (void)reloadItemByEntity:(SHSingleOptionMenuHeaderEntityModel *)entity index:(NSInteger)index {
+    if (!entity || !entity.title.length || index < 0 || index >= _optionMenuSource.count) {
+        return;
+    }
+    
+    UIButton *item = self.menus[index];
+    [item setTitle:entity.title forState:UIControlStateNormal];
+    [item setImage:[UIImage imageNamed:entity.icon] forState:UIControlStateNormal];
+    [item setImage:[UIImage imageNamed:entity.selectedIcon] forState:UIControlStateSelected];
+}
+
 #pragma mark - private
 
 - (void)createOptionMenuItems {
     [self.menuBorders makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.menus removeAllObjects];
+    [self.menuBorders removeAllObjects];
     
     for (int i = 0; i < _optionMenuSource.count; i++) {
         UIButton *temp = [[UIButton alloc] init];
@@ -144,6 +156,8 @@ static CGFloat const kItemDefaultHeight = 25;
         [self.menuBorders addObject:border];
         [self.menus addObject:temp];
     }
+    
+    [self setNeedsLayout];
 }
 
 - (SHSingleOptionMenuHeaderSelectedStyle)itemSelectedStyleWithIndex:(NSInteger)index {

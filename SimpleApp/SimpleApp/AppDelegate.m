@@ -150,7 +150,7 @@ static NSUInteger gcd(NSUInteger a, NSUInteger b)
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"FirstViewController";
+    NSString *className = @"TestCustomViewController";
     switch (type) {
         case 0:
         {

@@ -87,16 +87,16 @@ static CGFloat const kItemDefaultHeight = 25;
 #pragma mark - event responder
 
 - (void)menuItemClickAction:(UIButton *)btn {
-    btn.selected = !btn.isSelected;
-    
     NSInteger selectedIndex = btn.tag - kMenuItemBtnStartTag;
-    if ([self.delegate respondsToSelector:@selector(menuHeaderDidClickItem:index:entity:isCancel:)]) {
-        [self.delegate menuHeaderDidClickItem:btn index:selectedIndex entity:_optionMenuSource[selectedIndex] isCancel:!btn.isSelected];
+    if ([self.delegate respondsToSelector:@selector(menuHeaderDidClickItem:index:entity:)]) {
+        [self.delegate menuHeaderDidClickItem:btn index:selectedIndex entity:_optionMenuSource[selectedIndex]];
     }
     
     //设置选中后的效果
-    SHSingleOptionMenuHeaderSelectedStyle selectedStyle = [self itemSelectedStyleWithIndex:btn.tag - kMenuItemBtnStartTag];
-    [self renderMenuItem:btn andStyle:selectedStyle];
+    if (btn.isSelected) {
+        SHSingleOptionMenuHeaderSelectedStyle selectedStyle = [self itemSelectedStyleWithIndex:btn.tag - kMenuItemBtnStartTag];
+        [self renderMenuItem:btn andStyle:selectedStyle];
+    }
     
     //reset others
     for (UIButton *item in self.menus) {

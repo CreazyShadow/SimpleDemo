@@ -36,7 +36,7 @@ typedef NS_ENUM(NSInteger, SHSingleOptionMenuHeaderSelectedStyle) {
  */
 - (SHSingleOptionMenuHeaderSelectedStyle)menuHeaderItemSelectedStyleWithIndex:(NSInteger)index;
 
-- (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index entity:(SHSingleOptionMenuHeaderEntityModel *)entity isCancel:(BOOL)cancel;
+- (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index entity:(SHSingleOptionMenuHeaderEntityModel *)entity;
 
 @end
 

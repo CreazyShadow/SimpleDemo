@@ -111,8 +111,13 @@ static CGFloat const kContentMaxHeight = 260;
     return SHSingleOptionMenuHeaderSelectedDefault;
 }
 
-- (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index entity:(SHSingleOptionMenuHeaderEntityModel *)entity isCancel:(BOOL)cancel {
+- (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index entity:(SHSingleOptionMenuHeaderEntityModel *)entity {
     _currentSelectedMenuIndex = index;
+    
+    //判断header的状态
+    if (!btn.isSelected) {
+        btn.selected = YES;
+    }
     
     //取消选中
     if (cancel) {

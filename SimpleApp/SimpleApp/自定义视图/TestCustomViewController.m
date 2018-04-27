@@ -28,11 +28,11 @@
     [super viewDidLoad];
     
     [self addOptionMenuView];
-    [self.view addSubview:self.expandView];
 }
 
 #pragma mark - touch event
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+
 }
 
 #pragma mark - select image view
@@ -49,9 +49,11 @@
     self.menu = [[SHSingleOptionMenuView alloc] initWithFrame:CGRectMake(0, 100, kScreenWidth, 45)];
     _menu.menuHeaderSource = [self menuHeaderItemsSource];
     _menu.delegate = self;
-    _menu.headerItemSpace = 10;
+    _menu.headerHorPadding = 15;
+    _menu.headerItemSpace = 0;
     _menu.headerItemHeight = 25;
     _menu.expandHeight = 500;
+    _menu.headerItemWidth = 60;
     [self.view addSubview:_menu];
 }
 
@@ -65,7 +67,7 @@
         header.title = title;
         header.icon = @"filter_img";
         header.selectedIcon = @"selectd_filter_img";
-        header.iconIsLeft = ![titles.lastObject isEqualToString:title];
+        header.iconIsLeft = [titles.lastObject isEqualToString:title];
         
         [entity addObject:header];
     }
@@ -126,7 +128,10 @@ bool isSelected = NO;
 
 - (void)willDisplayMenuHeaderItem:(UIButton *)btn index:(NSInteger)index {
     if (index ==0 ) {
-        
+        btn.titleLabel.textAlignment = NSTextAlignmentLeft;
+        [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        btn.layer.borderColor = [UIColor redColor].CGColor;
+        btn.layer.borderWidth = 1;
     }
     else if (index == 3) {
         btn.backgroundColor = [UIColor hexStringToColor:@"F7F7F7"];

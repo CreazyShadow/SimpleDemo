@@ -78,6 +78,14 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    SecondViewController *second = [[SecondViewController alloc] init];
 //    [self.navigationController pushViewController:second animated:YES];
+    [self.button1 setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:5];
+    [self.button1.layer layoutIfNeeded];
+    self.button1.contentEdgeInsets = UIEdgeInsetsMake(0, -self.button1.titleLabel.origin.x, 0, self.button1.titleLabel.origin.x);
+//    CGFloat imgW = self.button1.imageView.width;
+//    CGFloat lblW = self.button1.titleLabel.width;
+//    self.button1.titleEdgeInsets = UIEdgeInsetsMake(0, -(self.button1.imageView.origin.x + imgW), 0, (self.button1.imageView.origin.x + imgW));
+//    self.button1.imageEdgeInsets = UIEdgeInsetsMake(0, -(self.button1.imageView.origin.x - lblW - 5), 0, (self.button1.imageView.origin.x - lblW - 5));
+    
 }
 
 #pragma mark - override
@@ -149,11 +157,10 @@
 
 - (UIButton *)button1 {
     if (!_button1) {
-        _button1 = [[UIButton alloc] initWithFrame:CGRectMake(20, 80, 100, 30)];
+        _button1 = [[UIButton alloc] initWithFrame:CGRectMake(20, 80, 150, 30)];
         _button1.backgroundColor = [UIColor purpleColor];
         [_button1 setImage:[UIImage imageNamed:@"circle"] forState:UIControlStateNormal];
-        _button1.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 5);
-        //        [_button1 setTitle:@"button1" forState:UIControlStateNormal];
+        [_button1 setTitle:@"button1" forState:UIControlStateNormal];
         [_button1 addTarget:self action:@selector(clickButton1) forControlEvents:UIControlEventTouchUpInside];
     }
     

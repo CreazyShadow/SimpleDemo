@@ -82,7 +82,6 @@ UICollectionViewDelegateFlowLayout>
 
 - (void)reloadData {
     [self.collectionView reloadData];
-    [self.collectionView layoutIfNeeded];
 }
 
 - (void)reloadItemsForIndexs:(NSSet *)indexs {
@@ -101,6 +100,7 @@ UICollectionViewDelegateFlowLayout>
 #pragma mark - getter & setter
 
 - (CGFloat)expectHeight {
+    [self.collectionView layoutIfNeeded];
     return self.collectionView.contentSize.height;
 }
 

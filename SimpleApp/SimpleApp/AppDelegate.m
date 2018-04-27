@@ -63,17 +63,51 @@ typedef NS_ENUM(NSInteger, AppType) {
 
 @implementation AppDelegate
 
+static NSUInteger gcd(NSUInteger a, NSUInteger b)
+{
+    // http://en.wikipedia.org/wiki/Greatest_common_divisor
+    if (a < b) {
+        return gcd(b, a);
+    } else if (a == b) {
+        return b;
+    }
+    
+    while (true) {
+        NSUInteger remainder = a % b;
+        if (remainder == 0) {
+            return b;
+        }
+        a = b;
+        b = remainder;
+    }
+}
+
+- (NSTimeInterval)frameDelayGreatestCommonDivisor
+{
+    NSTimeInterval kFLAnimatedImageDelayTimeIntervalMinimum = 0.02;
+    const NSTimeInterval kGreatestCommonDivisorPrecision = 2.0 / kFLAnimatedImageDelayTimeIntervalMinimum;
+    
+    NSArray *delays = @[@0.12];
+    
+    // Scales the frame delays by `kGreatestCommonDivisorPrecision`
+    // then converts it to an UInteger for in order to calculate the GCD.
+    NSUInteger scaledGCD = lrint([delays.firstObject floatValue] * kGreatestCommonDivisorPrecision);
+    for (NSNumber *value in delays) {
+        scaledGCD = gcd(lrint([value floatValue] * kGreatestCommonDivisorPrecision), scaledGCD);
+    }
+    
+    // Reverse to scale to get the value back into seconds.
+    return scaledGCD / kGreatestCommonDivisorPrecision;
+}
+
 - (void)test {
-//    NSMutableArray *arr = nil;
-//    while (YES) {
-//        arr = [NSMutableArray array];
-//        [arr addObject:@"1"];
-//        [arr addObject:@"12"];
-//        [arr addObject:@"13"];
-////        NSLog(@"----%p---%ld--%@", arr, arr.count, arr);
-//
-//        [NSThread sleepForTimeInterval:0.2];
-//    }
+    NSUInteger val = gcd(1, 2);
+    val = gcd(10, 100);
+    val = gcd(5, 8);
+    val = gcd(7, 3);
+    
+    NSTimeInterval interval = [self frameDelayGreatestCommonDivisor];
+    NSLog(@"---");
 }
 
 - (NSArray *)arr {
@@ -116,7 +150,7 @@ typedef NS_ENUM(NSInteger, AppType) {
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"TestCustomViewController";
+    NSString *className = @"FirstViewController";
     switch (type) {
         case 0:
         {

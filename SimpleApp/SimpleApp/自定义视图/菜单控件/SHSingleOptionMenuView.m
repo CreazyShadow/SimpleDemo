@@ -41,7 +41,11 @@ static CGFloat const kContentMaxHeight = 260;
 
 @property (nonatomic, strong) SHSingleOptionMenuHeaderView *header;
 @property (nonatomic, strong) SHSingleOptionMenuContentView *content;
-@property (nonatomic, strong) UIControl *maskView; ///< 蒙板
+@property (nonatomic, strong) UIControl *maskView;  ///< 蒙板
+
+@property (nonatomic, strong) UIView *bottomView;
+@property (nonatomic, strong) UIButton *resetBtn;
+@property (nonatomic, strong) UIButton *confirmBtn;
 
 @property (nonatomic, strong) NSMutableDictionary<NSNumber *, NSMutableArray<SHOptionMenuIndexPath *> *> *menuSelectedItemsCache;
 
@@ -81,11 +85,42 @@ static CGFloat const kContentMaxHeight = 260;
     _content.hidden = YES;
     _content.delegate = self;
     [self addSubview:_content];
+    
+    self.bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, _content.maxY, self.width, 44)];
+    [self addSubview:_bottomView];
+    
+    self.resetBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, _bottomView.width * 0.5, _bottomView.height)];
+    [_resetBtn setTitle:@"重置" forState:UIControlStateNormal];
+    [_resetBtn setTitleColor:[UIColor hexStringToColor:@"666666"] forState:UIControlStateNormal];
+    _resetBtn.backgroundColor = [UIColor hexStringToColor:@"F7F7F7"];
+    _resetBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [_resetBtn addTarget:self action:@selector(resetAction) forControlEvents:UIControlEventTouchUpInside];
+    [_bottomView addSubview:_resetBtn];
+    
+    self.confirmBtn = [[UIButton alloc] initWithFrame:CGRectMake(_resetBtn.maxX, 0, _bottomView.width * 0.5, _bottomView.height)];
+    [_confirmBtn setTitle:@"确定" forState:UIControlStateNormal];
+    [_confirmBtn setTitleColor:[UIColor hexStringToColor:@"FFFFFF"] forState:UIControlStateNormal];
+    _confirmBtn.backgroundColor = [UIColor redColor];
+    _confirmBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [_confirmBtn addTarget:self action:@selector(confirmAction) forControlEvents:UIControlEventTouchUpInside];
+    [_bottomView addSubview:_confirmBtn];
 }
 
 #pragma mark - event responder
 
 - (void)maskAction {
+    [self setupContentStatus:NO];
+}
+
+- (void)resetAction {
+    NSMutableArray *items = [self cacheItemsForHeaderIndex:_currentSelectedMenuIndex];
+    [items removeAllObjects];
+    
+    //刷新界面
+    [self.content reloadData];
+}
+
+- (void)confirmAction {
     [self setupContentStatus:NO];
 }
 
@@ -173,7 +208,7 @@ static CGFloat const kContentMaxHeight = 260;
         [items removeObject:indexPath];
     } else {
         //如果只能单选，删除以前的
-        [items removeAllObjects];
+//        [items removeAllObjects];
         
         //如果能够多选
         
@@ -181,7 +216,7 @@ static CGFloat const kContentMaxHeight = 260;
     }
     
     //隐藏contnt
-    [self setupContentStatus:NO];
+//    [self setupContentStatus:NO];
     
     //更新header menu状态
     BOOL hasSelectedItem = [self hasSelectedItemForMenuHeaderIndex:_currentSelectedMenuIndex];
@@ -196,6 +231,7 @@ static CGFloat const kContentMaxHeight = 260;
 
 - (void)setupContentStatus:(BOOL)isShow {
     if (!isShow) {
+        self.bottomView.hidden = YES;
         self.content.hidden = YES;
         self.height = self.header.height;
         return;
@@ -203,7 +239,9 @@ static CGFloat const kContentMaxHeight = 260;
     
     CGFloat height = self.content.expectHeight > kContentMaxHeight ? kContentMaxHeight : self.content.expectHeight;
     self.content.height = height;
+    self.bottomView.y = _content.maxY;
     self.content.hidden = NO;
+    self.bottomView.hidden = NO;
     self.height = self.expandHeight;
     self.maskView.height = self.height;
 }

@@ -39,11 +39,6 @@
  */
 - (void)willDisplayMenuHeaderItem:(UIButton *)btn index:(NSInteger)index;
 
-/**
- header item选中时的样式
- */
-- (SHSingleOptionMenuHeaderSelectedStyle)menuHeaderItemSelectedStyleWithIndex:(NSInteger)index;
-
 #pragma mark - content setting
 
 - (BOOL)menu:(SHSingleOptionMenuView *)menu canMulSelectedForHeaderIndex:(NSInteger)index;
@@ -72,9 +67,14 @@
 
 #pragma mark - content
 
+- (NSArray<SHOptionMenuIndexPath *> *)menuSelectedItemsWithHeaderIndex:(NSInteger)index;
+
 #pragma mark - method
 
+- (void)setupDefaultSelectedIndexPath:(NSArray<SHSingleOptionMenuHeaderEntityModel *> *)indexPaths;
+
 - (void)reloadMenu;
+- (void)reloadHeaderItemWithTitle:(NSString *)title index:(NSInteger)index;
 - (void)reloadHeaderItemWithEntity:(SHSingleOptionMenuHeaderEntityModel *)entity index:(NSInteger)index;
 - (void)reloadContentItemsAtIndexs:(NSSet<NSNumber *> *)indexs;
 

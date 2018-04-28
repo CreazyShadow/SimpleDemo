@@ -22,6 +22,15 @@
     return instance;
 }
 
+- (BOOL)isEqual:(id)object {
+    if (!object || ![object isKindOfClass:[SHOptionMenuIndexPath class]]) {
+        return NO;
+    }
+    
+    SHOptionMenuIndexPath *obj = (SHOptionMenuIndexPath *)object;
+    return obj.headerIndex == self.headerIndex && obj.contentIndex == self.contentIndex;
+}
+
 @end
 
 #pragma mark - SHSingleOptionMenuView
@@ -33,6 +42,8 @@ static CGFloat const kContentMaxHeight = 260;
 @property (nonatomic, strong) SHSingleOptionMenuHeaderView *header;
 @property (nonatomic, strong) SHSingleOptionMenuContentView *content;
 @property (nonatomic, strong) UIControl *maskView; ///< 蒙板
+
+@property (nonatomic, strong) NSMutableDictionary<NSNumber *, NSMutableArray<SHOptionMenuIndexPath *> *> *menuSelectedItemsCache;
 
 @end
 
@@ -46,6 +57,7 @@ static CGFloat const kContentMaxHeight = 260;
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.clipsToBounds = YES;
+        self.menuSelectedItemsCache = [[NSMutableDictionary alloc] init];
         
         [self buildSubViews];
     }
@@ -56,7 +68,7 @@ static CGFloat const kContentMaxHeight = 260;
 #pragma mark - init subviews
 
 - (void)buildSubViews {
-    self.header = [[SHSingleOptionMenuHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height)];
+    self.header = [[SHSingleOptionMenuHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height) style:SHMenuHeaderStyleCube];
     _header.delegate = self;
     [self addSubview:_header];
     
@@ -79,12 +91,25 @@ static CGFloat const kContentMaxHeight = 260;
 
 #pragma mark - public
 
+- (void)setupDefaultSelectedIndexPath:(NSArray<SHOptionMenuIndexPath *> *)indexPaths {
+    for (SHOptionMenuIndexPath *item in indexPaths) {
+        NSMutableArray *detail = [self cacheItemsForHeaderIndex:item.headerIndex];
+        if (![detail containsObject:item]) {
+            [detail addObject:item];
+        }
+    }
+}
+
 - (void)reloadMenu {
     // 创建header
     self.header.optionMenuSource = _menuHeaderSource;
     
     //创建content
     [self.content reloadData];
+}
+
+- (void)reloadHeaderItemWithTitle:(NSString *)title index:(NSInteger)index {
+    [self.header reloadItemWithTitle:title index:index];
 }
 
 - (void)reloadHeaderItemWithEntity:(SHSingleOptionMenuHeaderEntityModel *)entity index:(NSInteger)index {
@@ -97,31 +122,12 @@ static CGFloat const kContentMaxHeight = 260;
 
 #pragma mark - SingleOptionMenuHeaderDelegate
 
-- (void)willDisplayMenuHeaderItem:(UIButton *)btn index:(NSInteger)index {
-    if ([self.delegate respondsToSelector:@selector(willDisplayMenuHeaderItem:index:)]) {
-        [self.delegate willDisplayMenuHeaderItem:btn index:index];
-    }
-}
-
-- (SHSingleOptionMenuHeaderSelectedStyle)menuHeaderItemSelectedStyleWithIndex:(NSInteger)index {
-    if ([self.delegate respondsToSelector:@selector(menuHeaderItemSelectedStyleWithIndex:)]) {
-        return [self.delegate menuHeaderItemSelectedStyleWithIndex:index];
-    }
-    
-    return SHSingleOptionMenuHeaderSelectedDefault;
-}
-
-- (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index entity:(SHSingleOptionMenuHeaderEntityModel *)entity {
+- (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index entity:(SHSingleOptionMenuHeaderEntityModel *)entity isChangeTab:(BOOL)isChangeTab {
     _currentSelectedMenuIndex = index;
     
-    //判断header的状态
-    if (!btn.isSelected) {
-        btn.selected = YES;
-    }
-    
-    //取消选中
-    if (cancel) {
+    if (!self.content.hidden && !isChangeTab) { //已经展示内容 并且 点击
         [self setupContentStatus:NO];
+        [self.header updateMenuItemStatus:[self hasSelectedItemForMenuHeaderIndex:index] index:index];
         return;
     }
     
@@ -136,6 +142,10 @@ static CGFloat const kContentMaxHeight = 260;
     if ([self.delegate respondsToSelector:@selector(menu:didSelectedHeaderItem:)]) {
         [self.delegate menu:self didSelectedHeaderItem:index];
     }
+}
+
+- (BOOL)hasSelectedItemForMenuHeaderIndex:(NSInteger)index {
+    return self.menuSelectedItemsCache[@(index)].count > 0;
 }
 
 #pragma mark - SingleOptionMenuContentViewDelegate
@@ -156,6 +166,27 @@ static CGFloat const kContentMaxHeight = 260;
 
 - (void)menuContentView:(SHSingleOptionMenuContentView *)contentView didSelectItem:(NSInteger)index {
     SHOptionMenuIndexPath *indexPath = [SHOptionMenuIndexPath indexPathForHeaderIndex:_currentSelectedMenuIndex contentIndex:index];
+    
+    //修改选中的缓存
+    NSMutableArray *items = [self cacheItemsForHeaderIndex:_currentSelectedMenuIndex];
+    if ([items containsObject:indexPath]) {
+        [items removeObject:indexPath];
+    } else {
+        //如果只能单选，删除以前的
+        [items removeAllObjects];
+        
+        //如果能够多选
+        
+        [items addObject:indexPath];
+    }
+    
+    //隐藏contnt
+    [self setupContentStatus:NO];
+    
+    //更新header menu状态
+    BOOL hasSelectedItem = [self hasSelectedItemForMenuHeaderIndex:_currentSelectedMenuIndex];
+    [self.header updateMenuItemStatus:hasSelectedItem index:_currentSelectedMenuIndex];
+    
     if ([self.delegate respondsToSelector:@selector(menu:didSelectedContentItemForIndexPath:)]) {
         [self.delegate menu:self didSelectedContentItemForIndexPath:indexPath];
     }
@@ -175,6 +206,16 @@ static CGFloat const kContentMaxHeight = 260;
     self.content.hidden = NO;
     self.height = self.expandHeight;
     self.maskView.height = self.height;
+}
+
+- (NSMutableArray<SHOptionMenuIndexPath *> *)cacheItemsForHeaderIndex:(NSInteger)index {
+    NSMutableArray *items = self.menuSelectedItemsCache[@(index)];
+    if (!items) {
+        items = [[NSMutableArray alloc] init];
+        self.menuSelectedItemsCache[@(index)] = items;
+    }
+    
+    return items;
 }
 
 #pragma mark - getter & setter
@@ -202,6 +243,10 @@ static CGFloat const kContentMaxHeight = 260;
 - (void)setHeaderHorPadding:(CGFloat)headerHorPadding {
     _headerHorPadding = headerHorPadding;
     self.header.horPadding = headerHorPadding;
+}
+
+- (NSArray<SHOptionMenuIndexPath *> *)menuSelectedItemsWithHeaderIndex:(NSInteger)index {
+    return [self.menuSelectedItemsCache[@(index)] copy];
 }
 
 @end

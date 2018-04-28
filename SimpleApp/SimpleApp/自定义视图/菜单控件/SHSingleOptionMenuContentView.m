@@ -11,8 +11,6 @@
 static NSInteger const kItemTag = 10;
 static NSString *const kCellID = @"UICollectionViewCellIdentify";
 
-static CGFloat const kTextLblLeftOrRightMargin = 0;
-
 @interface SHSingleOptionMenuContentView() <
 UICollectionViewDelegate,
 UICollectionViewDataSource,

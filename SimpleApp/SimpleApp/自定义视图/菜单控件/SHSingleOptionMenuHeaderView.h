@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, SHSingleOptionMenuHeaderSelectedStyle) {
-    SHSingleOptionMenuHeaderSelectedDefault,      ///< 红色文字
-    SHSingleOptionMenuHeaderSelectedRedBorder,    ///< 红色外框
-    SHSingleOptionMenuHeaderSelectedExpand        ///< 展开边框
+typedef NS_ENUM(NSInteger, SHMenuHeaderStyle) {
+    SHMenuHeaderStylePlainText, ///< 扁平文字
+    SHMenuHeaderStyleCube       ///< 方块形状
 };
 
 @interface SHSingleOptionMenuHeaderEntityModel : NSObject
@@ -20,6 +19,7 @@ typedef NS_ENUM(NSInteger, SHSingleOptionMenuHeaderSelectedStyle) {
 @property (nonatomic, copy) NSString *icon;
 @property (nonatomic, copy) NSString *selectedIcon;
 @property (nonatomic, assign) BOOL iconIsLeft;
+@property (nonatomic, copy) NSString *groupName;
 
 @end
 
@@ -31,12 +31,7 @@ typedef NS_ENUM(NSInteger, SHSingleOptionMenuHeaderSelectedStyle) {
  */
 - (void)willDisplayMenuHeaderItem:(UIButton *)btn index:(NSInteger)index;
 
-/**
- item选中时的样式
- */
-- (SHSingleOptionMenuHeaderSelectedStyle)menuHeaderItemSelectedStyleWithIndex:(NSInteger)index;
-
-- (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index entity:(SHSingleOptionMenuHeaderEntityModel *)entity;
+- (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index entity:(SHSingleOptionMenuHeaderEntityModel *)entity isChangeTab:(BOOL)isChangeTab;
 
 @end
 
@@ -50,8 +45,11 @@ typedef NS_ENUM(NSInteger, SHSingleOptionMenuHeaderSelectedStyle) {
 @property (nonatomic, assign) CGFloat itemHeight;   ///< item 高度 默认25
 @property (nonatomic, assign) CGFloat horPadding;   ///< 水平间隔 内边距
 
-- (void)resetMenuHeaderItemStatusWithIndex:(NSInteger)index;
+- (instancetype)initWithFrame:(CGRect)frame style:(SHMenuHeaderStyle)style;
+
+- (void)updateMenuItemStatus:(BOOL)status index:(NSInteger)index;
 
 - (void)reloadItemByEntity:(SHSingleOptionMenuHeaderEntityModel *)entity index:(NSInteger)index;
+- (void)reloadItemWithTitle:(NSString *)title index:(NSInteger)index;
 
 @end

@@ -101,13 +101,7 @@ static NSUInteger gcd(NSUInteger a, NSUInteger b)
 }
 
 - (void)test {
-    NSUInteger val = gcd(1, 2);
-    val = gcd(10, 100);
-    val = gcd(5, 8);
-    val = gcd(7, 3);
-    
-    NSTimeInterval interval = [self frameDelayGreatestCommonDivisor];
-    NSLog(@"---");
+   
 }
 
 - (NSArray *)arr {

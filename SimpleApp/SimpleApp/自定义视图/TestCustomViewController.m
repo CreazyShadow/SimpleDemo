@@ -50,10 +50,10 @@
     _menu.menuHeaderSource = [self menuHeaderItemsSource];
     _menu.delegate = self;
     _menu.headerHorPadding = 15;
-    _menu.headerItemSpace = 0;
+    _menu.headerItemSpace = 10;
     _menu.headerItemHeight = 25;
     _menu.expandHeight = 500;
-    _menu.headerItemWidth = 60;
+//    _menu.headerItemWidth = 50;
     [self.view addSubview:_menu];
 }
 
@@ -68,6 +68,7 @@
         header.icon = @"filter_img";
         header.selectedIcon = @"selectd_filter_img";
         header.iconIsLeft = [titles.lastObject isEqualToString:title];
+        header.groupName = @"AAA";
         
         [entity addObject:header];
     }
@@ -91,8 +92,6 @@
     return CGSizeMake(150, 40);
 }
 
-bool isSelected = NO;
-
 - (UIView *)menu:(SHSingleOptionMenuView *)menu itemForIndexPath:(SHOptionMenuIndexPath *)indexPath reusableItem:(UIView *)item itemSup:(UIView *)sup {
     UILabel *actualItem = (UILabel *)item;
     if (!item) {
@@ -104,51 +103,39 @@ bool isSelected = NO;
     actualItem.textColor = [UIColor orangeColor];
     NSArray *titles = @[@"品牌", @"分类", @"尺码", @"闪电发货"];
     actualItem.text = [NSString stringWithFormat:@"%@---%ld", titles[indexPath.headerIndex], indexPath.contentIndex];
-    if (isSelected) {
+    
+    if ([[menu menuSelectedItemsWithHeaderIndex:indexPath.headerIndex] containsObject:indexPath]) {
         actualItem.textColor = [UIColor redColor];
-        isSelected = NO;
     }
     
     return actualItem;
 }
 
 - (void)menu:(SHSingleOptionMenuView *)menu didSelectedContentItemForIndexPath:(SHOptionMenuIndexPath *)indexPath {
-    NSLog(@"-----header:%ld content:%ld", indexPath.headerIndex, indexPath.contentIndex);
+    NSArray *titles = @[@"品牌", @"分类", @"尺码", @"闪电发货"];
+    BOOL hasSelectItems = [menu menuSelectedItemsWithHeaderIndex:indexPath.headerIndex].count > 0;
+    NSString *title = [NSString stringWithFormat:@"%@---%ld", titles[indexPath.headerIndex], indexPath.contentIndex];
+    if (!hasSelectItems) {
+        title = titles[indexPath.headerIndex];
+    }
     
-    SHSingleOptionMenuHeaderEntityModel *header = [[SHSingleOptionMenuHeaderEntityModel alloc] init];
-    header.title = @"品牌---1";
-    header.icon = @"filter_img";
-    header.selectedIcon = @"selectd_filter_img";
-    [menu reloadHeaderItemWithEntity:header index:indexPath.headerIndex];
+    [menu reloadHeaderItemWithTitle:title index:indexPath.headerIndex];
     
     NSSet *set = [NSSet setWithObject:@(indexPath.contentIndex)];
-    isSelected = YES;
     [menu reloadContentItemsAtIndexs:set];
 }
 
-- (void)willDisplayMenuHeaderItem:(UIButton *)btn index:(NSInteger)index {
-    if (index ==0 ) {
-        btn.titleLabel.textAlignment = NSTextAlignmentLeft;
-        [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        btn.layer.borderColor = [UIColor redColor].CGColor;
-        btn.layer.borderWidth = 1;
-    }
-    else if (index == 3) {
-        btn.backgroundColor = [UIColor hexStringToColor:@"F7F7F7"];
-        return;
-    }
-}
-
-- (SHSingleOptionMenuHeaderSelectedStyle)menuHeaderItemSelectedStyleWithIndex:(NSInteger)index {
-    if (index == 3) {
-        return SHSingleOptionMenuHeaderSelectedRedBorder;
-    }
-    
-    if (index == 2 || index == 1) {
-        return SHSingleOptionMenuHeaderSelectedExpand;
-    }
-    
-    return SHSingleOptionMenuHeaderSelectedDefault;
-}
+//- (void)willDisplayMenuHeaderItem:(UIButton *)btn index:(NSInteger)index {
+//    if (index ==0 ) {
+//        btn.titleLabel.textAlignment = NSTextAlignmentLeft;
+//        [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//        btn.layer.borderColor = [UIColor redColor].CGColor;
+//        btn.layer.borderWidth = 1;
+//    }
+//    else if (index == 3) {
+//        btn.backgroundColor = [UIColor hexStringToColor:@"F7F7F7"];
+//        return;
+//    }
+//}
 
 @end

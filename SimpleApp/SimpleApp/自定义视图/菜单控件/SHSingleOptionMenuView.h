@@ -43,11 +43,18 @@
 
 - (BOOL)menu:(SHSingleOptionMenuView *)menu canMulSelectedForHeaderIndex:(NSInteger)index;
 
+/**
+ 是否能够多选
+ */
+- (BOOL)menu:(SHSingleOptionMenuView *)menu canMultiChoiceForHeaderIndex:(NSInteger)index;
+
 #pragma mark - click action
 
 - (void)menu:(SHSingleOptionMenuView *)menu didSelectedHeaderItem:(NSInteger)index;
 
 - (void)menu:(SHSingleOptionMenuView *)menu didSelectedContentItemForIndexPath:(SHOptionMenuIndexPath *)indexPath;
+
+- (void)menu:(SHSingleOptionMenuView *)menu didClickBottomAction:(BOOL)isConfirm index:(NSInteger)headerIndex;
 
 @end
 

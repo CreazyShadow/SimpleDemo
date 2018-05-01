@@ -118,10 +118,18 @@ static CGFloat const kContentMaxHeight = 260;
     
     //刷新界面
     [self.content reloadData];
+    
+    if ([self.delegate respondsToSelector:@selector(menu:didClickBottomAction:index:)]) {
+        [self.delegate menu:self didClickBottomAction:NO index:_currentSelectedMenuIndex];
+    }
 }
 
 - (void)confirmAction {
-    [self setupContentStatus:NO];
+    [self changeUIWhenSelectedContentItems];
+    
+    if ([self.delegate respondsToSelector:@selector(menu:didClickBottomAction:index:)]) {
+        [self.delegate menu:self didClickBottomAction:YES index:_currentSelectedMenuIndex];
+    }
 }
 
 #pragma mark - public
@@ -202,25 +210,25 @@ static CGFloat const kContentMaxHeight = 260;
 - (void)menuContentView:(SHSingleOptionMenuContentView *)contentView didSelectItem:(NSInteger)index {
     SHOptionMenuIndexPath *indexPath = [SHOptionMenuIndexPath indexPathForHeaderIndex:_currentSelectedMenuIndex contentIndex:index];
     
+    //是否能够多选
+    BOOL canMulti = [self canMultiChoiceForHeaderIndex:_currentSelectedMenuIndex];
+    
     //修改选中的缓存
     NSMutableArray *items = [self cacheItemsForHeaderIndex:_currentSelectedMenuIndex];
     if ([items containsObject:indexPath]) {
         [items removeObject:indexPath];
     } else {
-        //如果只能单选，删除以前的
-//        [items removeAllObjects];
-        
-        //如果能够多选
+        if (!canMulti) { //单选
+            [items removeAllObjects];
+        }
         
         [items addObject:indexPath];
     }
     
     //隐藏contnt
-//    [self setupContentStatus:NO];
-    
-    //更新header menu状态
-    BOOL hasSelectedItem = [self hasSelectedItemForMenuHeaderIndex:_currentSelectedMenuIndex];
-    [self.header updateMenuItemStatus:hasSelectedItem index:_currentSelectedMenuIndex];
+    if (!canMulti) {
+        [self changeUIWhenSelectedContentItems];
+    }
     
     if ([self.delegate respondsToSelector:@selector(menu:didSelectedContentItemForIndexPath:)]) {
         [self.delegate menu:self didSelectedContentItemForIndexPath:indexPath];
@@ -241,7 +249,7 @@ static CGFloat const kContentMaxHeight = 260;
     self.content.height = height;
     self.bottomView.y = _content.maxY;
     self.content.hidden = NO;
-    self.bottomView.hidden = NO;
+    self.bottomView.hidden = ![self canMultiChoiceForHeaderIndex:_currentSelectedMenuIndex];
     self.height = self.expandHeight;
     self.maskView.height = self.height;
 }
@@ -254,6 +262,22 @@ static CGFloat const kContentMaxHeight = 260;
     }
     
     return items;
+}
+
+- (BOOL)canMultiChoiceForHeaderIndex:(NSInteger)index {
+    if ([self.delegate respondsToSelector:@selector(menu:canMulSelectedForHeaderIndex:)]) {
+        return [self.delegate menu:self canMulSelectedForHeaderIndex:index];
+    }
+    
+    return NO;
+}
+
+- (void)changeUIWhenSelectedContentItems {
+    [self setupContentStatus:NO];
+    
+    //更新header menu状态
+    BOOL hasSelectedItem = [self hasSelectedItemForMenuHeaderIndex:_currentSelectedMenuIndex];
+    [self.header updateMenuItemStatus:hasSelectedItem index:_currentSelectedMenuIndex];
 }
 
 #pragma mark - getter & setter

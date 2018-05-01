@@ -112,6 +112,12 @@
 }
 
 - (void)menu:(SHSingleOptionMenuView *)menu didSelectedContentItemForIndexPath:(SHOptionMenuIndexPath *)indexPath {
+    if (indexPath.headerIndex == 0) {
+        NSSet *set = [NSSet setWithObject:@(indexPath.contentIndex)];
+        [menu reloadContentItemsAtIndexs:set];
+        return;
+    }
+    
     NSArray *titles = @[@"品牌", @"分类", @"尺码", @"闪电发货"];
     BOOL hasSelectItems = [menu menuSelectedItemsWithHeaderIndex:indexPath.headerIndex].count > 0;
     NSString *title = [NSString stringWithFormat:@"%@---%ld", titles[indexPath.headerIndex], indexPath.contentIndex];
@@ -123,6 +129,34 @@
     
     NSSet *set = [NSSet setWithObject:@(indexPath.contentIndex)];
     [menu reloadContentItemsAtIndexs:set];
+}
+
+- (void)menu:(SHSingleOptionMenuView *)menu didClickBottomAction:(BOOL)isConfirm index:(NSInteger)headerIndex {
+    if (!isConfirm) {
+        return;
+    }
+    
+    NSArray *titles = @[@"品牌", @"分类", @"尺码", @"闪电发货"];
+    NSArray<SHOptionMenuIndexPath *> *selectedItems = [menu menuSelectedItemsWithHeaderIndex:headerIndex];
+    NSMutableString *title = [NSMutableString string];
+    for (SHOptionMenuIndexPath *item in selectedItems) {
+        [title appendFormat:@"%@---%ld,", titles[headerIndex], item.contentIndex];
+    }
+    
+    if (selectedItems.count > 0) {
+        [title deleteCharactersInRange:NSMakeRange(title.length - 1, 1)];
+    }
+    
+    if (title.length == 0) {
+        title = titles[headerIndex];
+    }
+    
+    [menu reloadHeaderItemWithTitle:title index:headerIndex];
+}
+
+
+- (BOOL)menu:(SHSingleOptionMenuView *)menu canMulSelectedForHeaderIndex:(NSInteger)index {
+    return index == 0;
 }
 
 //- (void)willDisplayMenuHeaderItem:(UIButton *)btn index:(NSInteger)index {

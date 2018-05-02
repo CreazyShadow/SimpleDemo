@@ -11,6 +11,8 @@
 		010D9C88208EC29E0066619A /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D9C86208EC29E0066619A /* UIColor+Hex.m */; };
 		010D9C8B208EC3CC0066619A /* UIButton+ImageTitleStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D9C89208EC3CB0066619A /* UIButton+ImageTitleStyle.m */; };
 		010D9C8C208EC3CC0066619A /* UIButton+ImageTitleStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 010D9C8A208EC3CB0066619A /* UIButton+ImageTitleStyle.h */; };
+		0117732D2099656B00160E17 /* UIView+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0117732B2099656A00160E17 /* UIView+Utils.h */; };
+		0117732E2099656B00160E17 /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0117732C2099656B00160E17 /* UIView+Utils.m */; };
 		01258862208078BE00A2686D /* UIButton+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 01258860208078BE00A2686D /* UIButton+Utils.h */; };
 		01258863208078BE00A2686D /* UIButton+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01258861208078BE00A2686D /* UIButton+Utils.m */; };
 		7301A1991DF54D2700274358 /* NSObject+Single.m in Sources */ = {isa = PBXBuildFile; fileRef = 7301A1981DF54D2700274358 /* NSObject+Single.m */; };
@@ -86,6 +88,8 @@
 		010D9C86208EC29E0066619A /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		010D9C89208EC3CB0066619A /* UIButton+ImageTitleStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleStyle.m"; sourceTree = "<group>"; };
 		010D9C8A208EC3CB0066619A /* UIButton+ImageTitleStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleStyle.h"; sourceTree = "<group>"; };
+		0117732B2099656A00160E17 /* UIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
+		0117732C2099656B00160E17 /* UIView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
 		01258860208078BE00A2686D /* UIButton+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Utils.h"; sourceTree = "<group>"; };
 		01258861208078BE00A2686D /* UIButton+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Utils.m"; sourceTree = "<group>"; };
 		7301A1971DF54D2700274358 /* NSObject+Single.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Single.h"; sourceTree = "<group>"; };
@@ -220,6 +224,8 @@
 		732B3B6C1DB9A427000A6A25 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0117732B2099656A00160E17 /* UIView+Utils.h */,
+				0117732C2099656B00160E17 /* UIView+Utils.m */,
 				732B3B6D1DB9A427000A6A25 /* UIView+Extension.h */,
 				732B3B6E1DB9A427000A6A25 /* UIView+Extension.m */,
 			);
@@ -419,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73C10A631FA81A0A005E2B3B /* UIScrollView+EmptyDataSet.h in Headers */,
+				0117732D2099656B00160E17 /* UIView+Utils.h in Headers */,
 				73A8B7911E8F8C7E00303C4D /* LoadChartDataSource.h in Headers */,
 				AE16FECB1F3BF6DA0050E892 /* NSObject+Runtime.h in Headers */,
 				735ADFBF1E83624D00F79620 /* TestViewController_1.h in Headers */,
@@ -592,6 +599,7 @@
 				736266FD1FB2D3FC000A518B /* EmptySubObj.m in Sources */,
 				732B3B791DB9A427000A6A25 /* PageView.m in Sources */,
 				731A049B1CD3101300BFA726 /* URLInterceptor.m in Sources */,
+				0117732E2099656B00160E17 /* UIView+Utils.m in Sources */,
 				731A04AF1CD3341B00BFA726 /* URLHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

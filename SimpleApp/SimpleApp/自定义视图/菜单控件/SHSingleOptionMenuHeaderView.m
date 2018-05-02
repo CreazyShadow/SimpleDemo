@@ -8,7 +8,6 @@
 
 #import "SHSingleOptionMenuHeaderView.h"
 
-#define colorHex(R) [UIColor hexStringToColor:(R)]
 #define kDefaultMenuColor  colorHex(@"333333")
 #define kSelectedMenuColor colorHex(@"DD1712")
 

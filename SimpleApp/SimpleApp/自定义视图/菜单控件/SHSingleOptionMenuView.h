@@ -13,6 +13,11 @@
 
 @class SHSingleOptionMenuView;
 
+typedef NS_ENUM(NSInteger, SHSingleOptionMenuStyle) {
+    SHSingleOptionMenuStylePlainHeader,
+    SHSingleOptionMenuStyleBoxHeader
+};
+
 #pragma mark - position indexpath
 
 @interface SHOptionMenuIndexPath : NSObject
@@ -41,12 +46,10 @@
 
 #pragma mark - content setting
 
-- (BOOL)menu:(SHSingleOptionMenuView *)menu canMulSelectedForHeaderIndex:(NSInteger)index;
-
 /**
  是否能够多选
  */
-- (BOOL)menu:(SHSingleOptionMenuView *)menu canMultiChoiceForHeaderIndex:(NSInteger)index;
+- (BOOL)menu:(SHSingleOptionMenuView *)menu canMulSelectedForHeaderIndex:(NSInteger)index;
 
 #pragma mark - click action
 
@@ -64,7 +67,8 @@
 
 @property (nonatomic, weak) id<SingleOptionMenuDelegate> delegate;
 @property (nonatomic, strong) NSArray<SHSingleOptionMenuHeaderEntityModel *> *menuHeaderSource;
-@property (nonatomic, assign) CGFloat expandHeight;       ///< 展开菜单项时的高度 必须设置
+
+- (instancetype)initWithFrame:(CGRect)frame style:(SHSingleOptionMenuStyle)style;
 
 #pragma mark - header
 @property (nonatomic, assign) CGFloat headerItemWidth;    ///< 默认等分

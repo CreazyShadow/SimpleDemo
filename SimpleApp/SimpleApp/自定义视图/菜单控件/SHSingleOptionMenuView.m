@@ -10,6 +10,7 @@
 
 #import "SHSingleOptionMenuHeaderView.h"
 #import "SHSingleOptionMenuContentView.h"
+#import "AppDelegate.h"
 
 #pragma mark - position indexpath
 
@@ -48,6 +49,7 @@ static CGFloat const kContentMaxHeight = 260;
 @property (nonatomic, strong) UIButton *confirmBtn;
 
 @property (nonatomic, strong) NSMutableDictionary<NSNumber *, NSMutableArray<SHOptionMenuIndexPath *> *> *menuSelectedItemsCache;
+@property (nonatomic, assign) SHSingleOptionMenuStyle style;
 
 @end
 
@@ -58,10 +60,11 @@ static CGFloat const kContentMaxHeight = 260;
 
 #pragma mark - life cycle(init)
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame style:(SHSingleOptionMenuStyle)style {
     if (self = [super initWithFrame:frame]) {
         self.clipsToBounds = YES;
         self.menuSelectedItemsCache = [[NSMutableDictionary alloc] init];
+        self.style = style;
         
         [self buildSubViews];
     }
@@ -72,34 +75,34 @@ static CGFloat const kContentMaxHeight = 260;
 #pragma mark - init subviews
 
 - (void)buildSubViews {
-    self.header = [[SHSingleOptionMenuHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height) style:SHMenuHeaderStyleCube];
+    self.header = [[SHSingleOptionMenuHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height) style:(SHMenuHeaderStyle)_style];
     _header.delegate = self;
     [self addSubview:_header];
     
-    self.maskView = [[UIControl alloc] initWithFrame:CGRectMake(0, _header.maxY, self.width, self.height)];
+    self.maskView = [[UIControl alloc] initWithFrame:CGRectMake(0, _header.bottom, self.width, self.height)];
     _maskView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
     [_maskView addTarget:self action:@selector(maskAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_maskView];
     
-    self.content = [[SHSingleOptionMenuContentView alloc] initWithFrame:CGRectMake(0, _header.maxY, self.width, kContentMaxHeight)];
+    self.content = [[SHSingleOptionMenuContentView alloc] initWithFrame:CGRectMake(0, _header.bottom, self.width, kContentMaxHeight)];
     _content.hidden = YES;
     _content.delegate = self;
     [self addSubview:_content];
     
-    self.bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, _content.maxY, self.width, 44)];
+    self.bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, _content.bottom, self.width, 44)];
     [self addSubview:_bottomView];
     
     self.resetBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, _bottomView.width * 0.5, _bottomView.height)];
     [_resetBtn setTitle:@"重置" forState:UIControlStateNormal];
-    [_resetBtn setTitleColor:[UIColor hexStringToColor:@"666666"] forState:UIControlStateNormal];
-    _resetBtn.backgroundColor = [UIColor hexStringToColor:@"F7F7F7"];
+    [_resetBtn setTitleColor:colorHex(@"666666") forState:UIControlStateNormal];
+    _resetBtn.backgroundColor = colorHex(@"F7F7F7");
     _resetBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [_resetBtn addTarget:self action:@selector(resetAction) forControlEvents:UIControlEventTouchUpInside];
     [_bottomView addSubview:_resetBtn];
     
-    self.confirmBtn = [[UIButton alloc] initWithFrame:CGRectMake(_resetBtn.maxX, 0, _bottomView.width * 0.5, _bottomView.height)];
+    self.confirmBtn = [[UIButton alloc] initWithFrame:CGRectMake(_resetBtn.bottom, 0, _bottomView.width * 0.5, _bottomView.height)];
     [_confirmBtn setTitle:@"确定" forState:UIControlStateNormal];
-    [_confirmBtn setTitleColor:[UIColor hexStringToColor:@"FFFFFF"] forState:UIControlStateNormal];
+    [_confirmBtn setTitleColor:colorHex(@"FFFFFF") forState:UIControlStateNormal];
     _confirmBtn.backgroundColor = [UIColor redColor];
     _confirmBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [_confirmBtn addTarget:self action:@selector(confirmAction) forControlEvents:UIControlEventTouchUpInside];
@@ -247,14 +250,12 @@ static CGFloat const kContentMaxHeight = 260;
     
     CGFloat height = self.content.expectHeight > kContentMaxHeight ? kContentMaxHeight : self.content.expectHeight;
     self.content.height = height;
-    self.bottomView.y = _content.maxY;
+    self.bottomView.top = _content.bottom;
     self.content.hidden = NO;
     self.bottomView.hidden = ![self canMultiChoiceForHeaderIndex:_currentSelectedMenuIndex];
-//    self.height = self.expandHeight;
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    CGRect rect = [self.superview convertRect:self.frame toView:window];
-    rect = [self convertRect:self.bounds toView:window];
-    self.height = kScreenHeight - rect.origin.y;
+    UIWindow *window = ((AppDelegate *)[UIApplication sharedApplication].delegate).window;
+    CGRect rect = [self convertRect:self.bounds toView:window];
+    self.height = kScreenHeight - rect.origin.x;
     self.maskView.height = self.height;
 }
 

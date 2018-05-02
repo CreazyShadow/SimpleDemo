@@ -74,9 +74,9 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
         }
         
         //自定义样式
-//        if ([self.delegate respondsToSelector:@selector(willDisplayMenuHeaderItem:index:)]) {
-//            [self.delegate willDisplayMenuHeaderItem:_menus[i] index:i];
-//        }
+        if ([self.delegate respondsToSelector:@selector(willDisplayMenuHeaderItem:index:)]) {
+            [self.delegate willDisplayMenuHeaderItem:_menus[i] index:i];
+        }
     }
 }
 

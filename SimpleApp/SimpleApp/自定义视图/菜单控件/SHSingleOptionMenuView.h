@@ -42,7 +42,7 @@ typedef NS_ENUM(NSInteger, SHSingleOptionMenuStyle) {
 /**
  用于设置item的样式
  */
-- (void)willDisplayMenuHeaderItem:(UIButton *)btn index:(NSInteger)index;
+- (void)menu:(SHSingleOptionMenuView *)menu willDisplayHeaderItem:(UIButton *)btn index:(NSInteger)index;
 
 #pragma mark - content setting
 

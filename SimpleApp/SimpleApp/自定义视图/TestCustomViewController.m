@@ -68,7 +68,7 @@
         header.icon = @"filter_img";
         header.selectedIcon = @"selectd_filter_img";
         header.iconIsLeft = [titles.lastObject isEqualToString:title];
-//        header.groupName = @"AAA";
+        header.groupName = [NSString stringWithFormat:@"AAA%ld", [titles indexOfObject:title]];
         
         [entity addObject:header];
     }
@@ -158,17 +158,15 @@
     return index == 0;
 }
 
-//- (void)willDisplayMenuHeaderItem:(UIButton *)btn index:(NSInteger)index {
-//    if (index ==0 ) {
-//        btn.titleLabel.textAlignment = NSTextAlignmentLeft;
-//        [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-//        btn.layer.borderColor = [UIColor redColor].CGColor;
-//        btn.layer.borderWidth = 1;
-//    }
-//    else if (index == 3) {
-//        btn.backgroundColor = [UIColor hexStringToColor:@"F7F7F7"];
-//        return;
-//    }
-//}
+- (void)menu:(SHSingleOptionMenuView *)menu willDisplayHeaderItem:(UIButton *)btn index:(NSInteger)index {
+    if (index < 3) {
+        btn.titleEdgeInsets = UIEdgeInsetsZero;
+        btn.imageEdgeInsets = UIEdgeInsetsZero;
+        [btn layoutIfNeeded];
+        
+        btn.titleEdgeInsets = UIEdgeInsetsMake(0, -btn.titleLabel.origin.x, 0, btn.titleLabel.origin.x);
+        btn.imageEdgeInsets = UIEdgeInsetsMake(0, -(btn.imageView.origin.x - btn.titleLabel.width - 2), 0, (btn.imageView.origin.x - btn.titleLabel.width - 2));
+    }
+}
 
 @end

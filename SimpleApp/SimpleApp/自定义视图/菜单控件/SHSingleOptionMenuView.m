@@ -100,7 +100,7 @@ static CGFloat const kContentMaxHeight = 260;
     [_resetBtn addTarget:self action:@selector(resetAction) forControlEvents:UIControlEventTouchUpInside];
     [_bottomView addSubview:_resetBtn];
     
-    self.confirmBtn = [[UIButton alloc] initWithFrame:CGRectMake(_resetBtn.bottom, 0, _bottomView.width * 0.5, _bottomView.height)];
+    self.confirmBtn = [[UIButton alloc] initWithFrame:CGRectMake(_resetBtn.right, 0, _bottomView.width * 0.5, _bottomView.height)];
     [_confirmBtn setTitle:@"确定" forState:UIControlStateNormal];
     [_confirmBtn setTitleColor:colorHex(@"FFFFFF") forState:UIControlStateNormal];
     _confirmBtn.backgroundColor = [UIColor redColor];
@@ -200,6 +200,12 @@ static CGFloat const kContentMaxHeight = 260;
 
 - (BOOL)hasSelectedItemForMenuHeaderIndex:(NSInteger)index {
     return self.menuSelectedItemsCache[@(index)].count > 0;
+}
+
+- (void)willDisplayMenuHeaderItem:(UIButton *)btn index:(NSInteger)index {
+    if ([self.delegate respondsToSelector:@selector(menu:willDisplayHeaderItem:index:)]) {
+        [self.delegate menu:self willDisplayHeaderItem:btn index:index];
+    }
 }
 
 #pragma mark - SingleOptionMenuContentViewDelegate

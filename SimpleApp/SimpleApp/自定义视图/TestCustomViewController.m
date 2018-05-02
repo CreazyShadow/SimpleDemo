@@ -52,7 +52,7 @@
     _menu.headerHorPadding = 15;
     _menu.headerItemSpace = 10;
     _menu.headerItemHeight = 25;
-    _menu.expandHeight = 500;
+//    _menu.expandHeight = 500;
 //    _menu.headerItemWidth = 50;
     [self.view addSubview:_menu];
 }

@@ -250,7 +250,11 @@ static CGFloat const kContentMaxHeight = 260;
     self.bottomView.y = _content.maxY;
     self.content.hidden = NO;
     self.bottomView.hidden = ![self canMultiChoiceForHeaderIndex:_currentSelectedMenuIndex];
-    self.height = self.expandHeight;
+//    self.height = self.expandHeight;
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    CGRect rect = [self.superview convertRect:self.frame toView:window];
+    rect = [self convertRect:self.bounds toView:window];
+    self.height = kScreenHeight - rect.origin.y;
     self.maskView.height = self.height;
 }
 

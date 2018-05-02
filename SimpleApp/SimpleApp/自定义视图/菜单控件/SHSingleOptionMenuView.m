@@ -166,6 +166,14 @@ static CGFloat const kContentMaxHeight = 260;
     [self.content reloadItemsForIndexs:indexs];
 }
 
+- (void)resetMenu {
+    // reset header
+    [self.header reloadItems];
+    
+    // reset content
+    [self.menuSelectedItemsCache removeAllObjects];
+}
+
 #pragma mark - SingleOptionMenuHeaderDelegate
 
 - (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index entity:(SHSingleOptionMenuHeaderEntityModel *)entity isChangeTab:(BOOL)isChangeTab {
@@ -255,7 +263,7 @@ static CGFloat const kContentMaxHeight = 260;
     self.bottomView.hidden = ![self canMultiChoiceForHeaderIndex:_currentSelectedMenuIndex];
     UIWindow *window = ((AppDelegate *)[UIApplication sharedApplication].delegate).window;
     CGRect rect = [self convertRect:self.bounds toView:window];
-    self.height = kScreenHeight - rect.origin.x;
+    self.height = kScreenHeight - rect.origin.y;
     self.maskView.height = self.height;
 }
 

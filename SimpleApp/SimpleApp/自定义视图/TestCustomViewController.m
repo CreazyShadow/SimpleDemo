@@ -32,7 +32,7 @@
 
 #pragma mark - touch event
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-
+    [self.menu resetMenu];
 }
 
 #pragma mark - select image view
@@ -46,7 +46,7 @@
 #pragma mark - single option menu view
 
 - (void)addOptionMenuView {
-    self.menu = [[SHSingleOptionMenuView alloc] initWithFrame:CGRectMake(0, 100, kScreenWidth, 45) style:SHSingleOptionMenuStylePlainHeader];
+    self.menu = [[SHSingleOptionMenuView alloc] initWithFrame:CGRectMake(0, 100, kScreenWidth, 45) style:SHSingleOptionMenuStyleBoxHeader];
     _menu.menuHeaderSource = [self menuHeaderItemsSource];
     _menu.delegate = self;
     _menu.headerHorPadding = 15;
@@ -68,7 +68,7 @@
         header.icon = @"filter_img";
         header.selectedIcon = @"selectd_filter_img";
         header.iconIsLeft = [titles.lastObject isEqualToString:title];
-        header.groupName = @"AAA";
+//        header.groupName = @"AAA";
         
         [entity addObject:header];
     }
@@ -153,7 +153,6 @@
     
     [menu reloadHeaderItemWithTitle:title index:headerIndex];
 }
-
 
 - (BOOL)menu:(SHSingleOptionMenuView *)menu canMulSelectedForHeaderIndex:(NSInteger)index {
     return index == 0;

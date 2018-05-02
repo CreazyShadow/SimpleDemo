@@ -115,6 +115,10 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 
 #pragma mark - public
 
+- (void)reloadItems {
+    [self createOptionMenuItems];
+}
+
 - (void)reloadItemWithTitle:(NSString *)title index:(NSInteger)index {
     [self.menus[index] setTitle:title forState:UIControlStateNormal];
     [self setNeedsLayout];
@@ -182,7 +186,7 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
     
     NSString *lastGroup = self.optionMenuSource[last.tag - kMenuItemBtnStartTag].groupName;
     NSString *currentGroup = self.optionMenuSource[current.tag - kMenuItemBtnStartTag].groupName;
-    if (![lastGroup isEqualToString:currentGroup]) {
+    if (lastGroup.length && currentGroup.length && ![lastGroup isEqualToString:currentGroup]) {
         return NO;
     }
     

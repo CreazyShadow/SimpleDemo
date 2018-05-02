@@ -51,5 +51,6 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderStyle) {
 
 - (void)reloadItemByEntity:(SHSingleOptionMenuHeaderEntityModel *)entity index:(NSInteger)index;
 - (void)reloadItemWithTitle:(NSString *)title index:(NSInteger)index;
+- (void)reloadItems;
 
 @end

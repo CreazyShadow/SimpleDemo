@@ -77,6 +77,7 @@ static CGFloat const kContentMaxHeight = 260;
 
 - (void)buildSubViews {
     self.header = [[SHSingleOptionMenuHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height) style:(SHMenuHeaderStyle)_style];
+    _header.backgroundColor = [UIColor whiteColor];
     _header.delegate = self;
     [self addSubview:_header];
     
@@ -152,7 +153,7 @@ static CGFloat const kContentMaxHeight = 260;
     //判断分组 如果同一个group 则设置最后item
     NSMutableDictionary<NSString *, SHOptionMenuIndexPath *> *needUpdate = [NSMutableDictionary dictionary];
     for (SHOptionMenuIndexPath *item in indexPaths) {
-        NSString *groupName = self.menuHeaderSource[item.headerIndex].groupName;
+        NSString *groupName = [self.delegate menu:self headerEntityForIndex:item.headerIndex].groupName;
         needUpdate[groupName] = item;
     }
     
@@ -163,18 +164,14 @@ static CGFloat const kContentMaxHeight = 260;
 
 - (void)reloadMenu {
     // 创建header
-    self.header.optionMenuSource = _menuHeaderSource;
+    [self.header reloadItems];
     
     //创建content
     [self.content reloadData];
 }
 
-- (void)reloadHeaderItemWithTitle:(NSString *)title index:(NSInteger)index {
-    [self.header reloadItemWithTitle:title index:index];
-}
-
-- (void)reloadHeaderItemWithEntity:(SHSingleOptionMenuHeaderEntityModel *)entity index:(NSInteger)index {
-    [self.header reloadItemByEntity:entity index:index];
+- (void)reloadHeaderItemsWithIndexs:(NSSet<NSNumber *> *)indexs {
+    [self.header reloadItemsWithIndexs:indexs];
 }
 
 - (void)reloadContentItemsAtIndexs:(NSSet *)indexs {
@@ -191,14 +188,22 @@ static CGFloat const kContentMaxHeight = 260;
 
 #pragma mark - SingleOptionMenuHeaderDelegate
 
-- (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index entity:(SHSingleOptionMenuHeaderEntityModel *)entity isChangeTab:(BOOL)isChangeTab {
+- (NSInteger)numberOfItemsCount {
+    return [self.delegate numberOfHeaderItemsCountForMenu:self];
+}
+
+- (SHSingleOptionMenuHeaderEntityModel *)itemEntityModelForIndex:(NSInteger)index {
+    return [self.delegate menu:self headerEntityForIndex:index];
+}
+
+- (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index isChangeTab:(BOOL)isChangeTab {
     _currentSelectedMenuIndex = index;
     
     if (!self.content.hidden && !isChangeTab) { //已经展示内容 并且 点击
         [self setupContentStatus:NO];
         [self.header updateMenuItemStatus:[self hasSelectedItemForMenuHeaderIndex:index] index:index];
         //上一个header item恢复到选中状态
-//        [self.header updateMenuItemStatus:YES index:_lastSelectedItemHeaderIndex];
+        //        [self.header updateMenuItemStatus:YES index:_lastSelectedItemHeaderIndex];
         return;
     }
     
@@ -318,11 +323,6 @@ static CGFloat const kContentMaxHeight = 260;
 }
 
 #pragma mark - getter & setter
-
-- (void)setMenuHeaderSource:(NSArray<SHSingleOptionMenuHeaderEntityModel *> *)menuHeaderSource {
-    _menuHeaderSource = [menuHeaderSource copy];
-    self.header.optionMenuSource = _menuHeaderSource;
-}
 
 - (void)setHeaderItemSpace:(CGFloat)headerItemSpace {
     _headerItemSpace = headerItemSpace;

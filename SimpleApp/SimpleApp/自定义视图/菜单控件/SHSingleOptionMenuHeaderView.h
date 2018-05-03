@@ -13,7 +13,7 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderStyle) {
     SHMenuHeaderStyleCube       ///< 方块形状
 };
 
-@interface SHSingleOptionMenuHeaderEntityModel : NSObject
+@interface SHSingleOptionMenuHeaderEntityModel : NSObject<NSCopying>
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *icon;
@@ -25,19 +25,23 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderStyle) {
 
 @protocol SingleOptionMenuHeaderDelegate <NSObject>
 
+- (NSInteger)numberOfItemsCount;
+
+- (SHSingleOptionMenuHeaderEntityModel *)itemEntityModelForIndex:(NSInteger)index;
+
 @optional
 /**
  用于设置item的样式
  */
 - (void)willDisplayMenuHeaderItem:(UIButton *)btn index:(NSInteger)index;
 
-- (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index entity:(SHSingleOptionMenuHeaderEntityModel *)entity isChangeTab:(BOOL)isChangeTab;
+- (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index isChangeTab:(BOOL)isChangeTab;
 
 @end
 
 @interface SHSingleOptionMenuHeaderView : UIView
 
-@property (nonatomic, strong) NSArray<SHSingleOptionMenuHeaderEntityModel *> *optionMenuSource;
+//@property (nonatomic, strong) NSArray<SHSingleOptionMenuHeaderEntityModel *> *optionMenuSource;
 @property (nonatomic, weak) id<SingleOptionMenuHeaderDelegate> delegate;
 
 @property (nonatomic, assign) CGFloat itemWidth;    ///< 默认等分
@@ -49,8 +53,7 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderStyle) {
 
 - (void)updateMenuItemStatus:(BOOL)status index:(NSInteger)index;
 
-- (void)reloadItemByEntity:(SHSingleOptionMenuHeaderEntityModel *)entity index:(NSInteger)index;
-- (void)reloadItemWithTitle:(NSString *)title index:(NSInteger)index;
 - (void)reloadItems;
+- (void)reloadItemsWithIndexs:(NSSet<NSNumber *> *)indexs;
 
 @end

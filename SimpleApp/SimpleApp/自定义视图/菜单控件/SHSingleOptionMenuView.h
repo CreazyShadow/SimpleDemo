@@ -31,6 +31,12 @@ typedef NS_ENUM(NSInteger, SHSingleOptionMenuStyle) {
 
 @protocol SingleOptionMenuDelegate<NSObject>
 
+#pragma mark - header source
+- (NSInteger)numberOfHeaderItemsCountForMenu:(SHSingleOptionMenuView *)menu;
+
+- (SHSingleOptionMenuHeaderEntityModel *)menu:(SHSingleOptionMenuView *)menu headerEntityForIndex:(NSInteger)index;
+
+#pragma mark - content source
 - (NSInteger)menu:(SHSingleOptionMenuView *)menu numberOfContentItemsCountForHeaderIndex:(NSInteger)index;
 
 - (CGSize)menu:(SHSingleOptionMenuView *)menu itemSizeForIndexPath:(SHOptionMenuIndexPath *)indexPath;
@@ -66,7 +72,7 @@ typedef NS_ENUM(NSInteger, SHSingleOptionMenuStyle) {
 @interface SHSingleOptionMenuView : UIView
 
 @property (nonatomic, weak) id<SingleOptionMenuDelegate> delegate;
-@property (nonatomic, strong) NSArray<SHSingleOptionMenuHeaderEntityModel *> *menuHeaderSource;
+//@property (nonatomic, strong) NSArray<SHSingleOptionMenuHeaderEntityModel *> *menuHeaderSource;
 
 - (instancetype)initWithFrame:(CGRect)frame style:(SHSingleOptionMenuStyle)style;
 
@@ -85,8 +91,7 @@ typedef NS_ENUM(NSInteger, SHSingleOptionMenuStyle) {
 - (void)setupDefaultSelectedIndexPath:(NSArray<SHOptionMenuIndexPath *> *)indexPaths;
 
 - (void)reloadMenu;
-- (void)reloadHeaderItemWithTitle:(NSString *)title index:(NSInteger)index;
-- (void)reloadHeaderItemWithEntity:(SHSingleOptionMenuHeaderEntityModel *)entity index:(NSInteger)index;
+- (void)reloadHeaderItemsWithIndexs:(NSSet<NSNumber *> *)indexs;
 - (void)reloadContentItemsAtIndexs:(NSSet<NSNumber *> *)indexs;
 
 - (void)resetMenu;

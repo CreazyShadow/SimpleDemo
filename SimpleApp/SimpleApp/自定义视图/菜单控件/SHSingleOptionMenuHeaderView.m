@@ -20,6 +20,17 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 };
 
 @implementation SHSingleOptionMenuHeaderEntityModel
+
+- (nonnull id)copyWithZone:(nullable NSZone *)zone {
+    SHSingleOptionMenuHeaderEntityModel *model = [SHSingleOptionMenuHeaderEntityModel allocWithZone:zone];
+    model.title = self.title;
+    model.icon = self.icon;
+    model.selectedIcon = self.selectedIcon;
+    model.iconIsLeft = self.iconIsLeft;
+    model.groupName = self.groupName;
+    return model;
+}
+
 @end
 
 @interface SHSingleOptionMenuHeaderView()
@@ -35,6 +46,10 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 @end
 
 @implementation SHSingleOptionMenuHeaderView
+{
+    UIButton *_lastItem;
+	BOOL _isFirstCreate;
+}
 
 #pragma mark - life cycle(init)
 
@@ -43,6 +58,7 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
         self.menus = [NSMutableArray array];
         self.menuBorders = [NSMutableArray array];
         self.style = style;
+        _isFirstCreate = YES;
         
         [self buildSubViews];
     }
@@ -55,19 +71,30 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    //    CGFloat height = [self itemHeight] ?: AdaptedWidthValue(kItemDefaultHeight);
-    CGFloat width = (self.width - (_optionMenuSource.count - 1) * _itemSpace - 2 * _horPadding) / _optionMenuSource.count;
+    NSInteger count = [self.delegate numberOfItemsCount];
+    if (count == 0) {
+        return;
+    }
+    
+    //创建items
+    if (_isFirstCreate) {
+        [self createOptionMenuItems];
+        _isFirstCreate = NO;
+    }
+    
+    //更新布局
+    CGFloat width = (self.width - (count - 1) * _itemSpace - 2 * _horPadding) / count;
     width = _itemWidth == 0 ? width : _itemWidth;
     CGFloat height = _itemHeight == 0 ? kItemDefaultHeight : _itemHeight;
     
-    self.containerScrollView.contentSize = CGSizeMake(width * _optionMenuSource.count, 0);
+    self.containerScrollView.contentSize = CGSizeMake(width * count, 0);
     for (int i = 0; i < _menus.count && i < _menuBorders.count; i++) {
         //设置item frame
         _menuBorders[i].frame = CGRectMake(_horPadding + (width + _itemSpace) * i, (self.height - height) * 0.5, width, (self.height + height) * 0.5 + 5); // 5px为了超出父视图self
         _menus[i].frame = CGRectMake(0, 0, width, height);
         
         //调整图片位置
-        if (_optionMenuSource[i].iconIsLeft) {
+        if ([self.delegate itemEntityModelForIndex:i].iconIsLeft) {
             [_menus[i] setButtonImageTitleStyle:ButtonImageTitleStyleLeft padding:4.f];
         } else {
             [_menus[i] setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:4.f];
@@ -95,21 +122,20 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 #pragma mark - event responder
 
 - (void)menuItemClickAction:(UIButton *)btn {
-    static UIButton *lastItem = nil;
     NSInteger selectedIndex = btn.tag - kMenuItemBtnStartTag;
     
-    BOOL isChangeTab = [self itemShouldChangeStatusWithLast:lastItem current:btn];
+    BOOL isChangeTab = [self itemShouldChangeStatusWithLast:_lastItem current:btn];
     if (isChangeTab) {
-        lastItem.selected = NO;
-        [self renderMenuItem:lastItem andStatus:NO];
+        _lastItem.selected = NO;
+        [self renderMenuItem:_lastItem andStatus:NO];
     }
     
-    lastItem = btn;
+    _lastItem = btn;
     
     [self updateItemStatusToSelecting:btn.tag - kMenuItemBtnStartTag];
     
-    if ([self.delegate respondsToSelector:@selector(menuHeaderDidClickItem:index:entity:isChangeTab:)]) {
-        [self.delegate menuHeaderDidClickItem:btn index:selectedIndex entity:_optionMenuSource[selectedIndex] isChangeTab:isChangeTab];
+    if ([self.delegate respondsToSelector:@selector(menuHeaderDidClickItem:index:isChangeTab:)]) {
+        [self.delegate menuHeaderDidClickItem:btn index:selectedIndex isChangeTab:isChangeTab];
     }
 }
 
@@ -119,20 +145,16 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
     [self createOptionMenuItems];
 }
 
-- (void)reloadItemWithTitle:(NSString *)title index:(NSInteger)index {
-    [self.menus[index] setTitle:title forState:UIControlStateNormal];
-    [self setNeedsLayout];
-}
-
-- (void)reloadItemByEntity:(SHSingleOptionMenuHeaderEntityModel *)entity index:(NSInteger)index {
-    if (!entity || !entity.title.length || index < 0 || index >= _optionMenuSource.count) {
-        return;
+- (void)reloadItemsWithIndexs:(NSSet<NSNumber *> *)indexs {
+    for (NSNumber *temp in indexs) {
+        NSInteger index = temp.integerValue;
+        if (index < 0 || index >= self.menus.count) {
+            continue;
+        }
+        
+        [self setupItem:self.menus[index] withEntityModel:[self.delegate itemEntityModelForIndex:index]];
     }
     
-    UIButton *item = self.menus[index];
-    [item setTitle:entity.title forState:UIControlStateNormal];
-    [item setImage:[UIImage imageNamed:entity.icon] forState:UIControlStateNormal];
-    [item setImage:[UIImage imageNamed:entity.selectedIcon] forState:UIControlStateSelected];
     [self setNeedsLayout];
 }
 
@@ -151,19 +173,12 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
     [self.menus removeAllObjects];
     [self.menuBorders removeAllObjects];
     
-    for (int i = 0; i < _optionMenuSource.count; i++) {
+    NSInteger count = [self.delegate numberOfItemsCount];
+    for (int i = 0; i < count; i++) {
         UIButton *temp = [[UIButton alloc] init];
-        temp.layer.cornerRadius = 2.0f;
-        temp.titleLabel.numberOfLines = 1;
-        temp.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-        [temp setTitle:_optionMenuSource[i].title forState:UIControlStateNormal];
-        [temp setTitleColor:kDefaultMenuColor forState:UIControlStateNormal];
-        [temp setTitleColor:kSelectedMenuColor forState:UIControlStateSelected];
-        [temp setImage:[UIImage imageNamed:_optionMenuSource[i].icon] forState:UIControlStateNormal];
-        [temp setImage:[UIImage imageNamed:_optionMenuSource[i].selectedIcon] forState:UIControlStateSelected];
         temp.tag = kMenuItemBtnStartTag + i;
-        temp.titleLabel.font = [UIFont systemFontOfSize:12];
         [temp addTarget:self action:@selector(menuItemClickAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self setupItem:temp withEntityModel:[self.delegate itemEntityModelForIndex:i]];
         
         // 添加border view
         UIView *border = [self menuItemBorderViewWithItem:temp];
@@ -179,13 +194,29 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
     [self setNeedsLayout];
 }
 
+- (void)setupItem:(UIButton *)btn withEntityModel:(SHSingleOptionMenuHeaderEntityModel *)model {
+    if (!btn || !model) {
+        return;
+    }
+    
+    btn.layer.cornerRadius = 2.0f;
+    btn.titleLabel.numberOfLines = 1;
+    btn.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+    [btn setTitle:model.title forState:UIControlStateNormal];
+    [btn setTitleColor:kDefaultMenuColor forState:UIControlStateNormal];
+    [btn setTitleColor:kSelectedMenuColor forState:UIControlStateSelected];
+    [btn setImage:[UIImage imageNamed:model.icon] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:model.selectedIcon] forState:UIControlStateSelected];
+    btn.titleLabel.font = [UIFont systemFontOfSize:12];
+}
+
 - (BOOL)itemShouldChangeStatusWithLast:(UIButton *)last current:(UIButton *)current {
     if (last.tag == current.tag || !last) {
         return NO;
     }
     
-    NSString *lastGroup = self.optionMenuSource[last.tag - kMenuItemBtnStartTag].groupName;
-    NSString *currentGroup = self.optionMenuSource[current.tag - kMenuItemBtnStartTag].groupName;
+    NSString *lastGroup = [self.delegate itemEntityModelForIndex:last.tag - kMenuItemBtnStartTag].groupName;
+    NSString *currentGroup = [self.delegate itemEntityModelForIndex:current.tag - kMenuItemBtnStartTag].groupName;
     if (lastGroup.length && currentGroup.length && ![lastGroup isEqualToString:currentGroup]) {
         return NO;
     }
@@ -245,13 +276,13 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 
 #pragma mark - getter & setter
 
-- (void)setOptionMenuSource:(NSArray<SHSingleOptionMenuHeaderEntityModel *> *)optionMenuSource {
-    if (![optionMenuSource isKindOfClass:[NSArray class]]) {
-        return;
-    }
-    
-    _optionMenuSource = [optionMenuSource copy];
-    [self createOptionMenuItems];
-}
+//- (void)setOptionMenuSource:(NSArray<SHSingleOptionMenuHeaderEntityModel *> *)optionMenuSource {
+//    if (![optionMenuSource isKindOfClass:[NSArray class]]) {
+//        return;
+//    }
+//
+//    _optionMenuSource = [optionMenuSource copy];
+//    [self createOptionMenuItems];
+//}
 
 @end

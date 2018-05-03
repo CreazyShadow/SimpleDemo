@@ -47,15 +47,14 @@
 
 - (void)addOptionMenuView {
     self.menu = [[SHSingleOptionMenuView alloc] initWithFrame:CGRectMake(0, 100, kScreenWidth, 45) style:SHSingleOptionMenuStylePlainHeader];
-    _menu.menuHeaderSource = [self menuHeaderItemsSource];
     _menu.delegate = self;
     _menu.headerHorPadding = 15;
     _menu.headerItemSpace = 10;
     _menu.headerItemHeight = 25;
     
-    SHOptionMenuIndexPath *indexPath1 = [SHOptionMenuIndexPath indexPathForHeaderIndex:0 contentIndex:1];
-    SHOptionMenuIndexPath *indexPath2 = [SHOptionMenuIndexPath indexPathForHeaderIndex:1 contentIndex:1];
-    [_menu setupDefaultSelectedIndexPath:@[indexPath1, indexPath2]];
+//    SHOptionMenuIndexPath *indexPath1 = [SHOptionMenuIndexPath indexPathForHeaderIndex:0 contentIndex:1];
+//    SHOptionMenuIndexPath *indexPath2 = [SHOptionMenuIndexPath indexPathForHeaderIndex:1 contentIndex:1];
+//    [_menu setupDefaultSelectedIndexPath:@[indexPath1, indexPath2]];
     [self.view addSubview:_menu];
 }
 
@@ -77,6 +76,24 @@
     }
     
     return entity;
+}
+
+- (NSInteger)numberOfHeaderItemsCountForMenu:(SHSingleOptionMenuView *)menu {
+    return 4;
+}
+
+- (SHSingleOptionMenuHeaderEntityModel *)menu:(SHSingleOptionMenuView *)menu headerEntityForIndex:(NSInteger)index {
+    NSArray<SHOptionMenuIndexPath *> *selectedItems = [menu menuSelectedItemsWithHeaderIndex:index];
+    SHSingleOptionMenuHeaderEntityModel *origin = [self menuHeaderItemsSource][index];
+    if (selectedItems.count == 0) {
+        return origin;
+    }
+    
+    NSArray *titles = @[@"品牌", @"分类", @"尺码", @"闪电发货"];
+    NSString *title = [NSString stringWithFormat:@"%@---%ld", titles[index], selectedItems.firstObject.contentIndex];
+    SHSingleOptionMenuHeaderEntityModel *new = [origin copy];
+    new.title = title;
+    return new;
 }
 
 - (NSInteger)menu:(SHSingleOptionMenuView *)menu numberOfContentItemsCountForHeaderIndex:(NSInteger)index {
@@ -121,17 +138,12 @@
         return;
     }
     
-    NSArray *titles = @[@"品牌", @"分类", @"尺码", @"闪电发货"];
-    BOOL hasSelectItems = [menu menuSelectedItemsWithHeaderIndex:indexPath.headerIndex].count > 0;
-    NSString *title = [NSString stringWithFormat:@"%@---%ld", titles[indexPath.headerIndex], indexPath.contentIndex];
-    if (!hasSelectItems) {
-        title = titles[indexPath.headerIndex];
-    }
+//    [menu reloadHeaderItemWithTitle:title index:indexPath.headerIndex];
+    NSSet *headerSet = [NSSet setWithObject:@(indexPath.headerIndex)];
+    [menu reloadHeaderItemsWithIndexs:headerSet];
     
-    [menu reloadHeaderItemWithTitle:title index:indexPath.headerIndex];
-    
-    NSSet *set = [NSSet setWithObject:@(indexPath.contentIndex)];
-    [menu reloadContentItemsAtIndexs:set];
+    NSSet *contentSet = [NSSet setWithObject:@(indexPath.contentIndex)];
+    [menu reloadContentItemsAtIndexs:contentSet];
 }
 
 - (void)menu:(SHSingleOptionMenuView *)menu didClickBottomAction:(BOOL)isConfirm index:(NSInteger)headerIndex {
@@ -154,7 +166,7 @@
         title = titles[headerIndex];
     }
     
-    [menu reloadHeaderItemWithTitle:title index:headerIndex];
+//    [menu reloadHeaderItemWithTitle:title index:headerIndex];
 }
 
 - (BOOL)menu:(SHSingleOptionMenuView *)menu canMulSelectedForHeaderIndex:(NSInteger)index {

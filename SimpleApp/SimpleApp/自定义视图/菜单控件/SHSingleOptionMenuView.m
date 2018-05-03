@@ -139,7 +139,6 @@ static CGFloat const kContentMaxHeight = 260;
 #pragma mark - public
 
 - (void)setupDefaultSelectedIndexPath:(NSArray<SHOptionMenuIndexPath *> *)indexPaths {
-    
     //更新缓存
     for (SHOptionMenuIndexPath *item in indexPaths) {
         NSMutableArray *detail = [self cacheItemsForHeaderIndex:item.headerIndex];
@@ -149,7 +148,15 @@ static CGFloat const kContentMaxHeight = 260;
     }
     
     //更新header
+    
+    //判断分组 如果同一个group 则设置最后item
+    NSMutableDictionary<NSString *, SHOptionMenuIndexPath *> *needUpdate = [NSMutableDictionary dictionary];
     for (SHOptionMenuIndexPath *item in indexPaths) {
+        NSString *groupName = self.menuHeaderSource[item.headerIndex].groupName;
+        needUpdate[groupName] = item;
+    }
+    
+    for (SHOptionMenuIndexPath *item in needUpdate.allValues) {
         [self.header updateMenuItemStatus:YES index:item.headerIndex];
     }
 }

@@ -56,8 +56,6 @@
     SHOptionMenuIndexPath *indexPath1 = [SHOptionMenuIndexPath indexPathForHeaderIndex:0 contentIndex:1];
     SHOptionMenuIndexPath *indexPath2 = [SHOptionMenuIndexPath indexPathForHeaderIndex:1 contentIndex:1];
     [_menu setupDefaultSelectedIndexPath:@[indexPath1, indexPath2]];
-//    _menu.expandHeight = 500;
-//    _menu.headerItemWidth = 50;
     [self.view addSubview:_menu];
 }
 
@@ -73,6 +71,7 @@
         header.selectedIcon = @"selectd_filter_img";
         header.iconIsLeft = [titles.lastObject isEqualToString:title];
 //        header.groupName = [NSString stringWithFormat:@"AAA%ld", [titles indexOfObject:title]];
+        header.groupName = @"AAA";
         
         [entity addObject:header];
     }

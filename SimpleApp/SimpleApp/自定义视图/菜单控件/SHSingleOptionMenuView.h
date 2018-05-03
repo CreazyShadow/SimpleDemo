@@ -82,7 +82,7 @@ typedef NS_ENUM(NSInteger, SHSingleOptionMenuStyle) {
 
 #pragma mark - method
 
-- (void)setupDefaultSelectedIndexPath:(NSArray<SHSingleOptionMenuHeaderEntityModel *> *)indexPaths;
+- (void)setupDefaultSelectedIndexPath:(NSArray<SHOptionMenuIndexPath *> *)indexPaths;
 
 - (void)reloadMenu;
 - (void)reloadHeaderItemWithTitle:(NSString *)title index:(NSInteger)index;

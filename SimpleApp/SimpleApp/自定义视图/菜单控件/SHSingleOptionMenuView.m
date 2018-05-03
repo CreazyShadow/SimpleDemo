@@ -56,6 +56,7 @@ static CGFloat const kContentMaxHeight = 260;
 @implementation SHSingleOptionMenuView
 {
     NSInteger _currentSelectedMenuIndex;
+    NSInteger _lastSelectedItemHeaderIndex; ///< 最近有选中过的item index
 }
 
 #pragma mark - life cycle(init)
@@ -138,11 +139,18 @@ static CGFloat const kContentMaxHeight = 260;
 #pragma mark - public
 
 - (void)setupDefaultSelectedIndexPath:(NSArray<SHOptionMenuIndexPath *> *)indexPaths {
+    
+    //更新缓存
     for (SHOptionMenuIndexPath *item in indexPaths) {
         NSMutableArray *detail = [self cacheItemsForHeaderIndex:item.headerIndex];
         if (![detail containsObject:item]) {
             [detail addObject:item];
         }
+    }
+    
+    //更新header
+    for (SHOptionMenuIndexPath *item in indexPaths) {
+        [self.header updateMenuItemStatus:YES index:item.headerIndex];
     }
 }
 
@@ -182,6 +190,8 @@ static CGFloat const kContentMaxHeight = 260;
     if (!self.content.hidden && !isChangeTab) { //已经展示内容 并且 点击
         [self setupContentStatus:NO];
         [self.header updateMenuItemStatus:[self hasSelectedItemForMenuHeaderIndex:index] index:index];
+        //上一个header item恢复到选中状态
+//        [self.header updateMenuItemStatus:YES index:_lastSelectedItemHeaderIndex];
         return;
     }
     
@@ -240,6 +250,7 @@ static CGFloat const kContentMaxHeight = 260;
         }
         
         [items addObject:indexPath];
+//        _lastSelectedItemHeaderIndex = _currentSelectedMenuIndex;
     }
     
     //隐藏contnt

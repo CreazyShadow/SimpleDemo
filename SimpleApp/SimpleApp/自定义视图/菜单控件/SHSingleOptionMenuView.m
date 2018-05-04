@@ -28,8 +28,18 @@
         return NO;
     }
     
+    if (self == object) {
+        return YES;
+    }
+    
     SHOptionMenuIndexPath *obj = (SHOptionMenuIndexPath *)object;
     return obj.headerIndex == self.headerIndex && obj.contentIndex == self.contentIndex;
+}
+
+- (NSUInteger)hash {
+    NSString *header = [NSString stringWithFormat:@"%ld", self.headerIndex];
+    NSString *content = [NSString stringWithFormat:@"%ld", self.contentIndex];
+    return [header hash] ^ [content hash];
 }
 
 @end

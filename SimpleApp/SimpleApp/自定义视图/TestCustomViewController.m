@@ -28,6 +28,15 @@
     [super viewDidLoad];
     
     [self addOptionMenuView];
+    
+    SHOptionMenuIndexPath *indexPath1 = [SHOptionMenuIndexPath indexPathForHeaderIndex:0 contentIndex:0];
+    SHOptionMenuIndexPath *indexPath2 = [SHOptionMenuIndexPath indexPathForHeaderIndex:0 contentIndex:0];
+    NSMutableSet *set = [NSMutableSet set];
+    [set addObject:indexPath1];
+    [set addObject:indexPath2];
+    
+    BOOL equal = [indexPath1 isEqual:indexPath2];
+    NSLog(@"-----%p---%p", indexPath1, indexPath2);
 }
 
 #pragma mark - touch event

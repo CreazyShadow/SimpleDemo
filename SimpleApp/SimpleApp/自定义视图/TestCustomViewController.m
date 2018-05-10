@@ -46,7 +46,7 @@
 #pragma mark - single option menu view
 
 - (void)addOptionMenuView {
-    self.menu = [[SHSingleOptionMenuView alloc] initWithFrame:CGRectMake(0, 100, kScreenWidth, 45) style:SHSingleOptionMenuStylePlainHeader];
+    self.menu = [[SHSingleOptionMenuView alloc] initWithFrame:CGRectMake(0, 100, kScreenWidth, 45) style:SHSingleOptionMenuStyleBoxHeader];
     _menu.delegate = self;
     _menu.headerHorPadding = 15;
     _menu.headerItemSpace = 10;
@@ -69,8 +69,6 @@
         header.icon = @"filter_img";
         header.selectedIcon = @"selectd_filter_img";
         header.iconIsLeft = [titles.lastObject isEqualToString:title];
-//        header.groupName = [NSString stringWithFormat:@"AAA%ld", [titles indexOfObject:title]];
-        header.groupName = @"AAA";
         
         [entity addObject:header];
     }

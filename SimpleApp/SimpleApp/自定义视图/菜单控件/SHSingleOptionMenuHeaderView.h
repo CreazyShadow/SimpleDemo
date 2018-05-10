@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderStyle) {
  */
 - (void)willDisplayMenuHeaderItem:(UIButton *)btn index:(NSInteger)index;
 
-- (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index isChangeTab:(BOOL)isChangeTab;
+- (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index;
 
 @end
 

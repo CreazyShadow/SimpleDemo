@@ -123,19 +123,28 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 - (void)menuItemClickAction:(UIButton *)btn {
     NSInteger selectedIndex = btn.tag - kMenuItemBtnStartTag;
     
-    BOOL isChangeTab = [self itemShouldChangeStatusWithLast:_lastItem current:btn];
+    BOOL isChangeTab = _lastItem && _lastItem.tag == btn.tag;
     if (isChangeTab && _style == SHMenuHeaderStylePlainText) { //切换tab 并且 paintext style
-        [self renderMenuItem:_lastItem andStatus:NO];
+        [self resetOtherItemStatuForCurrentItem:btn];
     }
-    
-    _lastItem = btn;
     
     [self updateItemStatusToSelecting:btn.tag - kMenuItemBtnStartTag];
     
-    if ([self.delegate respondsToSelector:@selector(menuHeaderDidClickItem:index:isChangeTab:)]) {
-        [self.delegate menuHeaderDidClickItem:btn index:selectedIndex isChangeTab:isChangeTab];
+    if ([self.delegate respondsToSelector:@selector(menuHeaderDidClickItem:index:)]) {
+        [self.delegate menuHeaderDidClickItem:btn index:selectedIndex];
     }
-    
+ 
+    _lastItem = btn;
+}
+
+- (void)resetOtherItemStatuForCurrentItem:(UIButton *)current {
+    for (UIButton *temp in self.menus) {
+        if (temp.tag == current.tag) {
+            continue;
+        }
+        
+        [self renderMenuItem:temp andStatus:NO];
+    }
 }
 
 #pragma mark - public
@@ -160,10 +169,6 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 - (void)updateMenuItemStatus:(BOOL)status index:(NSInteger)index {
     if (index < 0 || index >= self.menus.count) {
         return;
-    }
-    
-    if (_style != SHMenuHeaderStyleCube) {
-        _lastItem = self.menus[index];
     }
     
     [self renderMenuItem:self.menus[index] andStatus:status];
@@ -211,14 +216,6 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
     [btn setImage:[UIImage imageNamed:model.icon] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:model.selectedIcon] forState:UIControlStateSelected];
     btn.titleLabel.font = [UIFont systemFontOfSize:12];
-}
-
-- (BOOL)itemShouldChangeStatusWithLast:(UIButton *)last current:(UIButton *)current {
-    if (last.tag == current.tag || !last) {
-        return NO;
-    }
-    
-    return YES;
 }
 
 #pragma mark - change item ui

@@ -76,7 +76,6 @@ static CGFloat const kContentMaxHeight = 260;
         self.clipsToBounds = YES;
         self.menuSelectedItemsCache = [[NSMutableDictionary alloc] init];
         self.style = style;
-        _currentSelectedMenuIndex = -1;
         
         [self buildSubViews];
     }
@@ -235,19 +234,18 @@ static CGFloat const kContentMaxHeight = 260;
     return [self.delegate menu:self headerEntityForIndex:index];
 }
 
-- (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index isChangeTab:(BOOL)isChangeTab {
-    if (_style == SHSingleOptionMenuStyleBoxHeader &&
-        _currentSelectedMenuIndex >= 0 && _selectingItemsTemp) { // 重置前一个item对应的值
-        
+- (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index {
+    BOOL isChangeTab = !self.content.hidden && _currentSelectedMenuIndex != index;
+    //当切换tab时重置上一个item 状态
+    if (_style == SHSingleOptionMenuStyleBoxHeader && isChangeTab && _selectingItemsTemp) {
         NSMutableArray *now = [self cacheItemsForHeaderIndex:_currentSelectedMenuIndex];
         [now removeAllObjects];
         [now addObjectsFromArray:_selectingItemsTemp];
         [self.header updateMenuItemStatus:now.count > 0 index:_currentSelectedMenuIndex];
     }
     
-    _currentSelectedMenuIndex = index;
     _selectingItemsTemp = [[self menuSelectedItemsWithHeaderIndex:index] copy];
-    
+
     //如果没有content item
     NSInteger contentCount = [self.delegate menu:self numberOfContentItemsCountForHeaderIndex:index];
     if (contentCount == 0) {
@@ -282,6 +280,8 @@ static CGFloat const kContentMaxHeight = 260;
     if ([self.delegate respondsToSelector:@selector(menu:didSelectedHeaderItem:)]) {
         [self.delegate menu:self didSelectedHeaderItem:index];
     }
+    
+    _currentSelectedMenuIndex = index;
 }
 
 - (BOOL)hasSelectedItemForMenuHeaderIndex:(NSInteger)index {
@@ -386,7 +386,7 @@ static CGFloat const kContentMaxHeight = 260;
     self.bottomView.hidden = ![self canMultiChoiceForHeaderIndex:_currentSelectedMenuIndex];
     UIWindow *window = ((AppDelegate *)[UIApplication sharedApplication].delegate).window;
     CGRect rect = [self convertRect:self.bounds toView:window];
-    self.height = SCREEN_HEIGHT - rect.origin.y;
+    self.height = kScreenHeight - rect.origin.y;
     self.maskView.height = self.height;
 }
 

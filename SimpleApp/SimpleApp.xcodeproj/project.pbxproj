@@ -15,6 +15,10 @@
 		0125887C208434FF00A2686D /* NatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0125887A208434FF00A2686D /* NatureViewController.xib */; };
 		0125887F20843A2000A2686D /* NatureClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0125887E20843A2000A2686D /* NatureClass.m */; };
 		01258883208482CA00A2686D /* ThridManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01258882208482CA00A2686D /* ThridManager.m */; };
+		01A0855E209FF87D00258C6F /* RacLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0855C209FF87D00258C6F /* RacLoginViewController.m */; };
+		01A0855F209FF87D00258C6F /* RacLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A0855D209FF87D00258C6F /* RacLoginViewController.xib */; };
+		01A08562209FFD7C00258C6F /* RACLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A08561209FFD7C00258C6F /* RACLoginViewModel.m */; };
+		01A0856520A0543000258C6F /* TestUIWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0856420A0543000258C6F /* TestUIWebViewViewController.m */; };
 		7304CE9F1CF542B300C5E349 /* libSimpleModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7304CE9E1CF542B300C5E349 /* libSimpleModel.a */; };
 		7310AEE91E8215B800BAA0E8 /* SortHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7310AEE81E8215B800BAA0E8 /* SortHelper.m */; };
 		731C12321E84A9750034F361 /* PopAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731C12311E84A9750034F361 /* PopAnimationViewController.m */; };
@@ -237,6 +241,13 @@
 		012588802084827300A2686D /* SimpleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleApp.entitlements; sourceTree = "<group>"; };
 		01258881208482CA00A2686D /* ThridManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThridManager.h; sourceTree = "<group>"; };
 		01258882208482CA00A2686D /* ThridManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThridManager.m; sourceTree = "<group>"; };
+		01A0855B209FF87D00258C6F /* RacLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RacLoginViewController.h; sourceTree = "<group>"; };
+		01A0855C209FF87D00258C6F /* RacLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RacLoginViewController.m; sourceTree = "<group>"; };
+		01A0855D209FF87D00258C6F /* RacLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RacLoginViewController.xib; sourceTree = "<group>"; };
+		01A08560209FFD7C00258C6F /* RACLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACLoginViewModel.h; sourceTree = "<group>"; };
+		01A08561209FFD7C00258C6F /* RACLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACLoginViewModel.m; sourceTree = "<group>"; };
+		01A0856320A0543000258C6F /* TestUIWebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestUIWebViewViewController.h; sourceTree = "<group>"; };
+		01A0856420A0543000258C6F /* TestUIWebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestUIWebViewViewController.m; sourceTree = "<group>"; };
 		192D915ABA8975E1A187A054 /* Pods-SimpleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp.release.xcconfig"; sourceTree = "<group>"; };
 		1ADD0F38396CB07FF3AB19A5 /* libPods-SimpleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7304CE9E1CF542B300C5E349 /* libSimpleModel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSimpleModel.a; path = "../../../../Library/Developer/Xcode/DerivedData/SimpleApp-cswqutjhlfbmkqbsnbwnxbznehzs/Build/Products/Debug-iphonesimulator/libSimpleModel.a"; sourceTree = "<group>"; };
@@ -676,6 +687,34 @@
 			path = "底层原理和逆向";
 			sourceTree = "<group>";
 		};
+		01A0854D209FF6AF00258C6F /* 响应式编程 */ = {
+			isa = PBXGroup;
+			children = (
+				01A0854F209FF6DA00258C6F /* Design */,
+				01A0854E209FF6BE00258C6F /* RAC */,
+			);
+			path = "响应式编程";
+			sourceTree = "<group>";
+		};
+		01A0854E209FF6BE00258C6F /* RAC */ = {
+			isa = PBXGroup;
+			children = (
+				01A0855B209FF87D00258C6F /* RacLoginViewController.h */,
+				01A0855C209FF87D00258C6F /* RacLoginViewController.m */,
+				01A0855D209FF87D00258C6F /* RacLoginViewController.xib */,
+				01A08560209FFD7C00258C6F /* RACLoginViewModel.h */,
+				01A08561209FFD7C00258C6F /* RACLoginViewModel.m */,
+			);
+			path = RAC;
+			sourceTree = "<group>";
+		};
+		01A0854F209FF6DA00258C6F /* Design */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
 		46ADEDCDB75D7E1A2BEBBA6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -738,6 +777,8 @@
 				731C12631E84F0060034F361 /* WKWebViewViewController.m */,
 				73F3AD4B1F468B08004450F8 /* RayWkWebView.h */,
 				73F3AD4C1F468B08004450F8 /* RayWkWebView.m */,
+				01A0856320A0543000258C6F /* TestUIWebViewViewController.h */,
+				01A0856420A0543000258C6F /* TestUIWebViewViewController.m */,
 			);
 			path = webview;
 			sourceTree = "<group>";
@@ -1011,6 +1052,7 @@
 			isa = PBXGroup;
 			children = (
 				012588802084827300A2686D /* SimpleApp.entitlements */,
+				01A0854D209FF6AF00258C6F /* 响应式编程 */,
 				012588772084349700A2686D /* 底层原理和逆向 */,
 				0109B551207E120900625640 /* 第三方 */,
 				AE8BD4391F38770000169FA3 /* 性能 */,
@@ -1684,6 +1726,7 @@
 				736CB2771E80F74200AC3EEF /* jscontextdemo.js in Resources */,
 				73523F751F7DE72100E8B81D /* RenderViewController.xib in Resources */,
 				7373D2571CD0AA2600332D91 /* LaunchScreen.storyboard in Resources */,
+				01A0855F209FF87D00258C6F /* RacLoginViewController.xib in Resources */,
 				73B5A05D1DC6F15200477323 /* SelectImageItemView.xib in Resources */,
 				738F57A71F74C617004D6878 /* ToolBarXibViewController.xib in Resources */,
 				7373D2541CD0AA2600332D91 /* Assets.xcassets in Resources */,
@@ -1725,7 +1768,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		735ADFC61E83669800F79620 /* ShellScript */ = {
@@ -1865,6 +1908,7 @@
 				73BE8D841E7284CC0073A2C6 /* PushManagerViewController.m in Sources */,
 				732B50881E8B567B006F2677 /* RayTimer.m in Sources */,
 				73BA34DC1DB12E65007E9FC1 /* MasonyTableViewController.m in Sources */,
+				01A08562209FFD7C00258C6F /* RACLoginViewModel.m in Sources */,
 				AEDEB4D31F380D9C00A05940 /* HXWebViewLoadInterceptor.m in Sources */,
 				732AE6261E5E8E710068E1CE /* ClassB.m in Sources */,
 				732116D21EFA1E0B0041BF6E /* Object_Super+Introduce.m in Sources */,
@@ -1917,6 +1961,7 @@
 				73BA34D41DB12E65007E9FC1 /* SecondViewController.m in Sources */,
 				732D80351EB42E3D0003FD18 /* ANotificationViewController.m in Sources */,
 				731C127F1E8512970034F361 /* TestArithmeticViewController.m in Sources */,
+				01A0856520A0543000258C6F /* TestUIWebViewViewController.m in Sources */,
 				73C5B11D1F975BBC00F62AFA /* BgViewController.m in Sources */,
 				73B5A0611DC7110200477323 /* TestCustomViewController.m in Sources */,
 				AE0E032D1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.m in Sources */,
@@ -1941,6 +1986,7 @@
 				734DAE0B1E88FC8900D553CC /* AttributeViewController.m in Sources */,
 				732116D51EFA1E520041BF6E /* CategoryViewController.m in Sources */,
 				73523F741F7DE72100E8B81D /* RenderViewController.m in Sources */,
+				01A0855E209FF87D00258C6F /* RacLoginViewController.m in Sources */,
 				7393FBC41E48533B00EF7BDF /* Hit.m in Sources */,
 				735ADFE31E8377FA00F79620 /* RayNavigationTransition.m in Sources */,
 				7359983E1EA6F64A00427C5B /* Animation_super.m in Sources */,

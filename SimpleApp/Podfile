@@ -23,6 +23,7 @@ def share_pods
     pod 'JDFlipNumberView'
     pod 'FLEX', :configuration => 'Debug'
     pod 'AdhocSDK'
+    pod 'ReactiveObjC', '~>3.0.0'
 end
 
 target 'SimpleApp' do

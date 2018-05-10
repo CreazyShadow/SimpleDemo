@@ -40,6 +40,7 @@ PODS:
   - MJRefresh (3.1.15.3)
   - OpenShare (0.0.1)
   - pop (1.0.10)
+  - ReactiveObjC (3.0.0)
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
@@ -66,6 +67,7 @@ DEPENDENCIES:
   - MJRefresh
   - OpenShare
   - pop
+  - ReactiveObjC (~> 3.0.0)
   - SDWebImage
   - WebViewJavascriptBridge
   - WSProgressHUD
@@ -90,6 +92,7 @@ SPEC REPOS:
     - MJRefresh
     - OpenShare
     - pop
+    - ReactiveObjC
     - SDWebImage
     - Shimmer
     - WebViewJavascriptBridge
@@ -114,6 +117,7 @@ SPEC CHECKSUMS:
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   OpenShare: a560580dbb729d5c0c3cc1ee84cd6aa4a07e94c6
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
@@ -121,6 +125,6 @@ SPEC CHECKSUMS:
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 5f7f040f491d6742b754579aac5cc523bbc68dde
+PODFILE CHECKSUM: 33cfb92cc5a9fb2a62cff2fd04f1897ee1154039
 
 COCOAPODS: 1.5.0

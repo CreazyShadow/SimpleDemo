@@ -72,9 +72,10 @@ typedef NS_ENUM(NSInteger, SHSingleOptionMenuStyle) {
 @interface SHSingleOptionMenuView : UIView
 
 @property (nonatomic, weak) id<SingleOptionMenuDelegate> delegate;
-//@property (nonatomic, strong) NSArray<SHSingleOptionMenuHeaderEntityModel *> *menuHeaderSource;
 
 - (instancetype)initWithFrame:(CGRect)frame style:(SHSingleOptionMenuStyle)style;
+
+@property (nonatomic, assign) BOOL menuIsShowing;
 
 #pragma mark - header
 @property (nonatomic, assign) CGFloat headerItemWidth;    ///< 默认等分
@@ -95,5 +96,7 @@ typedef NS_ENUM(NSInteger, SHSingleOptionMenuStyle) {
 - (void)reloadContentItemsAtIndexs:(NSSet<NSNumber *> *)indexs;
 
 - (void)resetMenu;
+
+- (void)hiddenMenuContent;
 
 @end

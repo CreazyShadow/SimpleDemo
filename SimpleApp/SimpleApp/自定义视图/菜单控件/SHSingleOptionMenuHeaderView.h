@@ -19,7 +19,6 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderStyle) {
 @property (nonatomic, copy) NSString *icon;
 @property (nonatomic, copy) NSString *selectedIcon;
 @property (nonatomic, assign) BOOL iconIsLeft;
-@property (nonatomic, copy) NSString *groupName;
 
 @end
 
@@ -41,7 +40,6 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderStyle) {
 
 @interface SHSingleOptionMenuHeaderView : UIView
 
-//@property (nonatomic, strong) NSArray<SHSingleOptionMenuHeaderEntityModel *> *optionMenuSource;
 @property (nonatomic, weak) id<SingleOptionMenuHeaderDelegate> delegate;
 
 @property (nonatomic, assign) CGFloat itemWidth;    ///< 默认等分

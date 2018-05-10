@@ -27,7 +27,6 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
     model.icon = self.icon;
     model.selectedIcon = self.selectedIcon;
     model.iconIsLeft = self.iconIsLeft;
-    model.groupName = self.groupName;
     return model;
 }
 
@@ -125,8 +124,7 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
     NSInteger selectedIndex = btn.tag - kMenuItemBtnStartTag;
     
     BOOL isChangeTab = [self itemShouldChangeStatusWithLast:_lastItem current:btn];
-    if (isChangeTab) {
-        _lastItem.selected = NO;
+    if (isChangeTab && _style == SHMenuHeaderStylePlainText) { //切换tab 并且 paintext style
         [self renderMenuItem:_lastItem andStatus:NO];
     }
     
@@ -137,6 +135,7 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
     if ([self.delegate respondsToSelector:@selector(menuHeaderDidClickItem:index:isChangeTab:)]) {
         [self.delegate menuHeaderDidClickItem:btn index:selectedIndex isChangeTab:isChangeTab];
     }
+    
 }
 
 #pragma mark - public
@@ -161,6 +160,10 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 - (void)updateMenuItemStatus:(BOOL)status index:(NSInteger)index {
     if (index < 0 || index >= self.menus.count) {
         return;
+    }
+    
+    if (_style != SHMenuHeaderStyleCube) {
+        _lastItem = self.menus[index];
     }
     
     [self renderMenuItem:self.menus[index] andStatus:status];
@@ -212,12 +215,6 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 
 - (BOOL)itemShouldChangeStatusWithLast:(UIButton *)last current:(UIButton *)current {
     if (last.tag == current.tag || !last) {
-        return NO;
-    }
-    
-    NSString *lastGroup = [self.delegate itemEntityModelForIndex:last.tag - kMenuItemBtnStartTag].groupName;
-    NSString *currentGroup = [self.delegate itemEntityModelForIndex:current.tag - kMenuItemBtnStartTag].groupName;
-    if (lastGroup.length && currentGroup.length && ![lastGroup isEqualToString:currentGroup]) {
         return NO;
     }
     
@@ -276,13 +273,5 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 
 #pragma mark - getter & setter
 
-//- (void)setOptionMenuSource:(NSArray<SHSingleOptionMenuHeaderEntityModel *> *)optionMenuSource {
-//    if (![optionMenuSource isKindOfClass:[NSArray class]]) {
-//        return;
-//    }
-//
-//    _optionMenuSource = [optionMenuSource copy];
-//    [self createOptionMenuItems];
-//}
 
 @end

@@ -19,6 +19,8 @@
 		01A0855F209FF87D00258C6F /* RacLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A0855D209FF87D00258C6F /* RacLoginViewController.xib */; };
 		01A08562209FFD7C00258C6F /* RACLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A08561209FFD7C00258C6F /* RACLoginViewModel.m */; };
 		01A0856520A0543000258C6F /* TestUIWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0856420A0543000258C6F /* TestUIWebViewViewController.m */; };
+		01A0857B20A44A1000258C6F /* SHIndexMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0857A20A44A1000258C6F /* SHIndexMenuView.m */; };
+		01A0857E20A4510800258C6F /* TestIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0857D20A4510800258C6F /* TestIndexViewController.m */; };
 		7304CE9F1CF542B300C5E349 /* libSimpleModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7304CE9E1CF542B300C5E349 /* libSimpleModel.a */; };
 		7310AEE91E8215B800BAA0E8 /* SortHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7310AEE81E8215B800BAA0E8 /* SortHelper.m */; };
 		731C12321E84A9750034F361 /* PopAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731C12311E84A9750034F361 /* PopAnimationViewController.m */; };
@@ -248,6 +250,10 @@
 		01A08561209FFD7C00258C6F /* RACLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACLoginViewModel.m; sourceTree = "<group>"; };
 		01A0856320A0543000258C6F /* TestUIWebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestUIWebViewViewController.h; sourceTree = "<group>"; };
 		01A0856420A0543000258C6F /* TestUIWebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestUIWebViewViewController.m; sourceTree = "<group>"; };
+		01A0857920A44A1000258C6F /* SHIndexMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHIndexMenuView.h; sourceTree = "<group>"; };
+		01A0857A20A44A1000258C6F /* SHIndexMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHIndexMenuView.m; sourceTree = "<group>"; };
+		01A0857C20A4510800258C6F /* TestIndexViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestIndexViewController.h; sourceTree = "<group>"; };
+		01A0857D20A4510800258C6F /* TestIndexViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestIndexViewController.m; sourceTree = "<group>"; };
 		192D915ABA8975E1A187A054 /* Pods-SimpleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp.release.xcconfig"; sourceTree = "<group>"; };
 		1ADD0F38396CB07FF3AB19A5 /* libPods-SimpleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7304CE9E1CF542B300C5E349 /* libSimpleModel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSimpleModel.a; path = "../../../../Library/Developer/Xcode/DerivedData/SimpleApp-cswqutjhlfbmkqbsnbwnxbznehzs/Build/Products/Debug-iphonesimulator/libSimpleModel.a"; sourceTree = "<group>"; };
@@ -713,6 +719,17 @@
 			children = (
 			);
 			path = Design;
+			sourceTree = "<group>";
+		};
+		01A0857820A448AE00258C6F /* 滑动索引控件 */ = {
+			isa = PBXGroup;
+			children = (
+				01A0857920A44A1000258C6F /* SHIndexMenuView.h */,
+				01A0857A20A44A1000258C6F /* SHIndexMenuView.m */,
+				01A0857C20A4510800258C6F /* TestIndexViewController.h */,
+				01A0857D20A4510800258C6F /* TestIndexViewController.m */,
+			);
+			path = "滑动索引控件";
 			sourceTree = "<group>";
 		};
 		46ADEDCDB75D7E1A2BEBBA6B /* Frameworks */ = {
@@ -1189,6 +1206,7 @@
 		73B5A0551DC6F14500477323 /* 自定义视图 */ = {
 			isa = PBXGroup;
 			children = (
+				01A0857820A448AE00258C6F /* 滑动索引控件 */,
 				010D9C81208EC1B40066619A /* 菜单控件 */,
 				733C262F1DD42213005FF7AE /* Slider */,
 				73B5A0561DC6F15200477323 /* SelectImage */,
@@ -1846,6 +1864,7 @@
 				731DAD161E7B8B10004E5F8D /* CustomOperation.m in Sources */,
 				73A346AC1E67A9780030CE9D /* ThreadViewController.m in Sources */,
 				732AE6201E5E89FF0068E1CE /* EKElement.m in Sources */,
+				01A0857E20A4510800258C6F /* TestIndexViewController.m in Sources */,
 				735A35522019BE640017D6EF /* HXListView.m in Sources */,
 				731C126A1E84F0060034F361 /* WKWebViewViewController.m in Sources */,
 				736266C91FB06EE1000A518B /* MultipleScrollViewController.m in Sources */,
@@ -1884,6 +1903,7 @@
 				7362AB401ECDAE5F00B2E933 /* HealthInfoModel+Test.m in Sources */,
 				73BBE7D41EE7D38700FC76BB /* HealthChartViewController.m in Sources */,
 				7362AB491ECE9DF500B2E933 /* NSObject+MsgOperation.m in Sources */,
+				01A0857B20A44A1000258C6F /* SHIndexMenuView.m in Sources */,
 				731C12681E84F0060034F361 /* TestWebviewViewController.m in Sources */,
 				73BA34D31DB12E65007E9FC1 /* FirstViewController.m in Sources */,
 				735998271EA4A18000427C5B /* ConstrantViewController.m in Sources */,

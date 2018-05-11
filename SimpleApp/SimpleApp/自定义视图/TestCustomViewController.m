@@ -111,20 +111,27 @@
 }
 
 - (UIView *)menu:(SHSingleOptionMenuView *)menu itemForIndexPath:(SHOptionMenuIndexPath *)indexPath reusableItem:(UIView *)item itemSup:(UIView *)sup {
-    UILabel *actualItem = (UILabel *)item;
-    if (!item) {
-        actualItem = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 100, 40)];
-        actualItem.font = [UIFont systemFontOfSize:14];
-        actualItem.textAlignment = NSTextAlignmentLeft;
+//    UILabel *actualItem = (UILabel *)item;
+//    if (!item) {
+//        actualItem = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 100, 40)];
+//        actualItem.font = [UIFont systemFontOfSize:14];
+//        actualItem.textAlignment = NSTextAlignmentLeft;
+//    }
+//
+//    actualItem.textColor = [UIColor orangeColor];
+//    NSArray *titles = @[@"品牌", @"分类", @"尺码", @"闪电发货"];
+//    actualItem.text = [NSString stringWithFormat:@"%@---%ld", titles[indexPath.headerIndex], indexPath.contentIndex];
+//
+//    if ([[menu menuSelectedItemsWithHeaderIndex:indexPath.headerIndex] containsObject:indexPath]) {
+//        actualItem.textColor = [UIColor redColor];
+//    }
+    
+    UIView *actualItem = item;
+    if (!actualItem) {
+        actualItem = [[UIView alloc] init];
+        actualItem.backgroundColor = [UIColor orangeColor];
     }
     
-    actualItem.textColor = [UIColor orangeColor];
-    NSArray *titles = @[@"品牌", @"分类", @"尺码", @"闪电发货"];
-    actualItem.text = [NSString stringWithFormat:@"%@---%ld", titles[indexPath.headerIndex], indexPath.contentIndex];
-    
-    if ([[menu menuSelectedItemsWithHeaderIndex:indexPath.headerIndex] containsObject:indexPath]) {
-        actualItem.textColor = [UIColor redColor];
-    }
     
     return actualItem;
 }

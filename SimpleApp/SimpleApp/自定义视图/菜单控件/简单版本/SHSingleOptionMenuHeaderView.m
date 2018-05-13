@@ -123,7 +123,7 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 - (void)menuItemClickAction:(UIButton *)btn {
     NSInteger selectedIndex = btn.tag - kMenuItemBtnStartTag;
     
-    BOOL isChangeTab = _lastItem && _lastItem.tag == btn.tag;
+    BOOL isChangeTab = _lastItem && _lastItem.tag != btn.tag;
     if (isChangeTab && _style == SHMenuHeaderStylePlainText) { //切换tab 并且 paintext style
         [self resetOtherItemStatuForCurrentItem:btn];
     }

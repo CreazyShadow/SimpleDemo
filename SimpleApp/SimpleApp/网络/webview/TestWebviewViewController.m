@@ -151,7 +151,7 @@ extern NSString * const maxCount;
             
         case 1:
         {
-            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:63342/StudyNote/test/FixLayoutRefresh.html?_ijt=i6nml82a1m1lsuffiqao6gttb3"]];
+            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:63342/StudyNote/StudyBase/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2/login.html?_ijt=c3rk3uruju72rrggi5f5dj128d"]];
             [self.wkwebview loadRequest:request];
         }
             break;

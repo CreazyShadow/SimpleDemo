@@ -28,15 +28,6 @@
     [super viewDidLoad];
     
     [self addOptionMenuView];
-    
-    SHOptionMenuIndexPath *indexPath1 = [SHOptionMenuIndexPath indexPathForHeaderIndex:0 contentIndex:0];
-    SHOptionMenuIndexPath *indexPath2 = [SHOptionMenuIndexPath indexPathForHeaderIndex:0 contentIndex:0];
-    NSMutableSet *set = [NSMutableSet set];
-    [set addObject:indexPath1];
-    [set addObject:indexPath2];
-    
-    BOOL equal = [indexPath1 isEqual:indexPath2];
-    NSLog(@"-----%p---%p", indexPath1, indexPath2);
 }
 
 #pragma mark - touch event
@@ -55,7 +46,7 @@
 #pragma mark - single option menu view
 
 - (void)addOptionMenuView {
-    self.menu = [[SHSingleOptionMenuView alloc] initWithFrame:CGRectMake(0, 100, kScreenWidth, 45) style:SHSingleOptionMenuStylePlainHeader];
+    self.menu = [[SHSingleOptionMenuView alloc] initWithFrame:CGRectMake(0, 100, kScreenWidth, 45) style:SHSingleOptionMenuStyleBoxHeader];
     _menu.delegate = self;
     _menu.headerHorPadding = 15;
     _menu.headerItemSpace = 10;
@@ -78,8 +69,6 @@
         header.icon = @"filter_img";
         header.selectedIcon = @"selectd_filter_img";
         header.iconIsLeft = [titles.lastObject isEqualToString:title];
-//        header.groupName = [NSString stringWithFormat:@"AAA%ld", [titles indexOfObject:title]];
-        header.groupName = @"AAA";
         
         [entity addObject:header];
     }
@@ -122,20 +111,27 @@
 }
 
 - (UIView *)menu:(SHSingleOptionMenuView *)menu itemForIndexPath:(SHOptionMenuIndexPath *)indexPath reusableItem:(UIView *)item itemSup:(UIView *)sup {
-    UILabel *actualItem = (UILabel *)item;
-    if (!item) {
-        actualItem = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 100, 40)];
-        actualItem.font = [UIFont systemFontOfSize:14];
-        actualItem.textAlignment = NSTextAlignmentLeft;
+//    UILabel *actualItem = (UILabel *)item;
+//    if (!item) {
+//        actualItem = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 100, 40)];
+//        actualItem.font = [UIFont systemFontOfSize:14];
+//        actualItem.textAlignment = NSTextAlignmentLeft;
+//    }
+//
+//    actualItem.textColor = [UIColor orangeColor];
+//    NSArray *titles = @[@"品牌", @"分类", @"尺码", @"闪电发货"];
+//    actualItem.text = [NSString stringWithFormat:@"%@---%ld", titles[indexPath.headerIndex], indexPath.contentIndex];
+//
+//    if ([[menu menuSelectedItemsWithHeaderIndex:indexPath.headerIndex] containsObject:indexPath]) {
+//        actualItem.textColor = [UIColor redColor];
+//    }
+    
+    UIView *actualItem = item;
+    if (!actualItem) {
+        actualItem = [[UIView alloc] init];
+        actualItem.backgroundColor = [UIColor orangeColor];
     }
     
-    actualItem.textColor = [UIColor orangeColor];
-    NSArray *titles = @[@"品牌", @"分类", @"尺码", @"闪电发货"];
-    actualItem.text = [NSString stringWithFormat:@"%@---%ld", titles[indexPath.headerIndex], indexPath.contentIndex];
-    
-    if ([[menu menuSelectedItemsWithHeaderIndex:indexPath.headerIndex] containsObject:indexPath]) {
-        actualItem.textColor = [UIColor redColor];
-    }
     
     return actualItem;
 }

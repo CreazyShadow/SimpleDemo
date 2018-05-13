@@ -27,7 +27,6 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
     model.icon = self.icon;
     model.selectedIcon = self.selectedIcon;
     model.iconIsLeft = self.iconIsLeft;
-    model.groupName = self.groupName;
     return model;
 }
 
@@ -124,18 +123,27 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 - (void)menuItemClickAction:(UIButton *)btn {
     NSInteger selectedIndex = btn.tag - kMenuItemBtnStartTag;
     
-    BOOL isChangeTab = [self itemShouldChangeStatusWithLast:_lastItem current:btn];
-    if (isChangeTab) {
-        _lastItem.selected = NO;
-        [self renderMenuItem:_lastItem andStatus:NO];
+    BOOL isChangeTab = _lastItem && _lastItem.tag == btn.tag;
+    if (isChangeTab && _style == SHMenuHeaderStylePlainText) { //切换tab 并且 paintext style
+        [self resetOtherItemStatuForCurrentItem:btn];
     }
-    
-    _lastItem = btn;
     
     [self updateItemStatusToSelecting:btn.tag - kMenuItemBtnStartTag];
     
-    if ([self.delegate respondsToSelector:@selector(menuHeaderDidClickItem:index:isChangeTab:)]) {
-        [self.delegate menuHeaderDidClickItem:btn index:selectedIndex isChangeTab:isChangeTab];
+    if ([self.delegate respondsToSelector:@selector(menuHeaderDidClickItem:index:)]) {
+        [self.delegate menuHeaderDidClickItem:btn index:selectedIndex];
+    }
+ 
+    _lastItem = btn;
+}
+
+- (void)resetOtherItemStatuForCurrentItem:(UIButton *)current {
+    for (UIButton *temp in self.menus) {
+        if (temp.tag == current.tag) {
+            continue;
+        }
+        
+        [self renderMenuItem:temp andStatus:NO];
     }
 }
 
@@ -210,20 +218,6 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
     btn.titleLabel.font = [UIFont systemFontOfSize:12];
 }
 
-- (BOOL)itemShouldChangeStatusWithLast:(UIButton *)last current:(UIButton *)current {
-    if (last.tag == current.tag || !last) {
-        return NO;
-    }
-    
-    NSString *lastGroup = [self.delegate itemEntityModelForIndex:last.tag - kMenuItemBtnStartTag].groupName;
-    NSString *currentGroup = [self.delegate itemEntityModelForIndex:current.tag - kMenuItemBtnStartTag].groupName;
-    if (lastGroup.length && currentGroup.length && ![lastGroup isEqualToString:currentGroup]) {
-        return NO;
-    }
-    
-    return YES;
-}
-
 #pragma mark - change item ui
 
 - (void)updateItemStatusToSelecting:(NSInteger)index {
@@ -276,13 +270,5 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 
 #pragma mark - getter & setter
 
-//- (void)setOptionMenuSource:(NSArray<SHSingleOptionMenuHeaderEntityModel *> *)optionMenuSource {
-//    if (![optionMenuSource isKindOfClass:[NSArray class]]) {
-//        return;
-//    }
-//
-//    _optionMenuSource = [optionMenuSource copy];
-//    [self createOptionMenuItems];
-//}
 
 @end

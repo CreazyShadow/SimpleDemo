@@ -135,17 +135,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [self.navigationController popViewControllerAnimated:YES];
-    
-    if (!_maskView.superview) {
-        UIView *maskView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
-        maskView.backgroundColor = [UIColor orangeColor];
-        maskView.alpha = 0.3;
-        maskView.userInteractionEnabled = NO;
-//        [self.navigationController.view insertSubview:maskView atIndex:0];
-        [self.view.superview insertSubview:maskView atIndex:0];
-        _maskView = maskView;
-    }
+    tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 1)];
 }
 
 @end

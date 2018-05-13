@@ -31,6 +31,7 @@
 
 #import <UIView+Shape.h>
 #import <UIView+Utils.h>
+#import <WSProgressHUD.h>
 
 #import "GlobalInstance.h"
 

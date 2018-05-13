@@ -101,7 +101,10 @@ static NSUInteger gcd(NSUInteger a, NSUInteger b)
 }
 
 - (void)test {
-   
+    NSMutableArray *a = [@[@1, @2] mutableCopy];
+    NSArray *b = [a copy];
+    [a removeObject:@"3"];
+    NSLog(@"%------p %p", a, b);
 }
 
 - (NSArray *)arr {
@@ -144,7 +147,7 @@ static NSUInteger gcd(NSUInteger a, NSUInteger b)
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"TestCustomViewController";
+    NSString *className = @"SecondViewController";
     switch (type) {
         case 0:
         {

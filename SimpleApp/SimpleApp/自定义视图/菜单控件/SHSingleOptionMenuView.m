@@ -126,14 +126,14 @@ static CGFloat const kContentMaxHeight = 260;
 - (void)maskAction {
     [self setupContentStatus:NO];
     
-    if (_style == SHSingleOptionMenuStyleBoxHeader) {
-        //还原选项
-        NSMutableArray *now = [self cacheItemsForHeaderIndex:_currentSelectedMenuIndex];
-        [now removeAllObjects];
-        [now addObjectsFromArray:_selectingItemsTemp];
-    }
+    [self resetContentItemsToStartSelecte];
     
-    [self.header updateMenuItemStatus:[self hasSelectedItemForMenuHeaderIndex:_currentSelectedMenuIndex] index:_currentSelectedMenuIndex];
+    //刷新title
+    [self updateHeaderItemTitleWithIndex:_currentSelectedMenuIndex];
+    if (_style == SHSingleOptionMenuStylePlainHeader &&
+        [self.delegate respondsToSelector:@selector(menu:didSelectedContentItemForIndexPath:)]) {
+        [self.delegate menu:self didSelectedContentItemForIndexPath:[self menuSelectedItemsWithHeaderIndex:_currentSelectedMenuIndex].firstObject];
+    }
 }
 
 - (void)resetAction {
@@ -226,26 +226,39 @@ static CGFloat const kContentMaxHeight = 260;
 
 #pragma mark - SingleOptionMenuHeaderDelegate
 
-- (NSInteger)numberOfItemsCount {
+- (NSInteger)numberOfItemsCountInHeader:(SHSingleOptionMenuHeaderView *)header {
     return [self.delegate numberOfHeaderItemsCountForMenu:self];
 }
 
-- (SHSingleOptionMenuHeaderEntityModel *)itemEntityModelForIndex:(NSInteger)index {
+- (SHSingleOptionMenuHeaderEntityModel *)itemEntityModelForIndex:(NSInteger)index inHeader:(SHSingleOptionMenuHeaderView *)header {
     return [self.delegate menu:self headerEntityForIndex:index];
 }
 
-- (void)menuHeaderDidClickItem:(UIButton *)btn index:(NSInteger)index {
-    BOOL isChangeTab = !self.content.hidden && _currentSelectedMenuIndex != index;
-    //当切换tab时重置上一个item 状态
-    if (_style == SHSingleOptionMenuStyleBoxHeader && isChangeTab && _selectingItemsTemp) {
-        NSMutableArray *now = [self cacheItemsForHeaderIndex:_currentSelectedMenuIndex];
-        [now removeAllObjects];
-        [now addObjectsFromArray:_selectingItemsTemp];
-        [self.header updateMenuItemStatus:now.count > 0 index:_currentSelectedMenuIndex];
+- (void)menuHeader:(SHSingleOptionMenuHeaderView *)header didClickItem:(UIButton *)btn index:(NSInteger)index isChangeTab:(BOOL)isChangeTab {
+    if (_selectingItemsTemp && isChangeTab) { // 重置前一个item对应的值
+        [self resetContentItemsToStartSelecte];
     }
     
+    //点击已选中的header 退出选择
+    if (!self.content.hidden && !isChangeTab) {
+        [self resetContentItemsToStartSelecte];
+        
+        [self setupContentStatus:NO];
+        [self.header updateMenuItemStatus:[self hasSelectedItemForMenuHeaderIndex:index] index:index];
+        //刷新title
+        [self updateHeaderItemTitleWithIndex:index];
+        
+        if (_style == SHSingleOptionMenuStylePlainHeader &&
+            [self.delegate respondsToSelector:@selector(menu:didSelectedContentItemForIndexPath:)]) {
+            [self.delegate menu:self didSelectedContentItemForIndexPath:[self menuSelectedItemsWithHeaderIndex:index].firstObject];
+        }
+        
+        return;
+    }
+    
+    _currentSelectedMenuIndex = index;
     _selectingItemsTemp = [[self menuSelectedItemsWithHeaderIndex:index] copy];
-
+    
     //如果没有content item
     NSInteger contentCount = [self.delegate menu:self numberOfContentItemsCountForHeaderIndex:index];
     if (contentCount == 0) {
@@ -260,15 +273,6 @@ static CGFloat const kContentMaxHeight = 260;
     //设置默认选中项
     [self selectedFirstItemWhenOnceClickForHeaderIndex:index];
     
-    //点击已选中的header 退出选择
-    if (!self.content.hidden && !isChangeTab) {
-        [self setupContentStatus:NO];
-        [self.header updateMenuItemStatus:[self hasSelectedItemForMenuHeaderIndex:index] index:index];
-        //刷新title
-        [self updateHeaderItemTitleWithIndex:index];
-        return;
-    }
-    
     //刷新content
     [self.content reloadData];
     
@@ -280,18 +284,27 @@ static CGFloat const kContentMaxHeight = 260;
     if ([self.delegate respondsToSelector:@selector(menu:didSelectedHeaderItem:)]) {
         [self.delegate menu:self didSelectedHeaderItem:index];
     }
-    
-    _currentSelectedMenuIndex = index;
 }
 
 - (BOOL)hasSelectedItemForMenuHeaderIndex:(NSInteger)index {
     return self.menuSelectedItemsCache[@(index)].count > 0;
 }
 
-- (void)willDisplayMenuHeaderItem:(UIButton *)btn index:(NSInteger)index {
+- (void)willDisplayMenuHeader:(SHSingleOptionMenuHeaderView *)header item:(UIButton *)btn index:(NSInteger)index {
     if ([self.delegate respondsToSelector:@selector(menu:willDisplayHeaderItem:index:)]) {
         [self.delegate menu:self willDisplayHeaderItem:btn index:index];
     }
+}
+
+- (void)resetContentItemsToStartSelecte {
+    if (_style == SHSingleOptionMenuStylePlainHeader) {
+        return;
+    }
+    
+    NSMutableArray *now = [self cacheItemsForHeaderIndex:_currentSelectedMenuIndex];
+    [now removeAllObjects];
+    [now addObjectsFromArray:_selectingItemsTemp];
+    [self.header updateMenuItemStatus:now.count > 0 index:_currentSelectedMenuIndex];
 }
 
 #pragma mark - SingleOptionMenuContentViewDelegate

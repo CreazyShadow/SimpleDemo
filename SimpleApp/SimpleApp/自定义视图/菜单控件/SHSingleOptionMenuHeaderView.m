@@ -47,7 +47,7 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 @implementation SHSingleOptionMenuHeaderView
 {
     UIButton *_lastItem;
-	BOOL _isFirstCreate;
+    BOOL _isFirstCreate;
 }
 
 #pragma mark - life cycle(init)
@@ -70,7 +70,7 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    NSInteger count = [self.delegate numberOfItemsCount];
+    NSInteger count = [self.delegate numberOfItemsCountInHeader:self];
     if (count == 0) {
         return;
     }
@@ -93,15 +93,15 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
         _menus[i].frame = CGRectMake(0, 0, width, height);
         
         //调整图片位置
-        if ([self.delegate itemEntityModelForIndex:i].iconIsLeft) {
+        if ([self.delegate itemEntityModelForIndex:i inHeader:self].iconIsLeft) {
             [_menus[i] setButtonImageTitleStyle:ButtonImageTitleStyleLeft padding:4.f];
         } else {
             [_menus[i] setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:4.f];
         }
         
         //自定义样式
-        if ([self.delegate respondsToSelector:@selector(willDisplayMenuHeaderItem:index:)]) {
-            [self.delegate willDisplayMenuHeaderItem:_menus[i] index:i];
+        if ([self.delegate respondsToSelector:@selector(willDisplayMenuHeader:item:index:)]) {
+            [self.delegate willDisplayMenuHeader:self item:_menus[i] index:i];
         }
     }
 }
@@ -123,28 +123,19 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 - (void)menuItemClickAction:(UIButton *)btn {
     NSInteger selectedIndex = btn.tag - kMenuItemBtnStartTag;
     
-    BOOL isChangeTab = _lastItem && _lastItem.tag == btn.tag;
+    BOOL isChangeTab = [self itemShouldChangeStatusWithLast:_lastItem current:btn];
     if (isChangeTab && _style == SHMenuHeaderStylePlainText) { //切换tab 并且 paintext style
-        [self resetOtherItemStatuForCurrentItem:btn];
+        [self renderMenuItem:_lastItem andStatus:NO];
     }
+    
+    _lastItem = btn;
     
     [self updateItemStatusToSelecting:btn.tag - kMenuItemBtnStartTag];
     
-    if ([self.delegate respondsToSelector:@selector(menuHeaderDidClickItem:index:)]) {
-        [self.delegate menuHeaderDidClickItem:btn index:selectedIndex];
+    if ([self.delegate respondsToSelector:@selector(menuHeader:didClickItem:index:isChangeTab:)]) {
+        [self.delegate menuHeader:self didClickItem:btn index:selectedIndex isChangeTab:isChangeTab];
     }
- 
-    _lastItem = btn;
-}
-
-- (void)resetOtherItemStatuForCurrentItem:(UIButton *)current {
-    for (UIButton *temp in self.menus) {
-        if (temp.tag == current.tag) {
-            continue;
-        }
-        
-        [self renderMenuItem:temp andStatus:NO];
-    }
+    
 }
 
 #pragma mark - public
@@ -160,7 +151,7 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
             continue;
         }
         
-        [self setupItem:self.menus[index] withEntityModel:[self.delegate itemEntityModelForIndex:index]];
+        [self setupItem:self.menus[index] withEntityModel:[self.delegate itemEntityModelForIndex:index inHeader:self]];
     }
     
     [self setNeedsLayout];
@@ -169,6 +160,10 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 - (void)updateMenuItemStatus:(BOOL)status index:(NSInteger)index {
     if (index < 0 || index >= self.menus.count) {
         return;
+    }
+    
+    if (_style != SHMenuHeaderStyleCube) {
+        _lastItem = self.menus[index];
     }
     
     [self renderMenuItem:self.menus[index] andStatus:status];
@@ -181,12 +176,12 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
     [self.menus removeAllObjects];
     [self.menuBorders removeAllObjects];
     
-    NSInteger count = [self.delegate numberOfItemsCount];
+    NSInteger count = [self.delegate numberOfItemsCountInHeader:self];
     for (int i = 0; i < count; i++) {
         UIButton *temp = [[UIButton alloc] init];
         temp.tag = kMenuItemBtnStartTag + i;
         [temp addTarget:self action:@selector(menuItemClickAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self setupItem:temp withEntityModel:[self.delegate itemEntityModelForIndex:i]];
+        [self setupItem:temp withEntityModel:[self.delegate itemEntityModelForIndex:i inHeader:self]];
         
         // 添加border view
         UIView *border = [self menuItemBorderViewWithItem:temp];
@@ -218,6 +213,14 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
     btn.titleLabel.font = [UIFont systemFontOfSize:12];
 }
 
+- (BOOL)itemShouldChangeStatusWithLast:(UIButton *)last current:(UIButton *)current {
+    if (last.tag == current.tag || !last) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 #pragma mark - change item ui
 
 - (void)updateItemStatusToSelecting:(NSInteger)index {
@@ -243,13 +246,13 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
     
     self.menuBorders[item.tag - kMenuItemBtnStartTag].layer.borderWidth = 0.f;
     switch (style) {
-            case SHMenuHeaderSelectingStyleRedText:
+        case SHMenuHeaderSelectingStyleRedText:
         {
             item.selected = YES;
         }
             break;
             
-            case SHMenuHeaderSelectingStyleExpand:
+        case SHMenuHeaderSelectingStyleExpand:
         {
             item.selected = YES;
             self.menus[item.tag - kMenuItemBtnStartTag].backgroundColor = [UIColor clearColor];

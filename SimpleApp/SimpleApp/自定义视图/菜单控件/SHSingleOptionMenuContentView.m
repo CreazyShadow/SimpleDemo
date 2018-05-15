@@ -48,8 +48,7 @@ UICollectionViewDelegateFlowLayout>
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellID forIndexPath:indexPath];
-    cell.contentView.layer.borderColor = [UIColor redColor].CGColor;
-    cell.contentView.layer.borderWidth = 1;
+
     UIView *old = [cell viewWithTag:kItemTag];
     if ([self.delegate respondsToSelector:@selector(menuContentView:itemForIndex:reusableItem:itemSup:)]) {
         UIView *content = [self.delegate menuContentView:self itemForIndex:indexPath.item reusableItem:old itemSup:cell.contentView];

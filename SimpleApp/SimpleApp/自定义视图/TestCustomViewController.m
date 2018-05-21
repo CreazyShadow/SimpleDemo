@@ -96,7 +96,7 @@
 
 - (NSInteger)menu:(SHSingleOptionMenuView *)menu numberOfContentItemsCountForHeaderIndex:(NSInteger)index {
     if (index == 0) {
-        return 17;
+        return 0;
     }
     
     return 5;

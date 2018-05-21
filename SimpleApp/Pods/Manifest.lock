@@ -1,19 +1,19 @@
 PODS:
-  - AdhocSDK (3.1.5)
-  - AFNetworking (3.2.0):
-    - AFNetworking/NSURLSession (= 3.2.0)
-    - AFNetworking/Reachability (= 3.2.0)
-    - AFNetworking/Security (= 3.2.0)
-    - AFNetworking/Serialization (= 3.2.0)
-    - AFNetworking/UIKit (= 3.2.0)
-  - AFNetworking/NSURLSession (3.2.0):
+  - AdhocSDK (3.1.5.1)
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.0)
-  - AFNetworking/Security (3.2.0)
-  - AFNetworking/Serialization (3.2.0)
-  - AFNetworking/UIKit (3.2.0):
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - Aspects (1.4.1)
   - EGOCache (2.2.0)
@@ -26,7 +26,7 @@ PODS:
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
-  - IQKeyboardManager (6.0.0)
+  - IQKeyboardManager (6.0.3)
   - JDFlipNumberView (2.2.3):
     - JDFlipNumberView/Core (= 2.2.3)
     - JDFlipNumberView/DefaultImageBundle (= 2.2.3)
@@ -74,35 +74,9 @@ DEPENDENCIES:
   - YTKNetwork
   - YYModel
 
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - AdhocSDK
-    - AFNetworking
-    - Aspects
-    - EGOCache
-    - FBAllocationTracker
-    - FBMemoryProfiler
-    - FBRetainCycleDetector
-    - FLEX
-    - FMDB
-    - IQKeyboardManager
-    - JDFlipNumberView
-    - Masonry
-    - MJExtension
-    - MJRefresh
-    - OpenShare
-    - pop
-    - ReactiveObjC
-    - SDWebImage
-    - Shimmer
-    - WebViewJavascriptBridge
-    - WSProgressHUD
-    - YTKNetwork
-    - YYModel
-
 SPEC CHECKSUMS:
-  AdhocSDK: cfb01edbfe2ed145fd7261b3bfb4e74502934915
-  AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
+  AdhocSDK: e763837013e7937e8359e7677c3ee8c13c207eea
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   EGOCache: 191fd213da6804d487b49b1a91772ba904f3e324
   FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
@@ -110,7 +84,7 @@ SPEC CHECKSUMS:
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
-  IQKeyboardManager: fdba62488e23c48a3fa8591635aff166ed946632
+  IQKeyboardManager: c390e612f4b98c8fd748016470138537dc163ead
   JDFlipNumberView: e4672404447e7240d26d22f8c850660cd44eef69
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
@@ -125,6 +99,6 @@ SPEC CHECKSUMS:
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 33cfb92cc5a9fb2a62cff2fd04f1897ee1154039
+PODFILE CHECKSUM: 2a9722579d99ab2b83216a07b983d1795c107f9e
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.2.1

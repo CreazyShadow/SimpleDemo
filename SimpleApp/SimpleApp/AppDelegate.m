@@ -13,6 +13,7 @@
 #import "ScrapeView.h"
 #import <math.h>
 #import <AFNetworking.h>
+#import <CoreFoundation/CoreFoundation.h>
 
 #import "CustomURLProtocol.h"
 #import "SessionCustomProtocolConfiguration.h"
@@ -101,10 +102,13 @@ static NSUInteger gcd(NSUInteger a, NSUInteger b)
 }
 
 - (void)test {
-    NSMutableArray *a = [@[@1, @2] mutableCopy];
-    NSArray *b = [a copy];
-    [a removeObject:@"3"];
-    NSLog(@"%------p %p", a, b);
+    NSMutableString *str1 = [@"爱" mutableCopy];
+    NSMutableString *str2 = [@"癌." mutableCopy];
+    NSMutableString *str3 = [@"哎" mutableCopy];
+    CFStringTransform((__bridge CFMutableStringRef)str1, NULL, kCFStringTransformToLatin, NO);
+    CFStringTransform((__bridge CFMutableStringRef)str2, NULL, kCFStringTransformToLatin, NO);
+    CFStringTransform((__bridge CFMutableStringRef)str3, NULL, kCFStringTransformToLatin, NO);
+    NSLog(@"----");
 }
 
 - (NSArray *)arr {

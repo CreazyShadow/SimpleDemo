@@ -15,6 +15,9 @@
 		0125887C208434FF00A2686D /* NatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0125887A208434FF00A2686D /* NatureViewController.xib */; };
 		0125887F20843A2000A2686D /* NatureClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0125887E20843A2000A2686D /* NatureClass.m */; };
 		01258883208482CA00A2686D /* ThridManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01258882208482CA00A2686D /* ThridManager.m */; };
+		016B77AB20B2CAD500196EC0 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016B77AA20B2CAD500196EC0 /* UserListViewController.swift */; };
+		016B77B220B2D45400196EC0 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016B77B120B2D45400196EC0 /* UserListCell.swift */; };
+		016B77B420B2D48F00196EC0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016B77B320B2D48F00196EC0 /* UserModel.swift */; };
 		01A0855E209FF87D00258C6F /* RacLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0855C209FF87D00258C6F /* RacLoginViewController.m */; };
 		01A0855F209FF87D00258C6F /* RacLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A0855D209FF87D00258C6F /* RacLoginViewController.xib */; };
 		01A08562209FFD7C00258C6F /* RACLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A08561209FFD7C00258C6F /* RACLoginViewModel.m */; };
@@ -243,6 +246,10 @@
 		012588802084827300A2686D /* SimpleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleApp.entitlements; sourceTree = "<group>"; };
 		01258881208482CA00A2686D /* ThridManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThridManager.h; sourceTree = "<group>"; };
 		01258882208482CA00A2686D /* ThridManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThridManager.m; sourceTree = "<group>"; };
+		016B77AA20B2CAD500196EC0 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		016B77B020B2CC7300196EC0 /* SimpleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		016B77B120B2D45400196EC0 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
+		016B77B320B2D48F00196EC0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		01A0855B209FF87D00258C6F /* RacLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RacLoginViewController.h; sourceTree = "<group>"; };
 		01A0855C209FF87D00258C6F /* RacLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RacLoginViewController.m; sourceTree = "<group>"; };
 		01A0855D209FF87D00258C6F /* RacLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RacLoginViewController.xib; sourceTree = "<group>"; };
@@ -541,7 +548,6 @@
 		73BA34AF1DB12E65007E9FC1 /* MasonryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasonryTableViewCell.m; sourceTree = "<group>"; };
 		73BA34B01DB12E65007E9FC1 /* MasonyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasonyTableViewController.h; sourceTree = "<group>"; };
 		73BA34B11DB12E65007E9FC1 /* MasonyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasonyTableViewController.m; sourceTree = "<group>"; };
-		73BA34B21DB12E65007E9FC1 /* SimpleApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		73BA34B31DB12E65007E9FC1 /* TestTableViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewViewController.swift; sourceTree = "<group>"; };
 		73BA34BB1DB12E65007E9FC1 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = "视图/ViewController.h"; sourceTree = "<group>"; };
 		73BA34BC1DB12E65007E9FC1 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = "视图/ViewController.m"; sourceTree = "<group>"; };
@@ -691,6 +697,17 @@
 				0125887E20843A2000A2686D /* NatureClass.m */,
 			);
 			path = "底层原理和逆向";
+			sourceTree = "<group>";
+		};
+		01810F2420AD2EB100A36B0E /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				016B77AA20B2CAD500196EC0 /* UserListViewController.swift */,
+				016B77B020B2CC7300196EC0 /* SimpleApp-Bridging-Header.h */,
+				016B77B120B2D45400196EC0 /* UserListCell.swift */,
+				016B77B320B2D48F00196EC0 /* UserModel.swift */,
+			);
+			path = Swift;
 			sourceTree = "<group>";
 		};
 		01A0854D209FF6AF00258C6F /* 响应式编程 */ = {
@@ -1069,6 +1086,7 @@
 			isa = PBXGroup;
 			children = (
 				012588802084827300A2686D /* SimpleApp.entitlements */,
+				01810F2420AD2EB100A36B0E /* Swift */,
 				01A0854D209FF6AF00258C6F /* 响应式编程 */,
 				012588772084349700A2686D /* 底层原理和逆向 */,
 				0109B551207E120900625640 /* 第三方 */,
@@ -1477,7 +1495,6 @@
 				73BA34AF1DB12E65007E9FC1 /* MasonryTableViewCell.m */,
 				73BA34B01DB12E65007E9FC1 /* MasonyTableViewController.h */,
 				73BA34B11DB12E65007E9FC1 /* MasonyTableViewController.m */,
-				73BA34B21DB12E65007E9FC1 /* SimpleApp-Bridging-Header.h */,
 				73BA34B31DB12E65007E9FC1 /* TestTableViewViewController.swift */,
 				7323E9E91DC1CDF300F053F8 /* RefreshViewController.h */,
 				7323E9EA1DC1CDF300F053F8 /* RefreshViewController.m */,
@@ -1849,6 +1866,7 @@
 				731C12791E8504200034F361 /* NSURLProtocol+WebKitSupport.m in Sources */,
 				73B5A05E1DC6F15200477323 /* SelectImageView.m in Sources */,
 				73E5BA881E26097000CF3BD5 /* GestureSummary_ResponseTime.m in Sources */,
+				016B77B220B2D45400196EC0 /* UserListCell.swift in Sources */,
 				73F5C2901E9DB8150016A44D /* DrawCurveViewController.m in Sources */,
 				733968491F948B700062DC9C /* RunLoopSourceCode.m in Sources */,
 				7373D24C1CD0AA2600332D91 /* AppDelegate.m in Sources */,
@@ -1943,12 +1961,14 @@
 				73B5A05C1DC6F15200477323 /* SelectImageItemView.m in Sources */,
 				735998301EA5E9CC00427C5B /* RecyleScrollViewItem.m in Sources */,
 				735998411EA6F6C900427C5B /* Class_Meta_ViewController.m in Sources */,
+				016B77AB20B2CAD500196EC0 /* UserListViewController.swift in Sources */,
 				732B507B1E8B3E5F006F2677 /* LifeCycleAViewController.m in Sources */,
 				735A35552019BE770017D6EF /* HXListViewViewController.m in Sources */,
 				73E540FE1E963A18007C6584 /* AutoChart.m in Sources */,
 				731C12691E84F0060034F361 /* UIWebView+Clean.m in Sources */,
 				731DAD131E7B805F004E5F8D /* OperationQueueViewController.m in Sources */,
 				7359982A1EA5B06C00427C5B /* RecycleScrollView.m in Sources */,
+				016B77B420B2D48F00196EC0 /* UserModel.swift in Sources */,
 				732D803B1EB435D90003FD18 /* BaseView.m in Sources */,
 				732B50851E8B489F006F2677 /* BaseHeaderViewController.m in Sources */,
 				7393FBCE1E49559100EF7BDF /* MessageMechanismViewController.m in Sources */,
@@ -2211,7 +2231,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/SimpleApp/Swift/SimpleApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2264,7 +2284,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/SimpleApp/Swift/SimpleApp-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s armv7";

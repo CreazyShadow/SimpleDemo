@@ -10,6 +10,7 @@
 #import <AFNetworking.h>
 
 #import <objc/runtime.h>
+#import "SimpleApp-Swift.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, UIWebViewDelegate>
 
@@ -25,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     [self addWeb];
 }
 

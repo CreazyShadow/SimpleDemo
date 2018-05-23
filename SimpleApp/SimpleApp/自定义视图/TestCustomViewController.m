@@ -32,7 +32,7 @@
 
 #pragma mark - touch event
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.menu resetMenu];
+    
 }
 
 #pragma mark - select image view

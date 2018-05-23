@@ -47,7 +47,7 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 @implementation SHSingleOptionMenuHeaderView
 {
     UIButton *_lastItem;
-    BOOL _isFirstCreate;
+	BOOL _isFirstCreate;
 }
 
 #pragma mark - life cycle(init)
@@ -109,7 +109,7 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 #pragma mark - init subviews
 
 - (void)buildSubViews {
-    self.bottomLineView = [[UIView alloc] initWithFrame:CGRectMake(0, self.height - 1, self.width, 1)];
+    self.bottomLineView = [[UIView alloc] initWithFrame:CGRectMake(0, self.height - 1, self.width, 0.5)];
     _bottomLineView.backgroundColor = colorHex(@"F0F0F0");
     [self addSubview:_bottomLineView];
     
@@ -151,10 +151,22 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
             continue;
         }
         
-        [self setupItem:self.menus[index] withEntityModel:[self.delegate itemEntityModelForIndex:index inHeader:self]];
+        SHSingleOptionMenuHeaderEntityModel *model = [self.delegate itemEntityModelForIndex:index inHeader:self];
+        [self setupItem:self.menus[index] withEntityModel:model];
+        
+        //调整图片位置
+        if (model.iconIsLeft) {
+            [_menus[index] setButtonImageTitleStyle:ButtonImageTitleStyleLeft padding:4.f];
+        } else {
+            [_menus[index] setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:4.f];
+        }
+        
+        //自定义样式
+        if ([self.delegate respondsToSelector:@selector(willDisplayMenuHeader:item:index:)]) {
+            [self.delegate willDisplayMenuHeader:self item:_menus[index] index:index];
+        }
     }
     
-    [self setNeedsLayout];
 }
 
 - (void)updateMenuItemStatus:(BOOL)status index:(NSInteger)index {
@@ -194,6 +206,11 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
         [self renderMenuItem:temp andStatus:NO];
     }
     
+    //设置默认选中
+    [self.defaultSelectedItems enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+        [self updateMenuItemStatus:YES index:idx];
+    }];
+    
     [self setNeedsLayout];
 }
 
@@ -210,7 +227,7 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
     [btn setTitleColor:kSelectedMenuColor forState:UIControlStateSelected];
     [btn setImage:[UIImage imageNamed:model.icon] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:model.selectedIcon] forState:UIControlStateSelected];
-    btn.titleLabel.font = [UIFont systemFontOfSize:12];
+    btn.titleLabel.font = [UIFont systemFontOfSize:14];
 }
 
 - (BOOL)itemShouldChangeStatusWithLast:(UIButton *)last current:(UIButton *)current {
@@ -246,13 +263,13 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
     
     self.menuBorders[item.tag - kMenuItemBtnStartTag].layer.borderWidth = 0.f;
     switch (style) {
-        case SHMenuHeaderSelectingStyleRedText:
+            case SHMenuHeaderSelectingStyleRedText:
         {
             item.selected = YES;
         }
             break;
             
-        case SHMenuHeaderSelectingStyleExpand:
+            case SHMenuHeaderSelectingStyleExpand:
         {
             item.selected = YES;
             self.menus[item.tag - kMenuItemBtnStartTag].backgroundColor = [UIColor clearColor];

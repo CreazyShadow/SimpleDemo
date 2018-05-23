@@ -48,6 +48,7 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderStyle) {
 @property (nonatomic, assign) CGFloat itemSpace;    ///< item 间隔
 @property (nonatomic, assign) CGFloat itemHeight;   ///< item 高度 默认25
 @property (nonatomic, assign) CGFloat horPadding;   ///< 水平间隔 内边距
+@property (nonatomic, copy) NSIndexSet *defaultSelectedItems; ///< 默认选中项
 
 - (instancetype)initWithFrame:(CGRect)frame style:(SHMenuHeaderStyle)style;
 

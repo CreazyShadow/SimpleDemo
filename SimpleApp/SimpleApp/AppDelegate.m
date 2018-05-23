@@ -45,6 +45,8 @@
 #import <EmptySubObj.h>
 #import <EmptySuperObj+Empty.h>
 
+#import "ThridManager.h"
+
 
 NSString *const maxCount = @"100";
 
@@ -146,12 +148,15 @@ static NSUInteger gcd(NSUInteger a, NSUInteger b)
     //通知
     //    [self setupNotification];
     
+    //第三方
+    [ThridManager initializeThridLibWithOptions:launchOptions];
+    
     return YES;
 }
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"FirstViewController";
+    NSString *className = @"TestCustomViewController";
     switch (type) {
         case 0:
         {

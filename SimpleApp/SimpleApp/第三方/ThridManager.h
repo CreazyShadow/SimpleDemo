@@ -10,6 +10,6 @@
 
 @interface ThridManager : NSObject
 
-+ (void)initializeThridLib;
++ (void)initializeThridLibWithOptions:(NSDictionary *)options;
 
 @end

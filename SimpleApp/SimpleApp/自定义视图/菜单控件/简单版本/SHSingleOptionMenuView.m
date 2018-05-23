@@ -197,11 +197,16 @@ static CGFloat const kContentMaxHeight = 260;
 }
 
 - (void)reloadMenu {
+    // reset content
+    [self.menuSelectedItemsCache removeAllObjects];
+    
     // 创建header
     [self.header reloadItems];
     
     //创建content
-    [self.content reloadData];
+    if (!self.content.hidden) {
+        [self.content reloadData];
+    }
 }
 
 - (void)reloadHeaderItemsWithIndexs:(NSSet<NSNumber *> *)indexs {
@@ -210,14 +215,6 @@ static CGFloat const kContentMaxHeight = 260;
 
 - (void)reloadContentItemsAtIndexs:(NSSet *)indexs {
     [self.content reloadItemsForIndexs:indexs];
-}
-
-- (void)resetMenu {
-    // reset header
-    [self.header reloadItems];
-    
-    // reset content
-    [self.menuSelectedItemsCache removeAllObjects];
 }
 
 - (void)hiddenMenuContent {
@@ -297,19 +294,26 @@ static CGFloat const kContentMaxHeight = 260;
 }
 
 - (void)resetContentItemsToStartSelecte {
-    if (_style == SHSingleOptionMenuStylePlainHeader) {
+    if (_style == SHMenuHeaderStylePlainText) {
         return;
     }
     
     NSMutableArray *now = [self cacheItemsForHeaderIndex:_currentSelectedMenuIndex];
-    [now removeAllObjects];
-    [now addObjectsFromArray:_selectingItemsTemp];
+    if ([self canMultiChoiceForHeaderIndex:_currentSelectedMenuIndex]) {
+        [now removeAllObjects];
+        [now addObjectsFromArray:_selectingItemsTemp];
+    }
+    
     [self.header updateMenuItemStatus:now.count > 0 index:_currentSelectedMenuIndex];
 }
 
 #pragma mark - SingleOptionMenuContentViewDelegate
 
 - (NSInteger)itemCountForMenuContentView:(SHSingleOptionMenuContentView *)contentView {
+    if ([self.delegate numberOfHeaderItemsCountForMenu:self] == 0) {
+        return 0;
+    }
+    
     return [self.delegate menu:self numberOfContentItemsCountForHeaderIndex:_currentSelectedMenuIndex];
 }
 

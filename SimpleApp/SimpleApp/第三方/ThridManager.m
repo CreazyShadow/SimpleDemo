@@ -9,15 +9,20 @@
 #import "ThridManager.h"
 #import <AdhocSDK/AdhocSDK.h>
 
+#if DEBUG
+#import <LLDebug.h>
+#endif
+
 @implementation ThridManager
 
-+ (void)initializeThridLib {
-    
++ (void)initializeThridLibWithOptions:(NSDictionary *)options {
+    [self startupAdhocSDk:options];
+    [self startLLDebugTool];
 }
 
 #pragma mark - adhoc
 
-- (void)startupAdhocSDk:(NSDictionary *)launchOptions {
++ (void)startupAdhocSDk:(NSDictionary *)launchOptions {
     AdhocSDKConfig *config = [AdhocSDKConfig defaultConfig];
     config.appKey = @"";
     config.enableDebugAssist = YES;
@@ -25,6 +30,15 @@
     config.sessionTrackEnabled = YES;
     config.durationTrackEnabled = YES;
     [AdhocSDK startWithConfigure:config options:launchOptions];
+}
+
+#pragma mark - LLDebugTool
+
++ (void)startLLDebugTool {
+    
+#if DEBUG
+    [[LLDebugTool sharedTool] startWorking];
+#endif
 }
 
 @end

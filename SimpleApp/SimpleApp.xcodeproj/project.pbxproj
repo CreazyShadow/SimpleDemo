@@ -15,6 +15,7 @@
 		016B77AB20B2CAD500196EC0 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016B77AA20B2CAD500196EC0 /* UserListViewController.swift */; };
 		016B77B220B2D45400196EC0 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016B77B120B2D45400196EC0 /* UserListCell.swift */; };
 		016B77B420B2D48F00196EC0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016B77B320B2D48F00196EC0 /* UserModel.swift */; };
+		016B77B720B3AA3E00196EC0 /* OcInvokeSwiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016B77B620B3AA3E00196EC0 /* OcInvokeSwiftViewController.m */; };
 		01A0855E209FF87D00258C6F /* RacLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0855C209FF87D00258C6F /* RacLoginViewController.m */; };
 		01A0855F209FF87D00258C6F /* RacLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A0855D209FF87D00258C6F /* RacLoginViewController.xib */; };
 		01A08562209FFD7C00258C6F /* RACLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A08561209FFD7C00258C6F /* RACLoginViewModel.m */; };
@@ -247,6 +248,8 @@
 		016B77B020B2CC7300196EC0 /* SimpleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		016B77B120B2D45400196EC0 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
 		016B77B320B2D48F00196EC0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		016B77B520B3AA3E00196EC0 /* OcInvokeSwiftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OcInvokeSwiftViewController.h; sourceTree = "<group>"; };
+		016B77B620B3AA3E00196EC0 /* OcInvokeSwiftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OcInvokeSwiftViewController.m; sourceTree = "<group>"; };
 		01A0855B209FF87D00258C6F /* RacLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RacLoginViewController.h; sourceTree = "<group>"; };
 		01A0855C209FF87D00258C6F /* RacLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RacLoginViewController.m; sourceTree = "<group>"; };
 		01A0855D209FF87D00258C6F /* RacLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RacLoginViewController.xib; sourceTree = "<group>"; };
@@ -704,6 +707,8 @@
 				016B77B020B2CC7300196EC0 /* SimpleApp-Bridging-Header.h */,
 				016B77B120B2D45400196EC0 /* UserListCell.swift */,
 				016B77B320B2D48F00196EC0 /* UserModel.swift */,
+				016B77B520B3AA3E00196EC0 /* OcInvokeSwiftViewController.h */,
+				016B77B620B3AA3E00196EC0 /* OcInvokeSwiftViewController.m */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -1693,7 +1698,6 @@
 				7373D2421CD0AA2600332D91 /* Resources */,
 				A9627E4735A38C62AD4E1B92 /* [CP] Copy Pods Resources */,
 				735ADFC61E83669800F79620 /* ShellScript */,
-				B743842D1A17AFADAFDE1DDD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1870,6 +1874,16 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp-resources.sh",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/JDFlipNumberView/JDFlipNumberView/JDFlipNumberView.bundle",
+				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Others/FilterView/LabelCell/LLFilterLabelCell.xib",
+				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Others/FilterView/TextFieldCell/LLFilterTextFieldCell.xib",
+				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Others/LLSubTitleTableViewCell.xib",
+				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Crash/LLCrashCell.xib",
+				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Crash/LLCrashContentCell.xib",
+				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Log/LLLogCell.xib",
+				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Network/LLNetworkCell.xib",
+				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Network/LLNetworkImageCell.xib",
+				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Sandbox/LLSandboxCell.xib",
+				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Resources/LLDebugTool.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/WSProgressHUD/WSProgressHUD/WSProgressBundle.bundle",
 			);
@@ -1877,27 +1891,22 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JDFlipNumberView.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLFilterLabelCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLFilterTextFieldCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLSubTitleTableViewCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLCrashCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLCrashContentCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLLogCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLNetworkCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLNetworkImageCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLSandboxCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLDebugTool.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WSProgressBundle.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B743842D1A17AFADAFDE1DDD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2038,6 +2047,7 @@
 				73BA34D61DB12E65007E9FC1 /* EventTextField.m in Sources */,
 				7340660A1E6CF82800E4E98B /* PushManager.m in Sources */,
 				735EDAB31E1CC790002962DB /* ChildEventView.m in Sources */,
+				016B77B720B3AA3E00196EC0 /* OcInvokeSwiftViewController.m in Sources */,
 				735ADFE91E837AB500F79620 /* ToViewController.m in Sources */,
 				731C664D1EC15791008DF9D1 /* LockViewController.m in Sources */,
 				73A8B7251E8E54CD00303C4D /* TapAViewController.m in Sources */,

@@ -23,6 +23,7 @@ def share_pods
 #    pod 'MLeaksFinder'
     pod 'JDFlipNumberView'
     pod 'FLEX', :configuration => 'Debug'
+    pod 'LLDebugTool' ,:configurations => ['Debug']
     pod 'AdhocSDK'
     pod 'ReactiveObjC', '~>3.0.0'
 end

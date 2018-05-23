@@ -159,9 +159,11 @@
     if (!_button1) {
         _button1 = [[UIButton alloc] initWithFrame:CGRectMake(20, 80, 150, 30)];
         _button1.backgroundColor = [UIColor purpleColor];
-        [_button1 setImage:[UIImage imageNamed:@"circle"] forState:UIControlStateNormal];
+        [_button1 setImage:[UIImage imageNamed:@"jiantou_morecomment"] forState:UIControlStateNormal];
         [_button1 setTitle:@"button1" forState:UIControlStateNormal];
         [_button1 addTarget:self action:@selector(clickButton1) forControlEvents:UIControlEventTouchUpInside];
+        
+        
     }
     
     return _button1;

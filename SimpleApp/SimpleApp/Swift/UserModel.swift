@@ -12,7 +12,33 @@ class UserModel: BaseModel {
     var name: String?
     var age: Int?
     
-    func test() {
+    @objc override init() {
+        self.name = nil
+        self.age = nil
+        super .init()
+    }
+    
+    convenience init(name:String?, age:Int?) {
+        self.init()
+        
+        self.name = name
+        self.age = age
+    }
+    
+    @discardableResult
+    func intro() -> String {
+        return "name:\(String(describing: self.name)) age:\(String(describing: self.age ?? nil))"
+    }
+    
+    @objc
+    func rename(name: String?) {
+        if let name = name {
+            self.name = name
+        }
+    }
+    
+    
+    func test(name: String?, age: Int?) {
         
     }
 }

@@ -14,24 +14,6 @@
 static NSInteger const kMenuItemBtnStartTag = 10;
 static CGFloat const kItemDefaultHeight = 25;
 
-typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
-    SHMenuHeaderSelectingStyleRedText,      ///< 红色文字
-    SHMenuHeaderSelectingStyleExpand        ///< 展开边框
-};
-
-@implementation SHSingleOptionMenuHeaderEntityModel
-
-- (nonnull id)copyWithZone:(nullable NSZone *)zone {
-    SHSingleOptionMenuHeaderEntityModel *model = [SHSingleOptionMenuHeaderEntityModel allocWithZone:zone];
-    model.title = self.title;
-    model.icon = self.icon;
-    model.selectedIcon = self.selectedIcon;
-    model.iconIsLeft = self.iconIsLeft;
-    return model;
-}
-
-@end
-
 @interface SHSingleOptionMenuHeaderView()
 
 @property (nonatomic, strong) UIScrollView *containerScrollView;
@@ -39,14 +21,13 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 
 @property (nonatomic, assign) SHMenuHeaderStyle style;
 
-@property (nonatomic, strong) NSMutableArray<UIView *> *menuBorders;///< 包括item的border source
-@property (nonatomic, strong) NSMutableArray<UIButton *> *menus;    ///< item source
+@property (nonatomic, strong) NSMutableArray<SHSingleOptionMenuHeaderItemView *> *itemsArray;    ///< item source
+@property (nonatomic, strong) NSMutableDictionary<NSString *, SHSingleOptionMenuHeaderItemView *> *lastItemPool;
 
 @end
 
 @implementation SHSingleOptionMenuHeaderView
 {
-    UIButton *_lastItem;
 	BOOL _isFirstCreate;
 }
 
@@ -54,8 +35,7 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 
 - (instancetype)initWithFrame:(CGRect)frame style:(SHMenuHeaderStyle)style {
     if (self = [super initWithFrame:frame]) {
-        self.menus = [NSMutableArray array];
-        self.menuBorders = [NSMutableArray array];
+        self.itemsArray = [NSMutableArray array];
         self.style = style;
         _isFirstCreate = YES;
         
@@ -84,24 +64,17 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
     //更新布局
     CGFloat width = (self.width - (count - 1) * _itemSpace - 2 * _horPadding) / count;
     width = _itemWidth == 0 ? width : _itemWidth;
-    CGFloat height = _itemHeight == 0 ? kItemDefaultHeight : _itemHeight;
+    CGFloat height = self.height;
     
     self.containerScrollView.contentSize = CGSizeMake(width * count, 0);
-    for (int i = 0; i < _menus.count && i < _menuBorders.count; i++) {
+    for (int i = 0; i < _itemsArray.count; i++) {
         //设置item frame
-        _menuBorders[i].frame = CGRectMake(_horPadding + (width + _itemSpace) * i, (self.height - height) * 0.5, width, (self.height + height) * 0.5 + 5); // 5px为了超出父视图self
-        _menus[i].frame = CGRectMake(0, 0, width, height);
-        
-        //调整图片位置
-        if ([self.delegate itemEntityModelForIndex:i inHeader:self].iconIsLeft) {
-            [_menus[i] setButtonImageTitleStyle:ButtonImageTitleStyleLeft padding:4.f];
-        } else {
-            [_menus[i] setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:4.f];
-        }
+        _itemsArray[i].frame = CGRectMake(_horPadding + (width + _itemSpace) * i, 0, width, height);
+        _itemsArray[i].titleHeight = self.itemHeight > 0 ? self.itemHeight : kItemDefaultHeight;
         
         //自定义样式
         if ([self.delegate respondsToSelector:@selector(willDisplayMenuHeader:item:index:)]) {
-            [self.delegate willDisplayMenuHeader:self item:_menus[i] index:i];
+            [self.delegate willDisplayMenuHeader:self item:_itemsArray[i] index:i];
         }
     }
 }
@@ -109,186 +82,125 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderSelectingStyle) {
 #pragma mark - init subviews
 
 - (void)buildSubViews {
-    self.bottomLineView = [[UIView alloc] initWithFrame:CGRectMake(0, self.height - 1, self.width, 0.5)];
-    _bottomLineView.backgroundColor = colorHex(@"F0F0F0");
+    self.bottomLineView = [[UIView alloc] initWithFrame:CGRectMake(0, self.height - 0.5, self.width, 0.5)];
+    _bottomLineView.backgroundColor = [UIColor redColor];
     [self addSubview:_bottomLineView];
     
     self.containerScrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
-    
     [self addSubview:_containerScrollView];
 }
 
 #pragma mark - event responder
 
-- (void)menuItemClickAction:(UIButton *)btn {
+- (void)menuItemClickAction:(SHSingleOptionMenuHeaderItemView *)btn {
     NSInteger selectedIndex = btn.tag - kMenuItemBtnStartTag;
-    
-    BOOL isChangeTab = [self itemShouldChangeStatusWithLast:_lastItem current:btn];
-    if (isChangeTab && _style == SHMenuHeaderStylePlainText) { //切换tab 并且 paintext style
-        [self renderMenuItem:_lastItem andStatus:NO];
+    SHSingleOptionMenuHeaderItemView *lastItem = self.lastItemPool[btn.model.group];
+    BOOL isChangeTab = [self itemShouldChangeStatusWithLast:lastItem current:btn];
+    if (isChangeTab) {
+        lastItem.status = SHMenuHeaderItemStateDefault;
+        lastItem.backgroundColor = [UIColor clearColor];
     }
     
-    _lastItem = btn;
-    
-    [self updateItemStatusToSelecting:btn.tag - kMenuItemBtnStartTag];
+    btn.backgroundColor = _style == SHMenuHeaderStylePlainText ? [UIColor clearColor] : self.backgroundColor;
+    btn.status = SHMenuHeaderItemStateSelecting;
+    self.lastItemPool[btn.model.group] = btn;
     
     if ([self.delegate respondsToSelector:@selector(menuHeader:didClickItem:index:isChangeTab:)]) {
         [self.delegate menuHeader:self didClickItem:btn index:selectedIndex isChangeTab:isChangeTab];
     }
-    
 }
 
 #pragma mark - public
 
 - (void)reloadItems {
+    [self.lastItemPool removeAllObjects];
     [self createOptionMenuItems];
 }
 
 - (void)reloadItemsWithIndexs:(NSSet<NSNumber *> *)indexs {
     for (NSNumber *temp in indexs) {
         NSInteger index = temp.integerValue;
-        if (index < 0 || index >= self.menus.count) {
+        if (index < 0 || index >= self.itemsArray.count) {
             continue;
         }
         
-        SHSingleOptionMenuHeaderEntityModel *model = [self.delegate itemEntityModelForIndex:index inHeader:self];
-        [self setupItem:self.menus[index] withEntityModel:model];
-        
-        //调整图片位置
-        if (model.iconIsLeft) {
-            [_menus[index] setButtonImageTitleStyle:ButtonImageTitleStyleLeft padding:4.f];
-        } else {
-            [_menus[index] setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:4.f];
-        }
+        SHOptionMenuHeaderItemEntityModel *model = [self.delegate itemEntityModelForIndex:index inHeader:self];
+        self.itemsArray[index].model = model;
         
         //自定义样式
         if ([self.delegate respondsToSelector:@selector(willDisplayMenuHeader:item:index:)]) {
-            [self.delegate willDisplayMenuHeader:self item:_menus[index] index:index];
+            [self.delegate willDisplayMenuHeader:self item:_itemsArray[index] index:index];
         }
     }
-    
 }
 
 - (void)updateMenuItemStatus:(BOOL)status index:(NSInteger)index {
-    if (index < 0 || index >= self.menus.count) {
+    if (index < 0 || index >= self.itemsArray.count) {
         return;
     }
     
+    SHSingleOptionMenuHeaderItemView *item = self.itemsArray[index];
+    item.status = !status ? SHMenuHeaderItemStateDefault : SHMenuHeaderItemStateSelected;
+    item.backgroundColor = item.status == SHMenuHeaderItemStateSelecting ? self.backgroundColor : [UIColor clearColor];
     if (_style != SHMenuHeaderStyleCube) {
-        _lastItem = self.menus[index];
+        self.lastItemPool[item.model.group] = item;
     }
-    
-    [self renderMenuItem:self.menus[index] andStatus:status];
 }
 
 #pragma mark - private
 
 - (void)createOptionMenuItems {
-    [self.menuBorders makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [self.menus removeAllObjects];
-    [self.menuBorders removeAllObjects];
+    [self.itemsArray makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self.itemsArray removeAllObjects];
     
     NSInteger count = [self.delegate numberOfItemsCountInHeader:self];
+    SHOptionMenuHeaderItemStyle itemStyle = (SHOptionMenuHeaderItemStyle)self.style;
     for (int i = 0; i < count; i++) {
-        UIButton *temp = [[UIButton alloc] init];
+        SHSingleOptionMenuHeaderItemView *temp = [[SHSingleOptionMenuHeaderItemView alloc] initWithFrame:CGRectZero style:itemStyle];
         temp.tag = kMenuItemBtnStartTag + i;
+        temp.model = [self.delegate itemEntityModelForIndex:i inHeader:self];
+        temp.status = SHMenuHeaderItemStateDefault;
         [temp addTarget:self action:@selector(menuItemClickAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self setupItem:temp withEntityModel:[self.delegate itemEntityModelForIndex:i inHeader:self]];
         
-        // 添加border view
-        UIView *border = [self menuItemBorderViewWithItem:temp];
-        [self.containerScrollView addSubview:border];
-        
-        [self.menuBorders addObject:border];
-        [self.menus addObject:temp];
-        
-        //render item
-        [self renderMenuItem:temp andStatus:NO];
+        [self.containerScrollView addSubview:temp];
+        [self.itemsArray addObject:temp];
     }
     
     //设置默认选中
+    __weak SHSingleOptionMenuHeaderView *weakSelf = self;
     [self.defaultSelectedItems enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
-        [self updateMenuItemStatus:YES index:idx];
+        if (idx < weakSelf.itemsArray.count) {
+            SHSingleOptionMenuHeaderItemView *item = weakSelf.itemsArray[idx];
+            item.status = SHMenuHeaderItemStateSelected;
+            weakSelf.lastItemPool[item.model.group] = item;
+        }
     }];
     
     [self setNeedsLayout];
 }
 
-- (void)setupItem:(UIButton *)btn withEntityModel:(SHSingleOptionMenuHeaderEntityModel *)model {
-    if (!btn || !model) {
-        return;
-    }
-    
-    btn.layer.cornerRadius = 2.0f;
-    btn.titleLabel.numberOfLines = 1;
-    btn.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-    [btn setTitle:model.title forState:UIControlStateNormal];
-    [btn setTitleColor:kDefaultMenuColor forState:UIControlStateNormal];
-    [btn setTitleColor:kSelectedMenuColor forState:UIControlStateSelected];
-    [btn setImage:[UIImage imageNamed:model.icon] forState:UIControlStateNormal];
-    [btn setImage:[UIImage imageNamed:model.selectedIcon] forState:UIControlStateSelected];
-    btn.titleLabel.font = [UIFont systemFontOfSize:14];
-}
-
-- (BOOL)itemShouldChangeStatusWithLast:(UIButton *)last current:(UIButton *)current {
+- (BOOL)itemShouldChangeStatusWithLast:(SHSingleOptionMenuHeaderItemView *)last current:(SHSingleOptionMenuHeaderItemView *)current {
     if (last.tag == current.tag || !last) {
         return NO;
     }
     
-    return YES;
+    if (last.model.group.length == 0 || current.model.group.length == 0) {
+        return NO;
+    }
+    
+    return [last.model.group isEqualToString:current.model.group];
 }
 
 #pragma mark - change item ui
 
-- (void)updateItemStatusToSelecting:(NSInteger)index {
-    SHMenuHeaderSelectingStyle selectingStyle = _style == SHMenuHeaderStylePlainText ? SHMenuHeaderSelectingStyleRedText : SHMenuHeaderSelectingStyleExpand;
-    [self renderMenuItem:self.menus[index] andStyle:selectingStyle];
-}
-
-- (void)renderMenuItem:(UIButton *)item andStatus:(BOOL)status {
-    item.selected = status;
-    item.backgroundColor = _style == SHMenuHeaderStylePlainText ? [UIColor clearColor] : colorHex(@"F7F7F7");
-    
-    item.layer.borderWidth = 0.f;
-    self.menuBorders[item.tag - kMenuItemBtnStartTag].layer.borderWidth = 0.f;
-    self.menuBorders[item.tag - kMenuItemBtnStartTag].backgroundColor = [UIColor clearColor];
-    if (status && _style == SHMenuHeaderStyleCube) {
-        item.backgroundColor = [UIColor clearColor];
-        item.layer.borderColor = colorHex(@"DD1712").CGColor;
-        item.layer.borderWidth = 1.f;
-    }
-}
-
-- (void)renderMenuItem:(UIButton *)item andStyle:(SHMenuHeaderSelectingStyle)style {
-    
-    self.menuBorders[item.tag - kMenuItemBtnStartTag].layer.borderWidth = 0.f;
-    switch (style) {
-            case SHMenuHeaderSelectingStyleRedText:
-        {
-            item.selected = YES;
-        }
-            break;
-            
-            case SHMenuHeaderSelectingStyleExpand:
-        {
-            item.selected = YES;
-            self.menus[item.tag - kMenuItemBtnStartTag].backgroundColor = [UIColor clearColor];
-            self.menus[item.tag - kMenuItemBtnStartTag].layer.borderWidth = 0.f;
-            self.menuBorders[item.tag - kMenuItemBtnStartTag].backgroundColor = [UIColor whiteColor];
-            self.menuBorders[item.tag - kMenuItemBtnStartTag].layer.borderWidth = 1;
-            self.menuBorders[item.tag - kMenuItemBtnStartTag].layer.borderColor = colorHex(@"F0F0F0").CGColor;
-        }
-            break;
-    }
-}
-
-- (UIView *)menuItemBorderViewWithItem:(UIButton *)btn {
-    UIView *borderView = [[UIView alloc] init];
-    [borderView addSubview:btn];
-    return borderView;
-}
-
 #pragma mark - getter & setter
 
+- (NSMutableDictionary<NSString *,SHSingleOptionMenuHeaderItemView *> *)lastItemPool {
+    if (!_lastItemPool) {
+        _lastItemPool = [[NSMutableDictionary alloc] init];
+    }
+    
+    return _lastItemPool;
+}
 
 @end

@@ -177,11 +177,11 @@ static CGFloat const kContentMaxHeight = 260;
     //更新header 状态
     NSArray<NSNumber *> *selectedHeaderIndexs = self.menuSelectedItemsCache.allKeys;
     switch (self.style) {
-            case SHSingleOptionMenuStylePlainHeader:
+        case SHSingleOptionMenuStylePlainHeader:
             [self.header updateMenuItemStatus:YES index:indexPaths.lastObject.headerIndex];
             break;
             
-            case SHSingleOptionMenuStyleBoxHeader:
+        case SHSingleOptionMenuStyleBoxHeader:
         {
             for (NSNumber *head in selectedHeaderIndexs) {
                 if ([self cacheItemsForHeaderIndex:head.integerValue].count > 0) {
@@ -227,19 +227,21 @@ static CGFloat const kContentMaxHeight = 260;
     return [self.delegate numberOfHeaderItemsCountForMenu:self];
 }
 
-- (SHSingleOptionMenuHeaderEntityModel *)itemEntityModelForIndex:(NSInteger)index inHeader:(SHSingleOptionMenuHeaderView *)header {
+- (SHOptionMenuHeaderItemEntityModel *)itemEntityModelForIndex:(NSInteger)index inHeader:(SHSingleOptionMenuHeaderView *)header {
     return [self.delegate menu:self headerEntityForIndex:index];
 }
 
-- (void)menuHeader:(SHSingleOptionMenuHeaderView *)header didClickItem:(UIButton *)btn index:(NSInteger)index isChangeTab:(BOOL)isChangeTab {
-    if (_selectingItemsTemp && isChangeTab) { // 重置前一个item对应的值
+- (void)menuHeader:(SHSingleOptionMenuHeaderView *)header didClickItem:(SHSingleOptionMenuHeaderItemView *)btn index:(NSInteger)index isChangeTab:(BOOL)isChangeTab {
+    // content已展开 并且 切换tab
+    if (!self.content.hidden && _currentSelectedMenuIndex != index) {
         [self resetContentItemsToStartSelecte];
+        !isChangeTab ?: [self.header updateMenuItemStatus:NO index:_currentSelectedMenuIndex];
     }
     
     //点击已选中的header 退出选择
-    if (!self.content.hidden && !isChangeTab) {
+//    !self.content.hidden && !isChangeTab
+    if (_currentSelectedMenuIndex == index && !self.content.hidden) {
         [self resetContentItemsToStartSelecte];
-        
         [self setupContentStatus:NO];
         [self.header updateMenuItemStatus:[self hasSelectedItemForMenuHeaderIndex:index] index:index];
         //刷新title
@@ -287,16 +289,16 @@ static CGFloat const kContentMaxHeight = 260;
     return self.menuSelectedItemsCache[@(index)].count > 0;
 }
 
-- (void)willDisplayMenuHeader:(SHSingleOptionMenuHeaderView *)header item:(UIButton *)btn index:(NSInteger)index {
+- (void)willDisplayMenuHeader:(SHSingleOptionMenuHeaderView *)header item:(SHSingleOptionMenuHeaderItemView *)btn index:(NSInteger)index {
     if ([self.delegate respondsToSelector:@selector(menu:willDisplayHeaderItem:index:)]) {
         [self.delegate menu:self willDisplayHeaderItem:btn index:index];
     }
 }
 
 - (void)resetContentItemsToStartSelecte {
-    if (_style == SHMenuHeaderStylePlainText) {
-        return;
-    }
+//    if (_style == SHMenuHeaderStylePlainText) { // TODO:上一个item不可多选
+//        return;
+//    }
     
     NSMutableArray *now = [self cacheItemsForHeaderIndex:_currentSelectedMenuIndex];
     if ([self canMultiChoiceForHeaderIndex:_currentSelectedMenuIndex]) {

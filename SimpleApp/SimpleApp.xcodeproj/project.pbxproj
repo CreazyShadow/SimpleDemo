@@ -12,10 +12,13 @@
 		0125887C208434FF00A2686D /* NatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0125887A208434FF00A2686D /* NatureViewController.xib */; };
 		0125887F20843A2000A2686D /* NatureClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0125887E20843A2000A2686D /* NatureClass.m */; };
 		01258883208482CA00A2686D /* ThridManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01258882208482CA00A2686D /* ThridManager.m */; };
+		0166ED0820B66FA9004407D4 /* SHSingleOptionMenuContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0166ED0520B66FA8004407D4 /* SHSingleOptionMenuContentView.m */; };
+		0166ED0920B66FA9004407D4 /* SHSingleOptionMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0166ED0620B66FA8004407D4 /* SHSingleOptionMenuView.m */; };
 		016B77AB20B2CAD500196EC0 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016B77AA20B2CAD500196EC0 /* UserListViewController.swift */; };
 		016B77B220B2D45400196EC0 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016B77B120B2D45400196EC0 /* UserListCell.swift */; };
 		016B77B420B2D48F00196EC0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016B77B320B2D48F00196EC0 /* UserModel.swift */; };
 		016B77B720B3AA3E00196EC0 /* OcInvokeSwiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016B77B620B3AA3E00196EC0 /* OcInvokeSwiftViewController.m */; };
+		016B77C020B5775200196EC0 /* SHSingleOptionMenuHeaderItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 016B77BF20B5775200196EC0 /* SHSingleOptionMenuHeaderItemView.m */; };
 		01A0855E209FF87D00258C6F /* RacLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0855C209FF87D00258C6F /* RacLoginViewController.m */; };
 		01A0855F209FF87D00258C6F /* RacLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A0855D209FF87D00258C6F /* RacLoginViewController.xib */; };
 		01A08562209FFD7C00258C6F /* RACLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A08561209FFD7C00258C6F /* RACLoginViewModel.m */; };
@@ -72,8 +75,6 @@
 		733968491F948B700062DC9C /* RunLoopSourceCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 733968481F948B700062DC9C /* RunLoopSourceCode.m */; };
 		733C26331DD42213005FF7AE /* ProductSliderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 733C26311DD42213005FF7AE /* ProductSliderTableViewCell.m */; };
 		733C26341DD42213005FF7AE /* ProductSliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 733C26321DD42213005FF7AE /* ProductSliderTableViewCell.xib */; };
-		733CC73220A7D24600ABA151 /* SHSingleOptionMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 733CC72D20A7D24500ABA151 /* SHSingleOptionMenuView.m */; };
-		733CC73320A7D24600ABA151 /* SHSingleOptionMenuContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 733CC72E20A7D24500ABA151 /* SHSingleOptionMenuContentView.m */; };
 		733CC73420A7D24600ABA151 /* SHSingleOptionMenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 733CC73120A7D24500ABA151 /* SHSingleOptionMenuHeaderView.m */; };
 		733CC73720A7D28A00ABA151 /* SHOptionMenuHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 733CC73620A7D28A00ABA151 /* SHOptionMenuHeader.m */; };
 		733CC73A20A7D2AD00ABA151 /* SHOptionMenuPlainHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 733CC73920A7D2AD00ABA151 /* SHOptionMenuPlainHeader.m */; };
@@ -244,12 +245,18 @@
 		012588802084827300A2686D /* SimpleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleApp.entitlements; sourceTree = "<group>"; };
 		01258881208482CA00A2686D /* ThridManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThridManager.h; sourceTree = "<group>"; };
 		01258882208482CA00A2686D /* ThridManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThridManager.m; sourceTree = "<group>"; };
+		0166ED0420B66FA8004407D4 /* SHSingleOptionMenuContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSingleOptionMenuContentView.h; sourceTree = "<group>"; };
+		0166ED0520B66FA8004407D4 /* SHSingleOptionMenuContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSingleOptionMenuContentView.m; sourceTree = "<group>"; };
+		0166ED0620B66FA8004407D4 /* SHSingleOptionMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSingleOptionMenuView.m; sourceTree = "<group>"; };
+		0166ED0720B66FA8004407D4 /* SHSingleOptionMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSingleOptionMenuView.h; sourceTree = "<group>"; };
 		016B77AA20B2CAD500196EC0 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		016B77B020B2CC7300196EC0 /* SimpleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		016B77B120B2D45400196EC0 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
 		016B77B320B2D48F00196EC0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		016B77B520B3AA3E00196EC0 /* OcInvokeSwiftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OcInvokeSwiftViewController.h; sourceTree = "<group>"; };
 		016B77B620B3AA3E00196EC0 /* OcInvokeSwiftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OcInvokeSwiftViewController.m; sourceTree = "<group>"; };
+		016B77BE20B5775200196EC0 /* SHSingleOptionMenuHeaderItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHSingleOptionMenuHeaderItemView.h; sourceTree = "<group>"; };
+		016B77BF20B5775200196EC0 /* SHSingleOptionMenuHeaderItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHSingleOptionMenuHeaderItemView.m; sourceTree = "<group>"; };
 		01A0855B209FF87D00258C6F /* RacLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RacLoginViewController.h; sourceTree = "<group>"; };
 		01A0855C209FF87D00258C6F /* RacLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RacLoginViewController.m; sourceTree = "<group>"; };
 		01A0855D209FF87D00258C6F /* RacLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RacLoginViewController.xib; sourceTree = "<group>"; };
@@ -363,10 +370,6 @@
 		733C26311DD42213005FF7AE /* ProductSliderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSliderTableViewCell.m; sourceTree = "<group>"; };
 		733C26321DD42213005FF7AE /* ProductSliderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductSliderTableViewCell.xib; sourceTree = "<group>"; };
 		733CC72C20A7D24500ABA151 /* SHSingleOptionMenuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSingleOptionMenuHeaderView.h; sourceTree = "<group>"; };
-		733CC72D20A7D24500ABA151 /* SHSingleOptionMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSingleOptionMenuView.m; sourceTree = "<group>"; };
-		733CC72E20A7D24500ABA151 /* SHSingleOptionMenuContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSingleOptionMenuContentView.m; sourceTree = "<group>"; };
-		733CC72F20A7D24500ABA151 /* SHSingleOptionMenuContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSingleOptionMenuContentView.h; sourceTree = "<group>"; };
-		733CC73020A7D24500ABA151 /* SHSingleOptionMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSingleOptionMenuView.h; sourceTree = "<group>"; };
 		733CC73120A7D24500ABA151 /* SHSingleOptionMenuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSingleOptionMenuHeaderView.m; sourceTree = "<group>"; };
 		733CC73520A7D28A00ABA151 /* SHOptionMenuHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHOptionMenuHeader.h; sourceTree = "<group>"; };
 		733CC73620A7D28A00ABA151 /* SHOptionMenuHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHOptionMenuHeader.m; sourceTree = "<group>"; };
@@ -1012,12 +1015,14 @@
 		733CC72B20A7D24500ABA151 /* 简单版本 */ = {
 			isa = PBXGroup;
 			children = (
+				016B77BE20B5775200196EC0 /* SHSingleOptionMenuHeaderItemView.h */,
+				016B77BF20B5775200196EC0 /* SHSingleOptionMenuHeaderItemView.m */,
 				733CC72C20A7D24500ABA151 /* SHSingleOptionMenuHeaderView.h */,
 				733CC73120A7D24500ABA151 /* SHSingleOptionMenuHeaderView.m */,
-				733CC72E20A7D24500ABA151 /* SHSingleOptionMenuContentView.m */,
-				733CC72F20A7D24500ABA151 /* SHSingleOptionMenuContentView.h */,
-				733CC73020A7D24500ABA151 /* SHSingleOptionMenuView.h */,
-				733CC72D20A7D24500ABA151 /* SHSingleOptionMenuView.m */,
+				0166ED0420B66FA8004407D4 /* SHSingleOptionMenuContentView.h */,
+				0166ED0520B66FA8004407D4 /* SHSingleOptionMenuContentView.m */,
+				0166ED0720B66FA8004407D4 /* SHSingleOptionMenuView.h */,
+				0166ED0620B66FA8004407D4 /* SHSingleOptionMenuView.m */,
 			);
 			path = "简单版本";
 			sourceTree = "<group>";
@@ -1927,11 +1932,10 @@
 				733CC73720A7D28A00ABA151 /* SHOptionMenuHeader.m in Sources */,
 				735ADFE01E836ADB00F79620 /* CustomAppDelegate.m in Sources */,
 				73BA34DD1DB12E65007E9FC1 /* TestTableViewViewController.swift in Sources */,
-				733CC73320A7D24600ABA151 /* SHSingleOptionMenuContentView.m in Sources */,
 				AE8BD43F1F38845200169FA3 /* TextInputViewController.m in Sources */,
 				732B50821E8B4602006F2677 /* TimerBViewController.m in Sources */,
 				731C12791E8504200034F361 /* NSURLProtocol+WebKitSupport.m in Sources */,
-				733CC73220A7D24600ABA151 /* SHSingleOptionMenuView.m in Sources */,
+				016B77C020B5775200196EC0 /* SHSingleOptionMenuHeaderItemView.m in Sources */,
 				73B5A05E1DC6F15200477323 /* SelectImageView.m in Sources */,
 				73E5BA881E26097000CF3BD5 /* GestureSummary_ResponseTime.m in Sources */,
 				016B77B220B2D45400196EC0 /* UserListCell.swift in Sources */,
@@ -1950,6 +1954,7 @@
 				73A8B7281E8E551200303C4D /* Aview.m in Sources */,
 				731DAD161E7B8B10004E5F8D /* CustomOperation.m in Sources */,
 				73A346AC1E67A9780030CE9D /* ThreadViewController.m in Sources */,
+				0166ED0820B66FA9004407D4 /* SHSingleOptionMenuContentView.m in Sources */,
 				732AE6201E5E89FF0068E1CE /* EKElement.m in Sources */,
 				733CC73420A7D24600ABA151 /* SHSingleOptionMenuHeaderView.m in Sources */,
 				01A0857E20A4510800258C6F /* TestIndexViewController.m in Sources */,
@@ -2029,6 +2034,7 @@
 				735A35512019BE640017D6EF /* HXListViewCell.m in Sources */,
 				73B5A05C1DC6F15200477323 /* SelectImageItemView.m in Sources */,
 				735998301EA5E9CC00427C5B /* RecyleScrollViewItem.m in Sources */,
+				0166ED0920B66FA9004407D4 /* SHSingleOptionMenuView.m in Sources */,
 				735998411EA6F6C900427C5B /* Class_Meta_ViewController.m in Sources */,
 				016B77AB20B2CAD500196EC0 /* UserListViewController.swift in Sources */,
 				732B507B1E8B3E5F006F2677 /* LifeCycleAViewController.m in Sources */,

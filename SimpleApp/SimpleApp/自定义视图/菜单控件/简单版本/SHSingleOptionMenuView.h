@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger, SHSingleOptionMenuStyle) {
 #pragma mark - header source
 - (NSInteger)numberOfHeaderItemsCountForMenu:(SHSingleOptionMenuView *)menu;
 
-- (SHSingleOptionMenuHeaderEntityModel *)menu:(SHSingleOptionMenuView *)menu headerEntityForIndex:(NSInteger)index;
+- (SHOptionMenuHeaderItemEntityModel *)menu:(SHSingleOptionMenuView *)menu headerEntityForIndex:(NSInteger)index;
 
 #pragma mark - content source
 - (NSInteger)menu:(SHSingleOptionMenuView *)menu numberOfContentItemsCountForHeaderIndex:(NSInteger)index;
@@ -48,7 +48,7 @@ typedef NS_ENUM(NSInteger, SHSingleOptionMenuStyle) {
 /**
  用于设置item的样式
  */
-- (void)menu:(SHSingleOptionMenuView *)menu willDisplayHeaderItem:(UIButton *)btn index:(NSInteger)index;
+- (void)menu:(SHSingleOptionMenuView *)menu willDisplayHeaderItem:(SHSingleOptionMenuHeaderItemView *)btn index:(NSInteger)index;
 
 #pragma mark - content setting
 

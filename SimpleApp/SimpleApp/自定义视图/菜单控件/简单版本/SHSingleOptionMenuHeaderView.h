@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "SHSingleOptionMenuHeaderItemView.h"
+
 @class SHSingleOptionMenuHeaderView;
 
 typedef NS_ENUM(NSInteger, SHMenuHeaderStyle) {
@@ -15,28 +17,19 @@ typedef NS_ENUM(NSInteger, SHMenuHeaderStyle) {
     SHMenuHeaderStyleCube       ///< 方块形状
 };
 
-@interface SHSingleOptionMenuHeaderEntityModel : NSObject<NSCopying>
-
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *icon;
-@property (nonatomic, copy) NSString *selectedIcon;
-@property (nonatomic, assign) BOOL iconIsLeft;
-
-@end
-
 @protocol SingleOptionMenuHeaderDelegate <NSObject>
 
 - (NSInteger)numberOfItemsCountInHeader:(SHSingleOptionMenuHeaderView *)header;
 
-- (SHSingleOptionMenuHeaderEntityModel *)itemEntityModelForIndex:(NSInteger)index inHeader:(SHSingleOptionMenuHeaderView *)header;
+- (SHOptionMenuHeaderItemEntityModel *)itemEntityModelForIndex:(NSInteger)index inHeader:(SHSingleOptionMenuHeaderView *)header;
 
 @optional
 /**
  用于设置item的样式
  */
-- (void)willDisplayMenuHeader:(SHSingleOptionMenuHeaderView *)header item:(UIButton *)btn index:(NSInteger)index;
+- (void)willDisplayMenuHeader:(SHSingleOptionMenuHeaderView *)header item:(SHSingleOptionMenuHeaderItemView *)item index:(NSInteger)index;
 
-- (void)menuHeader:(SHSingleOptionMenuHeaderView *)header didClickItem:(UIButton *)btn index:(NSInteger)index isChangeTab:(BOOL)isChangeTab;
+- (void)menuHeader:(SHSingleOptionMenuHeaderView *)header didClickItem:(SHSingleOptionMenuHeaderItemView *)item index:(NSInteger)index isChangeTab:(BOOL)isChangeTab;
 
 @end
 

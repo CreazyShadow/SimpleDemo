@@ -171,9 +171,12 @@ static CGFloat const kItemDefaultHeight = 25;
     [self.defaultSelectedItems enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
         if (idx < weakSelf.itemsArray.count) {
             SHSingleOptionMenuHeaderItemView *item = weakSelf.itemsArray[idx];
-            item.status = SHMenuHeaderItemStateSelected;
             weakSelf.lastItemPool[item.model.group] = item;
         }
+    }];
+    
+    [self.lastItemPool enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, SHSingleOptionMenuHeaderItemView * _Nonnull obj, BOOL * _Nonnull stop) {
+        obj.status = SHMenuHeaderItemStateSelected;
     }];
     
     [self setNeedsLayout];

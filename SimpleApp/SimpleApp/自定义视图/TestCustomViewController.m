@@ -78,7 +78,7 @@
             header.selectedIcon = @"selectd_filter_img";
             header.iconIsLeft = [titles.lastObject isEqualToString:title];
             NSInteger idx = [titles indexOfObject:title];
-//            idx = idx == 3 ? idx : 1;
+            idx = idx == 3 ? idx : 1;
             header.group = [NSString stringWithFormat:@"group%ld", idx];
             
             [entity addObject:header];

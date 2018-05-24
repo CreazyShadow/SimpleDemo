@@ -177,22 +177,11 @@ static CGFloat const kContentMaxHeight = 260;
     //更新header 状态
     NSMutableIndexSet *indexs = [NSMutableIndexSet indexSet];
     NSArray<NSNumber *> *selectedHeaderIndexs = self.menuSelectedItemsCache.allKeys;
-    switch (self.style) {
-        case SHSingleOptionMenuStylePlainHeader:
-            [indexs addIndex:selectedHeaderIndexs.lastObject.integerValue];
-            break;
-            
-        case SHSingleOptionMenuStyleBoxHeader:
-        {
-            for (NSNumber *head in selectedHeaderIndexs) {
-                if ([self cacheItemsForHeaderIndex:head.integerValue].count > 0) {
-                    [indexs addIndex:head.integerValue];
-                }
-            }
-        }          
-            break;
+    for (NSNumber *head in selectedHeaderIndexs) {
+        if ([self cacheItemsForHeaderIndex:head.integerValue].count > 0) {
+            [indexs addIndex:head.integerValue];
+        }
     }
-    
     
     self.header.defaultSelectedItems = [indexs copy];
     

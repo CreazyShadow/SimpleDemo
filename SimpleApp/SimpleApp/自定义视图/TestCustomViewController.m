@@ -59,9 +59,9 @@
     _menu.headerItemSpace = 10;
     _menu.headerItemHeight = 25;
 
-//    SHOptionMenuIndexPath *indexPath1 = [SHOptionMenuIndexPath indexPathForHeaderIndex:0 contentIndex:1];
-//    SHOptionMenuIndexPath *indexPath2 = [SHOptionMenuIndexPath indexPathForHeaderIndex:1 contentIndex:1];
-//    [_menu setupDefaultSelectedIndexPath:@[indexPath1, indexPath2]];
+    SHOptionMenuIndexPath *indexPath1 = [SHOptionMenuIndexPath indexPathForHeaderIndex:0 contentIndex:1];
+    SHOptionMenuIndexPath *indexPath2 = [SHOptionMenuIndexPath indexPathForHeaderIndex:1 contentIndex:1];
+    [_menu setupDefaultSelectedIndexPath:@[indexPath1, indexPath2]];
     [self.view addSubview:_menu];
 }
 
@@ -78,7 +78,7 @@
             header.selectedIcon = @"selectd_filter_img";
             header.iconIsLeft = [titles.lastObject isEqualToString:title];
             NSInteger idx = [titles indexOfObject:title];
-            idx = idx == 3 ? idx : 1;
+//            idx = idx == 3 ? idx : 1;
             header.group = [NSString stringWithFormat:@"group%ld", idx];
             
             [entity addObject:header];

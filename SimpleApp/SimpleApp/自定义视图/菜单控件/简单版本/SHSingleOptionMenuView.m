@@ -175,22 +175,26 @@ static CGFloat const kContentMaxHeight = 260;
     }
     
     //更新header 状态
+    NSMutableIndexSet *indexs = [NSMutableIndexSet indexSet];
     NSArray<NSNumber *> *selectedHeaderIndexs = self.menuSelectedItemsCache.allKeys;
     switch (self.style) {
         case SHSingleOptionMenuStylePlainHeader:
-            [self.header updateMenuItemStatus:YES index:indexPaths.lastObject.headerIndex];
+            [indexs addIndex:selectedHeaderIndexs.lastObject.integerValue];
             break;
             
         case SHSingleOptionMenuStyleBoxHeader:
         {
             for (NSNumber *head in selectedHeaderIndexs) {
                 if ([self cacheItemsForHeaderIndex:head.integerValue].count > 0) {
-                    [self.header updateMenuItemStatus:YES index:head.integerValue];
+                    [indexs addIndex:head.integerValue];
                 }
             }
-        }
+        }          
             break;
     }
+    
+    
+    self.header.defaultSelectedItems = [indexs copy];
     
     //更新header title
     [self.header reloadItemsWithIndexs:[NSSet setWithArray:selectedHeaderIndexs]];

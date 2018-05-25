@@ -76,15 +76,11 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    SecondViewController *second = [[SecondViewController alloc] init];
-//    [self.navigationController pushViewController:second animated:YES];
-    [self.button1 setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:5];
-    [self.button1.layer layoutIfNeeded];
-    self.button1.contentEdgeInsets = UIEdgeInsetsMake(0, -self.button1.titleLabel.origin.x, 0, self.button1.titleLabel.origin.x);
-//    CGFloat imgW = self.button1.imageView.width;
-//    CGFloat lblW = self.button1.titleLabel.width;
-//    self.button1.titleEdgeInsets = UIEdgeInsetsMake(0, -(self.button1.imageView.origin.x + imgW), 0, (self.button1.imageView.origin.x + imgW));
-//    self.button1.imageEdgeInsets = UIEdgeInsetsMake(0, -(self.button1.imageView.origin.x - lblW - 5), 0, (self.button1.imageView.origin.x - lblW - 5));
+    self.button1.selected = YES;
+    [self.button1 setImage:nil forState:UIControlStateNormal];
+    if (_button1.currentImage) {
+        [self.button1 setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:3];
+    }
     
 }
 

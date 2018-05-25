@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) UIView *maskView;
 
+@property (nonatomic, strong) UIView *operationView;
+
 @end
 
 @implementation CollectionViewController
@@ -27,28 +29,64 @@
     [self.view addSubview:self.maskView];
     [self.view addSubview:self.collectionView];
     
+    [self.view insertSubview:self.operationView aboveSubview:self.collectionView];
+}
+
+#pragma mark - event
+
+- (void)buttonAction:(UIButton *)btn {
+    NSLog(@"----点击的按钮：%ld", btn.tag - 10);
+}
+
+- (void)operationGestureAction:(UIPanGestureRecognizer *)gesture {
+    CGPoint point = [gesture translationInView:self.view];
+    static CGFloat startY = 0;
+    switch (gesture.state) {
+        case UIGestureRecognizerStateBegan:
+        {
+            startY = point.y;
+        }
+            break;
+            
+        case UIGestureRecognizerStateEnded:
+        {
+            
+        }
+            break;
+            
+        case UIGestureRecognizerStateChanged:
+        {
+            CGFloat offset = point.y - startY;
+            self.collectionView.contentOffset = CGPointMake(0, -offset - 64);
+            NSLog(@"---offset:%lf", offset);
+            gesture.view.top = 344 + offset;
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+//    NSLog(@"----开始滑动:%@", NSStringFromCGPoint(point));
 }
 
 #pragma mark - collectionview delegate & datasource
-
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-//    return CGSizeMake(kScreenWidth, section <= 1 ? 0 : 20);
-//}
-//
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
-//    return CGSizeMake(kScreenWidth, section * 10 + 20);
-//}
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return 0;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 10;
+    return 0;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(section * 20, 0, 0, 0);
+    if (section == 1) {
+        return UIEdgeInsetsMake(50, 0, 0, 0);
+    }
+    
+    return UIEdgeInsetsZero;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -60,11 +98,13 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return section * 2 + 1;
+    return 7;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     DemoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    cell.layer.borderColor = [UIColor orangeColor].CGColor;
+    cell.layer.borderWidth = 1;
     UILabel *lbl = [cell.contentView viewWithTag:10];
     if (!lbl) {
         lbl = [[UILabel alloc] init];
@@ -137,6 +177,26 @@
     }
     
     return _maskView;
+}
+
+- (UIView *)operationView {
+    if (!_operationView) {
+        _operationView = [[UIView alloc] initWithFrame:CGRectMake(0, 40 * 7 + 64, kScreenWidth, 50)];
+        _operationView.backgroundColor = [UIColor orangeColor];
+        
+        for (int i = 0; i < 5; i++) {
+            UIButton *temp = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth / 5 * i, 0, kScreenWidth / 5, 50)];
+            temp.tag = 10 + i;
+            [temp setTitle:@"测试" forState:UIControlStateNormal];
+            [temp addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+            [_operationView addSubview:temp];
+        }
+        
+        UIPanGestureRecognizer *gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(operationGestureAction:)];
+        [_operationView addGestureRecognizer:gesture];
+    }
+    
+    return _operationView;
 }
 
 @end

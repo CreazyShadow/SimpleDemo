@@ -104,13 +104,6 @@ static NSUInteger gcd(NSUInteger a, NSUInteger b)
 }
 
 - (void)test {
-    NSMutableString *str1 = [@"爱" mutableCopy];
-    NSMutableString *str2 = [@"癌." mutableCopy];
-    NSMutableString *str3 = [@"哎" mutableCopy];
-    CFStringTransform((__bridge CFMutableStringRef)str1, NULL, kCFStringTransformToLatin, NO);
-    CFStringTransform((__bridge CFMutableStringRef)str2, NULL, kCFStringTransformToLatin, NO);
-    CFStringTransform((__bridge CFMutableStringRef)str3, NULL, kCFStringTransformToLatin, NO);
-    NSLog(@"----");
 }
 
 - (NSArray *)arr {
@@ -156,7 +149,7 @@ static NSUInteger gcd(NSUInteger a, NSUInteger b)
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"TestCustomViewController";
+    NSString *className = @"CollectionViewController";
     switch (type) {
         case 0:
         {

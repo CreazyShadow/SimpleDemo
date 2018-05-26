@@ -48,6 +48,9 @@
                     <state key="normal" title="Log in">
                         <color key="titleColor" red="0.38973968329999997" green="1" blue="0.41332859230000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="loginAction:" destination="-1" eventType="touchUpInside" id="7bA-AM-0dT"/>
+                    </connections>
                 </button>
             </subviews>
             <constraints>

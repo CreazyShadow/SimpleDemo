@@ -79,6 +79,7 @@
 		733CC73720A7D28A00ABA151 /* SHOptionMenuHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 733CC73620A7D28A00ABA151 /* SHOptionMenuHeader.m */; };
 		733CC73A20A7D2AD00ABA151 /* SHOptionMenuPlainHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 733CC73920A7D2AD00ABA151 /* SHOptionMenuPlainHeader.m */; };
 		733CC73D20A7D2BF00ABA151 /* SHOptionMenuCubeHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 733CC73C20A7D2BF00ABA151 /* SHOptionMenuCubeHeader.m */; };
+		733CC74120A808CB00ABA151 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 733CC74020A808CB00ABA151 /* UserModel.m */; };
 		7340660A1E6CF82800E4E98B /* PushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 734066091E6CF82800E4E98B /* PushManager.m */; };
 		73406E2A1E14F10100D5C58C /* GestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73406E291E14F10100D5C58C /* GestureViewController.m */; };
 		7341E10E1FE0CFB50017EF36 /* IQKeyBoardBugsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7341E10D1FE0CFB50017EF36 /* IQKeyBoardBugsViewController.m */; };
@@ -378,6 +379,8 @@
 		733CC73B20A7D2BF00ABA151 /* SHOptionMenuCubeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHOptionMenuCubeHeader.h; sourceTree = "<group>"; };
 		733CC73C20A7D2BF00ABA151 /* SHOptionMenuCubeHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHOptionMenuCubeHeader.m; sourceTree = "<group>"; };
 		733CC73E20A7DB8800ABA151 /* SHOptionMenuHeader+SHOptionMenuHeader_private_.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SHOptionMenuHeader+SHOptionMenuHeader_private_.h"; sourceTree = "<group>"; };
+		733CC73F20A808CB00ABA151 /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		733CC74020A808CB00ABA151 /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		734066081E6CF82800E4E98B /* PushManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushManager.h; sourceTree = "<group>"; };
 		734066091E6CF82800E4E98B /* PushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushManager.m; sourceTree = "<group>"; };
 		73406E281E14F10100D5C58C /* GestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureViewController.h; sourceTree = "<group>"; };
@@ -733,6 +736,8 @@
 				01A0855D209FF87D00258C6F /* RacLoginViewController.xib */,
 				01A08560209FFD7C00258C6F /* RACLoginViewModel.h */,
 				01A08561209FFD7C00258C6F /* RACLoginViewModel.m */,
+				733CC73F20A808CB00ABA151 /* UserModel.h */,
+				733CC74020A808CB00ABA151 /* UserModel.m */,
 			);
 			path = RAC;
 			sourceTree = "<group>";
@@ -1934,6 +1939,7 @@
 				73BA34DD1DB12E65007E9FC1 /* TestTableViewViewController.swift in Sources */,
 				AE8BD43F1F38845200169FA3 /* TextInputViewController.m in Sources */,
 				732B50821E8B4602006F2677 /* TimerBViewController.m in Sources */,
+				733CC74120A808CB00ABA151 /* UserModel.m in Sources */,
 				731C12791E8504200034F361 /* NSURLProtocol+WebKitSupport.m in Sources */,
 				016B77C020B5775200196EC0 /* SHSingleOptionMenuHeaderItemView.m in Sources */,
 				73B5A05E1DC6F15200477323 /* SelectImageView.m in Sources */,

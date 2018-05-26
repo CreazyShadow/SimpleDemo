@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+#import <ReactiveObjC.h>
+#import "UserModel.h"
+
+// 1.fetch data
+// 2.user change data
+// 3.update model and upload to service
+
 @interface RACLoginViewModel : NSObject
+
+- (RACSignal<UserModel *> *)fetchData;
+
+- (RACSignal<NSNumber *> *)loginWithUser:(UserModel *)user;
 
 @end

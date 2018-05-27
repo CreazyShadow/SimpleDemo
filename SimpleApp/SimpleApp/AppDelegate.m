@@ -132,7 +132,7 @@ static NSUInteger gcd(NSUInteger a, NSUInteger b)
     self.window.backgroundColor = [UIColor whiteColor];
     
     //    设置启动方式
-    [self setupStartType:1];
+    [self setupStartType:0];
     
     [self.window makeKeyAndVisible];
     

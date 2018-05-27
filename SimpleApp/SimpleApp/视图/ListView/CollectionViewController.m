@@ -9,6 +9,10 @@
 #import "CollectionViewController.h"
 #import "DemoCollectionViewCell.h"
 
+static CGFloat kHeaderHeight = 344;
+static CGFloat collectionMinY = 0;
+static CGFloat collectionMaxY = 0;
+
 @interface CollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -20,6 +24,9 @@
 @end
 
 @implementation CollectionViewController
+{
+    BOOL _isSwipMenu;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,6 +39,18 @@
     [self.view insertSubview:self.operationView aboveSubview:self.collectionView];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    collectionMinY = _collectionView.contentOffset.y;
+    collectionMaxY = _collectionView.contentSize.height - _collectionView.height;
+}
+
 #pragma mark - event
 
 - (void)buttonAction:(UIButton *)btn {
@@ -39,27 +58,39 @@
 }
 
 - (void)operationGestureAction:(UIPanGestureRecognizer *)gesture {
+    _isSwipMenu = YES;
     CGPoint point = [gesture translationInView:self.view];
-    static CGFloat startY = 0;
+    static CGFloat startOffset = 0;
+    static CGFloat startMenuY = 0;
     switch (gesture.state) {
         case UIGestureRecognizerStateBegan:
         {
-            startY = point.y;
+            startOffset = _collectionView.contentOffset.y;
+            startMenuY = gesture.view.y;
         }
             break;
             
         case UIGestureRecognizerStateEnded:
         {
+            // 判断是否需要回弹
+            CGFloat offset = _collectionView.contentOffset.y;
+            if (offset > collectionMaxY) {
+                _collectionView.contentOffset = CGPointMake(0, collectionMaxY);
+                gesture.view.top += (offset - collectionMaxY);
+            } else if (offset < collectionMinY) {
+                _collectionView.contentOffset = CGPointMake(0, collectionMinY);
+                gesture.view.top -= (collectionMinY - offset);
+            }
             
+            _isSwipMenu = NO;
         }
             break;
             
         case UIGestureRecognizerStateChanged:
         {
-            CGFloat offset = point.y - startY;
-            self.collectionView.contentOffset = CGPointMake(0, -offset - 64);
-            NSLog(@"---offset:%lf", offset);
-            gesture.view.top = 344 + offset;
+            gesture.view.top = point.y + startMenuY;
+            CGFloat offset = startOffset - point.y;
+            _collectionView.contentOffset = CGPointMake(0, offset);
         }
             break;
             
@@ -74,9 +105,15 @@
 #pragma mark - uiscrollview delegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"----%@", NSStringFromCGPoint(scrollView.contentOffset));
-    [scrollView.panGestureRecognizer translationInView:self.view];
+    if (_isSwipMenu) {
+        return;
+    }
     
+    self.operationView.top = 280 - scrollView.contentOffset.y;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        self.operationView.top = 280 - scrollView.contentOffset.y;
+    });
 }
 
 #pragma mark - collectionview delegate & datasource
@@ -124,8 +161,6 @@
         [lbl mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(cell.contentView);
         }];
-        
-        NSLog(@"-----------复用");
     }
     
     lbl.text = [NSString stringWithFormat:@"AAAAA%ld--%ld", indexPath.section, indexPath.item];
@@ -165,6 +200,7 @@
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.backgroundColor = [UIColor whiteColor];
+        _collectionView.alwaysBounceVertical = YES;
         [_collectionView registerClass:[DemoCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
         
         [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
@@ -186,7 +222,7 @@
 
 - (UIView *)operationView {
     if (!_operationView) {
-        _operationView = [[UIView alloc] initWithFrame:CGRectMake(0, 40 * 7 + 64, kScreenWidth, 50)];
+        _operationView = [[UIView alloc] initWithFrame:CGRectMake(0, kHeaderHeight, kScreenWidth, 50)];
         _operationView.backgroundColor = [UIColor orangeColor];
         
         for (int i = 0; i < 5; i++) {

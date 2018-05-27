@@ -16,7 +16,7 @@
 @implementation ThridManager
 
 + (void)initializeThridLibWithOptions:(NSDictionary *)options {
-    [self startupAdhocSDk:options];
+//    [self startupAdhocSDk:options];
     [self startLLDebugTool];
 }
 

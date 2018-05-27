@@ -71,6 +71,14 @@
 //    NSLog(@"----开始滑动:%@", NSStringFromCGPoint(point));
 }
 
+#pragma mark - uiscrollview delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSLog(@"----%@", NSStringFromCGPoint(scrollView.contentOffset));
+    [scrollView.panGestureRecognizer translationInView:self.view];
+    
+}
+
 #pragma mark - collectionview delegate & datasource
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
@@ -151,10 +159,7 @@
 
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
-        
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-//        layout.headerReferenceSize = CGSizeZero;
-//        layout.footerReferenceSize = CGSizeZero;
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
         _collectionView.delegate = self;

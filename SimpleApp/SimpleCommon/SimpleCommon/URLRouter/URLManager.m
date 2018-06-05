@@ -12,8 +12,8 @@
 #import "NSError+URLRouter.h"
 #import "URLHandler.h"
 #import "URLLog.h"
-#import <YYModel/YYModel.h>
 #import "URLInterceptor.h"
+#import <YYModel/YYModel.h>
 
 @interface URLManager()
 

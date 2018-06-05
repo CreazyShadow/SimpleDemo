@@ -9,8 +9,13 @@
 import UIKit
 
 class UserListCell: UITableViewCell {
+    
+    let nameLbl: UILabel = UILabel()
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
+        
     }
 }

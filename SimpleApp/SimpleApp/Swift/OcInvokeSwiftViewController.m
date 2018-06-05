@@ -41,9 +41,9 @@
 #pragma mark - event responder
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    UserModel *model = [[UserModel alloc] init];
+    UserModel *model = [[UserModel alloc] initWithName:@"" age:-1];
+    [model test];
     
-    [model intro];
 }
 
 #pragma mark - network

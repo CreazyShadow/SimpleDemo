@@ -1,0 +1,6 @@
+framework module JDFlipNumberView {
+  umbrella header "JDFlipNumberView-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,6 +1,7 @@
 workspace 'SimpleApp.xcworkspace'
 
 platform :ios, '8.0'
+#use_frameworks!
 
 def share_pods
 	pod 'OpenShare'
@@ -28,7 +29,17 @@ def share_pods
     pod 'ReactiveObjC', '~>3.0.0'
 end
 
+
+def swift_pods
+    pod 'Then'
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'SnapKit'
+end
+
+
 target 'SimpleApp' do
 	xcodeproj 'SimpleApp.xcodeproj'
 	share_pods
+#    swift_pods
 end

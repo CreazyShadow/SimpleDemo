@@ -12,7 +12,7 @@
 #import "GcdViewController.h"
 #import "ScrapeView.h"
 #import <math.h>
-#import <AFNetworking.h>
+#import "AFNetworking.h"
 #import <CoreFoundation/CoreFoundation.h>
 
 #import "CustomURLProtocol.h"
@@ -37,7 +37,7 @@
 #import "MRCObject.h"
 #import "RunLoopUtility.h"
 
-#import <IQKeyboardManager.h>
+#import "IQKeyboardManager.h"
 
 #import "HXWebViewActionHandler.h"
 

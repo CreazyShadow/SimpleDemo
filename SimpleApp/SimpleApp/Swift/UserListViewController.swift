@@ -8,6 +8,9 @@
 
 import UIKit
 
+import Then
+import SnapKit
+
 class UserListViewController: BaseViewController {
     
     lazy var table: UITableView = {
@@ -20,6 +23,8 @@ class UserListViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
 }
 

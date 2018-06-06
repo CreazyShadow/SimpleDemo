@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import <ReactiveObjC.h>
 #import "UserModel.h"
 
 // 1.fetch data

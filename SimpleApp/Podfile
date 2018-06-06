@@ -1,7 +1,7 @@
 workspace 'SimpleApp.xcworkspace'
 
 platform :ios, '8.0'
-#use_frameworks!
+use_frameworks!
 
 def share_pods
 	pod 'OpenShare'
@@ -26,7 +26,6 @@ def share_pods
     pod 'FLEX', :configuration => 'Debug'
     pod 'LLDebugTool' ,:configurations => ['Debug']
     pod 'AdhocSDK'
-    pod 'ReactiveObjC', '~>3.0.0'
 end
 
 
@@ -35,11 +34,12 @@ def swift_pods
     pod 'RxSwift'
     pod 'RxCocoa'
     pod 'SnapKit'
+    pod 'PromiseKit'
 end
 
 
 target 'SimpleApp' do
-	xcodeproj 'SimpleApp.xcodeproj'
+	project 'SimpleApp.project'
 	share_pods
-#    swift_pods
+    swift_pods
 end

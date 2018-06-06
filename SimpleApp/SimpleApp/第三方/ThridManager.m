@@ -10,7 +10,7 @@
 #import <AdhocSDK/AdhocSDK.h>
 
 #if DEBUG
-#import <LLDebug.h>
+#import "LLDebug.h"
 #endif
 
 @implementation ThridManager

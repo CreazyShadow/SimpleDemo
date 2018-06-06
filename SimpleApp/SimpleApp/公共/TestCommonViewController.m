@@ -9,7 +9,6 @@
 #import "TestCommonViewController.h"
 
 #import <CircleLayer.h>
-#import <Masonry.h>
 
 #import <PageView.h>
 #import <PageViewItem.h>

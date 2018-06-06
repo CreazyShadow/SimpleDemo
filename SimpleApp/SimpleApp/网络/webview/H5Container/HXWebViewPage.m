@@ -8,7 +8,7 @@
 
 #import "HXWebViewPage.h"
 #import <WebKit/WebKit.h>
-#import <WKWebViewJavascriptBridge.h>
+#import "WKWebViewJavascriptBridge.h"
 
 @interface HXWebViewPage ()<WKUIDelegate, WKNavigationDelegate>
 

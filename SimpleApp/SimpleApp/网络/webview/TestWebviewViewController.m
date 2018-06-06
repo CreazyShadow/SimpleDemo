@@ -12,9 +12,6 @@
 #import <JavaScriptCore/JavaScriptCore.h>
 #import <WebKit/WebKit.h>
 
-#import <Aspects.h>
-#import <MJRefresh.h>
-
 extern NSString * const maxCount;
 
 @interface TestWebviewViewController ()< WKNavigationDelegate, WKScriptMessageHandler>

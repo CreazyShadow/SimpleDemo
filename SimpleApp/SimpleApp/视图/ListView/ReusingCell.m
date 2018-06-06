@@ -8,8 +8,6 @@
 
 #import "ReusingCell.h"
 
-#import <Masonry.h>
-
 @interface ReusingCell()
 
 @property (nonatomic, strong) UILabel *nameLbl;

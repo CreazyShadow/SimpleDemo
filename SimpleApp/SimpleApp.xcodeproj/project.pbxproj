@@ -216,7 +216,7 @@
 		AEDEB4CD1F3803E300A05940 /* HXWebViewPage.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDEB4CC1F3803E300A05940 /* HXWebViewPage.m */; };
 		AEDEB4D01F380D4D00A05940 /* HXWebViewActionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDEB4CF1F380D4D00A05940 /* HXWebViewActionHandler.m */; };
 		AEDEB4D31F380D9C00A05940 /* HXWebViewLoadInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDEB4D21F380D9C00A05940 /* HXWebViewLoadInterceptor.m */; };
-		B980A19BF0CE00920C503208 /* libPods-SimpleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ADD0F38396CB07FF3AB19A5 /* libPods-SimpleApp.a */; };
+		D82BA42EC19DAA6B3CC4BDDA /* Pods_SimpleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BBB7141BC3AFA2093465ED /* Pods_SimpleApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -274,7 +274,6 @@
 		01A3F43320C672D700A029C5 /* OcModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OcModule.h; sourceTree = "<group>"; };
 		01A3F43420C672D800A029C5 /* OcDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OcDefine.h; sourceTree = "<group>"; };
 		192D915ABA8975E1A187A054 /* Pods-SimpleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp.release.xcconfig"; sourceTree = "<group>"; };
-		1ADD0F38396CB07FF3AB19A5 /* libPods-SimpleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7304CE9E1CF542B300C5E349 /* libSimpleModel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSimpleModel.a; path = "../../../../Library/Developer/Xcode/DerivedData/SimpleApp-cswqutjhlfbmkqbsnbwnxbznehzs/Build/Products/Debug-iphonesimulator/libSimpleModel.a"; sourceTree = "<group>"; };
 		7310AEE71E8215B800BAA0E8 /* SortHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortHelper.h; sourceTree = "<group>"; };
 		7310AEE81E8215B800BAA0E8 /* SortHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortHelper.m; sourceTree = "<group>"; };
@@ -626,6 +625,7 @@
 		73F5C2931E9DBDE10016A44D /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTextField.m; sourceTree = "<group>"; };
 		73F5C2951E9DBE580016A44D /* TextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldViewController.h; sourceTree = "<group>"; };
 		73F5C2961E9DBE580016A44D /* TextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldViewController.m; sourceTree = "<group>"; };
+		96BBB7141BC3AFA2093465ED /* Pods_SimpleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE0E032B1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HXWebViewActionHandler+Share.h"; sourceTree = "<group>"; };
 		AE0E032C1F3D902A00CCD9EC /* HXWebViewActionHandler+Share.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HXWebViewActionHandler+Share.m"; sourceTree = "<group>"; };
 		AE0E032E1F3D905E00CCD9EC /* HXWebViewActionHandler+OpenAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HXWebViewActionHandler+OpenAccount.h"; sourceTree = "<group>"; };
@@ -657,7 +657,7 @@
 				73D4B2791ECADB64002E952E /* Photos.framework in Frameworks */,
 				7304CE9F1CF542B300C5E349 /* libSimpleModel.a in Frameworks */,
 				735432F21CF4653300FA966A /* libSimpleCommon.a in Frameworks */,
-				B980A19BF0CE00920C503208 /* libPods-SimpleApp.a in Frameworks */,
+				D82BA42EC19DAA6B3CC4BDDA /* Pods_SimpleApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -773,7 +773,7 @@
 				73D4B2781ECADB64002E952E /* Photos.framework */,
 				7304CE9E1CF542B300C5E349 /* libSimpleModel.a */,
 				735432F11CF4653300FA966A /* libSimpleCommon.a */,
-				1ADD0F38396CB07FF3AB19A5 /* libPods-SimpleApp.a */,
+				96BBB7141BC3AFA2093465ED /* Pods_SimpleApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1713,8 +1713,8 @@
 				7373D2401CD0AA2600332D91 /* Sources */,
 				7373D2411CD0AA2600332D91 /* Frameworks */,
 				7373D2421CD0AA2600332D91 /* Resources */,
-				A9627E4735A38C62AD4E1B92 /* [CP] Copy Pods Resources */,
 				735ADFC61E83669800F79620 /* ShellScript */,
+				EF18EBF79F877CA5142D1230 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1882,48 +1882,76 @@
 			shellPath = /bin/sh;
 			shellScript = "#cp -r \"${PROJECT_DIR}/SimpleCommon/SimpleCommon/Resource/commonBundle.bundle\" \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/commonBundle.bundle\"";
 		};
-		A9627E4735A38C62AD4E1B92 /* [CP] Copy Pods Resources */ = {
+		EF18EBF79F877CA5142D1230 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp-resources.sh",
-				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
-				"${PODS_ROOT}/JDFlipNumberView/JDFlipNumberView/JDFlipNumberView.bundle",
-				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Others/FilterView/LabelCell/LLFilterLabelCell.xib",
-				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Others/FilterView/TextFieldCell/LLFilterTextFieldCell.xib",
-				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Others/LLSubTitleTableViewCell.xib",
-				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Crash/LLCrashCell.xib",
-				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Crash/LLCrashContentCell.xib",
-				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Log/LLLogCell.xib",
-				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Network/LLNetworkCell.xib",
-				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Network/LLNetworkImageCell.xib",
-				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Sandbox/LLSandboxCell.xib",
-				"${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Resources/LLDebugTool.bundle",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_ROOT}/WSProgressHUD/WSProgressHUD/WSProgressBundle.bundle",
+				"${SRCROOT}/Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
+				"${BUILT_PRODUCTS_DIR}/EGOCache/EGOCache.framework",
+				"${BUILT_PRODUCTS_DIR}/FBAllocationTracker/FBAllocationTracker.framework",
+				"${BUILT_PRODUCTS_DIR}/FBMemoryProfiler/FBMemoryProfiler.framework",
+				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
+				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/JDFlipNumberView/JDFlipNumberView.framework",
+				"${BUILT_PRODUCTS_DIR}/LLDebugTool/LLDebugTool.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/OpenShare/OpenShare.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
+				"${BUILT_PRODUCTS_DIR}/WSProgressHUD/WSProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework",
+				"${BUILT_PRODUCTS_DIR}/YTKNetwork/YTKNetwork.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JDFlipNumberView.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLFilterLabelCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLFilterTextFieldCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLSubTitleTableViewCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLCrashCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLCrashContentCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLLogCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLNetworkCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLNetworkImageCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLSandboxCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LLDebugTool.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WSProgressBundle.bundle",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EGOCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBAllocationTracker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBMemoryProfiler.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JDFlipNumberView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDebugTool.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shimmer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WSProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebViewJavascriptBridge.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YTKNetwork.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2277,10 +2305,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CODE_SIGN_ENTITLEMENTS = SimpleApp/SimpleApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 568256030@qq.com (EAQJ6NC596)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = F74GWC55U7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2325,6 +2356,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 				VALID_ARCHS = "arm64 armv7s armv7";
 				WARNING_CFLAGS = "-Wno-objc-protocol-method-implementation";
 			};
@@ -2336,10 +2368,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CODE_SIGN_ENTITLEMENTS = SimpleApp/SimpleApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 568256030@qq.com (EAQJ6NC596)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = F74GWC55U7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2377,6 +2412,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/SimpleApp/Swift/SimpleApp-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 				VALID_ARCHS = "arm64 armv7s armv7";
 				WARNING_CFLAGS = "-Wno-objc-protocol-method-implementation";
 			};

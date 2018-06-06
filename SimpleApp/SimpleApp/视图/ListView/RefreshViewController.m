@@ -8,8 +8,6 @@
 
 #import "RefreshViewController.h"
 
-#import <MJRefresh.h>
-
 #import <CommonCrypto/CommonCrypto.h>
 
 @interface RefreshViewController ()<UITableViewDelegate, UITableViewDataSource>

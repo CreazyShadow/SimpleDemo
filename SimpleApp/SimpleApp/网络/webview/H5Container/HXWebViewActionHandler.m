@@ -8,7 +8,7 @@
 
 #import "HXWebViewActionHandler.h"
 
-#import <WKWebViewJavascriptBridge.h>
+#import "WKWebViewJavascriptBridge.h"
 
 #import <objc/runtime.h>
 #import <objc/message.h>

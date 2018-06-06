@@ -8,7 +8,7 @@
 
 #import "PopAnimationViewController.h"
 
-#import <POP.h>
+#import "POP.h"
 
 @interface PopAnimationViewController ()
 

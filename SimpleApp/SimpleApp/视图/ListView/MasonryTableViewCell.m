@@ -8,7 +8,7 @@
 
 #import "MasonryTableViewCell.h"
 
-#import <Masonry.h>
+
 
 @interface MasonryTableViewCell()
 

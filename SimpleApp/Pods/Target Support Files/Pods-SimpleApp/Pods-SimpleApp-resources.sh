@@ -91,28 +91,6 @@ EOM
       ;;
   esac
 }
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
-  install_resource "${PODS_ROOT}/JDFlipNumberView/JDFlipNumberView/JDFlipNumberView.bundle"
-  install_resource "${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Others/FilterView/LabelCell/LLFilterLabelCell.xib"
-  install_resource "${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Others/FilterView/TextFieldCell/LLFilterTextFieldCell.xib"
-  install_resource "${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Others/LLSubTitleTableViewCell.xib"
-  install_resource "${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Crash/LLCrashCell.xib"
-  install_resource "${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Crash/LLCrashContentCell.xib"
-  install_resource "${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Log/LLLogCell.xib"
-  install_resource "${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Network/LLNetworkCell.xib"
-  install_resource "${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Network/LLNetworkImageCell.xib"
-  install_resource "${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Sections/Sandbox/LLSandboxCell.xib"
-  install_resource "${PODS_ROOT}/LLDebugTool/LLDebugTool/UserInterface/Resources/LLDebugTool.bundle"
-  install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
-  install_resource "${PODS_ROOT}/WSProgressHUD/WSProgressHUD/WSProgressBundle.bundle"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
-  install_resource "${PODS_ROOT}/JDFlipNumberView/JDFlipNumberView/JDFlipNumberView.bundle"
-  install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
-  install_resource "${PODS_ROOT}/WSProgressHUD/WSProgressHUD/WSProgressBundle.bundle"
-fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

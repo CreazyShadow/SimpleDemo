@@ -10,8 +10,6 @@
 
 #import "RACLoginViewModel.h"
 
-#import <ReactiveObjC.h>
-
 @interface RacLoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;

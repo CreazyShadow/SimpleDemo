@@ -8,9 +8,9 @@
 
 #import "UIWindow+FlexSetting.h"
 
-//#if DEBUG
-#import <FLEXManager.h>
-//#endif
+#if DEBUG
+#import "FLEXManager.h"
+#endif
 
 @implementation UIWindow (FlexSetting)
 

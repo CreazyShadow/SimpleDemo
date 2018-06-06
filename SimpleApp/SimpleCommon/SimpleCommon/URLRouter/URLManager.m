@@ -13,7 +13,7 @@
 #import "URLHandler.h"
 #import "URLLog.h"
 #import "URLInterceptor.h"
-#import <YYModel/YYModel.h>
+//#import <YYModel/YYModel.h>
 
 @interface URLManager()
 
@@ -88,13 +88,13 @@
         meta = self.handlersMetaCache[input.scheme];
     }
     
-    URLHandler *handler = [meta isKindOfClass:[NSDictionary class]] ? [URLInput yy_modelWithDictionary:meta] : nil;
-    if (!handler) {
-        c2([URLResult errorResultWithInput:input message:@"Create handler failed"]);
-        return;
-    }
+//    URLHandler *handler = [meta isKindOfClass:[NSDictionary class]] ? [URLInput yy_modelWithDictionary:meta] : nil;
+//    if (!handler) {
+//        c2([URLResult errorResultWithInput:input message:@"Create handler failed"]);
+//        return;
+//    }
     
-    [handler openURLWithInput:input completion:completion];
+//    [handler openURLWithInput:input completion:completion];
 }
 
 - (URLInterceptor *)interceptorForName:(NSString *)name
@@ -156,7 +156,8 @@
     NSDictionary *interceptorConfigs = config[@"interceptors"];
     NSMutableArray<URLConfigurableInterceptor *> *interceptors = [NSMutableArray array];
     [interceptorConfigs enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        URLConfigurableInterceptor *interceptor = [URLConfigurableInterceptor yy_modelWithJSON:obj];
+//        URLConfigurableInterceptor *interceptor = [URLConfigurableInterceptor yy_modelWithJSON:obj];
+        URLConfigurableInterceptor *interceptor = nil;
         if (!interceptor) {
             return;
         }

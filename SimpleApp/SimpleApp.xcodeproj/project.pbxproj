@@ -12,6 +12,8 @@
 		0125887C208434FF00A2686D /* NatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0125887A208434FF00A2686D /* NatureViewController.xib */; };
 		0125887F20843A2000A2686D /* NatureClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0125887E20843A2000A2686D /* NatureClass.m */; };
 		01258883208482CA00A2686D /* ThridManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01258882208482CA00A2686D /* ThridManager.m */; };
+		01648A0720D3C06600BF0ACE /* RacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01648A0520D3C06600BF0ACE /* RacViewController.swift */; };
+		01648A0820D3C06600BF0ACE /* RacViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01648A0620D3C06600BF0ACE /* RacViewController.xib */; };
 		0166ED0820B66FA9004407D4 /* SHSingleOptionMenuContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0166ED0520B66FA8004407D4 /* SHSingleOptionMenuContentView.m */; };
 		0166ED0920B66FA9004407D4 /* SHSingleOptionMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0166ED0620B66FA8004407D4 /* SHSingleOptionMenuView.m */; };
 		016B77AB20B2CAD500196EC0 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016B77AA20B2CAD500196EC0 /* UserListViewController.swift */; };
@@ -247,6 +249,8 @@
 		012588802084827300A2686D /* SimpleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleApp.entitlements; sourceTree = "<group>"; };
 		01258881208482CA00A2686D /* ThridManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThridManager.h; sourceTree = "<group>"; };
 		01258882208482CA00A2686D /* ThridManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThridManager.m; sourceTree = "<group>"; };
+		01648A0520D3C06600BF0ACE /* RacViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacViewController.swift; sourceTree = "<group>"; };
+		01648A0620D3C06600BF0ACE /* RacViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RacViewController.xib; sourceTree = "<group>"; };
 		0166ED0420B66FA8004407D4 /* SHSingleOptionMenuContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSingleOptionMenuContentView.h; sourceTree = "<group>"; };
 		0166ED0520B66FA8004407D4 /* SHSingleOptionMenuContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSingleOptionMenuContentView.m; sourceTree = "<group>"; };
 		0166ED0620B66FA8004407D4 /* SHSingleOptionMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSingleOptionMenuView.m; sourceTree = "<group>"; };
@@ -710,6 +714,15 @@
 			path = "底层原理和逆向";
 			sourceTree = "<group>";
 		};
+		01648A0420D3C05500BF0ACE /* RAC */ = {
+			isa = PBXGroup;
+			children = (
+				01648A0520D3C06600BF0ACE /* RacViewController.swift */,
+				01648A0620D3C06600BF0ACE /* RacViewController.xib */,
+			);
+			path = RAC;
+			sourceTree = "<group>";
+		};
 		01810F2420AD2EB100A36B0E /* Swift */ = {
 			isa = PBXGroup;
 			children = (
@@ -1149,6 +1162,7 @@
 			isa = PBXGroup;
 			children = (
 				012588802084827300A2686D /* SimpleApp.entitlements */,
+				01648A0420D3C05500BF0ACE /* RAC */,
 				01810F2420AD2EB100A36B0E /* Swift */,
 				01A0854D209FF6AF00258C6F /* 响应式编程 */,
 				012588772084349700A2686D /* 底层原理和逆向 */,
@@ -1823,6 +1837,7 @@
 				73BA34D01DB12E65007E9FC1 /* BaseKnowTestViewController.xib in Resources */,
 				736CB2771E80F74200AC3EEF /* jscontextdemo.js in Resources */,
 				73523F751F7DE72100E8B81D /* RenderViewController.xib in Resources */,
+				01648A0820D3C06600BF0ACE /* RacViewController.xib in Resources */,
 				7373D2571CD0AA2600332D91 /* LaunchScreen.storyboard in Resources */,
 				01A0855F209FF87D00258C6F /* RacLoginViewController.xib in Resources */,
 				73B5A05D1DC6F15200477323 /* SelectImageItemView.xib in Resources */,
@@ -2052,6 +2067,7 @@
 				7359982D1EA5D1C200427C5B /* MRCObject.m in Sources */,
 				01258883208482CA00A2686D /* ThridManager.m in Sources */,
 				737B107E1E63B6E1001FF92A /* ProxyViewController.m in Sources */,
+				01648A0720D3C06600BF0ACE /* RacViewController.swift in Sources */,
 				73BA34D91DB12E65007E9FC1 /* CellModel.swift in Sources */,
 				7341E1111FE0D0160017EF36 /* IQKeyBoardTextView.m in Sources */,
 				736266CC1FB06F5C000A518B /* UIScrollView+Multiple.m in Sources */,

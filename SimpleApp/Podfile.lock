@@ -87,7 +87,6 @@ DEPENDENCIES:
   - PromiseKit
   - ReactiveObjC (~> 3.0.0)
   - RxCocoa
-  - RxSwift
   - SDWebImage
   - SnapKit
   - Then
@@ -159,6 +158,6 @@ SPEC CHECKSUMS:
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: ee27384d1b3cd76d994020e3cbf7f19ed32eea89
+PODFILE CHECKSUM: 878ddb28d8bf803aa6fd3c52480172b292f08581
 
 COCOAPODS: 1.5.2

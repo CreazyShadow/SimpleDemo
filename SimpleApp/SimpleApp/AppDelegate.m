@@ -46,7 +46,7 @@
 #import <EmptySuperObj+Empty.h>
 
 #import "ThridManager.h"
-
+#import "SimpleApp-Swift.h"
 
 NSString *const maxCount = @"100";
 
@@ -150,11 +150,15 @@ static NSUInteger gcd(NSUInteger a, NSUInteger b)
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"OcInvokeSwiftViewController";
+    NSString *className = @"FirstViewController";
     switch (type) {
         case 0:
         {
             vc = [[NSClassFromString(className) alloc] init];
+            if (!vc) {
+                className = [NSString stringWithFormat:@"%@.%@", @"SimpleApp", className];
+                vc = [[NSClassFromString(className) alloc] init];
+            }
         }
             break;
         case 1:

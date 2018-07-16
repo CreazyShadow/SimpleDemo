@@ -35,6 +35,7 @@ def swift_pods
     pod 'RxCocoa'
     pod 'SnapKit'
     pod 'PromiseKit'
+    pod 'Charts'
 end
 
 

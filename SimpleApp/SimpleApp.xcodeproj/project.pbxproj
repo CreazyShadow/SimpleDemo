@@ -1906,6 +1906,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SimpleApp/Pods-SimpleApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/EGOCache/EGOCache.framework",
 				"${BUILT_PRODUCTS_DIR}/FBAllocationTracker/FBAllocationTracker.framework",
 				"${BUILT_PRODUCTS_DIR}/FBMemoryProfiler/FBMemoryProfiler.framework",
@@ -1937,6 +1938,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EGOCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBAllocationTracker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBMemoryProfiler.framework",

@@ -76,11 +76,8 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.button1.selected = YES;
-    [self.button1 setImage:nil forState:UIControlStateNormal];
-    if (_button1.currentImage) {
-        [self.button1 setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:3];
-    }
+    
+    
     
 }
 
@@ -98,16 +95,15 @@
     
     _label.backgroundColor = [UIColor purpleColor];
     _label.textColor = [UIColor whiteColor];
-    _label.font = [UIFont systemFontOfSize:18];
-    _label.text = @"测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试";
+    _label.font = [UIFont systemFontOfSize:15];
+    _label.text = @"顶顶顶顶顶顶顶\n的点点滴滴多多多多多多";
     _label.numberOfLines = 0;
-    _label.lineBreakMode = NSLineBreakByTruncatingTail;
     
     [_label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(100);
         make.left.mas_equalTo(50);
         make.right.mas_equalTo(-50);
-        make.height.mas_equalTo(100);
+        make.height.mas_equalTo(35);
     }];
 }
 
@@ -188,7 +184,8 @@
 
 - (UIImageView *)imv {
     if (!_imv) {
-        _imv = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, 200, 300)];
+        _imv = [[UIImageView alloc] initWithFrame:CGRectMake(100, 300, 100, 100)];
+        _imv.image = [UIImage imageNamed:@"life_service"];
     }
     
     return _imv;

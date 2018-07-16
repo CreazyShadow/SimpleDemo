@@ -16,6 +16,9 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - Aspects (1.4.1)
+  - Charts (3.1.1):
+    - Charts/Core (= 3.1.1)
+  - Charts/Core (3.1.1)
   - EGOCache (2.2.0)
   - FBAllocationTracker (0.1.5)
   - FBMemoryProfiler (0.1.3):
@@ -72,6 +75,7 @@ DEPENDENCIES:
   - AdhocSDK
   - AFNetworking
   - Aspects
+  - Charts
   - EGOCache
   - FBMemoryProfiler
   - FLEX
@@ -100,6 +104,7 @@ SPEC REPOS:
     - AdhocSDK
     - AFNetworking
     - Aspects
+    - Charts
     - EGOCache
     - FBAllocationTracker
     - FBMemoryProfiler
@@ -131,6 +136,7 @@ SPEC CHECKSUMS:
   AdhocSDK: b0345e40b7016e64fefa799af8e0fa9cda3b4c62
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
   EGOCache: 191fd213da6804d487b49b1a91772ba904f3e324
   FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
   FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
@@ -158,6 +164,6 @@ SPEC CHECKSUMS:
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 878ddb28d8bf803aa6fd3c52480172b292f08581
+PODFILE CHECKSUM: 8b0d85f36368c7a3b6e541d1b395e992172880a2
 
 COCOAPODS: 1.5.2

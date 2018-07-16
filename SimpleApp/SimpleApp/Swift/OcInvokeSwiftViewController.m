@@ -41,8 +41,12 @@
 #pragma mark - event responder
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    UserModel *model = [[UserModel alloc] initWithName:@"" age:-1];
-    [model test];
+    UserModel *model = [[UserModel alloc] init];
+    NSDictionary *dict = @{@"name" : @"jack",
+                           @"age" : [NSNumber numberWithInt:12],
+                           @"score" : [NSNumber numberWithFloat:98.5]
+                           };
+    [model setModelWithDict:dict];
     
 }
 

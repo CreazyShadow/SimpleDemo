@@ -145,6 +145,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Charts/Charts.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EGOCache/EGOCache.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FBAllocationTracker/FBAllocationTracker.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FBMemoryProfiler/FBMemoryProfiler.framework"
@@ -175,6 +176,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Charts/Charts.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EGOCache/EGOCache.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FBAllocationTracker/FBAllocationTracker.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FBMemoryProfiler/FBMemoryProfiler.framework"

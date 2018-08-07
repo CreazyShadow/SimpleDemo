@@ -133,7 +133,7 @@ static NSUInteger gcd(NSUInteger a, NSUInteger b)
     self.window.backgroundColor = [UIColor whiteColor];
     
     //    设置启动方式
-    [self setupStartType:0];
+    [self setupStartType:1];
     
     [self.window makeKeyAndVisible];
     
@@ -150,7 +150,7 @@ static NSUInteger gcd(NSUInteger a, NSUInteger b)
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"FirstViewController";
+    NSString *className = @"RacViewController";
     switch (type) {
         case 0:
         {
@@ -164,6 +164,10 @@ static NSUInteger gcd(NSUInteger a, NSUInteger b)
         case 1:
         {
             vc = [[NSClassFromString(className) alloc] initWithNibName:className bundle:nil];
+            if (!vc) {
+                NSString *className1 = [NSString stringWithFormat:@"%@.%@", @"SimpleApp", className];
+                vc = [[NSClassFromString(className1) alloc] initWithNibName:className bundle:nil];
+            }
         }
             break;
         case 2:

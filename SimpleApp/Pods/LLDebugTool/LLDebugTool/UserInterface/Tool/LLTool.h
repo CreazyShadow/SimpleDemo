@@ -57,10 +57,25 @@
  The only dateformatter for "yyyy-MM-dd HH:mm:ss".
  */
 - (NSDate *)staticDateFromString:(NSString *)string;
+- (NSString *)staticStringFromDate:(NSDate *)date;
 
 /**
  Create lines of unity.
  */
 + (UIView *)lineView:(CGRect)frame superView:(UIView *)superView;
 
+/**
+ Convert data to JSONString.
+ */
++ (NSString *)prettyJSONStringFromData:(NSData *)data;
+
+/**
+ Get rect from two point
+ */
++ (CGRect)rectWithPoint:(CGPoint)point otherPoint:(CGPoint)otherPoint;
+
+/**
+ Show toast.
+ */
+- (void)toastMessage:(NSString *)message;
 @end

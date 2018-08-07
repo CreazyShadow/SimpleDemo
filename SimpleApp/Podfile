@@ -21,6 +21,8 @@ def share_pods
     pod 'Aspects'
     pod 'IQKeyboardManager'
     pod 'ReactiveObjC', '~>3.0.0'
+    pod 'ReactiveCocoa'
+    pod 'ReactiveObjCBridge'
 #    pod 'MLeaksFinder'
     pod 'JDFlipNumberView'
     pod 'FLEX', :configuration => 'Debug'
@@ -32,12 +34,11 @@ end
 def swift_pods
     pod 'Then'
 #    pod 'RxSwift'
-    pod 'RxCocoa'
+#    pod 'RxCocoa'
     pod 'SnapKit'
     pod 'PromiseKit'
-    pod 'Charts'
+#    pod 'Charts'
 end
-
 
 target 'SimpleApp' do
 	project 'SimpleApp.project'

@@ -11,14 +11,21 @@
 #define kDefaultMenuColor  colorHex(@"333333")
 #define kSelectedMenuColor colorHex(@"DD1712")
 
+#define AdaptedWidthValue(value) (value)
+
 #pragma mark - entity model
 
 @implementation SHOptionMenuHeaderItemEntityModel
+
+- (NSString *)group {
+    return _group ?: @"group";
+}
 
 - (nonnull id)copyWithZone:(nullable NSZone *)zone {
     SHOptionMenuHeaderItemEntityModel *model = [SHOptionMenuHeaderItemEntityModel allocWithZone:zone];
     model.title = self.title;
     model.icon = self.icon;
+    model.selectingIcon = self.selectingIcon;
     model.selectedIcon = self.selectedIcon;
     model.iconIsLeft = self.iconIsLeft;
     model.group = self.group;
@@ -30,9 +37,6 @@
 #pragma mark - item view
 
 @interface SHSingleOptionMenuHeaderItemView ()
-
-@property (nonatomic, strong) UIView *borderView;
-@property (nonatomic, strong) UIButton *titleBtn;
 
 @property (nonatomic, assign) SHOptionMenuHeaderItemStyle style;
 
@@ -62,10 +66,13 @@
     _titleBtn.frame = CGRectMake(0, y, self.width, _titleHeight);
     
     //排列图片和文字
-    if (self.model.iconIsLeft) {
-        [_titleBtn setButtonImageTitleStyle:ButtonImageTitleStyleLeft padding:4];
+    if (self.titleBtn.currentImage) {
+        ButtonImageTitleStyle imgStyle = self.model.iconIsLeft ? ButtonImageTitleStyleLeft : ButtonImageTitleStyleRight;
+//        [_titleBtn setButtonImageTitleStyle:imgStyle padding:AdaptedWidthValue(iPhone5 ? 1.5 : 3)];
+        //XTODO:测试
+        [_titleBtn setButtonImageTitleStyle:imgStyle padding:3];
     } else {
-        [_titleBtn setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:4];
+        _titleBtn.titleEdgeInsets = UIEdgeInsetsZero;
     }
 }
 
@@ -84,7 +91,7 @@
     _titleBtn.layer.borderColor = colorHex(@"F0F0F0").CGColor;
     _titleBtn.titleLabel.numberOfLines = 1;
     _titleBtn.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-    _titleBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    _titleBtn.titleLabel.font = [UIFont systemFontOfSize:12];
     [_titleBtn setTitleColor:kDefaultMenuColor forState:UIControlStateNormal];
     [_titleBtn setTitleColor:kSelectedMenuColor forState:UIControlStateSelected];
     
@@ -109,6 +116,7 @@
             _titleBtn.selected = NO;
             _titleBtn.backgroundColor = isPlainStyle ? [UIColor clearColor] : colorHex(@"F7F7F7");
             _titleBtn.layer.borderWidth = 0;
+            [_titleBtn setImage:[UIImage imageNamed:self.model.icon] forState:UIControlStateNormal];
         }
             break;
             
@@ -118,6 +126,7 @@
             _titleBtn.selected = YES;
             _titleBtn.backgroundColor = [UIColor clearColor];
             _titleBtn.layer.borderWidth = 0;
+            [_titleBtn setImage:[UIImage imageNamed:self.model.selectingIcon] forState:UIControlStateNormal];
         }
             break;
             
@@ -127,9 +136,13 @@
             _titleBtn.selected = YES;
             _titleBtn.backgroundColor = [UIColor clearColor];
             _titleBtn.layer.borderWidth = isPlainStyle ? 0 : 1;
+            _titleBtn.layer.borderColor = kSelectedMenuColor.CGColor;
+            [_titleBtn setImage:[UIImage imageNamed:self.model.selectedIcon] forState:UIControlStateNormal];
         }
             break;
     }
+    
+    [self setNeedsLayout];
 }
 
 - (void)setModel:(SHOptionMenuHeaderItemEntityModel *)model {
@@ -137,7 +150,7 @@
     
     [_titleBtn setTitle:model.title forState:UIControlStateNormal];
     [_titleBtn setImage:[UIImage imageNamed:model.icon] forState:UIControlStateNormal];
-    [_titleBtn setImage:[UIImage imageNamed:model.selectedIcon] forState:UIControlStateSelected];
+    self.status = _status; // 为了更新状态对应的图片
     
     [self setNeedsLayout];
 }

@@ -9,9 +9,10 @@
 import UIKit
 
 public class UserModel: BaseModel {
-    var name: String?
+    @objc var name: String?
     var age: Int?
     var score: Float?
+    @objc var phone = "123"
     
     public override init() {
         self.name = nil

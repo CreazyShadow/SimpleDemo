@@ -51,15 +51,6 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.3.4):
     - PromiseKit/CorePromise
-  - ReactiveCocoa (7.2.0):
-    - ReactiveSwift (~> 3.1)
-  - ReactiveObjC (3.0.0)
-  - ReactiveObjCBridge (3.0.0):
-    - ReactiveObjC (~> 3.0.0)
-    - ReactiveSwift (~> 3.0)
-  - ReactiveSwift (3.1.0):
-    - Result (~> 3.2)
-  - Result (3.2.4)
   - SDWebImage (4.4.1):
     - SDWebImage/Core (= 4.4.1)
   - SDWebImage/Core (4.4.1)
@@ -90,9 +81,6 @@ DEPENDENCIES:
   - OpenShare
   - pop
   - PromiseKit
-  - ReactiveCocoa
-  - ReactiveObjC (~> 3.0.0)
-  - ReactiveObjCBridge
   - SDWebImage
   - SnapKit
   - Then
@@ -121,11 +109,6 @@ SPEC REPOS:
     - OpenShare
     - pop
     - PromiseKit
-    - ReactiveCocoa
-    - ReactiveObjC
-    - ReactiveObjCBridge
-    - ReactiveSwift
-    - Result
     - SDWebImage
     - Shimmer
     - SnapKit
@@ -154,11 +137,6 @@ SPEC CHECKSUMS:
   OpenShare: a560580dbb729d5c0c3cc1ee84cd6aa4a07e94c6
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   PromiseKit: e1425568123ec844a944c93f2bcb29d511d39cf5
-  ReactiveCocoa: 476dae7ca790f40d30d186a1bd7ebae4290395d5
-  ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
-  ReactiveObjCBridge: bc8fce9f30caa22868439a621bf3f8b95e6e47e1
-  ReactiveSwift: 5b26d2e988fe0eed2daf48c4054d1de74db50184
-  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
@@ -168,6 +146,6 @@ SPEC CHECKSUMS:
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 7109e0b2ea712bf60d37498141f1f56b67adbe10
+PODFILE CHECKSUM: a9c08024d89b04219a09679571c489426c3b1f0e
 
 COCOAPODS: 1.5.0

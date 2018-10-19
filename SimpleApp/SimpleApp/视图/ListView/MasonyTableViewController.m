@@ -22,6 +22,20 @@
     [super viewDidLoad];
 
     [self.view addSubview:self.tableView];
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self.tableView.mj_header endRefreshing];
+    }];
+    
+    ((MJRefreshNormalHeader *)self.tableView.mj_header).lastUpdatedTimeText = ^NSString *(NSDate *lastUpdatedTime) {
+        return nil;
+    };
+    
+    ((MJRefreshNormalHeader *)self.tableView.mj_header).stateLabel.text = @"全网抢购";
+    
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self.tableView.mj_footer endRefreshing];
+    }];
 }
 
 #pragma mark - tableview delegate & datasource
@@ -36,6 +50,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MasonryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELLID"];
+    [cell setupLeft:@"AAAAA" right:@"BBBBB"];
     return cell;
 }
 

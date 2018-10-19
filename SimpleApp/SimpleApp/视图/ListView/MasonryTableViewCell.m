@@ -55,4 +55,9 @@
     }];
 }
 
+- (void)setupLeft:(NSString *)left right:(NSString *)right {
+    _title.text = left;
+    _right.text = right;
+}
+
 @end

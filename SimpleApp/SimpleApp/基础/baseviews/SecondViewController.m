@@ -34,6 +34,8 @@
     [super viewDidLoad];
     self.title = @"SecondViewController";
     
+    self.view.backgroundColor = [UIColor orangeColor];
+    
     [self.view addSubview:self.tableView];
     self.tableView.emptyDataSource = self;
 }
@@ -60,14 +62,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    __weak typeof(self) wSelf = self;
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:wSelf selector:@selector(timerRun) userInfo:nil repeats:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
-//    [self.timer invalidate];
 }
 
 - (void)dealloc {

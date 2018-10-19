@@ -10,6 +10,6 @@
 
 @interface FileManager : NSObject
 
-
+- (NSString *)fileContentWithPath:(NSString *)path;
 
 @end

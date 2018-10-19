@@ -66,7 +66,7 @@ static CGFloat const kItemDefaultHeight = 25;
     width = _itemWidth == 0 ? width : _itemWidth;
     CGFloat height = self.height;
     
-    self.containerScrollView.contentSize = CGSizeMake(width * count, 0);
+    self.containerScrollView.contentSize = CGSizeMake(width * count + (count - 1) * _itemSpace + 2 * _horPadding, 0);
     for (int i = 0; i < _itemsArray.count; i++) {
         //设置item frame
         _itemsArray[i].frame = CGRectMake(_horPadding + (width + _itemSpace) * i, 0, width, height);
@@ -83,7 +83,7 @@ static CGFloat const kItemDefaultHeight = 25;
 
 - (void)buildSubViews {
     self.bottomLineView = [[UIView alloc] initWithFrame:CGRectMake(0, self.height - 0.5, self.width, 0.5)];
-    _bottomLineView.backgroundColor = [UIColor redColor];
+    _bottomLineView.backgroundColor = colorHex(@"F0F0F0");
     [self addSubview:_bottomLineView];
     
     self.containerScrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
@@ -166,18 +166,7 @@ static CGFloat const kItemDefaultHeight = 25;
         [self.itemsArray addObject:temp];
     }
     
-    //设置默认选中
-    __weak SHSingleOptionMenuHeaderView *weakSelf = self;
-    [self.defaultSelectedItems enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
-        if (idx < weakSelf.itemsArray.count) {
-            SHSingleOptionMenuHeaderItemView *item = weakSelf.itemsArray[idx];
-            weakSelf.lastItemPool[item.model.group] = item;
-        }
-    }];
-    
-    [self.lastItemPool enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, SHSingleOptionMenuHeaderItemView * _Nonnull obj, BOOL * _Nonnull stop) {
-        obj.status = SHMenuHeaderItemStateSelected;
-    }];
+    [self changeItemStatus];
     
     [self setNeedsLayout];
 }
@@ -194,9 +183,33 @@ static CGFloat const kItemDefaultHeight = 25;
     return [last.model.group isEqualToString:current.model.group];
 }
 
-#pragma mark - change item ui
+#pragma mark - private
+
+- (void)changeItemStatus {
+    //设置默认选中
+    __weak SHSingleOptionMenuHeaderView *weakSelf = self;
+    [self.defaultSelectedItems enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+        if (idx < weakSelf.itemsArray.count) {
+            SHSingleOptionMenuHeaderItemView *item = weakSelf.itemsArray[idx];
+            weakSelf.lastItemPool[item.model.group] = item;
+        }
+    }];
+    
+    [self.lastItemPool enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, SHSingleOptionMenuHeaderItemView * _Nonnull obj, BOOL * _Nonnull stop) {
+        obj.status = SHMenuHeaderItemStateSelected;
+    }];
+    
+    [self setNeedsLayout];
+}
 
 #pragma mark - getter & setter
+
+- (void)setDefaultSelectedItems:(NSIndexSet *)defaultSelectedItems {
+    _defaultSelectedItems = defaultSelectedItems;
+    [self.lastItemPool removeAllObjects]; //TODO: 待优化
+    
+    [self changeItemStatus];
+}
 
 - (NSMutableDictionary<NSString *,SHSingleOptionMenuHeaderItemView *> *)lastItemPool {
     if (!_lastItemPool) {
@@ -204,6 +217,12 @@ static CGFloat const kItemDefaultHeight = 25;
     }
     
     return _lastItemPool;
+}
+
+- (void)setHidenBottomLine:(BOOL)hidenBottomLine {
+    _hidenBottomLine = hidenBottomLine;
+    
+    self.bottomLineView.hidden = hidenBottomLine;
 }
 
 @end

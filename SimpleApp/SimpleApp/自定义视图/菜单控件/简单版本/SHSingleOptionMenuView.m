@@ -73,7 +73,6 @@ static CGFloat const kContentMaxHeight = 260;
 
 - (instancetype)initWithFrame:(CGRect)frame style:(SHSingleOptionMenuStyle)style {
     if (self = [super initWithFrame:frame]) {
-        self.clipsToBounds = YES;
         self.menuSelectedItemsCache = [[NSMutableDictionary alloc] init];
         self.style = style;
         
@@ -92,6 +91,7 @@ static CGFloat const kContentMaxHeight = 260;
     [self addSubview:_header];
     
     self.maskView = [[UIControl alloc] initWithFrame:CGRectMake(0, _header.bottom, self.width, self.height)];
+    _maskView.hidden = YES;
     _maskView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
     [_maskView addTarget:self action:@selector(maskAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_maskView];
@@ -102,6 +102,7 @@ static CGFloat const kContentMaxHeight = 260;
     [self addSubview:_content];
     
     self.bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, _content.bottom, self.width, 44)];
+    _bottomView.hidden = YES;
     [self addSubview:_bottomView];
     
     self.resetBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, _bottomView.width * 0.5, _bottomView.height)];
@@ -134,6 +135,10 @@ static CGFloat const kContentMaxHeight = 260;
         [self.delegate respondsToSelector:@selector(menu:didSelectedContentItemForIndexPath:)]) {
         [self.delegate menu:self didSelectedContentItemForIndexPath:[self menuSelectedItemsWithHeaderIndex:_currentSelectedMenuIndex].firstObject];
     }
+    
+    if ([self.delegate respondsToSelector:@selector(menuContentDismiss:)]) {
+        [self.delegate menuContentDismiss:self];
+    }
 }
 
 - (void)resetAction {
@@ -165,10 +170,6 @@ static CGFloat const kContentMaxHeight = 260;
 #pragma mark - public
 
 - (void)setupDefaultSelectedIndexPath:(NSArray<SHOptionMenuIndexPath *> *)indexPaths {
-    if (indexPaths.count == 0) {
-        return;
-    }
-    
     //更新缓存
     for (SHOptionMenuIndexPath *item in indexPaths) {
         [self updateCacheWithItem:item];
@@ -194,6 +195,7 @@ static CGFloat const kContentMaxHeight = 260;
     [self.menuSelectedItemsCache removeAllObjects];
     
     // 创建header
+    self.header.defaultSelectedItems = nil;
     [self.header reloadItems];
     
     //创建content
@@ -212,6 +214,15 @@ static CGFloat const kContentMaxHeight = 260;
 
 - (void)hiddenMenuContent {
     [self setupContentStatus:NO];
+    
+    [self resetContentItemsToStartSelecte];
+    
+    //刷新title
+    [self updateHeaderItemTitleWithIndex:_currentSelectedMenuIndex];
+    
+    if ([self.delegate respondsToSelector:@selector(menuContentDismiss:)]) {
+        [self.delegate menuContentDismiss:self];
+    }
 }
 
 #pragma mark - SingleOptionMenuHeaderDelegate
@@ -231,8 +242,21 @@ static CGFloat const kContentMaxHeight = 260;
         !isChangeTab ?: [self.header updateMenuItemStatus:NO index:_currentSelectedMenuIndex];
     }
     
+    _currentSelectedMenuIndex = index;
+    _selectingItemsTemp = [[self menuSelectedItemsWithHeaderIndex:index] copy];
+    
+    //如果没有content item
+    NSInteger contentCount = [self.delegate menu:self numberOfContentItemsCountForHeaderIndex:index];
+    if (contentCount == 0) {
+        [self setupContentStatus:NO];
+        if ([self.delegate respondsToSelector:@selector(menu:didSelectedHeaderItem:)]) {
+            [self.delegate menu:self didSelectedHeaderItem:index];
+        }
+        
+        return;
+    }
+    
     //点击已选中的header 退出选择
-//    !self.content.hidden && !isChangeTab
     if (_currentSelectedMenuIndex == index && !self.content.hidden) {
         [self resetContentItemsToStartSelecte];
         [self setupContentStatus:NO];
@@ -243,20 +267,6 @@ static CGFloat const kContentMaxHeight = 260;
         if (_style == SHSingleOptionMenuStylePlainHeader &&
             [self.delegate respondsToSelector:@selector(menu:didSelectedContentItemForIndexPath:)]) {
             [self.delegate menu:self didSelectedContentItemForIndexPath:[self menuSelectedItemsWithHeaderIndex:index].firstObject];
-        }
-        
-        return;
-    }
-    
-    _currentSelectedMenuIndex = index;
-    _selectingItemsTemp = [[self menuSelectedItemsWithHeaderIndex:index] copy];
-    
-    //如果没有content item
-    NSInteger contentCount = [self.delegate menu:self numberOfContentItemsCountForHeaderIndex:index];
-    if (contentCount == 0) {
-        [self setupContentStatus:NO];
-        if ([self.delegate respondsToSelector:@selector(menu:didSelectedHeaderItem:)]) {
-            [self.delegate menu:self didSelectedHeaderItem:index];
         }
         
         return;
@@ -332,7 +342,7 @@ static CGFloat const kContentMaxHeight = 260;
     NSMutableArray *items = [self cacheItemsForHeaderIndex:_currentSelectedMenuIndex];
     
     //如果点击已经选中的选项并且不为单选style时
-    if ([items containsObject:indexPath] && self.style != SHSingleOptionMenuStylePlainHeader) {
+    if ([items containsObject:indexPath] && canMulti) {
         [items removeObject:indexPath];
     } else {
         [self updateCacheWithItem:indexPath];
@@ -387,6 +397,7 @@ static CGFloat const kContentMaxHeight = 260;
     if (!isShow) {
         self.bottomView.hidden = YES;
         self.content.hidden = YES;
+        self.maskView.hidden = YES;
         self.height = self.header.height;
         return;
     }
@@ -394,11 +405,14 @@ static CGFloat const kContentMaxHeight = 260;
     CGFloat height = self.content.expectHeight > kContentMaxHeight ? kContentMaxHeight : self.content.expectHeight;
     self.content.height = height;
     self.bottomView.top = _content.bottom;
+    self.maskView.hidden = NO;
     self.content.hidden = NO;
     self.bottomView.hidden = ![self canMultiChoiceForHeaderIndex:_currentSelectedMenuIndex];
-    UIWindow *window = ((AppDelegate *)[UIApplication sharedApplication].delegate).window;
-    CGRect rect = [self convertRect:self.bounds toView:window];
-    self.height = kScreenHeight - rect.origin.y;
+//    UIWindow *window = ((AppDelegate *)[UIApplication sharedApplication].delegate).window;
+//    CGRect rect = [self convertRect:self.bounds toView:window];
+//    self.height = kScreenHeight - rect.origin.y;
+//    self.maskView.height = self.height;
+    self.height = 2 * kScreenHeight;
     self.maskView.height = self.height;
 }
 

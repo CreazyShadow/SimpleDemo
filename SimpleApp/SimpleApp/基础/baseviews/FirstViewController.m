@@ -15,6 +15,7 @@
 
 #import <Person.h>
 #import <objc/runtime.h>
+#import <FileManager.h>
 
 #import "SubView.h"
 
@@ -76,9 +77,10 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    SecondViewController *second = [[SecondViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:second];
     
-    
-    
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 #pragma mark - override

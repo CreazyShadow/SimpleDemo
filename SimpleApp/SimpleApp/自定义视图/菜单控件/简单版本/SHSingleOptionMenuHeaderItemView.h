@@ -23,6 +23,7 @@ typedef NS_ENUM(NSInteger, SHOptionMenuHeaderItemStyle) {
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *icon;
+@property (nonatomic, copy) NSString *selectingIcon;
 @property (nonatomic, copy) NSString *selectedIcon;
 @property (nonatomic, assign) BOOL iconIsLeft;
 @property (nonatomic, copy) NSString *group;
@@ -32,6 +33,9 @@ typedef NS_ENUM(NSInteger, SHOptionMenuHeaderItemStyle) {
 @interface SHSingleOptionMenuHeaderItemView : UIControl
 
 - (instancetype)initWithFrame:(CGRect)frame style:(SHOptionMenuHeaderItemStyle)style;
+
+@property (nonatomic, strong) UIView *borderView;
+@property (nonatomic, strong) UIButton *titleBtn;
 
 @property (nonatomic, strong) SHOptionMenuHeaderItemEntityModel *model;
 

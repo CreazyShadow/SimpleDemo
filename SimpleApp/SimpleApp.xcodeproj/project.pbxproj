@@ -23,9 +23,6 @@
 		0178357020FC41A4007C60CC /* SwiftConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0178356F20FC41A4007C60CC /* SwiftConst.swift */; };
 		0178357220FD9837007C60CC /* RacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0178357120FD9837007C60CC /* RacViewController.swift */; };
 		0178357520FEE9EA007C60CC /* RayMenuScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0178357420FEE9EA007C60CC /* RayMenuScrollView.m */; };
-		01A0855E209FF87D00258C6F /* RacLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0855C209FF87D00258C6F /* RacLoginViewController.m */; };
-		01A0855F209FF87D00258C6F /* RacLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A0855D209FF87D00258C6F /* RacLoginViewController.xib */; };
-		01A08562209FFD7C00258C6F /* RACLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A08561209FFD7C00258C6F /* RACLoginViewModel.m */; };
 		01A0856520A0543000258C6F /* TestUIWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0856420A0543000258C6F /* TestUIWebViewViewController.m */; };
 		01A0857B20A44A1000258C6F /* SHIndexMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0857A20A44A1000258C6F /* SHIndexMenuView.m */; };
 		01A0857E20A4510800258C6F /* TestIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A0857D20A4510800258C6F /* TestIndexViewController.m */; };
@@ -84,7 +81,6 @@
 		733CC73720A7D28A00ABA151 /* SHOptionMenuHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 733CC73620A7D28A00ABA151 /* SHOptionMenuHeader.m */; };
 		733CC73A20A7D2AD00ABA151 /* SHOptionMenuPlainHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 733CC73920A7D2AD00ABA151 /* SHOptionMenuPlainHeader.m */; };
 		733CC73D20A7D2BF00ABA151 /* SHOptionMenuCubeHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 733CC73C20A7D2BF00ABA151 /* SHOptionMenuCubeHeader.m */; };
-		733CC74120A808CB00ABA151 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 733CC74020A808CB00ABA151 /* UserModel.m */; };
 		7340660A1E6CF82800E4E98B /* PushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 734066091E6CF82800E4E98B /* PushManager.m */; };
 		73406E2A1E14F10100D5C58C /* GestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73406E291E14F10100D5C58C /* GestureViewController.m */; };
 		7341E10E1FE0CFB50017EF36 /* IQKeyBoardBugsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7341E10D1FE0CFB50017EF36 /* IQKeyBoardBugsViewController.m */; };
@@ -268,11 +264,6 @@
 		0178357120FD9837007C60CC /* RacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RacViewController.swift; sourceTree = "<group>"; };
 		0178357320FEE9EA007C60CC /* RayMenuScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RayMenuScrollView.h; sourceTree = "<group>"; };
 		0178357420FEE9EA007C60CC /* RayMenuScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RayMenuScrollView.m; sourceTree = "<group>"; };
-		01A0855B209FF87D00258C6F /* RacLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RacLoginViewController.h; sourceTree = "<group>"; };
-		01A0855C209FF87D00258C6F /* RacLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RacLoginViewController.m; sourceTree = "<group>"; };
-		01A0855D209FF87D00258C6F /* RacLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RacLoginViewController.xib; sourceTree = "<group>"; };
-		01A08560209FFD7C00258C6F /* RACLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACLoginViewModel.h; sourceTree = "<group>"; };
-		01A08561209FFD7C00258C6F /* RACLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACLoginViewModel.m; sourceTree = "<group>"; };
 		01A0856320A0543000258C6F /* TestUIWebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestUIWebViewViewController.h; sourceTree = "<group>"; };
 		01A0856420A0543000258C6F /* TestUIWebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestUIWebViewViewController.m; sourceTree = "<group>"; };
 		01A0857920A44A1000258C6F /* SHIndexMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHIndexMenuView.h; sourceTree = "<group>"; };
@@ -391,8 +382,6 @@
 		733CC73B20A7D2BF00ABA151 /* SHOptionMenuCubeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHOptionMenuCubeHeader.h; sourceTree = "<group>"; };
 		733CC73C20A7D2BF00ABA151 /* SHOptionMenuCubeHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHOptionMenuCubeHeader.m; sourceTree = "<group>"; };
 		733CC73E20A7DB8800ABA151 /* SHOptionMenuHeader+SHOptionMenuHeader_private_.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SHOptionMenuHeader+SHOptionMenuHeader_private_.h"; sourceTree = "<group>"; };
-		733CC73F20A808CB00ABA151 /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
-		733CC74020A808CB00ABA151 /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		734066081E6CF82800E4E98B /* PushManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushManager.h; sourceTree = "<group>"; };
 		734066091E6CF82800E4E98B /* PushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushManager.m; sourceTree = "<group>"; };
 		73406E281E14F10100D5C58C /* GestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureViewController.h; sourceTree = "<group>"; };
@@ -749,23 +738,8 @@
 			isa = PBXGroup;
 			children = (
 				01A0854F209FF6DA00258C6F /* Design */,
-				01A0854E209FF6BE00258C6F /* RAC */,
 			);
 			path = "响应式编程";
-			sourceTree = "<group>";
-		};
-		01A0854E209FF6BE00258C6F /* RAC */ = {
-			isa = PBXGroup;
-			children = (
-				01A0855B209FF87D00258C6F /* RacLoginViewController.h */,
-				01A0855C209FF87D00258C6F /* RacLoginViewController.m */,
-				01A0855D209FF87D00258C6F /* RacLoginViewController.xib */,
-				01A08560209FFD7C00258C6F /* RACLoginViewModel.h */,
-				01A08561209FFD7C00258C6F /* RACLoginViewModel.m */,
-				733CC73F20A808CB00ABA151 /* UserModel.h */,
-				733CC74020A808CB00ABA151 /* UserModel.m */,
-			);
-			path = RAC;
 			sourceTree = "<group>";
 		};
 		01A0854F209FF6DA00258C6F /* Design */ = {
@@ -1847,7 +1821,6 @@
 				73523F751F7DE72100E8B81D /* RenderViewController.xib in Resources */,
 				01648A0820D3C06600BF0ACE /* RacViewController.xib in Resources */,
 				7373D2571CD0AA2600332D91 /* LaunchScreen.storyboard in Resources */,
-				01A0855F209FF87D00258C6F /* RacLoginViewController.xib in Resources */,
 				73B5A05D1DC6F15200477323 /* SelectImageItemView.xib in Resources */,
 				738F57A71F74C617004D6878 /* ToolBarXibViewController.xib in Resources */,
 				7373D2541CD0AA2600332D91 /* Assets.xcassets in Resources */,
@@ -1928,11 +1901,6 @@
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/OpenShare/OpenShare.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveObjCBridge/ReactiveObjCBridge.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Shimmer/Shimmer.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -1961,11 +1929,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjCBridge.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shimmer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -2001,7 +1964,6 @@
 				73BA34DD1DB12E65007E9FC1 /* TestTableViewViewController.swift in Sources */,
 				AE8BD43F1F38845200169FA3 /* TextInputViewController.m in Sources */,
 				732B50821E8B4602006F2677 /* TimerBViewController.m in Sources */,
-				733CC74120A808CB00ABA151 /* UserModel.m in Sources */,
 				731C12791E8504200034F361 /* NSURLProtocol+WebKitSupport.m in Sources */,
 				016B77C020B5775200196EC0 /* SHSingleOptionMenuHeaderItemView.m in Sources */,
 				73B5A05E1DC6F15200477323 /* SelectImageView.m in Sources */,
@@ -2090,7 +2052,6 @@
 				73BE8D841E7284CC0073A2C6 /* PushManagerViewController.m in Sources */,
 				732B50881E8B567B006F2677 /* RayTimer.m in Sources */,
 				73BA34DC1DB12E65007E9FC1 /* MasonyTableViewController.m in Sources */,
-				01A08562209FFD7C00258C6F /* RACLoginViewModel.m in Sources */,
 				0178357020FC41A4007C60CC /* SwiftConst.swift in Sources */,
 				AEDEB4D31F380D9C00A05940 /* HXWebViewLoadInterceptor.m in Sources */,
 				732AE6261E5E8E710068E1CE /* ClassB.m in Sources */,
@@ -2174,7 +2135,6 @@
 				734DAE0B1E88FC8900D553CC /* AttributeViewController.m in Sources */,
 				732116D51EFA1E520041BF6E /* CategoryViewController.m in Sources */,
 				73523F741F7DE72100E8B81D /* RenderViewController.m in Sources */,
-				01A0855E209FF87D00258C6F /* RacLoginViewController.m in Sources */,
 				7393FBC41E48533B00EF7BDF /* Hit.m in Sources */,
 				735ADFE31E8377FA00F79620 /* RayNavigationTransition.m in Sources */,
 				7359983E1EA6F64A00427C5B /* Animation_super.m in Sources */,

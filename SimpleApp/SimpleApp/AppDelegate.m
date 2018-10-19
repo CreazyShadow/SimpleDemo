@@ -104,13 +104,13 @@ static NSUInteger gcd(NSUInteger a, NSUInteger b)
 }
 
 - (void)test {
+    NSDictionary *dict = @{@"name" : @"1",
+                           @"score" : @{@"math" : @100, @"grade" : @"2"}
+                           };
     
-}
-
-- (NSArray *)arr {
-    
-    
-    return @[];
+    for (NSString *key in dict) {
+        NSLog(@"----%@", key);
+    }
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -133,7 +133,7 @@ static NSUInteger gcd(NSUInteger a, NSUInteger b)
     self.window.backgroundColor = [UIColor whiteColor];
     
     //    设置启动方式
-    [self setupStartType:1];
+    [self setupStartType:0];
     
     [self.window makeKeyAndVisible];
     
@@ -150,7 +150,7 @@ static NSUInteger gcd(NSUInteger a, NSUInteger b)
 
 - (void)setupStartType:(NSInteger)type {
     UIViewController *vc = nil;
-    NSString *className = @"RacViewController";
+    NSString *className = @"TestCustomViewController";
     switch (type) {
         case 0:
         {

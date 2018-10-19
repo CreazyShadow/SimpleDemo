@@ -10,4 +10,6 @@
 
 @interface MasonryTableViewCell : UITableViewCell
 
+- (void)setupLeft:(NSString *)left right:(NSString *)right;
+
 @end

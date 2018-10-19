@@ -65,6 +65,8 @@ typedef NS_ENUM(NSInteger, SHSingleOptionMenuStyle) {
 
 - (void)menu:(SHSingleOptionMenuView *)menu didClickBottomAction:(BOOL)isConfirm index:(NSInteger)headerIndex;
 
+- (void)menuContentDismiss:(SHSingleOptionMenuView *)menu;
+
 @end
 
 #pragma mark - option menu
@@ -78,6 +80,7 @@ typedef NS_ENUM(NSInteger, SHSingleOptionMenuStyle) {
 @property (nonatomic, assign) BOOL menuIsShowing;
 
 #pragma mark - header
+@property (nonatomic, strong, readonly) SHSingleOptionMenuHeaderView *header; ///< header
 @property (nonatomic, assign) CGFloat headerItemWidth;    ///< 默认等分
 @property (nonatomic, assign) CGFloat headerItemSpace;    ///< item 间隔
 @property (nonatomic, assign) CGFloat headerItemHeight;   ///< item 高度 默认25
